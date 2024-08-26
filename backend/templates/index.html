@@ -109,6 +109,45 @@
     .notification-icon i {
       font-size: 24px;
     }
+
+/* Tab Styling */
+#faq {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f8f9fa;
+  color: #333;
+  cursor: pointer;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.faq-content {
+  display: none;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.faq-content.show {
+  display: block;
+}
+
+
+
   </style>
 </head>
 <body>
@@ -129,6 +168,8 @@
           </ul>
         </div>
         <div class="text-end">
+          
+          <button type="button" class="btn btn-outline-warning me-2">Sign up</button>
           <button type="button" class="btn btn-primary me-2">Login</button>
         </div>
       </div>
@@ -194,58 +235,52 @@
   </section>
 
    <!-- FAQ Section -->
-  <section id="faq" class="container px-4 py-5">
+   <section id="faq" class="container px-4 py-5">
     <h2 class="pb-2 border-bottom text-center">Frequently Asked Questions</h2>
-    <div class="accordion" id="faqAccordion">
-      <!-- Question 1 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading1">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
-            Why should I use CV.ai
-          </button>
-        </h2>
-        <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">At CV.ai, we're not just offering a resume-building tool; we're providing you with a powerful strategic partner in your career journey. 
+    <div class="row">
+      <div class="col-md-3">
+        <!-- Tabs -->
+        <ul class="nav nav-pills flex-column" id="faqTabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" data-tab="faq1">Why should I use CV.ai?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-tab="faq2">What is ATS?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-tab="faq3">What is the meaning of ATS optimized CV?</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9">
+        <!-- Tab Content -->
+        <div id="faqContent">
+          <!-- Content for Question 1 -->
+          <div class="faq-content" id="faq1">
+            At CV.ai, we're not just offering a resume-building tool; we're providing you with a powerful strategic partner in your career journey.
             <ul>
-            <li><b>Advanced AI-Powered Insights</b></li>
-            Our platform harnesses the latest in large language models (LLMs) to analyze your resume with unparalleled speed and accuracy. By leveraging cutting-edge AI technology, we process information faster and more efficiently, offering you deeper, more actionable insights. This advanced analysis allows us to tailor your CV in a way that highlights your unique strengths and aligns perfectly with industry expectations.
-            
-            <li><b>Precision in Personalization</b></li>
-            With our LLM-powered resume analyzer, we go beyond mere error detection. Our AI meticulously evaluates your resume, identifying areas for improvement and providing specific recommendations to enhance your professional presentation. This means you receive not just generic advice, but insights that are directly relevant to your career goals and aspirations.
-            
-            <li><b>Tailored CV Optimization</b></li>
-            Our Resume Optimizer uses sophisticated algorithms to align your CV with targeted job opportunities. This ensures your resume is not only visually appealing but also optimized for Applicant Tracking Systems (ATS), increasing your chances of making it through initial screenings.      
-          </ul>
+              <li><b>Advanced AI-Powered Insights</b></li>
+              Our platform harnesses the latest in large language models (LLMs) to analyze your resume with unparalleled speed and accuracy. By leveraging cutting-edge AI technology, we process information faster and more efficiently, offering you deeper, more actionable insights. This advanced analysis allows us to tailor your CV in a way that highlights your unique strengths and aligns perfectly with industry expectations.
+              <li><b>Precision in Personalization</b></li>
+              With our LLM-powered resume analyzer, we go beyond mere error detection. Our AI meticulously evaluates your resume, identifying areas for improvement and providing specific recommendations to enhance your professional presentation. This means you receive not just generic advice, but insights that are directly relevant to your career goals and aspirations.
+              <li><b>Tailored CV Optimization</b></li>
+              Our Resume Optimizer uses sophisticated algorithms to align your CV with targeted job opportunities. This ensures your resume is not only visually appealing but also optimized for Applicant Tracking Systems (ATS), increasing your chances of making it through initial screenings.
+            </ul>
           </div>
-      </div>
-      <!-- Question 2 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading2">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-            How does CV.ai ensure the privacy of my data?
-          </button>
-        </h2>
-        <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            We prioritize your privacy and use advanced encryption techniques to protect your data. For more information, please review our privacy policy.
+          <!-- Content for Question 2 -->
+          <div class="faq-content" id="faq2">
+            ATS, or Applicant Tracking System, is like a robot that helps companies find the right people for a job. It looks at resumes and picks out the ones that match what the company needs, so they don’t have to look through all the resumes themselves.
           </div>
-        </div>
-      </div>
-      <!-- Question 3 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading3">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
-            Can I cancel my subscription at any time?
-          </button>
-        </h2>
-        <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Yes, you can cancel your subscription at any time. Please refer to our cancellation policy for more details.
+          <!-- Content for Question 3 -->
+          <div class="faq-content" id="faq3">
+            An ATS-optimized CV is a resume that is specially designed to be easily read by a computer system called an Applicant Tracking System (ATS). This system helps companies sort through job applications by looking for specific words and formats. An ATS-optimized CV makes sure your resume gets noticed by both the computer and the person hiring.
           </div>
         </div>
       </div>
     </div>
   </section>
+  
+ 
 
   <footer class="text-center text-lg-start mt-5">
     <div class="container p-4">
@@ -259,9 +294,8 @@
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
           <h3>Contact Us</h3>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Contact Form</a></li>
-            <li><a href="#" class="text-white">Support</a></li>
-            <li><a href="#" class="text-white">Feedback</a></li>
+            <li><a href="#" class="text-white">Chat with WuraAI</a></li>
+            <li><a href="#" class="text-white">Pricing</a></li>
           </ul>
         </div>
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
@@ -282,6 +316,29 @@
     <i class="fas fa-comments"></i>
   </div>
 
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('#faqTabs .nav-link');
+  const contents = document.querySelectorAll('#faqContent .faq-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      // Remove active class from all tabs and hide all contents
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('show'));
+
+      // Add active class to the clicked tab and show corresponding content
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('show');
+    });
+  });
+});
+
+</script>
+  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO6GJtBvZ0G2IkqnkJ4A8vHe5d5o5q+6vPpP7kQpC0Ad0S4U3K6kw" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-D5mZ3qRJUmO40WuD8QsoF48twTVYf8OX4efX7KeF+2wR+8K2eFVuQkc6MPb7V+fa" crossorigin="anonymous"></script>
 </body>
