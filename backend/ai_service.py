@@ -2,9 +2,23 @@ import vertexai
 from vertexai.generative_models import GenerativeModel, Part
 from google.cloud import storage
 from PyPDF2 import PdfReader
+import docx
+from io import BytesIO
 
 def initialize_vertex_ai(project_id, location):
     vertexai.init(project=project_id, location=location)
+
+def download_file_from_gcs(file_uri):
+    try:
+        storage_client = storage.Client()
+        bucket_name, blob_name = file_uri.replace("gs://", "").split("/", 1)
+        bucket = storage_client.bucket(bucket_name)
+        blob = bucket.blob(blob_name)
+        file_content = blob.download_as_bytes()
+        return file_content
+    except Exception as e:
+        print(f"Error downloading from GCS: {e}")
+        return None
 
 def upload_local_file_to_gcs(file_path, bucket_name, destination_blob_name):
     try:
@@ -13,13 +27,14 @@ def upload_local_file_to_gcs(file_path, bucket_name, destination_blob_name):
         blob = bucket.blob(destination_blob_name)
         blob.upload_from_filename(file_path)
         return f"gs://{bucket_name}/{destination_blob_name}"
+            
     except Exception as e:
-        print(f"Error uploading to GCS: {e}")
-        return None
+            print(f"Error uploading to GCS: {e}")
+            return None
 
-def extract_text_from_pdf(file_path):
+def extract_text_from_pdf(file_content):
     try:
-        with open(file_path, "rb") as file:
+        with BytesIO(file_content) as file:
             reader = PdfReader(file)
             text = ""
             for page in reader.pages:
@@ -27,6 +42,26 @@ def extract_text_from_pdf(file_path):
         return text
     except Exception as e:
         print(f"Error extracting text from PDF: {e}")
+        return ""
+
+def extract_text_from_docx(file_content):
+    try:
+        with BytesIO(file_content) as file:
+            doc = docx.Document(file)
+            text = ""
+            for paragraph in doc.paragraphs:
+                text += paragraph.text + "\n"
+        return text
+    except Exception as e:
+        print(f"Error extracting text from DOCX: {e}")
+        return ""
+
+def extract_text_from_txt(file_content):
+    try:
+        text = file_content.decode('utf-8')
+        return text
+    except Exception as e:
+        print(f"Error extracting text from TXT: {e}")
         return ""
 
 def call_vertex_ai(file_text):
@@ -51,23 +86,25 @@ def call_vertex_ai(file_text):
         print(f"Error calling Vertex AI: {e}")
         return "Error processing the file."
 
-def process_file(file_path):
-    bucket_name = 'genaiq_cloudbuild'
-    destination_blob_name = 'uploads/test_document.pdf'
-
-    file_uri = upload_local_file_to_gcs(file_path, bucket_name, destination_blob_name)
+def process_file(file_uri):
+    file_content = download_file_from_gcs(file_uri)
     
-    if file_uri:
-        file_text = extract_text_from_pdf(file_path)
+    if file_content:
+        file_extension = os.path.splitext(file_uri)[1].lower()
         
+        if file_extension == '.pdf':
+            file_text = extract_text_from_pdf(file_content)
+        elif file_extension == '.docx':
+            file_text = extract_text_from_docx(file_content)
+        elif file_extension == '.txt':
+            file_text = extract_text_from_txt(file_content)
+        else:
+            return "Unsupported file type."
+
         if file_text.strip():
             result = call_vertex_ai(file_text)
             return result
         else:
-            return "No text extracted from the PDF."
+            return "No text extracted from the file."
     else:
-        return "Failed to upload file to GCS."
-
-if __name__ == "__main__":
-    local_file_path = '/home/bishoptewogbade/genaiq/backend/static/uploads/resume.pdf'
-    print(process_file(local_file_path))
+        return "Failed to download file from GCS."

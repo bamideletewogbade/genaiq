@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CV.ai</title>
+  <title>Upload Resume</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
   <style>
@@ -192,101 +192,30 @@ footer .text-center.p-4 {
     </div>
   </header>
 
-  <header class="header-section">
-    <div class="header-image"></div>
-    <div class="header-text">
-      <h1 class="display-4">Welcome to CV.ai</h1>
-      <p>Transform your career with CV.ai, the advanced AI-driven tool designed to enhance your resume and stand out in the competitive job market. Our personalized approach tailors your resume to highlight your strengths and align with industry expectations.</p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-start">
-        <a href="/upload_resume_page" class="btn btn-primary btn-lg px-4 me-sm-3">Try it!</a>
-      </div>
-    </div>
-  </header>
-
-  <section id="features" class="container px-4 py-5">
-    <h2 class="pb-2 border-bottom text-center">Why Choose CV.ai?</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <!-- Feature 1 -->
-      <div class="col">
-        <div class="card h-100 text-center shadow-lg">
-          <div class="card-body">
-            <h3 class="card-title">Personalized AI Insights</h3>
-            <p class="card-text">Harness the power of AI to receive customized recommendations that reflect your unique skills and career goals.</p>
-            <a href="#" id="continueButton" class="btn btn-primary">Continue</a>
-          </div>
-        </div>
-      </div>
-      <!-- Feature 3 -->
-      <div class="col">
-        <div class="card h-100 text-center shadow-lg">
-          <div class="card-body">
-            <h3 class="card-title">Smart Resume Matcher</h3>
-            <p class="card-text">Match your resume with job descriptions to ensure you meet the key requirements and stand out.</p>
-            <a href="#" class="btn btn-primary">Match</a>
-          </div>
-        </div>
-      </div>
-      <!-- Feature 4 -->
-      <div class="col">
-        <div class="card h-100 text-center shadow-lg">
-          <div class="card-body">
-            <h3 class="card-title">Resume Roast</h3>
-            <p class="card-text">Add a touch of fun with a light-hearted review of your resume, providing insightful feedback in a playful manner.</p>
-            <a href="#" class="btn btn-primary">Try it out!</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-   <!-- FAQ Section -->
-   <section id="faq" class="container px-4 py-5">
-    <h2 class="pb-2 border-bottom text-center">Frequently Asked Questions</h2>
+    
+  <main class="container mt-5">
     <div class="row">
-      <div class="col-md-3">
-        <!-- Tabs -->
-        <ul class="nav nav-pills flex-column" id="faqTabs">
-          <li class="nav-item">
-            <a class="nav-link active" href="#" data-tab="faq1">Why should I use CV.ai?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-tab="faq2">What is ATS?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-tab="faq3">What is the meaning of ATS optimized CV?</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-9">
-        <!-- Tab Content -->
-        <div id="faqContent">
-          <!-- Content for Question 1 -->
-          <div class="faq-content" id="faq1">
-            At CV.ai, we're not just offering a resume-building tool; we're providing you with a powerful strategic partner in your career journey.
-            <ul>
-              <li><b>Advanced AI-Powered Insights</b></li>
-              Our platform harnesses the latest in large language models (LLMs) to analyze your resume with unparalleled speed and accuracy. By leveraging cutting-edge AI technology, we process information faster and more efficiently, offering you deeper, more actionable insights. This advanced analysis allows us to tailor your CV in a way that highlights your unique strengths and aligns perfectly with industry expectations.
-              <li><b>Precision in Personalization</b></li>
-              With our LLM-powered resume analyzer, we go beyond mere error detection. Our AI meticulously evaluates your resume, identifying areas for improvement and providing specific recommendations to enhance your professional presentation. This means you receive not just generic advice, but insights that are directly relevant to your career goals and aspirations.
-              <li><b>Tailored CV Optimization</b></li>
-              Our Resume Optimizer uses sophisticated algorithms to align your CV with targeted job opportunities. This ensures your resume is not only visually appealing but also optimized for Applicant Tracking Systems (ATS), increasing your chances of making it through initial screenings.
-            </ul>
+      <div class="col-md-6">
+        <h1 class="mb-4"><b>Upload Your Resume</b></h1>
+        <form action="/tools" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="resume" class="form-label">Choose your resume file</label>
+            <input type="file" class="form-control" id="resume" name="resume" accept=".pdf, .docx, .txt" required>
+            <div class="form-text">Only PDF, DOCX, and TXT files are allowed.</div>
           </div>
-          <!-- Content for Question 2 -->
-          <div class="faq-content" id="faq2">
-            ATS, or Applicant Tracking System, is like a robot that helps companies find the right people for a job. It looks at resumes and picks out the ones that match what the company needs, so they don’t have to look through all the resumes themselves.
-          </div>
-          <!-- Content for Question 3 -->
-          <div class="faq-content" id="faq3">
-            An ATS-optimized CV is a resume that is specially designed to be easily read by a computer system called an Applicant Tracking System (ATS). This system helps companies sort through job applications by looking for specific words and formats. An ATS-optimized CV makes sure your resume gets noticed by both the computer and the person hiring.
-          </div>
+          <a href="/tools" class="btn btn-primary">Upload</a>
+        </form>
+        <div class="create-cv-text mt-4">
+          No CV? No problem! <a href="#"><b>Click here to create a new CV in 5 minutes</b></a>
         </div>
       </div>
+      <div class="col-md-6 image-container">
+        <img id="uploadImage" alt="Upload Illustration">
+      </div>
     </div>
-  </section>
-  
- 
-
+  </main>
+<br>
+<br>
   <footer class="text-center text-lg-start text-white">
     <!-- Social Media Links -->
     <section class="d-flex justify-content-center p-4 border-bottom" style="background-color: #023047;">
@@ -341,41 +270,15 @@ footer .text-center.p-4 {
       © 2024 CV.ai. All rights reserved.
     </div>
   </footer>
-  
 
-  <!-- Chat Notification Icon -->
-  <div class="notification-icon">
-    <i class="fas fa-comments"></i>
-  </div>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('#faqTabs .nav-link');
-  const contents = document.querySelectorAll('#faqContent .faq-content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', (event) => {
-      event.preventDefault();
-
-      // Remove active class from all tabs and hide all contents
-      tabs.forEach(t => t.classList.remove('active'));
-      contents.forEach(c => c.classList.remove('show'));
-
-      // Add active class to the clicked tab and show corresponding content
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.tab).classList.add('show');
-    });
-  });
-});
-
-</script>
-<script>
-  document.getElementById('continueButton').addEventListener('click', () => {
-      window.location.href = 'continue_btn_index.html';
-  });
-</script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO6GJtBvZ0G2IkqnkJ4A8vHe5d5o5q+6vPpP7kQpC0Ad0S4U3K6kw" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-D5mZ3qRJUmO40WuD8QsoF48twTVYf8OX4efX7KeF+2wR+8K2eFVuQkc6MPb7V+fa" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set the image URL
+      const imageUrl = '/static/images/okay.jpg'; // Replace with the correct relative path
+      document.getElementById('uploadImage').src = imageUrl;
+    });
+  </script>
 </body>
 </html>
