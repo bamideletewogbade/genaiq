@@ -59,16 +59,15 @@
       background-color: #fb8500; /* Orange for hover effect */
     }
     .btn-outline-primary {
-    background-color: transparent; /* Transparent background for outlined buttons */
-    color: #fb8500; /* Orange text color */
-    border: 2px solid #fb8500; /* Orange border */
-}
-
-.btn-outline-primary:hover {
-    background-color: #ffb703; /* Yellow background on hover */
-    color: white; /* White text color on hover */
-    border-color: #ffb703; /* Yellow border on hover */
-}
+      background-color: transparent; /* Transparent background for outlined buttons */
+      color: #fb8500; /* Orange text color */
+      border: 2px solid #fb8500; /* Orange border */
+    }
+    .btn-outline-primary:hover {
+      background-color: #ffb703; /* Yellow background on hover */
+      color: white; /* White text color on hover */
+      border-color: #ffb703; /* Yellow border on hover */
+    }
     .card {
       border: none;
       border-radius: 0.5rem;
@@ -81,26 +80,21 @@
       color: #023047; /* Dark blue for card text */
     }
     footer {
-  background-color: #023047; /* Dark blue background for footer */
-  color: #ffffff; /* White text in footer */
-}
-
-footer h3 {
-  color: #fff; /* Yellow for footer headings */
-}
-
-footer a {
-  color: #ffffff; /* White links */
-}
-
-footer a:hover {
-  color: #fb8500; /* Orange for link hover effect */
-}
-
-footer .text-center.p-4 {
-  background-color: rgba(0, 0, 0, 0.05); /* Light background for bottom section */
-}
-
+      background-color: #023047; /* Dark blue background for footer */
+      color: #ffffff; /* White text in footer */
+    }
+    footer h3 {
+      color: #fff; /* Yellow for footer headings */
+    }
+    footer a {
+      color: #ffffff; /* White links */
+    }
+    footer a:hover {
+      color: #fb8500; /* Orange for link hover effect */
+    }
+    footer .text-center.p-4 {
+      background-color: rgba(0, 0, 0, 0.05); /* Light background for bottom section */
+    }
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -129,42 +123,25 @@ footer .text-center.p-4 {
     .notification-icon i {
       font-size: 24px;
     }
-
-/* Tab Styling */
-#faq {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.nav-pills .nav-link {
-  border-radius: 0;
-  border: 1px solid #ddd;
-  padding: 15px;
-  background-color: #f8f9fa;
-  color: #333;
-  cursor: pointer;
-}
-
-.nav-pills .nav-link.active {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.nav-pills .nav-link:hover {
-  background-color: #0056b3;
-  color: #fff;
-}
-
-.faq-content {
-  display: none;
-  padding: 15px;
-  border: 1px solid #ddd;
-  background-color: #fff;
-}
-
-.faq-content.show {
-  display: block;
-}
+    #documentContainer {
+      max-width: 100%;
+      height: auto;
+    }
+    #pdfViewer, #txtViewer, #docxViewer {
+      display: none; /* Hide by default */
+      width: 100%;
+      height: 500px;
+    }
+    #txtViewer {
+      white-space: pre-wrap;
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #f9f9f9;
+    }
+    #optimizeButton {
+      display: none; /* Hide by default */
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -173,6 +150,7 @@ footer .text-center.p-4 {
       <div class="navbar">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" style="font-size: large;">
               <b>CV.ai</b>
+        </a>
         <div class="nav-links">
           <ul class="nav col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
             <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
@@ -184,7 +162,6 @@ footer .text-center.p-4 {
           </ul>
         </div>
         <div class="text-end">
-          
           <button type="button" class="btn btn-outline-warning me-2">Login</button>
           <button type="button" class="btn btn-outline-primary me-2">Create CV</button>
         </div>
@@ -192,30 +169,33 @@ footer .text-center.p-4 {
     </div>
   </header>
 
-    
   <main class="container mt-5">
     <div class="row">
       <div class="col-md-6">
         <h1 class="mb-4"><b>Upload Your Resume</b></h1>
-        <form action="/tools" method="post" enctype="multipart/form-data">
+        <form id="uploadForm">
           <div class="mb-3">
             <label for="resume" class="form-label">Choose your resume file</label>
-            <input type="file" class="form-control" id="resume" name="resume" accept=".pdf, .docx, .txt" required>
+            <input type="file" class="form-control" id="resume" accept=".pdf, .docx, .txt" required>
             <div class="form-text">Only PDF, DOCX, and TXT files are allowed.</div>
           </div>
-          <a href="/tools" class="btn btn-primary">Upload</a>
+          <button type="button" class="btn btn-primary" onclick="handleUpload()">Upload</button>
         </form>
         <div class="create-cv-text mt-4">
           No CV? No problem! <a href="#"><b>Click here to create a new CV in 5 minutes</b></a>
         </div>
       </div>
-      <div class="col-md-6 image-container">
-        <img id="uploadImage" alt="Upload Illustration">
+      <div class="col-md-6">
+        <div id="documentContainer">
+          <iframe id="pdfViewer" src="" type="application/pdf"></iframe>
+          <pre id="txtViewer"></pre>
+          <a id="docxViewer" href="" target="_blank">View DOCX file</a>
+        </div>
+        <button id="optimizeButton" class="btn btn-primary" onclick="optimizeResume()">Optimize</button>
       </div>
     </div>
   </main>
-<br>
-<br>
+
   <footer class="text-center text-lg-start text-white">
     <!-- Social Media Links -->
     <section class="d-flex justify-content-center p-4 border-bottom" style="background-color: #023047;">
@@ -231,54 +211,98 @@ footer .text-center.p-4 {
         <a href="#" class="me-4 text-reset"><i class="fab fa-github"></i></a>
       </div>
     </section>
-  
+
     <!-- Footer Content -->
-    <section class="p-4" style="background-color: #023047;">
+    <section class="p-4">
       <div class="container text-center text-md-start">
-        <div class="row">
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto">
-            <h3 class="text-uppercase fw-bold mb-4">CV.ai</h3>
-            <p>At CV.ai, we use advanced AI technology to streamline the resume-building process and ensure you have the best chance of landing your dream job.</p>
+        <div class="row mt-3">
+          <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h3 class="text-uppercase fw-bold mb-4">Company Name</h3>
+            <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h3 class="text-uppercase fw-bold mb-4">Tools</h3>
-            <p><a href="#" class="text-reset">Resume Optimizer</a></p>
-            <p><a href="#" class="text-reset">Resume Matcher</a></p>
-            <p><a href="#" class="text-reset">Resume Roast</a></p>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
+            <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+            <p><a href="#" class="text-reset">Product 1</a></p>
+            <p><a href="#" class="text-reset">Product 2</a></p>
+            <p><a href="#" class="text-reset">Product 3</a></p>
+            <p><a href="#" class="text-reset">Product 4</a></p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">
+            <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
             <p><a href="#" class="text-reset">Pricing</a></p>
-          </div>
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h3 class="text-uppercase fw-bold mb-4">Useful Links</h3>
-            <p><a href="#" class="text-reset">Your Account</a></p>
-            <p><a href="#" class="text-reset">FAQs</a></p>
-            <p><a href="#" class="text-reset">Privacy Policy</a></p>
-            <p><a href="#" class="text-reset">Terms & Conditions</a></p>
-          </div>
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <h3 class="text-uppercase fw-bold mb-4">Contact</h3>
-            <!-- <p><i class="fas fa-home me-3"></i> Lagos, Nigeria</p> -->
-            <p><i class="fas fa-envelope me-3"></i> bishoptewogbade@gmail.com</p>
-            <p><i class="fas fa-phone me-3"></i> +233 59 779 0470</p>
-            <p><i class="fas fa-print me-3"></i> +233 59 779 0470</p>
+            <p><a href="#" class="text-reset">Settings</a></p>
+            <p><a href="#" class="text-reset">Orders</a></p>
+            <p><a href="#" class="text-reset">Help</a></p>
           </div>
         </div>
       </div>
     </section>
-  
+
     <!-- Footer Bottom -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2024 CV.ai. All rights reserved.
-    </div>
+    <section class="text-center p-4" style="background-color: #023047;">
+      <div class="text-center p-4">
+        © 2024 Copyright:
+        <a class="text-reset fw-bold" href="#">CV.ai</a>
+      </div>
+    </section>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO6GJtBvZ0G2IkqnkJ4A8vHe5d5o5q+6vPpP7kQpC0Ad0S4U3K6kw" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-D5mZ3qRJUmO40WuD8QsoF48twTVYf8OX4efX7KeF+2wR+8K2eFVuQkc6MPb7V+fa" crossorigin="anonymous"></script>
+  <div class="notification-icon">
+    <i class="fas fa-bell"></i>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9yD17ku3D9f7GjtakxF4PE9yT1EqxDYanMowH+dW3umP9hTi4sk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-83w1bvsOUd4vvI8E6dA79Z4c9zQVoB+jIG85zWYIutB+8oZQ8NQTdYLG7LXN1gzE" crossorigin="anonymous"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Set the image URL
-      const imageUrl = '/static/images/okay.jpg'; // Replace with the correct relative path
-      document.getElementById('uploadImage').src = imageUrl;
-    });
+    function handleUpload() {
+      const fileInput = document.getElementById('resume');
+      const file = fileInput.files[0];
+      const fileType = file.type;
+      
+      const pdfType = 'application/pdf';
+      const txtType = 'text/plain';
+      const docxType = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+
+      const pdfViewer = document.getElementById('pdfViewer');
+      const txtViewer = document.getElementById('txtViewer');
+      const docxViewer = document.getElementById('docxViewer');
+      const optimizeButton = document.getElementById('optimizeButton');
+
+      // Hide all viewers initially
+      pdfViewer.style.display = 'none';
+      txtViewer.style.display = 'none';
+      docxViewer.style.display = 'none';
+      optimizeButton.style.display = 'none';
+
+      if (fileType === pdfType) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          pdfViewer.src = e.target.result;
+          pdfViewer.style.display = 'block'; // Show PDF
+          optimizeButton.style.display = 'block'; // Show Optimize button
+        };
+        reader.readAsDataURL(file);
+      } else if (fileType === txtType) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          txtViewer.textContent = e.target.result;
+          txtViewer.style.display = 'block'; // Show TXT
+          optimizeButton.style.display = 'block'; // Show Optimize button
+        };
+        reader.readAsText(file);
+      } else if (fileType === docxType) {
+        // For DOCX files, provide a download link
+        docxViewer.href = URL.createObjectURL(file);
+        docxViewer.style.display = 'block'; // Show DOCX link
+        optimizeButton.style.display = 'block'; // Show Optimize button
+      } else {
+        alert('Unsupported file type. Please upload a PDF, TXT, or DOCX file.');
+      }
+    }
+
+    function optimizeResume() {
+      alert('Optimize button clicked! Here you can implement the optimization logic.');
+    }
   </script>
 </body>
 </html>
