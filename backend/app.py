@@ -74,9 +74,46 @@ def upload_resume():
 def tools():
     return render_template('tool_selection_page.html')
 
-@app.route('/get_feedback_page')
+@app.route('/get_feedback_page', methods=['POST'])
 def get_feedback_page():
-    return render_template('get_feedback_page.html')
+    if 'resume' not in request.files:
+        return jsonify({'error': 'No file part'}), 400
+    
+    file = request.files['resume']
+    
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+    
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+
+        ensure_folder_exists(os.path.dirname(file_path))
+
+        try:
+            file.save(file_path)
+            print(f"File saved locally at {file_path}")
+
+            bucket_name = 'genaiq_cloudbuild'
+            destination_blob_name = f'uploads/{filename}'
+            file_uri = upload_local_file_to_gcs(file_path, bucket_name, destination_blob_name)
+            print(f"File uploaded to GCS at {file_uri}")
+
+            if file_uri:
+                # Process the file using AI service
+                analysis_result = process_file(file_uri)
+                return render_template('get_feedback_page.html', analysis_result=analysis_result), 200
+            else:
+                return jsonify({'error': 'Failed to upload file to GCS'}), 500
+
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500
+        finally:
+            # Clean up the local file
+            if os.path.exists(file_path):
+                os.remove(file_path)
+    else:
+        return jsonify({'error': 'Invalid file format'}), 400
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -32,6 +32,30 @@ def upload_local_file_to_gcs(file_path, bucket_name, destination_blob_name):
             print(f"Error uploading to GCS: {e}")
             return None
 
+def process_file(file_uri):
+    file_content = download_file_from_gcs(file_uri)
+    
+    if file_content:
+        file_extension = os.path.splitext(file_uri)[1].lower()
+        
+        if file_extension == '.pdf':
+            file_text = extract_text_from_pdf(file_content)
+        elif file_extension == '.docx':
+            file_text = extract_text_from_docx(file_content)
+        elif file_extension == '.txt':
+            file_text = extract_text_from_txt(file_content)
+        else:
+            return "Unsupported file type."
+
+        if file_text.strip():
+            result = call_vertex_ai(file_text)
+            return result
+        else:
+            return "No text extracted from the file."
+    else:
+        return "Failed to download file from GCS."
+
+
 def extract_text_from_pdf(file_content):
     try:
         with BytesIO(file_content) as file:
@@ -86,25 +110,3 @@ def call_vertex_ai(file_text):
         print(f"Error calling Vertex AI: {e}")
         return "Error processing the file."
 
-def process_file(file_uri):
-    file_content = download_file_from_gcs(file_uri)
-    
-    if file_content:
-        file_extension = os.path.splitext(file_uri)[1].lower()
-        
-        if file_extension == '.pdf':
-            file_text = extract_text_from_pdf(file_content)
-        elif file_extension == '.docx':
-            file_text = extract_text_from_docx(file_content)
-        elif file_extension == '.txt':
-            file_text = extract_text_from_txt(file_content)
-        else:
-            return "Unsupported file type."
-
-        if file_text.strip():
-            result = call_vertex_ai(file_text)
-            return result
-        else:
-            return "No text extracted from the file."
-    else:
-        return "Failed to download file from GCS."
