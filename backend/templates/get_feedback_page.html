@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Upload Resume</title>
+  <title>Resume Feedback</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
   <style>
@@ -123,24 +123,11 @@
     .notification-icon i {
       font-size: 24px;
     }
-    #documentContainer {
-      max-width: 100%;
-      height: auto;
-    }
-    #pdfViewer, #txtViewer, #docxViewer {
-      display: none; /* Hide by default */
-      width: 100%;
-      height: 500px;
-    }
-    #txtViewer {
-      white-space: pre-wrap;
-      border: 1px solid #ccc;
-      padding: 10px;
-      background-color: #f9f9f9;
-    }
-    .action-buttons {
-      display: none; /* Hide by default */
-      margin-top: 20px;
+    .feedback-content {
+      padding: 2rem;
+      background-color: #ffffff; /* White background for feedback */
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -171,30 +158,14 @@
 
   <main class="container mt-5 mb-5">
     <div class="row">
-      <div class="col-md-6">
-        <h1 class="mb-4"><b>Upload Your Resume</b></h1>
-        <form id="uploadForm">
-          <div class="mb-3">
-            <label for="resume" class="form-label">Choose your resume file</label>
-            <input type="file" class="form-control" id="resume" accept=".pdf, .docx, .txt" required>
-            <div class="form-text">Only PDF, DOCX, and TXT files are allowed.</div>
+      <div class="col-md-12">
+        <div class="feedback-content">
+          <h1 class="mb-4"><b>Resume Feedback</b></h1>
+          <p id="feedbackText">Fetching feedback...</p>
+          <!-- Here you can dynamically load the feedback from your server -->
+          <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Back to Upload</a>
           </div>
-          <button type="button" class="btn btn-primary" onclick="handleUpload()">Upload</button>
-        </form>
-        <div class="create-cv-text mt-4">
-          No CV? No problem! <a href="#"><b>Click here to create a new CV in 5 minutes</b></a>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div id="documentContainer">
-          <iframe id="pdfViewer" src="" type="application/pdf"></iframe>
-          <pre id="txtViewer"></pre>
-          <a id="docxViewer" href="" target="_blank">View DOCX file</a>
-        </div>
-        <div class="action-buttons">
-          <form method="get" action="/get_feedback_page">
-            <button type="submit" class="btn btn-primary">Get feedback on resume</button>
-          </form>
         </div>
       </div>
     </div>
@@ -215,107 +186,22 @@
         <a href="#" class="me-4 text-reset"><i class="fab fa-github"></i></a>
       </div>
     </section>
-    <!-- Footer Content -->
-    <section class="p-4">
-      <div class="container text-center text-md-start">
-        <div class="row">
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Company name
-            </h6>
-            <p>
-              Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h6 class="text-uppercase fw-bold mb-4">
-              Products
-            </h6>
-            <p><a href="#" class="text-reset">Angular</a></p>
-            <p><a href="#" class="text-reset">React</a></p>
-            <p><a href="#" class="text-reset">Vue</a></p>
-            <p><a href="#" class="text-reset">Laravel</a></p>
-          </div>
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h6 class="text-uppercase fw-bold mb-4">
-              Useful links
-            </h6>
-            <p><a href="#" class="text-reset">Pricing</a></p>
-            <p><a href="#" class="text-reset">Settings</a></p>
-            <p><a href="#" class="text-reset">Orders</a></p>
-            <p><a href="#" class="text-reset">Help</a></p>
-          </div>
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <h6 class="text-uppercase fw-bold mb-4">
-              Contact
-h6>
-            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-            <p><i class="fas fa-envelope me-3"></i> info@example.com</p>
-            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-          </div>
-        </div>
+
+    <!-- Footer -->
+    <section class="text-center">
+      <div class="text-center p-4">
+        <h3>CV.ai</h3>
+        <p>Your AI-powered resume feedback platform</p>
       </div>
     </section>
-    <!-- Footer Bottom -->
-    <div class="text-center p-4" style="background-color: #023047;">
-      &copy; 2024 Company Name. All rights reserved.
-    </div>
   </footer>
 
+  <!-- Notification Icon -->
   <div class="notification-icon">
     <i class="fas fa-bell"></i>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-3ggfzw8+9A2d6PVATrDb0KxA76mO0MZAdFe5q0Q7EoHah7nDFTlGVxjUk27zL2i" crossorigin="anonymous"></script>
-  <script>
-    function handleUpload() {
-      const fileInput = document.getElementById('resume');
-      const file = fileInput.files[0];
-      const fileType = file.type;
-
-      // Hide all viewers initially
-      document.getElementById('pdfViewer').style.display = 'none';
-      document.getElementById('txtViewer').style.display = 'none';
-      document.getElementById('docxViewer').style.display = 'none';
-
-      if (fileType === 'application/pdf') {
-        const pdfViewer = document.getElementById('pdfViewer');
-        pdfViewer.src = URL.createObjectURL(file);
-        pdfViewer.style.display = 'block';
-      } else if (fileType === 'text/plain') {
-        const txtViewer = document.getElementById('txtViewer');
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          txtViewer.textContent = e.target.result;
-        };
-        reader.readAsText(file);
-        txtViewer.style.display = 'block';
-      } else if (fileType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
-        const docxViewer = document.getElementById('docxViewer');
-        docxViewer.href = URL.createObjectURL(file);
-        docxViewer.style.display = 'block';
-      }
-
-      // Display the buttons after a file is uploaded
-      document.querySelector('.action-buttons').style.display = 'block';
-    }
-
-    function optimizeResume() {
-      alert('Optimize Resume function called');
-      // Add your optimization logic here
-    }
-
-    function matchResume() {
-      alert('Match Resume function called');
-      // Add your matching logic here
-    }
-
-    function roastResume() {
-      alert('Roast Resume function called');
-      // Add your roasting logic here
-    }
-  </script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9lPZ8t6vlwT1I6Z1MtnsmRkD0IL5prn5s7OkI1cECRwiTTFHe2a" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-GLhlTQ2hTcHh4wqa7bdv4oFS0fE44q8z3B6OeKo5OBmMA6oDAwA3z/J+O4oD+DoL" crossorigin="anonymous"></script>
 </body>
 </html>

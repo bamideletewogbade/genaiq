@@ -74,5 +74,9 @@ def upload_resume():
 def tools():
     return render_template('tool_selection_page.html')
 
+@app.route('/get_feedback_page')
+def get_feedback_page():
+    return render_template('get_feedback_page.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
