@@ -191,8 +191,7 @@
           <pre id="txtViewer"></pre>
           <a id="docxViewer" href="" target="_blank">View DOCX file</a>
         </div>
-        <form method="POST" action="/get_feedback_page" class="action-buttons" id="feedbackForm">
-          <input type="hidden" name="file_path" value="{{ file_path }}">
+        <form method="POST" action="/upload_resume" enctype="multipart/form-data" class="action-buttons" id="feedbackForm">
           <button type="submit" class="btn btn-primary">Get feedback on resume</button>
         </form>        
       </div>
@@ -279,6 +278,9 @@
 
       const file = fileInput.files[0];
       const fileType = file.type;
+
+       // Set the file path in the hidden input
+    document.querySelector('input[name="file_path"]').value = file.name;
 
       const reader = new FileReader();
 

@@ -162,21 +162,7 @@
       <div class="col-md-12">
         <div class="feedback-content">
           <h1 class="mb-4"><b>Resume Feedback</b></h1>
-          <!-- Use Jinja2 to render feedback -->
-          {% if analysis_result %}
-            <h3>Overall Feedback</h3>
-            <p>{{ analysis_result.overall }}</p>
-            <h3>Content</h3>
-            <p>{{ analysis_result.content }}</p>
-            <h3>Structure</h3>
-            <p>{{ analysis_result.structure }}</p>
-            <h3>Formatting</h3>
-            <p>{{ analysis_result.formatting }}</p>
-            <h3>Language</h3>
-            <p>{{ analysis_result.language }}</p>
-          {% else %}
-            <p id="feedbackText">Error fetching feedback. Please try again later.</p>
-          {% endif %}
+       
           <div class="text-center mt-4">
             <button id="downloadPdfBtn" class="btn btn-primary">Download PDF</button>
           </div>
@@ -209,14 +195,5 @@
       <p>&copy; 2024 CV.ai | All Rights Reserved</p>
     </section>
   </footer>
-
-  <script>
-    document.getElementById('downloadPdfBtn').addEventListener('click', function () {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-      doc.text(document.querySelector('.feedback-content').innerText, 10, 10);
-      doc.save('resume_feedback.pdf');
-    });
-  </script>
 </body>
 </html>

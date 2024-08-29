@@ -97,69 +97,22 @@ def save_file_to_gcs():
 @app.route('/upload_resume', methods=['POST'])
 def upload_resume():
     """Endpoint to upload resume and process it."""
+    logger.info("Received request to /upload_resume")
+    logger.debug(f"Request files: {request.files}")
+    logger.debug(f"Request form: {request.form}")
     if 'resume' not in request.files:
         logger.error("No file part in request")
         return jsonify({'error': 'No file part'}), 400
     
     file = request.files['resume']
     
-    if file.filename == '':
-        logger.error("No file selected for upload")
-        return jsonify({'error': 'No selected file'}), 400
-    
-    if file and allowed_file(file.filename):
-        filename = secure_filename(file.filename)
-        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-
-        ensure_folder_exists(os.path.dirname(file_path))
-
-        try:
-            # Save file locally
-            file.save(file_path)
-            logger.info(f"File saved locally at {file_path}")
-
-            # Upload file to GCS
-            bucket_name = 'genaiq_cloudbuild'
-            destination_blob_name = f'uploads/{filename}'
-            file_uri = upload_local_file_to_gcs(file_path, bucket_name, destination_blob_name)
-
-            if file_uri:
-                logger.info(f"File uploaded to GCS at {file_uri}")
-                # Process file using GCS URI
-                analysis_result = process_file(file_uri)
-                return render_template('get_feedback_page.html'), 200
-            else:
-                logger.error("Failed to upload file to GCS")
-                return jsonify({'error': 'Failed to upload file to GCS'}), 500
-        except Exception as e:
-            logger.error(f"Exception during resume upload: {e}")
-            return jsonify({'error': str(e)}), 500
-        finally:
-            if os.path.exists(file_path):
-                os.remove(file_path)
-                logger.info(f"Local file {file_path} removed after processing.")
-    else:
-        logger.error("Invalid file format")
-        return jsonify({'error': 'Invalid file format'}), 400
-
-@app.route('/tools')
-def tools():
-    return render_template('tool_selection_page.html')
-
-@app.route('/get_feedback_page', methods=['POST'])
-def get_feedback_page():
-    """Endpoint to get feedback page after uploading the resume."""
-    if 'resume' not in request.files:
-        logger.error("No file part in request")
-        return jsonify({'error': 'No file part'}), 400
-    
-    file = request.files['resume']
     
     if file.filename == '':
         logger.error("No file selected for upload")
         return jsonify({'error': 'No selected file'}), 400
     
     if file and allowed_file(file.filename):
+        logger.info(f"Received file: {file.filename}")
         filename = secure_filename(file.filename)
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
@@ -182,7 +135,7 @@ def get_feedback_page():
                 logger.info("Feedback generated successfully")
 
                 # Render feedback page with analysis result
-                return render_template('get_feedback_page.html', analysis_result=analysis_result)
+                return render_template('get_feedback_page.html')
             else:
                 logger.error("Failed to upload file to GCS")
                 return jsonify({'error': 'Failed to upload file to GCS'}), 500
@@ -197,6 +150,10 @@ def get_feedback_page():
     else:
         logger.error("Invalid file format")
         return jsonify({'error': 'Invalid file format'}), 400
+
+@app.route('/tools')
+def tools():
+    return render_template('tool_selection_page.html')
 
 if __name__ == "__main__":
      # Get the local server URL
