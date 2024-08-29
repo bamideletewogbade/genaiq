@@ -2,8 +2,14 @@ import vertexai
 from vertexai.generative_models import GenerativeModel, Part
 from google.cloud import storage
 from PyPDF2 import PdfReader
+from PyPDF2 import PdfWriter
+from pypdf import PdfReader
+from pypdf import PdfWriter
 import docx
 from io import BytesIO
+
+pdf_writer = PdfWriter()
+page = pdf_writer.add_blank_page(width=8.27 * 72, height=11.7 * 72)
 
 def initialize_vertex_ai(project_id, location):
     vertexai.init(project=project_id, location=location)
@@ -100,11 +106,24 @@ def call_vertex_ai(file_text):
             "As an HR expert with extensive experience, please review the following CV and provide detailed feedback "
             "on how well it showcases the candidate's qualifications, achievements, and overall potential for career growth. "
             "Highlight areas of strength and suggest improvements where applicable."
+
+           " <h3>Overall Feedback</h3>"
+            "<p>{{ analysis_result.overall }}</p>"
+           " <h3>Content</h3>"
+           " <p>{{ analysis_result.content }}</p>"
+           " <h3>Structure</h3>"
+           " <p>{{ analysis_result.structure }}</p> "
+           " <h3>Formatting</h3>"
+          "  <p>{{ analysis_result.formatting }}</p>"
+         "   <h3>Language</h3>"
+           " <p>{{ analysis_result.language }}</p>"
+
         )
 
         part = Part.from_text(file_text)
 
         response = model.generate_content([part, prompt])
+        print(response)
         return response.text
     except Exception as e:
         print(f"Error calling Vertex AI: {e}")
