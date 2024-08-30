@@ -6,16 +6,18 @@ from ai_service import process_file, upload_local_file_to_gcs
 
 app = Flask(__name__)
 
-# Set the upload folder
-UPLOAD_FOLDER = 'temp_uploads/'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.secret_key = 'bishop'  # Set a secure secret key in production
+# Configuration
+UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER', 'temp_uploads/')
+LOG_FILE_PATH = os.getenv('LOG_FILE_PATH', '/home/bamidele_tewogbade1/genaiq/backend/app.log')
+SECRET_KEY = "bishop"
 
-# Set up logging to file
-log_file_path = '/home/bamidele_tewogbade1/genaiq/backend/app.log'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.secret_key = SECRET_KEY
+
+# Set up logging
 logging.basicConfig(level=logging.INFO, 
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    handlers=[logging.FileHandler(log_file_path),
+                    handlers=[logging.FileHandler(LOG_FILE_PATH),
                               logging.StreamHandler()])
 
 logger = logging.getLogger(__name__)
@@ -29,12 +31,11 @@ def ensure_folder_exists(folder_path):
 # Ensure the upload directory exists
 ensure_folder_exists(app.config['UPLOAD_FOLDER'])
 
-# Define allowed file extensions
+# Allowed file extensions
 ALLOWED_EXTENSIONS = {'pdf', 'docx', 'txt'}
 
 def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/')
 def index():
@@ -72,9 +73,10 @@ def upload_file():
             file_uri = upload_local_file_to_gcs(filepath, bucket_name, destination_blob_name)
             logger.info(f"File URI: {file_uri}")
 
-            # Store filename in session
+            # Store filename and file URI in session
             session['filename'] = filename
             session['file_uri'] = file_uri
+            logger.info(f"Session data after upload: {session}")
 
             # Determine file type and prepare response
             if file.mimetype == 'application/pdf':
@@ -96,10 +98,11 @@ def upload_file():
             logger.error(f"Error processing file: {e}")
             response = {'error': 'File processing error'}
 
-        # Clean up the local file
-        if os.path.exists(filepath):
-            os.remove(filepath)
-            logger.info(f"File {filename} removed from local storage")
+        finally:
+            # Clean up the local file
+            if os.path.exists(filepath):
+                os.remove(filepath)
+                logger.info(f"File {filename} removed from local storage")
 
         return jsonify(response), 200 if 'error' not in response else 400
     else:
@@ -111,19 +114,13 @@ def get_feedback_page():
     logger.info("Received request to get feedback page")
 
     try:
-        # Log session data for debugging
-        logger.info(f"Session data: {session}")
-
-        # Retrieve the filename from session
         filename = session.get('filename')
-        if not filename:
-            logger.error("Filename not found in session")
-            return jsonify({'error': 'Filename not found'}), 400
-
         file_uri = session.get('file_uri')
-        if not file_uri:
-            logger.error("File URI not found in session")
-            return jsonify({'error': 'File URI not found'}), 400
+        logger.info(f"Session data at feedback page: {filename} + {file_uri}")
+
+        if not filename or not file_uri:
+            logger.error("Required session data missing")
+            return jsonify({'error': 'Session data missing'}), 400
 
         # Process the file using AI service
         analysis_result = process_file(file_uri)
@@ -146,4 +143,4 @@ def tools():
 
 if __name__ == "__main__":
     logger.info("Starting Flask application")
-    app.run(debug=True)
+    app.run(debug=os.getenv('FLASK_DEBUG', 'False').lower() == 'true')
