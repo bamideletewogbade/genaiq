@@ -2790,3 +2790,37 @@
 2024-08-30 10:23:15,058 - __main__ - INFO - Session data: <SecureCookieSession {'file_uri': 'gs://genaiq_storage/uploads/BamideleTewogbadeResume.pdf', 'filename': 'BamideleTewogbadeResume.pdf'}>
 2024-08-30 10:23:16,076 - __main__ - ERROR - Error in feedback page: name 'os' is not defined
 2024-08-30 10:23:16,076 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:23:16] "[35m[1mPOST /get_feedback_page HTTP/1.1[0m" 500 -
+2024-08-30 10:29:32,628 - __main__ - INFO - Starting Flask application
+2024-08-30 10:29:32,642 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-30 10:29:32,643 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 10:29:32,644 - werkzeug - INFO -  * Restarting with stat
+2024-08-30 10:29:34,964 - __main__ - INFO - Starting Flask application
+2024-08-30 10:29:34,972 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 10:29:34,973 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 10:29:39,104 - __main__ - INFO - Rendering index page
+2024-08-30 10:29:39,111 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:29:39] "GET / HTTP/1.1" 200 -
+2024-08-30 10:29:39,504 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:29:39] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-08-30 10:29:42,398 - __main__ - INFO - Rendering upload resume page
+2024-08-30 10:29:42,400 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:29:42] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-08-30 10:29:49,659 - __main__ - INFO - Received a file upload request
+2024-08-30 10:29:50,546 - __main__ - INFO - File Olusegun_Tewogbade.pdf saved to temp_uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:29:51,688 - __main__ - INFO - Received a file upload request
+2024-08-30 10:29:51,759 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:29:51,760 - __main__ - INFO - File type is PDF
+2024-08-30 10:29:51,760 - __main__ - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-08-30 10:29:51,761 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:29:51] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:29:52,378 - __main__ - INFO - Received a file upload request
+2024-08-30 10:29:53,219 - __main__ - INFO - File Olusegun_Tewogbade.pdf saved to temp_uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:29:53,337 - __main__ - INFO - File Olusegun_Tewogbade.pdf saved to temp_uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:29:53,669 - __main__ - INFO - Received request to get feedback page
+2024-08-30 10:29:53,669 - __main__ - INFO - Session data: <SecureCookieSession {'file_uri': 'gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-08-30 10:29:54,458 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:29:54,458 - __main__ - INFO - File type is PDF
+2024-08-30 10:29:54,458 - __main__ - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-08-30 10:29:54,459 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:29:54] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:29:54,566 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:29:54,566 - __main__ - INFO - File type is PDF
+2024-08-30 10:29:54,567 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:29:54] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:29:56,158 - __main__ - INFO - Analysis completed successfully
+2024-08-30 10:29:56,161 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:29:56] "POST /get_feedback_page HTTP/1.1" 200 -

@@ -7,6 +7,7 @@ from pypdf import PdfReader
 from pypdf import PdfWriter
 import docx
 from io import BytesIO
+import os
 
 pdf_writer = PdfWriter()
 page = pdf_writer.add_blank_page(width=8.27 * 72, height=11.7 * 72)
