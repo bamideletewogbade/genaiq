@@ -2603,3 +2603,190 @@
 2024-08-29 19:33:11 - werkzeug - INFO -  * Restarting with stat
 2024-08-29 19:33:14 - __main__ - INFO - Logging is set up.
 2024-08-29 19:33:14 - __main__ - DEBUG - Directory already exists at temp_uploads/
+2024-08-29 22:07:35 - __main__ - INFO - Logging is set up.
+2024-08-29 22:07:35 - __main__ - DEBUG - Directory already exists at temp_uploads/
+2024-08-29 22:07:35 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-29 22:07:35 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-08-29 22:07:35 - werkzeug - INFO -  * Restarting with stat
+2024-08-29 22:07:38 - __main__ - INFO - Logging is set up.
+2024-08-29 22:07:38 - __main__ - DEBUG - Directory already exists at temp_uploads/
+2024-08-29 22:07:38 - werkzeug - WARNING -  * Debugger is active!
+2024-08-29 22:07:38 - werkzeug - INFO -  * Debugger PIN: 114-935-039
+2024-08-29 22:07:44 - werkzeug - INFO - 127.0.0.1 - - [29/Aug/2024 22:07:44] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-08-29 22:07:45 - werkzeug - INFO - 127.0.0.1 - - [29/Aug/2024 22:07:45] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-08-29 22:07:45 - werkzeug - INFO - 127.0.0.1 - - [29/Aug/2024 22:07:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 22:07:47 - werkzeug - INFO - 127.0.0.1 - - [29/Aug/2024 22:07:47] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-08-29 22:13:05 - werkzeug - INFO -  * Detected change in '/home/bamidele_tewogbade1/genaiq/backend/app.py', reloading
+2024-08-29 22:13:06 - werkzeug - INFO -  * Restarting with stat
+2024-08-29 22:13:18 - werkzeug - INFO -  * Restarting with stat
+2024-08-29 22:13:28 - werkzeug - INFO -  * Restarting with stat
+2024-08-30 09:42:53,311 - __main__ - INFO - Starting Flask application
+2024-08-30 09:42:53,320 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 09:42:53,320 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 09:47:36,541 - werkzeug - INFO -  * Detected change in '/home/bamidele_tewogbade1/genaiq/backend/app.py', reloading
+2024-08-30 09:47:39,531 - __main__ - INFO - Starting Flask application
+2024-08-30 09:47:39,540 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 09:47:39,541 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 09:47:45,655 - __main__ - INFO - Rendering upload resume page
+2024-08-30 09:47:45,659 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 09:47:45] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-08-30 09:47:55,355 - __main__ - INFO - Received request to get feedback page
+2024-08-30 09:47:55,355 - __main__ - ERROR - Filename not found in session
+2024-08-30 09:47:55,355 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 09:47:55] "[31m[1mPOST /get_feedback_page HTTP/1.1[0m" 400 -
+2024-08-30 09:49:57,597 - werkzeug - INFO -  * Detected change in '/home/bamidele_tewogbade1/genaiq/backend/app.py', reloading
+2024-08-30 09:50:00,611 - __main__ - INFO - Starting Flask application
+2024-08-30 09:50:00,620 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 09:50:00,620 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 09:50:19,064 - werkzeug - INFO -  * Detected change in '/home/bamidele_tewogbade1/genaiq/backend/app.py', reloading
+2024-08-30 09:50:22,065 - __main__ - INFO - Starting Flask application
+2024-08-30 09:50:22,074 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 09:50:22,075 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 09:50:27,231 - werkzeug - INFO -  * Detected change in '/home/bamidele_tewogbade1/genaiq/backend/app.py', reloading
+2024-08-30 09:50:30,212 - __main__ - INFO - Starting Flask application
+2024-08-30 09:50:30,222 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 09:50:30,222 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 09:50:35,381 - werkzeug - INFO -  * Detected change in '/home/bamidele_tewogbade1/genaiq/backend/app.py', reloading
+2024-08-30 09:50:38,349 - __main__ - INFO - Starting Flask application
+2024-08-30 09:50:38,358 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 09:50:38,358 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 09:58:14,999 - __main__ - INFO - Starting Flask application
+2024-08-30 09:58:15,014 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-30 09:58:15,014 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 09:58:15,015 - werkzeug - INFO -  * Restarting with stat
+2024-08-30 09:58:17,340 - __main__ - INFO - Starting Flask application
+2024-08-30 09:58:17,349 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 09:58:17,350 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 09:58:24,580 - __main__ - INFO - Rendering index page
+2024-08-30 09:58:24,586 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 09:58:24] "GET / HTTP/1.1" 200 -
+2024-08-30 09:58:24,970 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 09:58:24] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-08-30 09:58:26,865 - __main__ - INFO - Rendering upload resume page
+2024-08-30 09:58:26,868 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 09:58:26] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-08-30 09:58:35,407 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 09:58:35] "[33mPOST /get_feedback_page HTTP/1.1[0m" 404 -
+2024-08-30 10:06:34,201 - werkzeug - INFO -  * Detected change in '/home/bamidele_tewogbade1/genaiq/backend/app.py', reloading
+2024-08-30 10:06:34,868 - werkzeug - INFO -  * Restarting with stat
+2024-08-30 10:10:49,910 - __main__ - INFO - Starting Flask application
+2024-08-30 10:10:49,925 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-30 10:10:49,925 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 10:10:49,926 - werkzeug - INFO -  * Restarting with stat
+2024-08-30 10:10:52,222 - __main__ - INFO - Starting Flask application
+2024-08-30 10:10:52,231 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 10:10:52,232 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 10:10:58,887 - __main__ - INFO - Rendering index page
+2024-08-30 10:10:58,894 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:10:58] "GET / HTTP/1.1" 200 -
+2024-08-30 10:10:59,286 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:10:59] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-08-30 10:11:01,200 - __main__ - INFO - Rendering upload resume page
+2024-08-30 10:11:01,203 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:11:01] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-08-30 10:16:03,060 - werkzeug - INFO -  * Detected change in '/home/bamidele_tewogbade1/genaiq/backend/app.py', reloading
+2024-08-30 10:16:03,755 - werkzeug - INFO -  * Restarting with stat
+2024-08-30 10:16:06,107 - __main__ - INFO - Starting Flask application
+2024-08-30 10:16:06,115 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 10:16:06,116 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 10:16:11,290 - werkzeug - INFO -  * Detected change in '/home/bamidele_tewogbade1/genaiq/backend/app.py', reloading
+2024-08-30 10:16:11,933 - werkzeug - INFO -  * Restarting with stat
+2024-08-30 10:16:14,387 - __main__ - INFO - Starting Flask application
+2024-08-30 10:16:14,395 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 10:16:14,396 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 10:16:16,486 - werkzeug - INFO -  * Detected change in '/home/bamidele_tewogbade1/genaiq/backend/app.py', reloading
+2024-08-30 10:16:17,131 - werkzeug - INFO -  * Restarting with stat
+2024-08-30 10:16:19,430 - __main__ - INFO - Starting Flask application
+2024-08-30 10:16:19,438 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 10:16:19,439 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 10:20:07,296 - __main__ - INFO - Rendering upload resume page
+2024-08-30 10:20:07,300 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:20:07] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-08-30 10:20:15,952 - __main__ - INFO - Received a file upload request
+2024-08-30 10:20:17,407 - __main__ - INFO - Received a file upload request
+2024-08-30 10:20:17,934 - __main__ - INFO - Received a file upload request
+2024-08-30 10:20:18,240 - __main__ - INFO - Received a file upload request
+2024-08-30 10:20:18,451 - __main__ - INFO - File Olusegun_Tewogbade.pdf saved to temp_uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:18,486 - __main__ - INFO - Received a file upload request
+2024-08-30 10:20:18,511 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:18,518 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:18,694 - __main__ - INFO - File Olusegun_Tewogbade.pdf saved to temp_uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:18,702 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:18,709 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:19,017 - __main__ - INFO - File Olusegun_Tewogbade.pdf saved to temp_uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:19,024 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:19,027 - __main__ - INFO - Received a file upload request
+2024-08-30 10:20:19,034 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:19,104 - __main__ - INFO - File Olusegun_Tewogbade.pdf saved to temp_uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:19,111 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:19,117 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:19,677 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:19,678 - __main__ - INFO - File type is PDF
+2024-08-30 10:20:19,678 - __main__ - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-08-30 10:20:19,679 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:20:19] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:20:19,738 - __main__ - INFO - File Olusegun_Tewogbade.pdf saved to temp_uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:19,745 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:19,752 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:19,821 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:19,821 - __main__ - INFO - File type is PDF
+2024-08-30 10:20:19,821 - __main__ - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-08-30 10:20:19,822 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:20:19] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:20:19,865 - __main__ - INFO - Received a file upload request
+2024-08-30 10:20:20,116 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:20,116 - __main__ - INFO - File type is PDF
+2024-08-30 10:20:20,117 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:20:20] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:20:20,178 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:20,178 - __main__ - INFO - File type is PDF
+2024-08-30 10:20:20,179 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:20:20] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:20:20,702 - __main__ - INFO - Received a file upload request
+2024-08-30 10:20:20,811 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:20,811 - __main__ - INFO - File type is PDF
+2024-08-30 10:20:20,812 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:20:20] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:20:21,607 - __main__ - INFO - File Olusegun_Tewogbade.pdf saved to temp_uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:21,614 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:21,620 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:22,521 - __main__ - INFO - File Olusegun_Tewogbade.pdf saved to temp_uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:22,528 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:22,535 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:22,593 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:22,593 - __main__ - INFO - File type is PDF
+2024-08-30 10:20:22,594 - __main__ - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-08-30 10:20:22,594 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:20:22] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:20:23,510 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:23,510 - __main__ - INFO - File type is PDF
+2024-08-30 10:20:23,511 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:20:23] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:20:23,578 - __main__ - INFO - Received request to get feedback page
+2024-08-30 10:20:23,578 - __main__ - INFO - Session data: <SecureCookieSession {'file_uri': 'gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-08-30 10:20:23,585 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:23,591 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:24,617 - __main__ - ERROR - Error in feedback page: name 'os' is not defined
+2024-08-30 10:20:24,618 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:20:24] "[35m[1mPOST /get_feedback_page HTTP/1.1[0m" 500 -
+2024-08-30 10:20:25,117 - __main__ - INFO - File Olusegun_Tewogbade.pdf saved to temp_uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:25,125 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:25,131 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-08-30 10:20:26,100 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/Olusegun_Tewogbade.pdf
+2024-08-30 10:20:26,100 - __main__ - INFO - File type is PDF
+2024-08-30 10:20:26,101 - __main__ - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-08-30 10:20:26,102 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:20:26] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:22:41,901 - __main__ - INFO - Starting Flask application
+2024-08-30 10:22:41,916 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-30 10:22:41,916 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 10:22:41,917 - werkzeug - INFO -  * Restarting with stat
+2024-08-30 10:22:44,230 - __main__ - INFO - Starting Flask application
+2024-08-30 10:22:44,238 - werkzeug - WARNING -  * Debugger is active!
+2024-08-30 10:22:44,239 - werkzeug - INFO -  * Debugger PIN: 288-788-501
+2024-08-30 10:22:52,999 - __main__ - INFO - Rendering index page
+2024-08-30 10:22:53,006 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:22:53] "GET / HTTP/1.1" 200 -
+2024-08-30 10:22:53,262 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:22:53] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-08-30 10:22:57,062 - __main__ - INFO - Rendering upload resume page
+2024-08-30 10:22:57,064 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:22:57] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-08-30 10:23:10,223 - __main__ - INFO - Received a file upload request
+2024-08-30 10:23:11,210 - __main__ - INFO - File BamideleTewogbadeResume.pdf saved to temp_uploads/BamideleTewogbadeResume.pdf
+2024-08-30 10:23:12,316 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/BamideleTewogbadeResume.pdf
+2024-08-30 10:23:12,317 - __main__ - INFO - File type is PDF
+2024-08-30 10:23:12,317 - __main__ - INFO - File BamideleTewogbadeResume.pdf removed from local storage
+2024-08-30 10:23:12,318 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:23:12] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:23:12,508 - __main__ - INFO - Received a file upload request
+2024-08-30 10:23:13,196 - __main__ - INFO - File BamideleTewogbadeResume.pdf saved to temp_uploads/BamideleTewogbadeResume.pdf
+2024-08-30 10:23:14,299 - __main__ - INFO - File URI: gs://genaiq_storage/uploads/BamideleTewogbadeResume.pdf
+2024-08-30 10:23:14,299 - __main__ - INFO - File type is PDF
+2024-08-30 10:23:14,300 - __main__ - INFO - File BamideleTewogbadeResume.pdf removed from local storage
+2024-08-30 10:23:14,300 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:23:14] "POST /upload HTTP/1.1" 200 -
+2024-08-30 10:23:15,058 - __main__ - INFO - Received request to get feedback page
+2024-08-30 10:23:15,058 - __main__ - INFO - Session data: <SecureCookieSession {'file_uri': 'gs://genaiq_storage/uploads/BamideleTewogbadeResume.pdf', 'filename': 'BamideleTewogbadeResume.pdf'}>
+2024-08-30 10:23:16,076 - __main__ - ERROR - Error in feedback page: name 'os' is not defined
+2024-08-30 10:23:16,076 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:23:16] "[35m[1mPOST /get_feedback_page HTTP/1.1[0m" 500 -

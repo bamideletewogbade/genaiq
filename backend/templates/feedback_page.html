@@ -130,6 +130,20 @@
       border-radius: 0.5rem;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+    .analysis-section {
+      margin-bottom: 2rem;
+    }
+    .analysis-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #023047; /* Dark blue for titles */
+      margin-bottom: 1rem;
+    }
+    .analysis-result {
+      font-size: 1.1rem;
+      color: #023047; /* Dark blue for result text */
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -162,7 +176,34 @@
       <div class="col-md-12">
         <div class="feedback-content">
           <h1 class="mb-4"><b>Resume Feedback</b></h1>
-       
+          
+          <!-- Analysis Results Section -->
+          <div class="analysis-section">
+            <div class="analysis-title">Analysis Summary</div>
+            <div class="analysis-result" id="summary-result">
+              <!-- Placeholder for analysis summary result -->
+              Your resume scores 85% in overall quality. The content is well-organized, but some areas need improvement.
+            </div>
+          </div>
+
+          <div class="analysis-section">
+            <div class="analysis-title">Strengths</div>
+            <div class="analysis-result" id="strengths-result">
+              <!-- Placeholder for strengths analysis result -->
+              1. Strong experience in project management.<br>
+              2. Excellent technical skills in Python and Java.
+            </div>
+          </div>
+
+          <div class="analysis-section">
+            <div class="analysis-title">Areas for Improvement</div>
+            <div class="analysis-result" id="improvement-result">
+              <!-- Placeholder for improvement analysis result -->
+              1. Enhance the summary section to better highlight key achievements.<br>
+              2. Provide more details on your contributions to past projects.
+            </div>
+          </div>
+
           <div class="text-center mt-4">
             <button id="downloadPdfBtn" class="btn btn-primary">Download PDF</button>
           </div>
@@ -181,19 +222,91 @@
         <span>Get connected with us on social networks:</span>
       </div>
       <div>
-        <a href="#" class="me-4 text-reset"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="me-4 text-reset"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="me-4 text-reset"><i class="fab fa-google"></i></a>
-        <a href="#" class="me-4 text-reset"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="me-4 text-reset"><i class="fab fa-linkedin"></i></a>
-        <a href="#" class="me-4 text-reset"><i class="fab fa-github"></i></a>
+        <a href="#" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="#" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
       </div>
     </section>
-    <section class="text-center p-4" style="background-color: #023047;">
-      <h3>Contact Us</h3>
-      <p>Email: support@cvai.com | Phone: +123456789</p>
-      <p>&copy; 2024 CV.ai | All Rights Reserved</p>
+    
+    <!-- Links -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h3 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>CV.ai
+            </h3>
+            <p>
+              CV.ai is a platform dedicated to enhancing your resume through automated analysis and suggestions for improvement.
+            </p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h3 class="text-uppercase fw-bold mb-4">Features</h3>
+            <p><a href="#" class="text-reset">Resume Builder</a></p>
+            <p><a href="#" class="text-reset">Resume Optimizer</a></p>
+            <p><a href="#" class="text-reset">Resume Matcher</a></p>
+            <p><a href="#" class="text-reset">Resume Roast</a></p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h3 class="text-uppercase fw-bold mb-4">Useful links</h3>
+            <p><a href="#" class="text-reset">Your Account</a></p>
+            <p><a href="#" class="text-reset">Pricing</a></p>
+            <p><a href="#" class="text-reset">FAQ</a></p>
+            <p><a href="#" class="text-reset">Help</a></p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h3 class="text-uppercase fw-bold mb-4">Contact</h3>
+            <p><i class="fas fa-home me-3"></i> Accra, Ghana</p>
+            <p><i class="fas fa-envelope me-3"></i> info@cv.ai</p>
+            <p><i class="fas fa-phone me-3"></i> + 233 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 233 234 567 89</p>
+          </div>
+        </div>
+      </div>
     </section>
+    
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 CV.ai | All Rights Reserved
+    </div>
   </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGz3ScvkMbZl6I2N9srmG5mV7Fr1zt/egERFJzrW3m41g" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-Y8y5CvJQO44OGFJ1zqckJNgOgh6DlmGhbbZVx9cz2hgxK24+Ai4Fk7efxtjqusOj" crossorigin="anonymous"></script>
+
+  <!-- JavaScript to handle PDF download -->
+  <script>
+    document.getElementById('downloadPdfBtn').addEventListener('click', function() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      
+      doc.text('Resume Feedback', 10, 10);
+      doc.text('Analysis Summary:', 10, 20);
+      doc.text(document.getElementById('summary-result').innerText, 10, 30);
+      
+      doc.text('Strengths:', 10, 50);
+      doc.text(document.getElementById('strengths-result').innerText, 10, 60);
+      
+      doc.text('Areas for Improvement:', 10, 80);
+      doc.text(document.getElementById('improvement-result').innerText, 10, 90);
+      
+      doc.save('resume_feedback.pdf');
+    });
+  </script>
 </body>
 </html>
