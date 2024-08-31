@@ -3,121 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Feedback for Olusegun Tewogbade</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            color: #333;
-        }
-        h1, h2, h3 {
-            color: #FE8C00;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .strengths, .improvements, .suggestions {
-            margin: 10px 0;
-        }
-        .suggestions {
-            font-style: italic;
-        }
-        .footer {
-            margin-top: 30px;
-            border-top: 1px solid #ccc;
-            padding-top: 10px;
-            font-size: 0.9em;
-            color: #666;
-        }
-        .footer a {
-            color: #FE8C00;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-    </style>
+    <meta name="description" content="Detailed feedback on your uploaded document.">
+    <title>Feedback - Document Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
-        <h1>CV Feedback for <span id="name">Olusegun Tewogbade</span></h1>
-        <p><strong>Date:</strong> <span id="date">August 30, 2024</span></p>
-        <p>Detailed Review and Recommendations</p>
+        <h1>Feedback</h1>
     </header>
 
-    <div class="section">
-        <h2>Overall Feedback</h2>
-        <p id="overall-feedback">Olusegun's CV demonstrates a strong foundation in software development with a focus on fintech and AI applications. The CV showcases his experience with various technologies and highlights his contributions to impactful projects. However, it could be strengthened by focusing on quantifiable achievements and tailoring the content to specific job applications.</p>
-    </div>
+    <main>
+        <section aria-labelledby="overall-feedback">
+            <h2 id="overall-feedback">Overall Feedback</h2>
+            <p>{{ analysis_result.overall }}</p>
+        </section>
 
-    <div class="section">
-        <h2>Content</h2>
-        <h3>Strengths</h3>
-        <ul id="content-strengths" class="strengths">
-            <!-- Dynamic content here -->
-        </ul>
-        <h3>Areas for Improvement</h3>
-        <ul id="content-improvements" class="improvements">
-            <!-- Dynamic content here -->
-        </ul>
-    </div>
+        <section aria-labelledby="content-feedback">
+            <h2 id="content-feedback">Content</h2>
+            <p>{{ analysis_result.content }}</p>
+        </section>
 
-    <div class="section">
-        <h2>Structure</h2>
-        <h3>Strengths</h3>
-        <ul id="structure-strengths" class="strengths">
-            <!-- Dynamic content here -->
-        </ul>
-        <h3>Areas for Improvement</h3>
-        <ul id="structure-improvements" class="improvements">
-            <!-- Dynamic content here -->
-        </ul>
-    </div>
+        <section aria-labelledby="structure-feedback">
+            <h2 id="structure-feedback">Structure</h2>
+            <p>{{ analysis_result.structure }}</p>
+        </section>
 
-    <div class="section">
-        <h2>Formatting</h2>
-        <h3>Strengths</h3>
-        <ul id="formatting-strengths" class="strengths">
-            <!-- Dynamic content here -->
-        </ul>
-        <h3>Areas for Improvement</h3>
-        <ul id="formatting-improvements" class="improvements">
-            <!-- Dynamic content here -->
-        </ul>
-    </div>
+        <section aria-labelledby="formatting-feedback">
+            <h2 id="formatting-feedback">Formatting</h2>
+            <p>{{ analysis_result.formatting }}</p>
+        </section>
 
-    <div class="section">
-        <h2>Language</h2>
-        <h3>Strengths</h3>
-        <ul id="language-strengths" class="strengths">
-            <!-- Dynamic content here -->
-        </ul>
-        <h3>Areas for Improvement</h3>
-        <ul id="language-improvements" class="improvements">
-            <!-- Dynamic content here -->
-        </ul>
-    </div>
+        <section aria-labelledby="language-feedback">
+            <h2 id="language-feedback">Language</h2>
+            <p>{{ analysis_result.language }}</p>
+        </section>
 
-    <div class="section">
-        <h2>Personalization</h2>
-        <ul id="personalization-suggestions" class="suggestions">
-            <!-- Dynamic content here -->
-        </ul>
-    </div>
+        <a href="{{ pdf_url }}" download>Download Feedback as PDF</a>
+    </main>
 
-    <div class="section">
-        <h2>Overall Recommendations</h2>
-        <ul id="overall-recommendations" class="suggestions">
-            <!-- Dynamic content here -->
-        </ul>
-    </div>
-
-    <div class="footer">
-        <p>If you have any questions or need further assistance, please <a href="mailto:support@example.com">contact us</a>.</p>
-        <p>Resources: <a href="https://www.grammarly.com/">Grammarly</a>, <a href="https://www.jobscan.co/">Jobscan</a>, <a href="https://www.canva.com/">Canva</a></p>
-    </div>
+    <footer>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('upload_resume_page') }}">Upload Another File</a>
+        </nav>
+    </footer>
 </body>
 </html>

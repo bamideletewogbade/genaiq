@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, jsonify, send_file, session
+from flask import Flask, render_template, request, jsonify, send_file, session, url_for
 from werkzeug.utils import secure_filename
 import os
 import logging
+import pdfkit
 from ai_service import process_file, upload_local_file_to_gcs
 
 app = Flask(__name__)
@@ -10,8 +11,10 @@ app = Flask(__name__)
 UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER', 'temp_uploads/')
 LOG_FILE_PATH = os.getenv('LOG_FILE_PATH', '/home/bamidele_tewogbade1/genaiq/backend/app.log')
 SECRET_KEY = "bishop"
+PDF_FOLDER = os.getenv('PDF_FOLDER', 'temp_pdfs/')
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['PDF_FOLDER'] = PDF_FOLDER
 app.secret_key = SECRET_KEY
 
 # Set up logging
@@ -28,8 +31,9 @@ def ensure_folder_exists(folder_path):
         os.makedirs(folder_path)
         logger.info(f"Created directory: {folder_path}")
 
-# Ensure the upload directory exists
+# Ensure the upload and PDF directories exist
 ensure_folder_exists(app.config['UPLOAD_FOLDER'])
+ensure_folder_exists(app.config['PDF_FOLDER'])
 
 # Allowed file extensions
 ALLOWED_EXTENSIONS = {'pdf', 'docx', 'txt'}
@@ -116,20 +120,43 @@ def get_feedback_page():
     try:
         filename = session.get('filename')
         file_uri = session.get('file_uri')
-        logger.info(f"Session data at feedback page: {filename} + {file_uri}")
+        logger.info(f"Session data at feedback page: filename={filename}, file_uri={file_uri}")
 
         if not filename or not file_uri:
             logger.error("Required session data missing")
             return jsonify({'error': 'Session data missing'}), 400
 
         # Process the file using AI service
-        analysis_result = process_file(file_uri)
-        logger.info("Analysis completed successfully")
+        logger.info("Calling AI service to process the file")
+        raw_response = process_file(file_uri)
+        logger.info(f"Raw AI service response: {raw_response}")
+
+        # # Generate PDF from the feedback
+        # feedback_html = render_template('feedback_page.html', analysis_result=analysis_result)
+        # pdf_filename = f"{os.path.splitext(filename)[0]}_feedback.pdf"
+        # pdf_filepath = os.path.join(app.config['PDF_FOLDER'], pdf_filename)
+        # pdfkit.from_string(feedback_html, pdf_filepath)
+        # logger.info(f"Generated PDF: {pdf_filepath}")
+
+        # # Store the PDF path in session
+        # session['pdf_filepath'] = pdf_filepath
+
         return render_template('feedback_page.html', analysis_result=analysis_result), 200
 
     except Exception as e:
         logger.error(f"Error in feedback page: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
+
+@app.route('/download_feedback_pdf')
+def download_feedback_pdf():
+    """Serve the feedback PDF for download."""
+    pdf_filepath = session.get('pdf_filepath')
+    if pdf_filepath and os.path.exists(pdf_filepath):
+        logger.info(f"Serving PDF: {pdf_filepath}")
+        return send_file(pdf_filepath, as_attachment=True)
+    else:
+        logger.error("PDF file not found")
+        return jsonify({'error': 'PDF file not found'}), 404
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):

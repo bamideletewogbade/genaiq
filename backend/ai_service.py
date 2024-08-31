@@ -6,6 +6,9 @@ import docx
 from io import BytesIO
 import os
 import logging
+import pdfkit
+import json
+import re
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -109,37 +112,83 @@ def extract_text_from_txt(file_content):
         logging.error(f"Error extracting text from TXT: {e}")
         return ""
 
+
+
 def call_vertex_ai(file_text):
-    """Calls Vertex AI to analyze the extracted text."""
+    """Calls Vertex AI to analyze the extracted text and returns the analysis in JSON format."""
     try:
+        logging.info("Initializing Vertex AI with the given project ID and location.")
         project_id = "genaiq-433814"
         location = "us-central1"
         initialize_vertex_ai(project_id, location)
 
+        logging.info("Loading the Vertex AI generative model.")
         model = GenerativeModel("gemini-1.5-flash-001")
 
+        logging.info("Preparing the prompt for Vertex AI.")
         prompt = (
-            "As an HR expert with extensive experience, please review the following CV and provide detailed feedback "
-            "on how well it showcases the candidate's qualifications, achievements, and overall potential for career growth. "
-            "Highlight areas of strength and suggest improvements where applicable.\n\n Try and get personal by using personal information such as name to refer to user"
-            "<h3>Overall Feedback</h3>"
-            "<p>{{ analysis_result.overall }}</p>"
-            "<h3>Content</h3>"
-            "<p>{{ analysis_result.content }}</p>"
-            "<h3>Structure</h3>"
-            "<p>{{ analysis_result.structure }}</p>"
-            "<h3>Formatting</h3>"
-            "<p>{{ analysis_result.formatting }}</p>"
-            "<h3>Language</h3>"
-            "<p>{{ analysis_result.language }}</p>"
+            "You are an HR expert with extensive experience in evaluating resumes. "
+            "Please review the following resume and provide detailed feedback on the candidate's qualifications, achievements, "
+            "and potential for career growth. Highlight areas of strength and suggest improvements. Also, provide an ATS match percentage "
+            "for each section of the resume. Structure the feedback with the following fields:\n\n"
+            "1. 'overall_feedback': A summary of the overall quality of the resume.\n"
+            "2. 'feedback_cards': A list of sections, each containing:\n"
+            "   - 'title': The section title (e.g., Professional Experience, Skills and Technologies, etc.).\n"
+            "   - 'description': Detailed feedback on the section.\n"
+            "   - 'rating': A rating out of 10 for this section.\n"
+            "   - 'ats_match': An ATS match percentage for this section.\n"
+            "   - 'recommendations': Suggestions for improvement.\n"
+           "Return response in JSON format, also remeber to be as human as possible. tone and clarity. also be personal by using the persons name"
         )
 
+        logging.info("Creating a Part object from the extracted file text.")
         part = Part.from_text(file_text)
+
+        logging.info("Sending the prompt to Vertex AI for content generation.")
         response = model.generate_content([part, prompt])
-        logging.info("Vertex AI call successful.")
-        print(response.text)
-        return response.text
+        if response:
+            logging.info("Received response from Vertex AI." + response.text)
+        else:
+            logger.info(f"Response not received from AI" + response.text)
+        logging.debug(f"Raw response from Vertex AI: {response.text}")
+
+        response_data = json.loads(response.to_dict)
+        print(response_data)
+        return response_data
+
     except Exception as e:
-        logging.error(f"Error calling Vertex AI: {e}")
-        return "Error processing the file."
+        return json.dumps({"error": "Error processing the file."})
+
+
+
+def generate_pdf_from_feedback(feedback_json, output_path):
+    """Generates a PDF from the feedback JSON."""
+    feedback_dict = json.loads(feedback_json)
+    
+    # Create HTML content
+    html_content = f"""
+    <html>
+    <head>
+        <title>Feedback Report</title>
+    </head>
+    <body>
+        <h1>Feedback Report</h1>
+        <h3>Overall Feedback</h3>
+        <p>{feedback_dict.get('overall', 'N/A')}</p>
+        <h3>Content</h3>
+        <p>{feedback_dict.get('content', 'N/A')}</p>
+        <h3>Structure</h3>
+        <p>{feedback_dict.get('structure', 'N/A')}</p>
+        <h3>Formatting</h3>
+        <p>{feedback_dict.get('formatting', 'N/A')}</p>
+        <h3>Language</h3>
+        <p>{feedback_dict.get('language', 'N/A')}</p>
+    </body>
+    </html>
+    """
+    
+    # Convert HTML to PDF
+    pdfkit.from_string(html_content, output_path)
+    logging.info(f"PDF generated successfully: {output_path}")
+    return output_path
 
