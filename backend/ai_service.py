@@ -113,10 +113,12 @@ def call_vertex_ai(file_uri):
         logging.info("Initializing Vertex AI with the given project ID and location.")
         project_id = "genaiq-433814"
         location = "us-central1"
-        initialize_vertex_ai(project_id, location)
+        vertexai.init(project=project_id, location=location)
 
         logging.info("Loading the Vertex AI generative model.")
-        model = GenerativeModel("gemini-1.5-flash-001")
+        model = GenerativeModel("gemini-1.5-flash-001",
+        generation_config={"response_mime_type": "application/json"}
+        )
 
         logging.info("Preparing the prompt for Vertex AI.")
         prompt = (
@@ -139,26 +141,22 @@ def call_vertex_ai(file_uri):
         logging.info("Sending the prompt to Vertex AI for content generation.")
         response = model.generate_content([part, prompt])
         
-        if response:
+        
+        if response and response.text:
             logging.info("Received response from Vertex AI.")
-            response_text = response.text  # Access the response text
+            response_text = response.text
             
-            print(f"Raw response text: {response_text}")  # Log the raw response for inspection
-            
-            if response_text.strip():  # Ensure there is content
-                try:
-                    response_json = jsonify(response_text)
-                    return response_json
-                except json.JSONDecodeError as json_err:
-                    logging.error(f"Failed to parse JSON response: {json_err}")
-                    return {"error": "Failed to parse JSON response."}
-            else:
-                logging.error("Response text is empty.")
-                return {"error": "Response text is empty."}
+            logging.debug(f"Raw response text: {response_text}")
+
+            try:
+                return json.loads(response.text.strip('```json').strip('```').strip())
+            except json.JSONDecodeError as json_err:
+                logging.error(f"Failed to parse JSON response: {json_err}")
+                return {"error": "Failed to parse JSON response.", "raw_response": response_text}
         else:
             logging.warning("No response received from Vertex AI.")
             return {"error": "No response received from Vertex AI."}
 
     except Exception as e:
         logging.error(f"Error in call_vertex_ai: {e}")
-        return {"error": "Error processing the file."}
+        return {"error": f"Error processing the file: {str(e)}"}

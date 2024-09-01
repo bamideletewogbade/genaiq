@@ -3,49 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Detailed feedback on your uploaded document.">
-    <title>Feedback - Document Analysis</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>CV Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .card {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #007BFF;
+        }
+        .recommendations {
+            margin-top: 10px;
+        }
+        .recommendations ul {
+            padding-left: 20px;
+        }
+        .recommendations ul li {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Feedback</h1>
-    </header>
+    <div class="container">
+        <h1>CV Feedback</h1>
+        <p><strong>Overall Feedback:</strong> Olusegun's resume showcases his technical expertise and experience in software development, particularly in fintech, AI, and mobile development. He demonstrates a strong understanding of various technologies and frameworks, and his contributions to real-world projects are impressive. However, the resume could benefit from some organizational improvements and a more concise presentation of his achievements. With minor tweaks, Olusegun's resume can be even more impactful and attract the attention of potential employers.</p>
+        
+        <div class="card">
+            <h2>Summary</h2>
+            <p>Olusegun, your summary is a strong starting point. It effectively highlights your passion for software development, your areas of expertise (fintech, AI, mobile development), and your skills (Java Spring Boot, Python Flask, Flutter). However, it could be more impactful by quantifying your achievements. For example, instead of saying 'designed and implemented impactful solutions,' consider mentioning the specific impact you made. Did you reduce development time by X%, increase user engagement by Y%, or improve system performance by Z%? These quantifiable metrics will make your accomplishments stand out.</p>
+            <p><strong>ATS Match:</strong> 80</p>
+            <div class="recommendations">
+                <p><strong>Recommendations:</strong></p>
+                <ul>
+                    <li>Quantify your achievements in your summary to showcase the impact of your work.</li>
+                    <li>Consider adding a specific career goal or desired role to provide a clear direction.</li>
+                </ul>
+            </div>
+        </div>
 
-    <main>
-        <section aria-labelledby="overall-feedback">
-            <h2 id="overall-feedback">Overall Feedback</h2>
-            <p>{{ analysis_result }}</p>
-        </section>
+        <div class="card">
+            <h2>Experience</h2>
+            <p>This section effectively outlines your experience at Fasyl Technology Group, Abeyie Innovation Studios, Blue Vision Multimedia, and your role as Lead Ambassador for Ingressive for Good. You showcase a solid understanding of the technologies and methodologies used in each role. You also highlight your key accomplishments, such as integrating Kafka to improve system reliability and efficiency, leading the development of an educational AI chatbot, and developing a cryptocurrency trading app. The use of bullet points makes the information easy to read and digest.</p>
+            <p><strong>ATS Match:</strong> 90</p>
+            <div class="recommendations">
+                <p><strong>Recommendations:</strong></p>
+                <ul>
+                    <li>Consider using action verbs to start each bullet point, making your achievements even more impactful. For example, instead of 'Designed and implemented RESTful APIs,' you could say 'Developed and deployed robust RESTful APIs.'</li>
+                    <li>Try to quantify your achievements in each role, such as 'Reduced response times by 60%', 'Increased user satisfaction by 20%', or 'Improved system performance by 40%.'</li>
+                    <li>Use a consistent format for each bullet point to enhance readability. Ensure bullet points align with the company name and job title.</li>
+                </ul>
+            </div>
+        </div>
 
-        <section aria-labelledby="content-feedback">
-            <h2 id="content-feedback">Content</h2>
-            <p>{{ analysis_result.content }}</p>
-        </section>
+        <div class="card">
+            <h2>Education</h2>
+            <p>You've clearly presented your education, including the degree, university, and dates of attendance. The information is concise and easily understood by recruiters.</p>
+            <p><strong>ATS Match:</strong> 95</p>
+            <div class="recommendations">
+                <p><strong>Recommendations:</strong></p>
+                <ul>
+                    <li>You could consider including any relevant coursework or projects that showcase your technical skills. For example, if you had a particularly interesting project in your computer science curriculum, you could briefly mention it.</li>
+                </ul>
+            </div>
+        </div>
 
-        <section aria-labelledby="structure-feedback">
-            <h2 id="structure-feedback">Structure</h2>
-            <p>{{ analysis_result.structure }}</p>
-        </section>
-
-        <section aria-labelledby="formatting-feedback">
-            <h2 id="formatting-feedback">Formatting</h2>
-            <p>{{ analysis_result.formatting }}</p>
-        </section>
-
-        <section aria-labelledby="language-feedback">
-            <h2 id="language-feedback">Language</h2>
-            <p>{{ analysis_result.language }}</p>
-        </section>
-
-        <a href="{{ pdf_url }}" download>Download Feedback as PDF</a>
-    </main>
-
-    <footer>
-        <nav>
-            <a href="{{ url_for('index') }}">Home</a>
-            <a href="{{ url_for('upload_resume_page') }}">Upload Another File</a>
-        </nav>
-    </footer>
+        <div class="card">
+            <h2>Skills</h2>
+            <p>You've listed a strong set of programming languages, frameworks, tools, and platforms. This gives recruiters a good idea of your technical proficiency. However, the list could be more impactful.</p>
+            <p><strong>ATS Match:</strong> 85</p>
+            <div class="recommendations">
+                <p><strong>Recommendations:</strong></p>
+                <ul>
+                    <li>Consider grouping skills into categories for easier readability. For example, you could group programming languages, frameworks, tools, and platforms into separate sections.</li>
+                    <li>You could include a brief description of your proficiency in some of the skills. For example, instead of simply listing 'Java,' you could mention 'Proficient in Java for building enterprise-level applications.'</li>
+                    <li>If you have any relevant certifications, consider adding them to this section.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
