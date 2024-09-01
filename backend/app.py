@@ -140,8 +140,10 @@ def get_feedback_page():
 
         # # Store the PDF path in session
         # session['pdf_filepath'] = pdf_filepath
+        analysis_result = {}
+        
 
-        return render_template('feedback_page.html', analysis_result=analysis_result), 200
+        return render_template('feedback_page.html', raw_response=analysis_result), 200
 
     except Exception as e:
         logger.error(f"Error in feedback page: {e}")

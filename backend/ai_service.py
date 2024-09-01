@@ -135,10 +135,9 @@ def call_vertex_ai(file_text):
             "2. 'feedback_cards': A list of sections, each containing:\n"
             "   - 'title': The section title (e.g., Professional Experience, Skills and Technologies, etc.).\n"
             "   - 'description': Detailed feedback on the section.\n"
-            "   - 'rating': A rating out of 10 for this section.\n"
             "   - 'ats_match': An ATS match percentage for this section.\n"
             "   - 'recommendations': Suggestions for improvement.\n"
-           "Return response in JSON format, also remeber to be as human as possible. tone and clarity. also be personal by using the persons name"
+            "Return response in JSON format, also remember to be as human as possible. tone and clarity. also be personal by using the person's name."
         )
 
         logging.info("Creating a Part object from the extracted file text.")
@@ -146,19 +145,26 @@ def call_vertex_ai(file_text):
 
         logging.info("Sending the prompt to Vertex AI for content generation.")
         response = model.generate_content([part, prompt])
+        
         if response:
-            logging.info("Received response from Vertex AI." + response.text)
+            logging.info("Received response from Vertex AI.")
+            response_text = response.text  # Access the response text
+            print(response_text)
+            
+            # try:
+            #     response_data = json.loads(response_text)
+            #     logging.debug(f"Parsed JSON response: {response_data}")
+            #     return response_data
+            # except json.JSONDecodeError as json_err:
+            #     logging.error(f"Failed to parse JSON response: {json_err}")
+            #     return {"error": "Failed to parse JSON response."}
         else:
-            logger.info(f"Response not received from AI" + response.text)
-        logging.debug(f"Raw response from Vertex AI: {response.text}")
-
-        response_data = json.loads(response.to_dict)
-        print(response_data)
-        return response_data
+            logging.error("No response received from Vertex AI.")
+            return {"error": "No response received from Vertex AI."}
 
     except Exception as e:
-        return json.dumps({"error": "Error processing the file."})
-
+        logging.error(f"Error in call_vertex_ai: {e}")
+        return {"error": "Error processing the file."}
 
 
 def generate_pdf_from_feedback(feedback_json, output_path):
