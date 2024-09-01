@@ -49,33 +49,6 @@ def upload_local_file_to_gcs(file_path, bucket_name, destination_blob_name):
         logging.error(f"Error uploading to GCS: {e}")
         return None
 
-def process_file(file_uri):
-    """Processes the file by extracting text and sending it to Vertex AI for analysis."""
-    file_content = download_file_from_gcs(file_uri)
-    
-    if file_content:
-        file_extension = os.path.splitext(file_uri)[1].lower()
-        
-        if file_extension == '.pdf':
-            file_text = extract_text_from_pdf(file_content)
-        elif file_extension == '.docx':
-            file_text = extract_text_from_docx(file_content)
-        elif file_extension == '.txt':
-            file_text = extract_text_from_txt(file_content)
-        else:
-            logging.warning(f"Unsupported file type: {file_extension}")
-            return "Unsupported file type."
-
-        if file_text.strip():
-            result = call_vertex_ai(file_text)
-            return result
-        else:
-            logging.warning("No text extracted from the file.")
-            return "No text extracted from the file."
-    else:
-        logging.error("Failed to download file from GCS.")
-        return "Failed to download file from GCS."
-
 def extract_text_from_pdf(file_content):
     """Extracts text from a PDF file."""
     try:
@@ -112,10 +85,30 @@ def extract_text_from_txt(file_content):
         logging.error(f"Error extracting text from TXT: {e}")
         return ""
 
-
-
-def call_vertex_ai(file_text):
+def call_vertex_ai(file_uri):
     """Calls Vertex AI to analyze the extracted text and returns the analysis in JSON format."""
+    file_content = download_file_from_gcs(file_uri)
+    
+    if not file_content:
+        logging.error(f"Failed to download file from GCS: {file_uri}")
+        return {"error": "Failed to download file from GCS."}
+    
+    file_extension = os.path.splitext(file_uri)[1].lower()
+    
+    if file_extension == '.pdf':
+        file_text = extract_text_from_pdf(file_content)
+    elif file_extension == '.docx':
+        file_text = extract_text_from_docx(file_content)
+    elif file_extension == '.txt':
+        file_text = extract_text_from_txt(file_content)
+    else:
+        logging.warning(f"Unsupported file type: {file_extension}")
+        return {"error": "Unsupported file type."}
+    
+    if not file_text.strip():
+        logging.warning("No text extracted from the file.")
+        return {"error": "No text extracted from the file."}
+    
     try:
         logging.info("Initializing Vertex AI with the given project ID and location.")
         project_id = "genaiq-433814"
@@ -137,7 +130,7 @@ def call_vertex_ai(file_text):
             "   - 'description': Detailed feedback on the section.\n"
             "   - 'ats_match': An ATS match percentage for this section.\n"
             "   - 'recommendations': Suggestions for improvement.\n"
-            "Return response in JSON format, also remember to be as human as possible. tone and clarity. also be personal by using the person's name."
+            "Return response in JSON format, also remember to be as human as possible. Tone and clarity. Also be personal by using the person's name."
         )
 
         logging.info("Creating a Part object from the extracted file text.")
@@ -149,19 +142,23 @@ def call_vertex_ai(file_text):
         if response:
             logging.info("Received response from Vertex AI.")
             response_text = response.text  # Access the response text
-            # print(response_text)
             
-            # try:
-            #     response_data = json.loads(response_text)
-            #     logging.debug(f"Parsed JSON response: {response_data}")
-            #     return response_data
-            # except json.JSONDecodeError as json_err:
-            #     logging.error(f"Failed to parse JSON response: {json_err}")
-            #     return {"error": "Failed to parse JSON response."}
+            print(f"Raw response text: {response_text}")  # Log the raw response for inspection
+            
+            if response_text.strip():  # Ensure there is content
+                try:
+                    response_json = jsonify(response_text)
+                    return response_json
+                except json.JSONDecodeError as json_err:
+                    logging.error(f"Failed to parse JSON response: {json_err}")
+                    return {"error": "Failed to parse JSON response."}
+            else:
+                logging.error("Response text is empty.")
+                return {"error": "Response text is empty."}
         else:
+            logging.warning("No response received from Vertex AI.")
             return {"error": "No response received from Vertex AI."}
 
     except Exception as e:
+        logging.error(f"Error in call_vertex_ai: {e}")
         return {"error": "Error processing the file."}
-
-

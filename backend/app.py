@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 import logging
 import pdfkit
-from ai_service import process_file, upload_local_file_to_gcs
+from ai_service import upload_local_file_to_gcs
 
 app = Flask(__name__)
 
@@ -129,9 +129,7 @@ def get_feedback_page():
         # Process the file using AI service
         logger.info("Calling AI service to process the file")
         try:
-
-            
-            analysis_result = process_file(file_uri)
+            analysis_result = call_vertex_ai(file_uri)
             print("Analysis result" + str(analysis_result))
         except Exception as e:
             logger.error(f"Error calling AI service: {e}")
