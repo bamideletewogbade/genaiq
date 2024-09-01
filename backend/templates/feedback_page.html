@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <title>Feedback - Document Analysis</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-
 <body>
     <header>
         <h1>Feedback</h1>
@@ -17,24 +15,29 @@
     <main>
         <section aria-labelledby="overall-feedback">
             <h2 id="overall-feedback">Overall Feedback</h2>
-            <p>{{ analysis_result.overall_feedback }}</p>
+            <p>{{ analysis_result.overall }}</p>
         </section>
 
-        {% for card in analysis_result.feedback_cards %}
-        <section aria-labelledby="{{ card.title|lower }}-feedback">
-            <h2 id="{{ card.title|lower }}-feedback">{{ card.title }}</h2>
-            <p>{{ card.description }}</p>
-            <h3>ATS Match: {{ card.ats_match }}%</h3>
-            <h3>Rating: {{ card.rating }}/10</h3>
-            <h3>Recommendations:</h3>
-            <ul>
-                {% for recommendation in card.recommendations %}
-                <li>{{ recommendation }}</li>
-                {% endfor %}
-            </ul>
+        <section aria-labelledby="content-feedback">
+            <h2 id="content-feedback">Content</h2>
+            <p>{{ analysis_result.content }}</p>
         </section>
-        {% endfor %}
-        
+
+        <section aria-labelledby="structure-feedback">
+            <h2 id="structure-feedback">Structure</h2>
+            <p>{{ analysis_result.structure }}</p>
+        </section>
+
+        <section aria-labelledby="formatting-feedback">
+            <h2 id="formatting-feedback">Formatting</h2>
+            <p>{{ analysis_result.formatting }}</p>
+        </section>
+
+        <section aria-labelledby="language-feedback">
+            <h2 id="language-feedback">Language</h2>
+            <p>{{ analysis_result.language }}</p>
+        </section>
+
         <a href="{{ pdf_url }}" download>Download Feedback as PDF</a>
     </main>
 
@@ -45,5 +48,4 @@
         </nav>
     </footer>
 </body>
-
 </html>

@@ -149,7 +149,7 @@ def call_vertex_ai(file_text):
         if response:
             logging.info("Received response from Vertex AI.")
             response_text = response.text  # Access the response text
-            print(response_text)
+            # print(response_text)
             
             # try:
             #     response_data = json.loads(response_text)
@@ -159,42 +159,9 @@ def call_vertex_ai(file_text):
             #     logging.error(f"Failed to parse JSON response: {json_err}")
             #     return {"error": "Failed to parse JSON response."}
         else:
-            logging.error("No response received from Vertex AI.")
             return {"error": "No response received from Vertex AI."}
 
     except Exception as e:
-        logging.error(f"Error in call_vertex_ai: {e}")
         return {"error": "Error processing the file."}
 
-
-def generate_pdf_from_feedback(feedback_json, output_path):
-    """Generates a PDF from the feedback JSON."""
-    feedback_dict = json.loads(feedback_json)
-    
-    # Create HTML content
-    html_content = f"""
-    <html>
-    <head>
-        <title>Feedback Report</title>
-    </head>
-    <body>
-        <h1>Feedback Report</h1>
-        <h3>Overall Feedback</h3>
-        <p>{feedback_dict.get('overall', 'N/A')}</p>
-        <h3>Content</h3>
-        <p>{feedback_dict.get('content', 'N/A')}</p>
-        <h3>Structure</h3>
-        <p>{feedback_dict.get('structure', 'N/A')}</p>
-        <h3>Formatting</h3>
-        <p>{feedback_dict.get('formatting', 'N/A')}</p>
-        <h3>Language</h3>
-        <p>{feedback_dict.get('language', 'N/A')}</p>
-    </body>
-    </html>
-    """
-    
-    # Convert HTML to PDF
-    pdfkit.from_string(html_content, output_path)
-    logging.info(f"PDF generated successfully: {output_path}")
-    return output_path
 

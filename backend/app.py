@@ -128,22 +128,20 @@ def get_feedback_page():
 
         # Process the file using AI service
         logger.info("Calling AI service to process the file")
-        raw_response = process_file(file_uri)
-        logger.info(f"Raw AI service response: {raw_response}")
+        try:
 
-        # # Generate PDF from the feedback
-        # feedback_html = render_template('feedback_page.html', analysis_result=analysis_result)
-        # pdf_filename = f"{os.path.splitext(filename)[0]}_feedback.pdf"
-        # pdf_filepath = os.path.join(app.config['PDF_FOLDER'], pdf_filename)
-        # pdfkit.from_string(feedback_html, pdf_filepath)
-        # logger.info(f"Generated PDF: {pdf_filepath}")
-
-        # # Store the PDF path in session
-        # session['pdf_filepath'] = pdf_filepath
-        analysis_result = {}
+            
+            analysis_result = process_file(file_uri)
+            print("Analysis result" + str(analysis_result))
+        except Exception as e:
+            logger.error(f"Error calling AI service: {e}")
+            return jsonify({'error': 'Error calling AI service'}), 500
         
+        # if 'error' in analysis_result:
+        #     logger.error(f"Error in AI response: {analysis_result['error']}")
+        #     return render_template('error_page.html', error=analysis_result['error'], raw_response=analysis_result.get('raw_response')), 500
 
-        return render_template('feedback_page.html', raw_response=analysis_result), 200
+        return render_template('feedback_page.html', analysis_result=analysis_result), 200
 
     except Exception as e:
         logger.error(f"Error in feedback page: {e}")
