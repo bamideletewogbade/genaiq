@@ -2824,3 +2824,879 @@
 2024-08-30 10:29:54,567 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:29:54] "POST /upload HTTP/1.1" 200 -
 2024-08-30 10:29:56,158 - __main__ - INFO - Analysis completed successfully
 2024-08-30 10:29:56,161 - werkzeug - INFO - 127.0.0.1 - - [30/Aug/2024 10:29:56] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 04:52:04,405 - app - INFO - Starting Flask application
+2024-09-02 04:52:06,621 - app - INFO - Starting Flask application
+2024-09-02 04:52:10,395 - app - INFO - Rendering index page
+2024-09-02 04:52:14,193 - app - INFO - Rendering upload resume page
+2024-09-02 04:52:50,859 - app - INFO - Received a file upload request
+2024-09-02 04:52:51,688 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 04:52:52,782 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 04:52:52,782 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 04:52:52,782 - app - INFO - File type is PDF
+2024-09-02 04:52:52,782 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 04:52:54,190 - app - INFO - Received request to get feedback page
+2024-09-02 04:52:54,191 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 04:52:54,191 - app - INFO - Calling AI service to process the file
+2024-09-02 04:52:54,191 - app - INFO - Analysis result: {'overall_feedback': 'Sample overall feedback from AI.', 'feedback_cards': [{'title': 'Summary', 'description': 'Sample description for Summary.', 'ats_match': 80, 'recommendations': ['Recommendation 1 for Summary', 'Recommendation 2 for Summary']}, {'title': 'Experience', 'description': 'Sample description for Experience.', 'ats_match': 90, 'recommendations': ['Recommendation 1 for Experience', 'Recommendation 2 for Experience']}, {'title': 'Education', 'description': 'Sample description for Education.', 'ats_match': 85, 'recommendations': ['Recommendation 1 for Education', 'Recommendation 2 for Education']}, {'title': 'Skills', 'description': 'Sample description for Skills.', 'ats_match': 90, 'recommendations': ['Recommendation 1 for Skills', 'Recommendation 2 for Skills']}]}
+2024-09-02 04:52:54,191 - app - ERROR - Error in feedback page: name 'logger' is not defined
+2024-09-02 04:59:51,596 - app - INFO - Starting Flask application
+2024-09-02 04:59:51,605 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 04:59:51,605 - werkzeug - INFO -  * Debugger PIN: 105-304-393
+2024-09-02 04:59:52,674 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 04:59:55,631 - app - INFO - Starting Flask application
+2024-09-02 04:59:55,639 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 04:59:55,640 - werkzeug - INFO -  * Debugger PIN: 105-304-393
+2024-09-02 05:00:12,069 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 05:01:24,701 - app - INFO - Starting Flask application
+2024-09-02 05:01:24,710 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 05:01:24,710 - werkzeug - INFO -  * Debugger PIN: 105-304-393
+2024-09-02 05:01:56,432 - app - INFO - Received a file upload request
+2024-09-02 05:01:56,434 - app - WARNING - No selected file
+2024-09-02 05:01:56,435 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 05:01:56] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2024-09-02 05:02:02,740 - app - INFO - Received a file upload request
+2024-09-02 05:02:03,628 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:02:04,723 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:02:04,724 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:02:04,724 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-02 05:02:04,724 - app - INFO - File type is PDF
+2024-09-02 05:02:04,725 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-02 05:02:04,726 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 05:02:04] "POST /upload HTTP/1.1" 200 -
+2024-09-02 05:02:06,239 - app - INFO - Received request to get feedback page
+2024-09-02 05:02:06,240 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:02:06,240 - app - INFO - Calling AI service to process the file
+2024-09-02 05:02:06,240 - app - INFO - Analysis result: {'overall_feedback': 'Sample overall feedback from AI.', 'feedback_cards': [{'title': 'Summary', 'description': 'Sample description for Summary.', 'ats_match': 80, 'recommendations': ['Recommendation 1 for Summary', 'Recommendation 2 for Summary']}, {'title': 'Experience', 'description': 'Sample description for Experience.', 'ats_match': 90, 'recommendations': ['Recommendation 1 for Experience', 'Recommendation 2 for Experience']}, {'title': 'Education', 'description': 'Sample description for Education.', 'ats_match': 85, 'recommendations': ['Recommendation 1 for Education', 'Recommendation 2 for Education']}, {'title': 'Skills', 'description': 'Sample description for Skills.', 'ats_match': 90, 'recommendations': ['Recommendation 1 for Skills', 'Recommendation 2 for Skills']}]}
+2024-09-02 05:02:06,248 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 05:02:06] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 05:02:42,617 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 05:02:45,615 - app - INFO - Starting Flask application
+2024-09-02 05:02:45,623 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 05:02:45,624 - werkzeug - INFO -  * Debugger PIN: 105-304-393
+2024-09-02 05:02:55,521 - app - INFO - Received a file upload request
+2024-09-02 05:02:56,988 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:02:58,083 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:02:58,083 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:02:58,084 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-02 05:02:58,084 - app - INFO - File type is PDF
+2024-09-02 05:02:58,084 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-02 05:02:58,085 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 05:02:58] "POST /upload HTTP/1.1" 200 -
+2024-09-02 05:02:59,249 - app - INFO - Received request to get feedback page
+2024-09-02 05:02:59,250 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:02:59,250 - app - INFO - Calling AI service to process the file
+2024-09-02 05:02:59,250 - app - ERROR - Error calling AI service: call_vertex_ai() missing 1 required positional argument: 'file_uri'
+2024-09-02 05:02:59,251 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 05:02:59] "[35m[1mPOST /get_feedback_page HTTP/1.1[0m" 500 -
+2024-09-02 05:03:20,505 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 05:03:23,501 - app - INFO - Starting Flask application
+2024-09-02 05:03:23,509 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 05:03:23,510 - werkzeug - INFO -  * Debugger PIN: 105-304-393
+2024-09-02 05:03:29,442 - app - INFO - Received a file upload request
+2024-09-02 05:03:30,561 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:03:31,646 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:03:31,646 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:03:31,647 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-02 05:03:31,647 - app - INFO - File type is PDF
+2024-09-02 05:03:31,647 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-02 05:03:31,648 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 05:03:31] "POST /upload HTTP/1.1" 200 -
+2024-09-02 05:03:33,753 - app - INFO - Received request to get feedback page
+2024-09-02 05:03:33,754 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:03:33,754 - app - INFO - Calling AI service to process the file
+2024-09-02 05:03:34,779 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 05:03:34,995 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 05:03:34,995 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 05:03:34,996 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 05:03:34,996 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 05:03:34,997 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 05:03:34,997 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 05:03:34,997 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 05:03:39,401 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 05:03:39,404 - app - INFO - Analysis result: {'overall_feedback': "Olusegun, your resume showcases your strong technical skills and experience in software development, particularly in the fintech and AI domains. You've successfully designed and implemented impactful solutions across a variety of projects, demonstrating your expertise in Java Spring Boot, Python Flask, and Flutter. However, there are opportunities to further enhance its clarity and impact. For instance, quantifying your achievements and tailoring the content to specific job requirements would be beneficial. You should also consider incorporating a consistent format throughout the resume, such as using a bold font for job titles, standardizing dates, and ensuring proper capitalization throughout.  ", 'feedback_cards': [{'title': 'Summary', 'description': 'This section provides a good overview of your technical expertise and passion for software development. However, consider highlighting more specific areas of interest and achievements, such as mentioning your experience with AI models or your success in optimizing systems for greater efficiency.', 'ats_match': '75%', 'recommendations': ['Highlight specific technical skills and achievements, focusing on fintech, AI, and mobile development.', 'Consider quantifying your achievements (e.g., "Reduced response times by 60%", "Increased user satisfaction by 20%").', "Tailor this section to the specific job you're applying for by emphasizing relevant skills and experience."]}, {'title': 'Experience', 'description': "You've provided detailed descriptions of your roles at Fasyl Technology Group, Abeyie Innovation Studios, Blue Vision Multimedia, and Ingressive for Good. However, consider restructuring this section to prioritize the most relevant experience based on the job you're applying for.  You've done a good job quantifying your accomplishments, which makes your impact more tangible.  ", 'ats_match': '85%', 'recommendations': ['Prioritize the most relevant work experience at the top.', 'Use action verbs to begin each bullet point and focus on quantifiable achievements.', 'Consider using a consistent format for date ranges and job titles for better readability.', 'Remove irrelevant or less impactful details to streamline the content.']}, {'title': 'Education', 'description': 'This section effectively outlines your educational background.  However, consider including any relevant coursework or projects that demonstrate your skills and knowledge.  ', 'ats_match': '80%', 'recommendations': ['Highlight relevant coursework, projects, or certifications related to software development, AI, or fintech.', 'Consider including any awards or honors received during your studies.']}, {'title': 'Skills', 'description': "You've included a comprehensive list of programming languages, frameworks, and tools. However, consider categorizing these skills for better organization and clarity.  ", 'ats_match': '90%', 'recommendations': ['Organize your skills into categories such as Programming Languages, Frameworks, Tools, Databases, etc.', 'Consider adding a brief description or example of your proficiency level for each skill (e.g., "Expert in Java Spring Boot").']}]}
+2024-09-02 05:03:39,412 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 05:03:39] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 10:45:06,049 - app - INFO - Starting Flask application
+2024-09-02 10:45:06,077 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 10:45:06,077 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 10:45:06,078 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 10:45:08,280 - app - INFO - Starting Flask application
+2024-09-02 10:45:08,288 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 10:45:08,290 - werkzeug - INFO -  * Debugger PIN: 105-719-310
+2024-09-02 10:45:20,760 - app - INFO - Rendering index page
+2024-09-02 10:45:20,766 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 10:45:20] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-02 10:45:21,780 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 10:45:21] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 10:45:24,253 - app - INFO - Rendering upload resume page
+2024-09-02 10:45:24,272 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 10:45:24] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 10:45:40,184 - app - INFO - Received a file upload request
+2024-09-02 10:45:41,162 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 10:45:41,176 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 10:45:41,182 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 10:45:46,668 - app - INFO - Received a file upload request
+2024-09-02 10:45:47,858 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 10:45:47,864 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 10:45:47,869 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 10:45:55,213 - ai_service - ERROR - Error uploading to GCS: string indices must be integers
+2024-09-02 10:45:55,213 - app - INFO - File URI: None
+2024-09-02 10:45:55,213 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': None, 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 10:45:55,214 - app - INFO - File type is PDF
+2024-09-02 10:45:55,214 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 10:45:55,215 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 10:45:55] "POST /upload HTTP/1.1" 200 -
+2024-09-02 10:45:58,791 - app - INFO - Received request to get feedback page
+2024-09-02 10:45:58,791 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=None
+2024-09-02 10:45:58,792 - app - ERROR - Required session data missing
+2024-09-02 10:45:58,792 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 10:45:58] "[31m[1mPOST /get_feedback_page HTTP/1.1[0m" 400 -
+2024-09-02 10:46:02,897 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 10:46:02,898 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 10:46:02,898 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 10:46:02,898 - app - INFO - File type is PDF
+2024-09-02 10:46:02,899 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 10:46:02] "POST /upload HTTP/1.1" 200 -
+2024-09-02 10:47:49,637 - app - INFO - Rendering index page
+2024-09-02 10:47:49,637 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 10:47:49] "GET / HTTP/1.1" 200 -
+2024-09-02 10:47:50,539 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 10:47:50] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 10:48:06,041 - app - INFO - Rendering upload resume page
+2024-09-02 10:48:06,042 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 10:48:06] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 10:48:14,838 - app - INFO - Received a file upload request
+2024-09-02 10:48:15,206 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 10:48:15,212 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 10:48:15,217 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 10:48:16,255 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 10:48:16,255 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 10:48:16,255 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 10:48:16,255 - app - INFO - File type is PDF
+2024-09-02 10:48:16,255 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 10:48:16,256 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 10:48:16] "POST /upload HTTP/1.1" 200 -
+2024-09-02 10:48:17,893 - app - INFO - Received request to get feedback page
+2024-09-02 10:48:17,894 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 10:48:17,894 - app - INFO - Calling AI service to process the file
+2024-09-02 10:48:17,901 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 10:48:17,906 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 10:48:18,849 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 10:48:19,057 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 10:48:19,057 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 10:48:19,057 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 10:48:19,058 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 10:48:19,058 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 10:48:19,059 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 10:48:19,059 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 10:48:23,898 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 10:48:23,900 - app - INFO - Analysis result: {'overall_feedback': "Olusegun's resume showcases a strong foundation in software development with a clear focus on fintech and AI.  He demonstrates a broad set of skills and a history of impactful projects.  While the resume is well-structured and informative, there are opportunities to further highlight his achievements and tailor it more effectively for specific job applications.", 'feedback_cards': [{'title': 'Summary', 'description': "Olusegun's summary is engaging and effectively highlights his passion for software development and his focus on fintech, AI, and mobile app development. It clearly establishes his technical skills and his dedication to solving real-world problems.  The use of specific technologies like Java Spring Boot, Python Flask, and Flutter adds credibility.", 'ats_match': 80, 'recommendations': ["Consider adding a quantifiable achievement to your summary.  For example, you could mention 'Developed X number of impactful solutions using Java Spring Boot...'.", 'Tailor this summary to the specific role you are applying for by highlighting the skills and experiences most relevant to the job description.']}, {'title': 'Experience', 'description': "Olusegun's work experience demonstrates a strong track record of delivering impactful solutions. He clearly articulates his roles and responsibilities, highlighting specific projects and quantifiable results. His experience with both backend and frontend development, including mobile app development, showcases his versatility and technical breadth.", 'ats_match': 90, 'recommendations': ["Consider using action verbs to start each bullet point for a more impactful and concise reading experience.  For example, instead of 'Developed and deployed RESTful APIs', you could say 'Developed and deployed robust RESTful APIs...'.", 'Expand on the impact of your projects.  Instead of stating a 70% reduction in response time, provide context on how this impacted the business or end users.', 'If you have any awards or recognition for your work, consider including them in this section.']}, {'title': 'Education', 'description': "Olusegun's education section provides a clear overview of his academic background and demonstrates a strong foundation in computer science. This is a valuable asset for potential employers.", 'ats_match': 75, 'recommendations': ['Consider including any relevant coursework or projects that directly relate to the specific role you are applying for.', 'If you have a GPA or any academic achievements, you could include them.']}, {'title': 'Skills', 'description': "Olusegun's skills section provides a comprehensive list of his technical abilities, demonstrating his proficiency in various programming languages, frameworks, and tools. This section clearly showcases his technical expertise and his ability to work with different technologies.", 'ats_match': 95, 'recommendations': ['Consider categorizing your skills into different groups (e.g., Programming Languages, Frameworks, Tools) for easier readability.  This can also improve ATS scannability.', "Quantify your skills whenever possible.  For example, instead of simply listing 'Java', you could say 'Proficient in Java with X years of experience'.", 'If you possess any specialized skills or certifications, highlight them in this section.']}]}
+2024-09-02 10:48:23,905 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 10:48:23] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 12:23:15,360 - app - INFO - Starting Flask application
+2024-09-02 12:23:15,385 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 12:23:15,385 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 12:23:15,387 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 12:23:17,682 - app - INFO - Starting Flask application
+2024-09-02 12:23:17,691 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 12:23:17,692 - werkzeug - INFO -  * Debugger PIN: 463-807-280
+2024-09-02 12:23:26,078 - app - INFO - Rendering index page
+2024-09-02 12:23:26,084 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 12:23:26] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-02 12:23:26,977 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 12:23:26] "GET /static/images/oka.jpg HTTP/1.1" 200 -
+2024-09-02 13:20:36,903 - app - INFO - Starting Flask application
+2024-09-02 13:20:36,934 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 13:20:36,934 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 13:20:36,936 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:20:39,195 - app - INFO - Starting Flask application
+2024-09-02 13:20:39,204 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:20:39,205 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:20:43,625 - app - INFO - Rendering index page
+2024-09-02 13:20:43,631 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:20:43] "GET / HTTP/1.1" 200 -
+2024-09-02 13:20:44,503 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:20:44] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 13:20:49,550 - app - INFO - Rendering upload resume page
+2024-09-02 13:20:49,562 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:20:49] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 13:20:51,206 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:20:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-09-02 13:21:03,196 - app - INFO - Received a file upload request
+2024-09-02 13:21:03,872 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:21:03,980 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:21:03,989 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:21:18,023 - ai_service - ERROR - Error uploading to GCS: string indices must be integers
+2024-09-02 13:21:18,023 - app - INFO - File URI: None
+2024-09-02 13:21:18,023 - app - INFO - Session data after upload: <SecureCookieSession {'filename': 'OlusegunTewogbadeResume.pdf', 'file_uri': None}>
+2024-09-02 13:21:18,023 - app - INFO - File type is PDF
+2024-09-02 13:21:18,024 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 13:21:18,024 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:21:18] "POST /upload HTTP/1.1" 200 -
+2024-09-02 13:21:29,289 - app - INFO - Received a file upload request
+2024-09-02 13:21:30,374 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:21:30,382 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:21:30,389 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:21:31,478 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:21:31,479 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:21:31,479 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 13:21:31,479 - app - INFO - File type is PDF
+2024-09-02 13:21:31,479 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 13:21:31,480 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:21:31] "POST /upload HTTP/1.1" 200 -
+2024-09-02 13:21:34,611 - app - INFO - Received request to get feedback page
+2024-09-02 13:21:34,611 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:21:34,611 - app - INFO - Calling AI service to process the file
+2024-09-02 13:21:34,618 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:21:34,625 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:21:35,030 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:21:35,238 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:21:35,239 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:21:35,239 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:21:35,239 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:21:35,239 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:21:35,239 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:21:35,240 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:21:40,200 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:21:40,223 - app - INFO - Analysis result: {'overall_feedback': "Olusegun, your resume showcases a strong foundation in software development with a focus on fintech and AI, which aligns well with many modern tech roles. You've demonstrated a diverse skill set, a clear track record of impactful projects, and leadership abilities. While your resume has a lot of positive aspects, some improvements can further enhance its impact. Let's break down the strengths and areas where we can refine things.", 'feedback_cards': [{'title': 'Summary', 'description': "Your summary is engaging and concise, effectively highlighting your key skills and passions. You've done a great job showcasing your experience with fintech, AI, and mobile app development. However, try adding a specific quantifiable achievement to further amplify your impact.", 'ats_match': '80%', 'recommendations': ["Consider adding a quantifiable achievement to your summary, such as 'Increased customer engagement by 20% through AI chatbot implementation' or 'Reduced development time by 15% by optimizing systems with Java Spring Boot.'"]}, {'title': 'Experience', 'description': 'This is the heart of your resume, and it\'s very impressive! You\'ve provided concrete examples of your work and demonstrated how you\'ve driven value in each role. The bullet points clearly showcase your technical skills and leadership abilities. For instance, the "Led implementation and deployment of eAlert service for OmniBSIC Ghana" example clearly illustrates your project management and technical skills.', 'ats_match': '90%', 'recommendations': ["Consider using more action verbs at the beginning of each bullet point to make your accomplishments stand out. For example, instead of 'Developed and deployed RESTful APIs', try 'Designed and implemented robust RESTful APIs' or 'Led the development and deployment of RESTful APIs.'"]}, {'title': 'Education', 'description': "You've effectively presented your education. However, consider adding a relevant course or project you completed during your studies, which showcases your skills and passion for software development.", 'ats_match': '70%', 'recommendations': ["Consider adding a relevant course or project from your studies. For example, 'Developed a mobile application using Flutter and Firebase for a university project, which incorporated AI features to personalize user experience.'"]}, {'title': 'Skills', 'description': "You've listed a strong set of technical skills. Your knowledge of Java, Python, Flutter, and frameworks like Spring Boot and Flask makes you a valuable candidate for many roles. However, consider organizing these skills into different categories (e.g., Programming Languages, Frameworks & Libraries, Tools & Platforms) to make it easier for recruiters to quickly grasp your capabilities.", 'ats_match': '85%', 'recommendations': ["Organize your skills into categories (e.g., Programming Languages, Frameworks & Libraries, Tools & Platforms). This improves readability and helps recruiters easily find the specific skills they're looking for."]}]}
+2024-09-02 13:21:40,229 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:21:40] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:22:36,853 - app - INFO - Received request to get feedback page
+2024-09-02 13:22:36,854 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:22:36,854 - app - INFO - Calling AI service to process the file
+2024-09-02 13:22:36,860 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:22:36,865 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:22:37,882 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:22:37,972 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:22:37,972 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:22:37,972 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:22:37,972 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:22:37,973 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:22:37,973 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:22:37,973 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:22:43,959 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:22:43,961 - app - INFO - Analysis result: {'overall_feedback': "Olusegun, your resume is packed with impressive experience and showcases your strong technical skills, particularly in fintech, AI, and mobile app development. You've clearly made significant contributions to a variety of projects and companies, demonstrating your leadership capabilities. However, there's room for improvement in terms of organization and clarity, which could enhance your ATS score and make your achievements even more impactful. Let's work on refining some aspects.", 'feedback_cards': [{'title': 'Summary', 'description': "Your summary is a great start! It's concise, highlights your passion, and showcases your key skills in fintech, AI, and mobile app development.  You mention impactful solutions and real-world problems, which is excellent for demonstrating value. However, consider adding a quantifiable achievement from your experience to make it even stronger.", 'ats_match': '80%', 'recommendations': ["Add a quantifiable achievement from your experience, for example, 'Increased user engagement by X% with a newly developed mobile app' or 'Optimized system performance by Y% through AI integration.'", "Use keywords relevant to your target roles. For example, if you're applying for a Java developer role, consider including specific Java libraries or technologies you've used."]}, {'title': 'Experience', 'description': 'This section is detailed and comprehensive, providing a clear picture of your professional journey. You effectively showcase your contributions to each role, highlighting your diverse skillset and problem-solving abilities. I particularly like how you quantify your achievements (e.g., 70% reduction in response times, 20% increase in performance, etc.). This adds significant weight to your accomplishments.', 'ats_match': '90%', 'recommendations': ['Consider using bullet points to separate your responsibilities and accomplishments within each role. This will make the information easier to read and digest for recruiters.', "For each role, consider starting with a concise summary sentence that highlights the company's industry and your key responsibilities. This will quickly capture the reader's attention."]}, {'title': 'Education', 'description': 'You clearly outline your academic background, demonstrating your relevant computer science degree from Catholic University College. However, consider adding a few keywords or phrases to highlight any academic achievements or projects relevant to your career aspirations. ', 'ats_match': '75%', 'recommendations': ['Highlight any relevant coursework, projects, or extracurricular activities related to fintech, AI, or mobile app development.', 'Consider including any awards, scholarships, or academic honors you received during your studies.']}, {'title': 'Skills', 'description': "This section effectively lists your programming languages, frameworks, and tools. This provides a clear picture of your technical expertise.  However, it could be more impactful by incorporating keywords relevant to the roles you're targeting. ", 'ats_match': '85%', 'recommendations': ['Organize your skills into categories (e.g., Programming Languages, Frameworks, Tools, etc.) to enhance readability.', "Include specific libraries or technologies you've used within each category. For instance, instead of just listing 'Java', list 'Java Spring Boot, Spring Data, Hibernate, etc.'."]}, {'title': 'Additional Information', 'description': 'You have included contact information, your LinkedIn profile, and a list of achievements.  This provides valuable context for recruiters.  Consider organizing the achievements section into a more structured format for better readability.', 'ats_match': '70%', 'recommendations': ['Format your contact information consistently. Ensure your email address is professional and easy to read.', 'Organize your achievements in a bulleted list format,  using clear and concise language to describe each accomplishment.']}]}
+2024-09-02 13:22:43,968 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:22:43] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:23:40,964 - app - INFO - Received request to get feedback page
+2024-09-02 13:23:40,964 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:23:40,964 - app - INFO - Calling AI service to process the file
+2024-09-02 13:23:40,972 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:23:40,978 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:23:41,983 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:23:42,072 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:23:42,072 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:23:42,072 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:23:42,072 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:23:42,072 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:23:42,073 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:23:42,073 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:23:47,994 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:23:47,995 - app - INFO - Analysis result: {'overall_feedback': 'Olusegun, this is a very strong resume. It showcases your impressive technical skills, experience in multiple areas, and clear passion for software development. The details are well-presented, and your achievements are quantifiable.  While there are a few minor tweaks to consider, the overall structure and content make this a powerful document.', 'feedback_cards': [{'title': 'Contact Information', 'description': 'Your contact information is well-formatted and easy to find. The inclusion of a LinkedIn profile URL is a nice touch.', 'ats_match': '95%', 'recommendations': ['You could consider adding a phone number in a more professional format, like +233-597-790-470. This will make it easier for potential employers to contact you.']}, {'title': 'Summary', 'description': 'This summary is effective! It highlights your passion for fintech, AI, and mobile development, along with your key technical skills. The mention of leading teams and solving real-world problems adds further value.', 'ats_match': '90%', 'recommendations': ['Consider adding a quantifiable achievement to make it even stronger. For example, you could mention a specific project that resulted in a measurable improvement.']}, {'title': 'Experience', 'description': "This is the heart of your resume. You've done a great job showcasing your diverse experience, including specific projects, responsibilities, and achievements. Quantifiable results are particularly impressive, demonstrating your impact and value. This section highlights your experience across various technologies and your ability to lead teams.", 'ats_match': '98%', 'recommendations': ["Consider using bullet points with a consistent format for better readability. For example,  using strong action verbs at the start of each bullet point like 'Developed,' 'Implemented,' 'Led,' etc."]}, {'title': 'Education', 'description': "This section is clear and concise, providing all the essential information.  The inclusion of the University's name and location is helpful.", 'ats_match': '85%', 'recommendations': ['Consider adding any relevant coursework, projects, or honors related to your field to further highlight your academic achievements.']}, {'title': 'Skills', 'description': "You've presented a strong set of skills, including programming languages, frameworks, and tools. This demonstrates your expertise and suitability for a wide range of roles.", 'ats_match': '90%', 'recommendations': ['You could consider grouping your skills into categories (e.g., Programming Languages, Frameworks, Databases) to enhance readability.']}, {'title': 'Awards and Certifications', 'description': "This section is missing. It's a valuable opportunity to showcase any accomplishments or certifications that demonstrate your skills and commitment to professional development. Consider adding any relevant certifications or awards that you may have received, for example: 'Certified Scrum Master' or 'Google Cloud Certified Professional' ", 'ats_match': 'N/A', 'recommendations': ['Add this section to further highlight your skills and professional achievements.']}, {'title': 'Projects', 'description': "This section is missing.  It's a great way to showcase independent work and further demonstrate your technical skills. Consider adding a section with a few projects you've worked on. Provide a brief description of each project, its purpose, technologies used, and the results achieved. ", 'ats_match': 'N/A', 'recommendations': ['Include a dedicated section for your personal projects and highlight your key contributions.']}, {'title': 'Additional Information', 'description': 'This section is missing.  Consider including additional relevant information that strengthens your application, such as your personal interests, volunteer work, or leadership experiences. This can help you stand out from other candidates.', 'ats_match': 'N/A', 'recommendations': ['Add a section for additional information to showcase your well-rounded profile.']}]}
+2024-09-02 13:23:48,002 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:23:48] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:24:56,445 - app - INFO - Received request to get feedback page
+2024-09-02 13:24:56,445 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:24:56,445 - app - INFO - Calling AI service to process the file
+2024-09-02 13:24:56,453 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:24:56,459 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:24:57,413 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:24:57,508 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:24:57,509 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:24:57,509 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:24:57,509 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:24:57,509 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:24:57,509 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:24:57,509 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:25:02,661 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:25:02,662 - ai_service - ERROR - Failed to parse JSON response: Expecting ',' delimiter: line 1 column 3679 (char 3678)
+2024-09-02 13:25:02,664 - app - INFO - Analysis result: {'error': 'Failed to parse JSON response.', 'raw_response': '{"overall_feedback": "Olusegun, your resume showcases a strong technical foundation and a clear passion for software development, particularly in the FinTech and AI domains. You have a diverse set of experiences that demonstrate your ability to tackle complex projects, lead teams, and deliver impactful results. However, there are areas where we can enhance the clarity and impact of your resume to better showcase your strengths to potential employers.", "feedback_cards": [{"title": "Summary", "description": "Your summary is well-written and concisely summarizes your skills and interests. It effectively communicates your passion for FinTech, AI, and mobile development. However, consider adding a specific accomplishment or quantifiable result to further highlight your impact.", "ats_match": 85, "recommendations": ["Consider adding a quantifiable achievement, such as \'Increased app user engagement by X% through AI integration\' or \'Successfully delivered Y projects within budget and timeframe.\'"]}, {"title": "Experience", "description": "This is the heart of your resume, and it\'s where you shine. You\'ve meticulously described your roles and responsibilities, providing specific examples of your accomplishments and the technologies you\'ve utilized. This demonstrates your technical skills, leadership potential, and problem-solving abilities. However, consider streamlining the descriptions to focus on the most impactful achievements and quantify them where possible.", "ats_match": 90, "recommendations": ["Consider using bullet points to emphasize key achievements within each role. For example, instead of \\"Led implementation and deployment of eAlert service for OmniBSIC Ghana,\\" write \\"Led the implementation and deployment of eAlert service for OmniBSIC Ghana, resulting in a 70% reduction in response times through Kafka integration and improved system reliability.\\" This approach makes your accomplishments more impactful and measurable."]}, {"title": "Lead Ambassador I4G CUCG", "description": "This section highlights your leadership experience and involvement in building a developer community. While it showcases your passion for fostering tech growth, it could be further strengthened by quantifying the impact of your efforts.", "ats_match": 75, "recommendations": ["Consider adding details like the number of hackathons or events you organized, the number of participants you engaged, or the specific contributions you made to the I4G community. This will make your achievements more concrete and tangible for recruiters."]}, {"title": "Education", "description": "This section provides the essential information about your academic background. It\'s well-presented and accurately reflects your degree and institution. However, consider adding any relevant coursework or projects that highlight your technical skills or relevant industry experience.", "ats_match": 80, "recommendations": ["Add a brief description of your most relevant coursework or projects. For example, \'Developed a mobile application for X using Y technologies\' or \'Led a team project on Z, utilizing A and B.\'"]}, {"title": "Skills", "description": "You\'ve listed a strong set of technical skills, covering programming languages, frameworks, and tools. This demonstrates your technical proficiency and ability to work with various technologies. However, consider adding a brief description of your expertise in each skill to showcase your level of mastery.", "ats_match": 95, "recommendations": ["Consider adding a brief description of your skills. For example, instead of \'JavaScript,\' you could write \'JavaScript (3 years of experience, proficient in React and Node.js).\']"}]}\n'}
+2024-09-02 13:25:02,670 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:25:02] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:25:30,330 - app - INFO - Starting Flask application
+2024-09-02 13:25:30,341 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 13:25:30,341 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 13:25:30,342 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:25:32,578 - app - INFO - Starting Flask application
+2024-09-02 13:25:32,587 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:25:32,588 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:25:35,442 - app - INFO - Rendering index page
+2024-09-02 13:25:35,448 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:25:35] "GET / HTTP/1.1" 200 -
+2024-09-02 13:25:36,233 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:25:36] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 13:25:42,104 - app - INFO - Rendering upload resume page
+2024-09-02 13:25:42,107 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:25:42] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 13:25:54,281 - app - INFO - Received a file upload request
+2024-09-02 13:25:54,912 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:25:54,927 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:25:54,934 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:25:55,957 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:25:55,957 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:25:55,958 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 13:25:55,958 - app - INFO - File type is PDF
+2024-09-02 13:25:55,958 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 13:25:55,959 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:25:55] "POST /upload HTTP/1.1" 200 -
+2024-09-02 13:25:57,796 - app - INFO - Received request to get feedback page
+2024-09-02 13:25:57,797 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:25:57,797 - app - INFO - Calling AI service to process the file
+2024-09-02 13:25:57,804 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:25:57,810 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:25:58,230 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:25:58,321 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:25:58,322 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:25:58,322 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:25:58,322 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:25:58,323 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:25:58,323 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:25:58,323 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:26:05,706 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:26:05,709 - app - INFO - Analysis result: {'overall_feedback': "Olusegun has a strong resume that showcases his technical skills and experience as a software developer, particularly in Fintech, AI, and mobile app development. The resume highlights his impressive track record of building and deploying solutions using various technologies. However, there are some areas where improvement can enhance the resume's impact.", 'feedback_cards': [{'title': 'Summary', 'description': "Olusegun's summary effectively captures his passion for software development and highlights his expertise in Fintech, AI, and mobile app development. He mentions his experience with Java Spring Boot, Python Flask, and Flutter, which are valuable skills in the industry. The summary also showcases his problem-solving abilities and commitment to using technology for good.", 'ats_match': '80%', 'recommendations': ['Consider adding specific accomplishments or quantifiable results in the summary. For example, mention the number of projects completed, the impact of solutions deployed, or any significant contributions to his previous roles.', 'Emphasize a key accomplishment or skill that directly aligns with the specific job he is applying for.']}, {'title': 'Experience', 'description': "Olusegun's experience section is well-structured and provides detailed information about his roles at Fasyl Technology Group, Abeyie Innovation Studios, Blue Vision Multimedia, and Ingressive For Good. He demonstrates a strong understanding of various technologies and frameworks, including Java Spring Boot, Python Flask, Flutter, Kafka, Git, Jenkins, and more. He also highlights his leadership skills, project management experience, and contributions to diverse projects, including mobile app development, AI integration, and fintech solutions.", 'ats_match': '90%', 'recommendations': ['Use action verbs to start each bullet point and quantify accomplishments whenever possible. For example, instead of "Developed RESTful APIs", try "Developed and deployed 10 RESTful APIs using Java Spring Boot...".', 'Consider adding specific project names to make the experience section more impactful. For example, "Developed the eAlert service for OmniBSIC Ghana" rather than "Led implementation and deployment of eAlert service for OmniBSIC Ghana."', 'Highlight the technologies used in each project, making it easier for the ATS to scan for relevant keywords.']}, {'title': 'Education', 'description': "Olusegun's education section is concise and clearly states his degree in Computer Science from Catholic University College, Ghana. The dates of attendance are provided, which is helpful for understanding his academic timeline.", 'ats_match': '75%', 'recommendations': ['Consider adding relevant coursework or projects that showcase your technical abilities. For example, mention any relevant thesis work or projects related to AI, Fintech, or mobile development.', 'If you have any relevant certifications or awards related to your field, you can add them to this section as well.']}, {'title': 'Skills', 'description': "Olusegun's skills section effectively lists his programming languages, frameworks, libraries, tools, and platforms. This provides a good overview of his technical abilities. The skills listed are relevant to the software development industry and align with his work experience.", 'ats_match': '85%', 'recommendations': ['Consider using bullet points instead of a list to make the skills section more visually appealing.', 'Group similar skills together for better readability. For example, group all programming languages together, then frameworks, then tools, and so on.']}, {'title': 'Achievements', 'description': "The achievements section, though concise, provides valuable insights into Olusegun's contributions to various initiatives. It demonstrates his leadership qualities, community involvement, and experience in organizing technical events. This section highlights his passion for technology and his ability to inspire others.", 'ats_match': '70%', 'recommendations': ['Expand on the achievements by adding specific details about the initiatives he led, the impact of his actions, and any quantifiable results. For example, mention the number of participants in the hackathons he organized, the specific achievements of the Ingressive For Good developer community, and any awards or recognitions received for his efforts.']}, {'title': 'Overall', 'description': "Olusegun's resume presents a strong foundation, but a few refinements can elevate its effectiveness.  Emphasizing quantifiable accomplishments, focusing on relevant skills, and incorporating strong action verbs can enhance the impact of his resume.  By making these adjustments, Olusegun can ensure his resume effectively showcases his abilities and attracts the attention of potential employers.", 'ats_match': '80%', 'recommendations': ['Tailor the resume to each job application by highlighting the skills and experiences that are most relevant to the specific role.  Use keywords from the job description to increase the ATS match score.', 'Ensure that the resume is formatted consistently, using a professional font and layout. Proofread carefully for any typos or grammatical errors.']}]}
+2024-09-02 13:26:05,716 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:26:05] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:27:41,479 - app - INFO - Received request to get feedback page
+2024-09-02 13:27:41,479 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:27:41,479 - app - INFO - Calling AI service to process the file
+2024-09-02 13:27:41,487 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:27:41,492 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:27:42,487 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:27:42,699 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:27:42,700 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:27:42,700 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:27:42,700 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:27:42,700 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:27:42,700 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:27:42,701 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:27:49,011 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:27:49,013 - app - INFO - Analysis result: {'overall_feedback': "Olusegun, your resume showcases your strong technical skills and diverse experience in software development. You have a clear passion for fintech, AI, and mobile development, evident through your projects and contributions. However, some sections could be optimized for better ATS scanning and clarity for the reader. Let's make it even more impactful! ", 'feedback_cards': [{'title': 'Contact Information', 'description': 'The contact information is clearly displayed and easily accessible. The LinkedIn link is a nice addition and provides potential employers with an immediate view of your profile.', 'ats_match': '90%', 'recommendations': ['Ensure that the email address is professional and easy to read. Consider adding a personal website or portfolio link if applicable.']}, {'title': 'Summary', 'description': 'Your summary is concise and highlights your key skills and interests.  It effectively communicates your passion for fintech, AI, and mobile development. However, consider adding quantifiable achievements to showcase the impact of your work.', 'ats_match': '80%', 'recommendations': ["Instead of mentioning 'impactful solutions,' try stating how your solutions impacted a project or business. For example, 'Increased user engagement by 20% through AI chatbot implementation.'", 'Add a quantifiable accomplishment to each skill area.']}, {'title': 'Experience', 'description': "This section demonstrates a strong work history and highlights your diverse skillset. You provide specific examples of projects and contributions, which showcase your technical abilities and leadership skills. It's excellent that you quantify your achievements, such as the 70% reduction in response times and 20% increase in performance. ", 'ats_match': '85%', 'recommendations': ["Consider using more action verbs in your descriptions to make your achievements stand out further. For instance, instead of 'developed and deployed RESTful APIs,' say 'Designed and implemented highly scalable RESTful APIs.'", 'Bullet points should ideally be in reverse chronological order.']}, {'title': 'Education', 'description': 'Your educational background is well-presented and includes your degree and institution. ', 'ats_match': '85%', 'recommendations': ['Consider adding relevant coursework or projects that showcase your skills in areas like AI, fintech, or mobile development. ', 'Add a GPA if it is above a 3.0.']}, {'title': 'Skills', 'description': 'The skills section lists a comprehensive set of technical abilities. It demonstrates your proficiency in various programming languages, frameworks, and tools. ', 'ats_match': '90%', 'recommendations': ['Categorize your skills into relevant categories like Programming Languages, Frameworks & Libraries, Databases, and Tools. This makes it easier for recruiters to quickly identify your strengths.']}, {'title': 'Awards and Certifications', 'description': "You haven't included a separate section for awards or certifications. Including relevant certifications would further boost your credibility and demonstrate your commitment to professional development.", 'ats_match': '70%', 'recommendations': ['Add a section for awards, certifications, and relevant training programs.  Include any certifications like AWS, Azure, or industry-specific licenses.']}, {'title': 'Projects', 'description': "While your experience section showcases many projects, a dedicated 'Projects' section allows you to highlight independent projects or personal initiatives. This can be particularly valuable for showcasing your creativity and problem-solving abilities.", 'ats_match': '75%', 'recommendations': ["Add a separate 'Projects' section if you have any personal or side projects that showcase your skills. Include a brief description, technologies used, and any relevant outcomes."]}, {'title': 'Volunteer/Leadership', 'description': "While your leadership experience is mentioned in your experience section, having a dedicated 'Volunteer/Leadership' section can highlight your extracurricular involvement. It shows your willingness to contribute to the community and take initiative.", 'ats_match': '70%', 'recommendations': ['Create a dedicated section for any volunteer work, leadership positions, or community involvement.  This showcases your personality and initiative.']}]}
+2024-09-02 13:27:49,020 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:27:49] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:28:32,397 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-02 13:28:32,983 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:28:35,381 - app - INFO - Starting Flask application
+2024-09-02 13:28:35,390 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:28:35,391 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:28:47,691 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-02 13:28:48,271 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:28:50,577 - app - INFO - Starting Flask application
+2024-09-02 13:28:50,586 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:28:50,586 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:28:53,698 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-02 13:28:54,323 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:28:56,688 - app - INFO - Starting Flask application
+2024-09-02 13:28:56,698 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:28:56,698 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:28:57,760 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-02 13:28:58,376 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:29:05,201 - app - INFO - Starting Flask application
+2024-09-02 13:29:05,213 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 13:29:05,213 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 13:29:05,214 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:29:07,501 - app - INFO - Starting Flask application
+2024-09-02 13:29:07,509 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:29:07,510 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:29:14,462 - app - INFO - Rendering index page
+2024-09-02 13:29:14,469 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:29:14] "GET / HTTP/1.1" 200 -
+2024-09-02 13:29:15,287 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:29:15] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 13:29:17,697 - app - INFO - Rendering upload resume page
+2024-09-02 13:29:17,700 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:29:17] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 13:29:26,568 - app - INFO - Received a file upload request
+2024-09-02 13:29:26,943 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:29:26,960 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:29:26,967 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:29:27,982 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:29:27,982 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:29:27,982 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-02 13:29:27,982 - app - INFO - File type is PDF
+2024-09-02 13:29:27,983 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-02 13:29:27,983 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:29:27] "POST /upload HTTP/1.1" 200 -
+2024-09-02 13:29:29,379 - app - INFO - Received request to get feedback page
+2024-09-02 13:29:29,380 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:29:29,380 - app - INFO - Calling AI service to process the file
+2024-09-02 13:29:29,388 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:29:29,395 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:29:30,347 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:29:30,439 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:29:30,439 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:29:30,440 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:29:30,440 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:29:30,440 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:29:30,440 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:29:30,441 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:29:35,772 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:29:35,774 - app - INFO - Analysis result: {'overall_feedback': 'Olusegun, your resume showcases your strong technical skills and diverse experience in software development, particularly in fintech and AI. You have a clear track record of success, but some areas could be enhanced to maximize your impact. Your ATS match score is approximately 75%. ', 'feedback_cards': [{'title': 'Summary', 'description': "The summary effectively highlights your passion for software development and your expertise in fintech, AI, and mobile app development. However, consider quantifying your achievements to demonstrate the impact of your work. For example, instead of stating you 'designed and implemented impactful solutions,' mention a specific project and its outcome.  This will make your skills more tangible to recruiters.", 'ats_match': '70%', 'recommendations': ['Quantify your achievements with specific numbers and results.', "Tailor your summary to the specific job you're applying for.", 'Use keywords relevant to the target job description.']}, {'title': 'Experience', 'description': "You've structured your experience sections well, detailing your responsibilities and accomplishments at each role. Your use of action verbs and specific examples showcases your technical abilities and problem-solving skills. It is impressive how you've consistently delivered tangible results, such as increasing efficiency by 60% with Kafka integration or enhancing user satisfaction by 20% with app troubleshooting.  You demonstrate a clear understanding of the technical landscape and your role in driving innovation.", 'ats_match': '80%', 'recommendations': ['Prioritize the most relevant experience for the targeted job.', 'Consider adding a brief description of each company for context.', 'Ensure consistent formatting for dates and titles across entries.']}, {'title': 'Skills', 'description': "You've listed a comprehensive set of programming languages, frameworks, and tools.  The organization is good, and it's clear you have a wide range of technical skills. However, consider tailoring this section to match the specific requirements of each job application.", 'ats_match': '75%', 'recommendations': ['Prioritize skills relevant to the specific job description.', 'Consider adding specific skills or technologies mentioned in the job posting.', 'Use keywords from the job description in the skills section.']}, {'title': 'Education', 'description': 'You have a well-structured education section, providing the necessary information about your degree and institution. However, consider adding relevant coursework or projects that demonstrate your skills and knowledge.', 'ats_match': '90%', 'recommendations': ['Highlight relevant coursework or projects that showcase your skills.', 'Consider mentioning any academic awards or honors.']}, {'title': 'Overall Resume Feedback', 'description': 'Overall, your resume is well-structured and provides a clear overview of your skills and experience. You have a strong track record of success and a passion for technology that is evident throughout your resume. By incorporating the recommendations above, you can further enhance your resume and increase your chances of securing your dream job.', 'ats_match': '80%', 'recommendations': ['Use a consistent format and style throughout the resume.', 'Proofread carefully for any grammatical errors or typos.', 'Consider using a professional resume template to improve the visual appeal of your resume.']}]}
+2024-09-02 13:29:35,781 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:29:35] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:30:03,774 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-02 13:30:04,409 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:30:06,722 - app - INFO - Starting Flask application
+2024-09-02 13:30:06,730 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:30:06,731 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:30:39,462 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-02 13:30:40,094 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:30:42,353 - app - INFO - Starting Flask application
+2024-09-02 13:30:42,361 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:30:42,362 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:30:43,419 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-02 13:30:44,030 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:30:46,268 - app - INFO - Starting Flask application
+2024-09-02 13:30:46,276 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:30:46,277 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:30:49,383 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-02 13:30:49,978 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:30:52,176 - app - INFO - Starting Flask application
+2024-09-02 13:30:52,184 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:30:52,184 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:30:55,301 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-02 13:30:55,926 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:30:58,250 - app - INFO - Starting Flask application
+2024-09-02 13:30:58,260 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:30:58,260 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:30:59,327 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-02 13:30:59,959 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:31:02,216 - app - INFO - Starting Flask application
+2024-09-02 13:31:02,227 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:31:02,228 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:31:11,429 - app - INFO - Starting Flask application
+2024-09-02 13:31:11,440 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 13:31:11,441 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 13:31:11,441 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:31:13,704 - app - INFO - Starting Flask application
+2024-09-02 13:31:13,712 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:31:13,713 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:31:17,729 - app - INFO - Rendering index page
+2024-09-02 13:31:17,735 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:31:17] "GET / HTTP/1.1" 200 -
+2024-09-02 13:31:18,577 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:31:18] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 13:31:24,287 - app - INFO - Rendering upload resume page
+2024-09-02 13:31:24,290 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:31:24] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 13:31:30,398 - app - INFO - Received a file upload request
+2024-09-02 13:31:31,528 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:31:31,544 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:31:31,551 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:31:32,558 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:31:32,558 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:31:32,558 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 13:31:32,559 - app - INFO - File type is PDF
+2024-09-02 13:31:32,559 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 13:31:32,560 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:31:32] "POST /upload HTTP/1.1" 200 -
+2024-09-02 13:31:33,865 - app - INFO - Received request to get feedback page
+2024-09-02 13:31:33,865 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:31:33,866 - app - INFO - Calling AI service to process the file
+2024-09-02 13:31:33,872 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:31:33,878 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:31:35,257 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:31:35,349 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:31:35,349 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:31:35,349 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:31:35,349 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:31:35,350 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:31:35,350 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:31:35,350 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:31:40,896 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:31:40,897 - app - INFO - Analysis result: {'overall_feedback': "Olusegun, your resume showcases a strong foundation in software development with a focus on fintech, AI, and mobile app development. You've demonstrated proficiency in various languages and frameworks, and your experience in leading projects and teams is impressive. However, there are opportunities to further enhance the clarity and impact of your resume for optimal ATS and human reader engagement. I recommend focusing on quantifying your achievements with specific metrics and tailoring your resume to the specific job requirements.", 'feedback_cards': [{'ats_match': 75, 'title': 'Summary', 'description': 'The summary effectively highlights your passion for software development and your areas of expertise, particularly fintech, AI, and mobile app development. It mentions your proficiency in key technologies like Java Spring Boot, Python Flask, and Flutter. However, consider adding a compelling statement that showcases your unique value proposition or a key achievement that summarizes your impact.', 'recommendations': ['Consider adding a quantifiable achievement or a specific example of your impact in the field.  For example, you could say, "I have successfully implemented AI solutions that improved efficiency by X% in Y projects." ', 'Tailor this section to the specific job you are applying for by highlighting relevant skills and experience.']}, {'ats_match': 80, 'title': 'Experience', 'description': 'You have a strong track record of experience in software development, demonstrating your ability to work on diverse projects with increasing responsibility. You provide specific details about your roles at Fasyl Technology Group, Abeyie Innovation Studios, and Blue Vision Multimedia, highlighting your contributions to API development, mobile app development, AI integration, and project management. However, consider enhancing the impact of your descriptions by focusing on quantifiable achievements and using action verbs.', 'recommendations': ['Quantify your achievements with metrics whenever possible. For example, instead of saying "Successfully deployed solutions at over 7 banks," consider saying "Successfully deployed solutions at 7 banks, resulting in a Y% increase in efficiency." ', 'Use strong action verbs to start each bullet point, showcasing your proactive approach. For example, instead of "Developed and deployed RESTful APIs," consider "Developed and deployed high-performance RESTful APIs".']}, {'ats_match': 70, 'title': 'Education', 'description': "The education section effectively presents your Bachelor's degree in Computer Science from Catholic University College, Ghana. However, consider adding any relevant coursework or projects that highlight your technical skills and abilities.", 'recommendations': ['Consider adding a relevant coursework or project that showcases your skills and expertise related to your target job. For example, you could mention a project where you implemented a fintech solution using Java Spring Boot or a mobile app development project using Flutter.', 'Include any relevant technical skills or certifications related to your field.']}, {'ats_match': 85, 'title': 'Skills', 'description': 'This section effectively lists your programming languages, frameworks, and tools. However, consider adding a brief description of your proficiency level for each skill and using keywords relevant to the specific job you are applying for.', 'recommendations': ['Consider adding a brief description of your proficiency level for each skill. For example, you could say "Proficient in Java Spring Boot" or "Expert in Python Flask." ', 'Add keywords relevant to the specific job you are applying for. Research common keywords used in the industry and include them in your skills list.']}, {'ats_match': 65, 'title': 'Lead Ambassador I4G CUCG', 'description': 'This section provides valuable information about your leadership experience and your involvement in the tech community. However, it could be more impactful by quantifying your achievements and highlighting the skills you developed during your time as Lead Campus Ambassador.', 'recommendations': ['Consider adding quantifiable achievements, such as the number of events organized or the number of students mentored. ', 'Highlight the specific skills you developed, such as leadership, communication, event planning, or community building.']}]}
+2024-09-02 13:31:40,904 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:31:40] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:35:57,434 - app - INFO - Starting Flask application
+2024-09-02 13:35:57,444 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 13:35:57,445 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 13:35:57,445 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:35:59,655 - app - INFO - Starting Flask application
+2024-09-02 13:35:59,665 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:35:59,666 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:36:08,212 - app - INFO - Rendering index page
+2024-09-02 13:36:08,218 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:36:08] "GET / HTTP/1.1" 200 -
+2024-09-02 13:36:08,986 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:36:08] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 13:36:12,945 - app - INFO - Rendering upload resume page
+2024-09-02 13:36:12,948 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:36:12] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 13:36:21,345 - app - INFO - Received a file upload request
+2024-09-02 13:36:22,072 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:36:22,087 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:36:22,093 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:36:23,119 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:36:23,120 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:36:23,120 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 13:36:23,120 - app - INFO - File type is PDF
+2024-09-02 13:36:23,120 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 13:36:23,121 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:36:23] "POST /upload HTTP/1.1" 200 -
+2024-09-02 13:36:25,086 - app - INFO - Received request to get feedback page
+2024-09-02 13:36:25,086 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:36:25,087 - app - INFO - Calling AI service to process the file
+2024-09-02 13:36:25,095 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:36:25,101 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:36:26,059 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:36:26,151 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:36:26,151 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:36:26,151 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:36:26,151 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:36:26,152 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:36:26,152 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:36:26,152 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:36:30,764 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:36:30,766 - app - INFO - Analysis result: {'overall_feedback': 'Olusegun, this resume showcases a strong foundation in software development, particularly in backend technologies and fintech. Your experience with Java Spring Boot, Python Flask, and Flutter is impressive. The detailed descriptions of your projects and accomplishments effectively highlight your technical skills and problem-solving abilities. However,  the resume could be strengthened by better tailoring it to specific job applications, using keywords strategically, and refining its overall presentation.', 'feedback_cards': [{'ats_match': 75, 'title': 'Summary', 'description': "The summary provides a good overview of Olusegun's skills and interests. It's engaging and highlights key areas like fintech, AI, and mobile development.  However, it could be further improved by quantifying achievements and focusing on what Olusegun can offer the company.", 'recommendations': ['Consider adding specific metrics to quantify your achievements (e.g., "Increased API performance by 20%").', 'Tailor the summary to the specific job description, highlighting skills and experience relevant to the role.', 'Replace vague terms like "impactful solutions" with concrete examples.']}, {'ats_match': 85, 'title': 'Experience', 'description': "Olusegun's experience section is detailed and informative.  You've done a good job of highlighting your roles, responsibilities, and achievements.  The descriptions are clear and demonstrate your technical proficiency in various areas.  The inclusion of specific projects like the eAlert service and the Agricultural Development Bank mobile app is beneficial.", 'recommendations': ['Consider using action verbs at the beginning of each bullet point to make the descriptions more impactful.', 'Quantify your achievements whenever possible (e.g., "Reduced processing time by 40%").', "Focus on the most relevant experience for the job you're applying for and tailor the descriptions accordingly."]}, {'ats_match': 65, 'title': 'Education', 'description': 'The education section is well-organized, but it could be enhanced by providing more context.  Including relevant coursework or projects might be beneficial for showcasing specific technical skills.', 'recommendations': ['Consider adding a brief description of your coursework or projects that align with the skills required for the job.', 'If you have any relevant certifications or awards, include them in this section.']}, {'ats_match': 70, 'title': 'Skills', 'description': "Olusegun's skills section showcases a diverse range of programming languages, frameworks, and tools.  However, it would be more impactful to group them into categories to make them easier to read and scan by ATS systems.", 'recommendations': ['Organize the skills into categories like "Programming Languages", "Frameworks & Libraries", "Tools & Platforms", etc.', 'Highlight skills that are most relevant to the specific job application.']}]}
+2024-09-02 13:36:30,773 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:36:30] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:41:24,163 - app - INFO - Received a file upload request
+2024-09-02 13:41:24,596 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:41:24,604 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:41:24,610 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:41:25,624 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:41:25,625 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:41:25,625 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 13:41:25,625 - app - INFO - File type is PDF
+2024-09-02 13:41:25,625 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 13:41:25,626 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:41:25] "POST /upload HTTP/1.1" 200 -
+2024-09-02 13:41:26,699 - app - INFO - Received request to get feedback page
+2024-09-02 13:41:26,699 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:41:26,699 - app - INFO - Calling AI service to process the file
+2024-09-02 13:41:26,706 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:41:26,712 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:41:27,677 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:41:27,891 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:41:27,891 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:41:27,891 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:41:27,891 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:41:27,891 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:41:27,891 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:41:27,892 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:41:32,779 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:41:32,781 - app - INFO - Analysis result: {'overall_feedback': "Olusegun's resume showcases strong technical skills and a passion for software development, particularly in the fintech and AI spaces.  However, there are some areas for improvement that could make it even more impactful for employers.  With a few tweaks, it will definitely stand out.", 'feedback_cards': [{'ats_match': 75, 'title': 'Summary', 'description': "Olusegun's summary is well-written and highlights his key skills and areas of expertise. It's concise and captures attention. However, I'd recommend adding a quantifiable achievement or two to further demonstrate impact.", 'recommendations': ["Consider adding a specific achievement, like 'Developed a mobile app that led to a [percentage]% increase in user engagement' or 'Implemented AI solutions that resulted in [percentage]% cost savings.'", 'You could also mention a specific technology or project that you are particularly passionate about.']}, {'ats_match': 90, 'title': 'Experience', 'description': "This is the strongest section of your resume. It provides a detailed and engaging account of your professional experience. You've effectively highlighted your key accomplishments and contributions.  It's clear that you have a strong track record of success. However, some sections could be more concise.", 'recommendations': ['Consider using bullet points for your responsibilities under each role to make it easier for the reader to quickly grasp the key takeaways.', "Condense the 'Lead Ambassador I4G CUCG' section as it's not as directly relevant to your current career path."]}, {'ats_match': 80, 'title': 'Education', 'description': 'Your education section is well-presented. However, it could benefit from further detail. ', 'recommendations': ['Consider adding a relevant coursework or project that highlights your skills and experience.', 'You could also include any relevant awards or honors you received during your academic career.']}, {'ats_match': 85, 'title': 'Skills', 'description': "You've listed a wide range of valuable skills. However, you can make this section even more impactful.", 'recommendations': ['Consider grouping skills by category (e.g., Programming Languages, Frameworks and Libraries, Tools and Platforms).', "Highlight any specific skills that are particularly relevant to the job you're applying for."]}, {'ats_match': 65, 'title': 'Additional Information', 'description': "The addition of the 'Which of your achievements match the job you're applying to?' section is not recommended. It's better to focus on providing a clear and concise resume.", 'recommendations': ["Remove the 'Which of your achievements match the job you're applying to?' section. It's not necessary and can be distracting for the reader."]}, {'ats_match': 85, 'title': 'Overall ATS Match', 'description': "Overall, Olusegun's resume has a strong ATS match percentage. However, by implementing the recommendations, you can further enhance its visibility and attract more attention from potential employers. ", 'recommendations': ['Use a resume builder or ATS optimization tool to ensure your resume is formatted correctly and uses the right keywords.']}]}
+2024-09-02 13:41:32,787 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:41:32] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:46:34,228 - app - INFO - Received a file upload request
+2024-09-02 13:46:34,997 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:46:35,004 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:46:35,010 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:46:36,048 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:46:36,048 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:46:36,048 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 13:46:36,049 - app - INFO - File type is PDF
+2024-09-02 13:46:36,049 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 13:46:36,050 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:46:36] "POST /upload HTTP/1.1" 200 -
+2024-09-02 13:46:37,442 - app - INFO - Received request to get feedback page
+2024-09-02 13:46:37,442 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:46:37,442 - app - INFO - Calling AI service to process the file
+2024-09-02 13:46:37,449 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:46:37,454 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:46:38,417 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:46:38,505 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:46:38,506 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:46:38,506 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:46:38,506 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:46:38,506 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:46:38,506 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:46:38,506 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:46:45,154 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:46:45,156 - app - INFO - Analysis result: {'overall_feedback': "Olusegun's resume demonstrates a strong foundation in software development with a focus on fintech and AI. He has a diverse experience working in various roles, from consultant programmer to partner/CTO, showcasing his ability to adapt and learn.  He has an impressive track record of leading projects, implementing solutions, and integrating AI, proving his technical skills and leadership qualities. However, some areas require attention to enhance the overall impact and clarity of his resume. ", 'feedback_cards': [{'ats_match': 70, 'title': 'Summary', 'description': "The summary effectively highlights Olusegun's passion for software development and his expertise in fintech, AI, and mobile app development. It also mentions his leadership experience and commitment to solving real-world problems. However, it can be improved by quantifying achievements and using stronger action verbs. For example, instead of saying 'I've designed and implemented impactful solutions', it could be 'Designed and implemented impactful solutions, resulting in [quantifiable result]'.", 'recommendations': ['Quantify achievements with specific metrics or numbers wherever possible.', 'Replace generic terms with strong action verbs that showcase accomplishments.', 'Consider tailoring the summary to align with the specific job description you are applying for.']}, {'ats_match': 85, 'title': 'Experience', 'description': "Olusegun's experience section provides a detailed overview of his roles and responsibilities, demonstrating his technical skills, leadership abilities, and problem-solving skills. He clearly articulates his accomplishments, showcasing the positive impact he made in each role. The use of bullet points makes the information easily digestible.  However, the descriptions can be more concise and focused on showcasing quantifiable results. ", 'recommendations': ['Prioritize the most relevant achievements and responsibilities for each role.', 'Emphasize measurable results using numbers, percentages, or specific metrics.', 'Streamline descriptions by using concise language and action verbs.', "Consider adding a 'Key Accomplishments' section at the end of each job description to highlight major achievements."]}, {'ats_match': 90, 'title': 'Skills', 'description': 'Olusegun lists a variety of technical skills, demonstrating his proficiency in various programming languages, frameworks, tools, and platforms. The skills listed are relevant to the software development industry and align well with the technologies he mentions in his experience. However, he can further improve this section by adding some relevant soft skills such as communication, teamwork, and problem-solving.', 'recommendations': ['Categorize the skills for easier readability (e.g., Programming Languages, Frameworks & Libraries, Tools & Platforms).', 'Include relevant soft skills that are essential for software development, such as communication, problem-solving, teamwork, and time management.', 'Consider highlighting skills that are particularly relevant to the specific job you are applying for.']}, {'ats_match': 75, 'title': 'Education', 'description': 'Olusegun includes his educational background, which provides context for his technical skills and knowledge. However, he can further enhance this section by adding any relevant coursework, projects, or extracurricular activities that demonstrate his passion for computer science and software development.', 'recommendations': ['Consider adding a brief description of any relevant coursework, projects, or research experience.', 'Highlight any academic awards or honors received.', 'If applicable, mention any relevant extracurricular activities that demonstrate your technical skills or leadership abilities.']}, {'ats_match': 80, 'title': 'Additional Information', 'description': "Olusegun's additional information section demonstrates his commitment to the tech community by highlighting his role as a Lead Campus Ambassador for Ingressive For Good.  However, he should consider adding other relevant information like certifications or professional memberships to further demonstrate his commitment to professional development and learning.", 'recommendations': ['Add relevant certifications or professional memberships to demonstrate your commitment to professional development.', 'Consider including any volunteer work or community involvement that showcases your leadership skills and commitment to giving back.', 'Highlight any relevant projects or initiatives that you have spearheaded or participated in.']}, {'ats_match': 65, 'title': 'Formatting', 'description': "The resume's formatting is generally clean and easy to read.  However, there are some formatting inconsistencies that could be improved. ", 'recommendations': ['Ensure consistent formatting for headings, bullet points, and spacing throughout the resume.', 'Use a professional font that is easy to read.', 'Consider using a resume template to ensure consistency and professionalism.']}]}
+2024-09-02 13:46:45,163 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:46:45] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:50:52,739 - app - INFO - Received a file upload request
+2024-09-02 13:50:53,161 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:50:53,169 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:50:53,175 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:50:54,102 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:50:54,102 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:50:54,103 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 13:50:54,103 - app - INFO - File type is PDF
+2024-09-02 13:50:54,103 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 13:50:54,104 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:50:54] "POST /upload HTTP/1.1" 200 -
+2024-09-02 13:50:55,274 - app - INFO - Received request to get feedback page
+2024-09-02 13:50:55,274 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:50:55,274 - app - INFO - Calling AI service to process the file
+2024-09-02 13:50:55,281 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:50:55,286 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:50:56,255 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:50:56,344 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:50:56,345 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:50:56,345 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:50:56,345 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:50:56,345 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:50:56,345 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:50:56,346 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:51:03,181 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:51:03,182 - ai_service - ERROR - Failed to parse JSON response: Expecting ',' delimiter: line 1 column 4681 (char 4680)
+2024-09-02 13:51:03,184 - app - INFO - Analysis result: {'error': 'Failed to parse JSON response.', 'raw_response': '{"overall_feedback": "Olusegun, your resume showcases a strong foundation in software development, particularly in the fintech and AI domains. You have a diverse portfolio of projects and experiences, demonstrating your versatility and technical skills. However, some sections could be more tailored to specific job applications, and the resume could benefit from a more concise and impactful format.  \\n\\nOverall, you have a strong profile, and with some adjustments, your resume will be even more effective in capturing the attention of potential employers.", "feedback_cards": [{"ats_match": "75%", "title": "Summary", "description": "Your summary effectively highlights your passion for software development and your key areas of expertise. It mentions your experience with Java Spring Boot, Python Flask, and Flutter, which are popular frameworks in the industry. However, you could make it more impactful by quantifying your accomplishments and using action verbs to showcase your impact. For example, instead of saying \\"I\'m dedicated to solving real-world problems,\\" you could say \\"Successfully developed and deployed solutions that improved efficiency by X% and reduced costs by Y%.\\"", "recommendations": ["Quantify your achievements in the summary to highlight your impact. \\nUse strong action verbs to emphasize your skills and accomplishments. \\nTailor the summary to the specific job you are applying for, focusing on the skills and experiences most relevant to the role."]}, {"ats_match": "80%", "title": "Experience", "description": "This section demonstrates a breadth of experiences across various companies and roles, highlighting your diverse skillset. The descriptions are detailed and provide specific examples of your work.  However, they could be more concise and focused on quantifiable results.  \\n\\nYou demonstrate strong technical skills, including experience with Java Spring Boot, Python Flask, Flutter, APIs, Databases (Oracle), and AI.  Your leadership in project refactoring, integration of AI, and training/support demonstrates valuable soft skills.  \\n\\nThe bullet points are a bit lengthy and could benefit from a more concise and results-oriented approach. For example, instead of saying \\"Developed and deployed RESTful APIs...\\", you could say \\"Developed and deployed RESTful APIs for 7 banks, enabling them to extend product offerings and integrate with ACH and CTS systems, resulting in a X% increase in revenue.\\" \\n\\nYour involvement in building an AI chatbot for educating students on racial issues demonstrates your commitment to social responsibility, which is a valuable asset in today\'s job market.", "recommendations": ["Prioritize quantifiable results in each bullet point to demonstrate your impact. \\nUse bullet points with concise and impactful language. \\nConsider using a consistent format for bullet points to improve readability. \\nFor each experience, highlight the most relevant skills and achievements for the target job."]}, {"ats_match": "90%", "title": "Skills", "description": "You have a strong list of technical skills, including programming languages, frameworks, and tools.  The inclusion of both hard skills and soft skills (version control, documentation, training) is beneficial.   The skills section is well-organized and easy to read, allowing recruiters to quickly identify your qualifications.", "recommendations": ["Consider grouping skills into categories (e.g., Programming Languages, Frameworks, Tools, Soft Skills) to improve readability. \\nIf you have a large number of skills, consider listing the most relevant skills for each job application."]}, {"ats_match": "70%", "title": "Education", "description": "You have included your university degree, which is a relevant credential for most software development roles.  However, you could enhance this section by adding specific coursework or projects that demonstrate your technical abilities.", "recommendations": ["Consider adding relevant coursework or projects that showcase your technical skills and knowledge. \\nIf you have any certifications or relevant training programs, include them in this section."]}, {"ats_match": "65%", "title": "Lead Ambassador I4G CUCG", "description": "This section demonstrates your leadership and community involvement. However, it could be improved by adding specific achievements or outcomes of your work.  For example, \\"Organized hackathons that attracted X number of participants and resulted in Y projects.\\" ", "recommendations": ["Quantify your accomplishments and highlight the impact of your leadership role. \\nFocus on achievements that demonstrate your technical skills and leadership qualities."}\n]}\n'}
+2024-09-02 13:51:03,191 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:51:03] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:51:22,304 - app - INFO - Starting Flask application
+2024-09-02 13:51:22,316 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 13:51:22,316 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 13:51:22,317 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:51:24,544 - app - INFO - Starting Flask application
+2024-09-02 13:51:24,553 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:51:24,554 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:51:27,204 - app - INFO - Rendering index page
+2024-09-02 13:51:27,211 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:51:27] "GET / HTTP/1.1" 200 -
+2024-09-02 13:51:27,966 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:51:27] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 13:51:30,078 - app - INFO - Rendering upload resume page
+2024-09-02 13:51:30,081 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:51:30] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 13:51:38,975 - app - INFO - Received a file upload request
+2024-09-02 13:51:39,583 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:51:39,597 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:51:39,604 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:51:40,648 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:51:40,649 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:51:40,649 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 13:51:40,649 - app - INFO - File type is PDF
+2024-09-02 13:51:40,649 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 13:51:40,650 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:51:40] "POST /upload HTTP/1.1" 200 -
+2024-09-02 13:51:42,072 - app - INFO - Received request to get feedback page
+2024-09-02 13:51:42,072 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:51:42,072 - app - INFO - Calling AI service to process the file
+2024-09-02 13:51:42,079 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:51:42,085 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:51:43,045 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 13:51:43,138 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 13:51:43,138 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 13:51:43,138 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 13:51:43,139 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 13:51:43,139 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 13:51:43,139 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 13:51:43,139 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 13:51:49,190 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 13:51:49,192 - app - INFO - Analysis result: {'overall_feedback': "Olusegun's resume showcases a strong foundation in software development with a clear focus on fintech, AI, and mobile app development. He's demonstrated impressive experience in building impactful solutions, leading teams, optimizing systems, and integrating AI. The resume effectively highlights Olusegun's skills and achievements. However, some improvements can be made to further enhance its impact. ", 'feedback_cards': [{'ats_match': 85, 'title': 'Summary', 'description': "Olusegun's summary effectively captures his passion for software development and his key skills. He mentions specific technologies like Java Spring Boot, Python Flask, and Flutter, which are relevant to his target roles. However, it could be strengthened by quantifying some of his achievements. For instance, instead of saying 'designed and implemented impactful solutions', he could mention the impact of his work in terms of increased efficiency, reduced costs, or improved user satisfaction.", 'recommendations': ["Quantify your achievements in the summary. Instead of saying 'impactful solutions,' describe the impact using metrics like percentage increase in efficiency or reduced costs. ", 'Consider adding a specific career goal to give the reader a clearer understanding of your aspirations.']}, {'ats_match': 90, 'title': 'Experience', 'description': "The experience section is well-structured and provides a good overview of Olusegun's work history. He effectively describes his roles and responsibilities at each company, showcasing his technical proficiency and project management skills. The use of bullet points makes the information easily digestible.  Olusegun demonstrates a clear understanding of the value he brings to each employer.  He quantifies some achievements, such as the 70% reduction in response times and the 20% increase in performance. However, there is room to further strengthen the impact of his achievements.", 'recommendations': ["Further quantify your achievements in the Experience section. For example, instead of saying 'Led the refactoring of source code,' provide details about the improvements in performance, scalability, or efficiency.  ", 'Elaborate on the specific AI chatbots you developed and their impact on client engagement.  ', 'Highlight the specific business challenges you addressed for clients, and quantify the results you achieved.']}, {'ats_match': 80, 'title': 'Education', 'description': "Olusegun's education section is concise and clearly presents his degree. However, it could be enhanced by adding relevant coursework or projects that demonstrate his technical skills and knowledge.", 'recommendations': ['Consider including relevant coursework or projects that demonstrate your technical skills and knowledge, such as developing a specific application or solving a complex programming problem.', 'If you have any relevant certifications, such as Java or Python certifications, you can include them here.']}, {'ats_match': 90, 'title': 'Skills', 'description': "The skills section is well-organized and lists a variety of technical skills relevant to Olusegun's target roles. He lists programming languages, frameworks, libraries, and tools.  This is a strong section.", 'recommendations': ["Consider adding a few more skills that are specific to your target roles. For example, if you're applying for a role that requires data analysis, you could include data analysis skills like SQL, Python libraries (Pandas, NumPy), and data visualization tools like Tableau or Power BI."]}, {'ats_match': 75, 'title': 'Contact Information', 'description': 'The contact information is well-formatted.  However, it is too lengthy.  There is too much information at the top of the resume.  ', 'recommendations': ['You should edit your contact information at the top and only list your name, phone number, and email.  A link to your LinkedIn profile is good to include, but this information could be moved to the footer of the resume.  You should limit the contact information to the very top of the page.  Also, remove any unnecessary formatting such as bolding or extra spacing.  This is distracting to the reader.']}]}
+2024-09-02 13:51:49,199 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:51:49] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:54:09,062 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 13:54:09,682 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:54:11,923 - app - INFO - Starting Flask application
+2024-09-02 13:54:11,931 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:54:11,932 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:54:16,064 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 13:54:16,682 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:54:18,879 - app - INFO - Starting Flask application
+2024-09-02 13:54:18,887 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:54:18,887 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:54:20,965 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 13:54:21,575 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:54:23,874 - app - INFO - Starting Flask application
+2024-09-02 13:54:23,883 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:54:23,883 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:54:33,132 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 13:54:33,754 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:55:51,173 - app - INFO - Starting Flask application
+2024-09-02 13:55:51,184 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 13:55:51,185 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 13:55:51,185 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:55:53,383 - app - INFO - Starting Flask application
+2024-09-02 13:55:53,392 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:55:53,392 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:55:56,175 - app - INFO - Rendering index page
+2024-09-02 13:55:56,181 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:55:56] "GET / HTTP/1.1" 200 -
+2024-09-02 13:55:57,048 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:55:57] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 13:55:59,652 - app - INFO - Rendering upload resume page
+2024-09-02 13:55:59,654 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:55:59] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 13:56:08,817 - app - INFO - Received a file upload request
+2024-09-02 13:56:09,416 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:56:09,431 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:56:09,437 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:56:10,449 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:56:10,449 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:56:10,449 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-02 13:56:10,449 - app - INFO - File type is PDF
+2024-09-02 13:56:10,450 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-02 13:56:10,451 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:56:10] "POST /upload HTTP/1.1" 200 -
+2024-09-02 13:56:11,328 - app - INFO - Received request to get feedback page
+2024-09-02 13:56:11,329 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:56:11,329 - app - INFO - Calling AI service to process the file
+2024-09-02 13:56:11,329 - app - ERROR - Error calling AI service: call_vertex_ai_test() takes 0 positional arguments but 1 was given
+2024-09-02 13:56:11,329 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:56:11] "[35m[1mPOST /get_feedback_page HTTP/1.1[0m" 500 -
+2024-09-02 13:56:25,106 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 13:56:25,704 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 13:56:27,877 - app - INFO - Starting Flask application
+2024-09-02 13:56:27,885 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 13:56:27,886 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 13:56:29,685 - app - INFO - Received a file upload request
+2024-09-02 13:56:30,197 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:56:30,211 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:56:30,218 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 13:56:31,292 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:56:31,292 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:56:31,293 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-02 13:56:31,293 - app - INFO - File type is PDF
+2024-09-02 13:56:31,293 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-02 13:56:31,294 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:56:31] "POST /upload HTTP/1.1" 200 -
+2024-09-02 13:56:32,400 - app - INFO - Received request to get feedback page
+2024-09-02 13:56:32,400 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-02 13:56:32,400 - app - INFO - Calling AI service to process the file
+2024-09-02 13:56:32,401 - app - INFO - Analysis result: {'overall_feedback': 'Sample overall feedback from AI.', 'feedback_cards': [{'title': 'Summary', 'description': 'Sample description for Summary.', 'ats_match': '80%', 'recommendations': ['Recommendation 1 for Summary', 'Recommendation 2 for Summary']}, {'title': 'Experience', 'description': 'Sample description for Experience.', 'recommendations': ['Recommendation 1 for Experience', 'Recommendation 2 for Experience']}, {'title': 'Education', 'description': 'Sample description for Education.', 'recommendations': ['Recommendation 1 for Education', 'Recommendation 2 for Education']}, {'title': 'Skills', 'description': 'Sample description for Skills.', 'recommendations': ['Recommendation 1 for Skills', 'Recommendation 2 for Skills']}]}
+2024-09-02 13:56:32,409 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 13:56:32] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 13:59:58,009 - app - INFO - Starting Flask application
+2024-09-02 13:59:58,021 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 13:59:58,021 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 13:59:58,022 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 14:00:00,338 - app - INFO - Starting Flask application
+2024-09-02 14:00:00,347 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 14:00:00,348 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 14:00:03,585 - app - INFO - Rendering index page
+2024-09-02 14:00:03,591 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:00:03] "GET / HTTP/1.1" 200 -
+2024-09-02 14:00:04,464 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:00:04] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 14:00:08,610 - app - INFO - Rendering upload resume page
+2024-09-02 14:00:08,612 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:00:08] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 14:00:15,659 - app - INFO - Received a file upload request
+2024-09-02 14:00:16,165 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:00:16,180 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:00:16,186 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:00:17,221 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:00:17,221 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:00:17,221 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 14:00:17,222 - app - INFO - File type is PDF
+2024-09-02 14:00:17,222 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 14:00:17,223 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:00:17] "POST /upload HTTP/1.1" 200 -
+2024-09-02 14:00:18,378 - app - INFO - Received request to get feedback page
+2024-09-02 14:00:18,379 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:00:18,379 - app - INFO - Calling AI service to process the file
+2024-09-02 14:00:18,379 - app - INFO - Analysis result: {'overall_feedback': 'Sample overall feedback from AI.', 'feedback_cards': [{'title': 'Summary', 'description': 'Sample description for Summary.', 'ats_match': '80%', 'recommendations': ['Recommendation 1 for Summary', 'Recommendation 2 for Summary']}, {'title': 'Experience', 'description': 'Sample description for Experience.', 'recommendations': ['Recommendation 1 for Experience', 'Recommendation 2 for Experience']}, {'title': 'Education', 'description': 'Sample description for Education.', 'recommendations': ['Recommendation 1 for Education', 'Recommendation 2 for Education']}, {'title': 'Skills', 'description': 'Sample description for Skills.', 'recommendations': ['Recommendation 1 for Skills', 'Recommendation 2 for Skills']}]}
+2024-09-02 14:00:18,387 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:00:18] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 14:08:22,209 - app - INFO - Received request to get feedback page
+2024-09-02 14:08:22,210 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:08:22,210 - app - INFO - Calling AI service to process the file
+2024-09-02 14:08:22,210 - app - INFO - Analysis result: {'overall_feedback': 'Sample overall feedback from AI.', 'feedback_cards': [{'title': 'Summary', 'description': 'Sample description for Summary.', 'ats_match': '80%', 'recommendations': ['Recommendation 1 for Summary', 'Recommendation 2 for Summary']}, {'title': 'Experience', 'description': 'Sample description for Experience.', 'recommendations': ['Recommendation 1 for Experience', 'Recommendation 2 for Experience']}, {'title': 'Education', 'description': 'Sample description for Education.', 'recommendations': ['Recommendation 1 for Education', 'Recommendation 2 for Education']}, {'title': 'Skills', 'description': 'Sample description for Skills.', 'recommendations': ['Recommendation 1 for Skills', 'Recommendation 2 for Skills']}]}
+2024-09-02 14:08:22,217 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:08:22] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 14:10:48,666 - app - INFO - Received request to get feedback page
+2024-09-02 14:10:48,667 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:10:48,667 - app - INFO - Calling AI service to process the file
+2024-09-02 14:10:48,667 - app - INFO - Analysis result: {'overall_feedback': 'Sample overall feedback from AI.', 'feedback_cards': [{'title': 'Summary', 'description': 'Sample description for Summary.', 'ats_match': '80%', 'recommendations': ['Recommendation 1 for Summary', 'Recommendation 2 for Summary']}, {'title': 'Experience', 'description': 'Sample description for Experience.', 'recommendations': ['Recommendation 1 for Experience', 'Recommendation 2 for Experience']}, {'title': 'Education', 'description': 'Sample description for Education.', 'recommendations': ['Recommendation 1 for Education', 'Recommendation 2 for Education']}, {'title': 'Skills', 'description': 'Sample description for Skills.', 'recommendations': ['Recommendation 1 for Skills', 'Recommendation 2 for Skills']}]}
+2024-09-02 14:10:48,674 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:10:48] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 14:13:41,668 - app - INFO - Received request to get feedback page
+2024-09-02 14:13:41,669 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:13:41,669 - app - INFO - Calling AI service to process the file
+2024-09-02 14:13:41,669 - app - INFO - Analysis result: {'overall_feedback': 'Sample overall feedback from AI.', 'feedback_cards': [{'title': 'Summary', 'description': 'Sample description for Summary.', 'ats_match': '80%', 'recommendations': ['Recommendation 1 for Summary', 'Recommendation 2 for Summary']}, {'title': 'Experience', 'description': 'Sample description for Experience.', 'recommendations': ['Recommendation 1 for Experience', 'Recommendation 2 for Experience']}, {'title': 'Education', 'description': 'Sample description for Education.', 'recommendations': ['Recommendation 1 for Education', 'Recommendation 2 for Education']}, {'title': 'Skills', 'description': 'Sample description for Skills.', 'recommendations': ['Recommendation 1 for Skills', 'Recommendation 2 for Skills']}]}
+2024-09-02 14:13:41,676 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:13:41] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 14:15:22,963 - app - INFO - Received request to get feedback page
+2024-09-02 14:15:22,964 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:15:22,964 - app - INFO - Calling AI service to process the file
+2024-09-02 14:15:22,964 - app - INFO - Analysis result: {'overall_feedback': 'Sample overall feedback from AI.', 'feedback_cards': [{'title': 'Summary', 'description': 'Sample description for Summary.', 'ats_match': '80%', 'recommendations': ['Recommendation 1 for Summary', 'Recommendation 2 for Summary']}, {'title': 'Experience', 'description': 'Sample description for Experience.', 'recommendations': ['Recommendation 1 for Experience', 'Recommendation 2 for Experience']}, {'title': 'Education', 'description': 'Sample description for Education.', 'recommendations': ['Recommendation 1 for Education', 'Recommendation 2 for Education']}, {'title': 'Skills', 'description': 'Sample description for Skills.', 'recommendations': ['Recommendation 1 for Skills', 'Recommendation 2 for Skills']}]}
+2024-09-02 14:15:22,971 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:15:22] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 14:18:41,560 - app - INFO - Received request to get feedback page
+2024-09-02 14:18:41,560 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:18:41,560 - app - INFO - Calling AI service to process the file
+2024-09-02 14:18:41,560 - app - INFO - Analysis result: {'overall_feedback': 'Sample overall feedback from AI.', 'feedback_cards': [{'title': 'Summary', 'description': 'Sample description for Summary.', 'ats_match': '80%', 'recommendations': ['Recommendation 1 for Summary', 'Recommendation 2 for Summary']}, {'title': 'Experience', 'description': 'Sample description for Experience.', 'recommendations': ['Recommendation 1 for Experience', 'Recommendation 2 for Experience']}, {'title': 'Education', 'description': 'Sample description for Education.', 'recommendations': ['Recommendation 1 for Education', 'Recommendation 2 for Education']}, {'title': 'Skills', 'description': 'Sample description for Skills.', 'recommendations': ['Recommendation 1 for Skills', 'Recommendation 2 for Skills']}]}
+2024-09-02 14:18:41,567 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:18:41] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 14:20:02,792 - app - INFO - Received request to get feedback page
+2024-09-02 14:20:02,792 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:20:02,792 - app - INFO - Calling AI service to process the file
+2024-09-02 14:20:02,792 - app - INFO - Analysis result: {'overall_feedback': 'Sample overall feedback from AI.', 'feedback_cards': [{'title': 'Summary', 'description': 'Sample description for Summary.', 'ats_match': '80%', 'recommendations': ['Recommendation 1 for Summary', 'Recommendation 2 for Summary']}, {'title': 'Experience', 'description': 'Sample description for Experience.', 'recommendations': ['Recommendation 1 for Experience', 'Recommendation 2 for Experience']}, {'title': 'Education', 'description': 'Sample description for Education.', 'recommendations': ['Recommendation 1 for Education', 'Recommendation 2 for Education']}, {'title': 'Skills', 'description': 'Sample description for Skills.', 'recommendations': ['Recommendation 1 for Skills', 'Recommendation 2 for Skills']}]}
+2024-09-02 14:20:02,800 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:20:02] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 14:21:11,821 - app - INFO - Received request to get feedback page
+2024-09-02 14:21:11,821 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:21:11,821 - app - INFO - Calling AI service to process the file
+2024-09-02 14:21:11,821 - app - INFO - Analysis result: {'overall_feedback': 'Sample overall feedback from AI.', 'feedback_cards': [{'title': 'Summary', 'description': 'Sample description for Summary.', 'ats_match': '80%', 'recommendations': ['Recommendation 1 for Summary', 'Recommendation 2 for Summary']}, {'title': 'Experience', 'description': 'Sample description for Experience.', 'recommendations': ['Recommendation 1 for Experience', 'Recommendation 2 for Experience']}, {'title': 'Education', 'description': 'Sample description for Education.', 'recommendations': ['Recommendation 1 for Education', 'Recommendation 2 for Education']}, {'title': 'Skills', 'description': 'Sample description for Skills.', 'recommendations': ['Recommendation 1 for Skills', 'Recommendation 2 for Skills']}]}
+2024-09-02 14:21:11,828 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:21:11] "POST /get_feedback_page HTTP/1.1" 200 -
+2024-09-02 14:21:38,810 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 14:21:39,415 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 14:21:41,688 - app - INFO - Starting Flask application
+2024-09-02 14:21:41,696 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 14:21:41,697 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 14:21:46,722 - app - INFO - Starting Flask application
+2024-09-02 14:21:46,733 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 14:21:46,734 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 14:21:46,734 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 14:21:48,930 - app - INFO - Starting Flask application
+2024-09-02 14:21:48,938 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 14:21:48,938 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 14:21:52,023 - app - INFO - Rendering index page
+2024-09-02 14:21:52,029 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:21:52] "GET / HTTP/1.1" 200 -
+2024-09-02 14:21:52,909 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:21:52] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 14:21:58,829 - app - INFO - Rendering upload resume page
+2024-09-02 14:21:58,832 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:21:58] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 14:22:07,853 - app - INFO - Received a file upload request
+2024-09-02 14:22:08,364 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:22:08,378 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:22:08,385 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:22:09,393 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:22:09,393 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:22:09,394 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 14:22:09,394 - app - INFO - File type is PDF
+2024-09-02 14:22:09,394 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 14:22:09,395 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:22:09] "POST /upload HTTP/1.1" 200 -
+2024-09-02 14:22:10,829 - app - INFO - Received request to get feedback page
+2024-09-02 14:22:10,829 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:22:10,829 - app - INFO - Calling AI service to process the file
+2024-09-02 14:22:10,829 - app - ERROR - Error calling AI service: call_vertex_ai() missing 1 required positional argument: 'file_uri'
+2024-09-02 14:22:10,830 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:22:10] "[35m[1mPOST /get_feedback_page HTTP/1.1[0m" 500 -
+2024-09-02 14:22:25,795 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 14:22:26,448 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 14:22:28,797 - app - INFO - Starting Flask application
+2024-09-02 14:22:28,805 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 14:22:28,806 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 14:22:32,139 - app - INFO - Received a file upload request
+2024-09-02 14:22:33,842 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:22:33,856 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:22:33,862 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:22:34,876 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:22:34,877 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:22:34,877 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-02 14:22:34,877 - app - INFO - File type is PDF
+2024-09-02 14:22:34,877 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-02 14:22:34,878 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:22:34] "POST /upload HTTP/1.1" 200 -
+2024-09-02 14:22:36,201 - app - INFO - Received request to get feedback page
+2024-09-02 14:22:36,202 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-02 14:22:36,202 - app - INFO - Calling AI service to process the file
+2024-09-02 14:22:36,202 - app - ERROR - Error calling AI service: name 'fil' is not defined
+2024-09-02 14:22:36,202 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:22:36] "[35m[1mPOST /get_feedback_page HTTP/1.1[0m" 500 -
+2024-09-02 14:22:59,847 - app - INFO - Rendering index page
+2024-09-02 14:22:59,853 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:22:59] "GET / HTTP/1.1" 200 -
+2024-09-02 14:23:00,646 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:23:00] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 14:23:13,545 - app - INFO - Rendering upload resume page
+2024-09-02 14:23:13,548 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:23:13] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 14:23:24,299 - app - INFO - Received a file upload request
+2024-09-02 14:23:31,167 - app - INFO - Received a file upload request
+2024-09-02 14:23:32,438 - app - INFO - File BamideleTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/BamideleTewogbadeResume.pdf
+2024-09-02 14:23:32,445 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:23:32,451 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:23:33,449 - ai_service - INFO - File uploaded successfully to GCS: uploads/BamideleTewogbadeResume.pdf
+2024-09-02 14:23:33,449 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/BamideleTewogbadeResume.pdf
+2024-09-02 14:23:33,449 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/BamideleTewogbadeResume.pdf', 'filename': 'BamideleTewogbadeResume.pdf'}>
+2024-09-02 14:23:33,449 - app - INFO - File type is PDF
+2024-09-02 14:23:33,450 - app - INFO - File BamideleTewogbadeResume.pdf removed from local storage
+2024-09-02 14:23:33,450 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:23:33] "POST /upload HTTP/1.1" 200 -
+2024-09-02 14:23:34,344 - app - INFO - File BamideleTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/BamideleTewogbadeResume.pdf
+2024-09-02 14:23:34,351 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:23:34,357 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:23:35,358 - ai_service - INFO - File uploaded successfully to GCS: uploads/BamideleTewogbadeResume.pdf
+2024-09-02 14:23:35,358 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/BamideleTewogbadeResume.pdf
+2024-09-02 14:23:35,358 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/BamideleTewogbadeResume.pdf', 'filename': 'BamideleTewogbadeResume.pdf'}>
+2024-09-02 14:23:35,358 - app - INFO - File type is PDF
+2024-09-02 14:23:35,359 - app - INFO - File BamideleTewogbadeResume.pdf removed from local storage
+2024-09-02 14:23:35,360 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:23:35] "POST /upload HTTP/1.1" 200 -
+2024-09-02 14:23:39,702 - app - INFO - Received request to get feedback page
+2024-09-02 14:23:39,703 - app - INFO - Session data at feedback page: filename=BamideleTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/BamideleTewogbadeResume.pdf
+2024-09-02 14:23:39,703 - app - INFO - Calling AI service to process the file
+2024-09-02 14:23:39,703 - app - ERROR - Error calling AI service: name 'fil' is not defined
+2024-09-02 14:23:39,704 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:23:39] "[35m[1mPOST /get_feedback_page HTTP/1.1[0m" 500 -
+2024-09-02 14:29:17,693 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 14:29:18,360 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 14:29:20,722 - app - INFO - Starting Flask application
+2024-09-02 14:29:20,731 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 14:29:20,732 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 14:29:23,835 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 14:29:24,479 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 14:29:26,903 - app - INFO - Starting Flask application
+2024-09-02 14:29:26,911 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 14:29:26,912 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 14:29:33,096 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 14:29:33,776 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 14:29:36,244 - app - INFO - Starting Flask application
+2024-09-02 14:29:36,253 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 14:29:36,253 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 14:31:14,385 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-02 14:31:15,078 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 14:31:17,409 - app - INFO - Starting Flask application
+2024-09-02 14:31:17,418 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 14:31:17,418 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 14:31:20,524 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-02 14:31:21,138 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 14:31:23,401 - app - INFO - Starting Flask application
+2024-09-02 14:31:23,410 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 14:31:23,410 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 14:31:33,669 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-02 14:31:34,316 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 14:32:04,647 - app - INFO - Starting Flask application
+2024-09-02 14:32:04,658 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 14:32:04,659 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 14:32:04,659 - werkzeug - INFO -  * Restarting with stat
+2024-09-02 14:32:06,936 - app - INFO - Starting Flask application
+2024-09-02 14:32:06,944 - werkzeug - WARNING -  * Debugger is active!
+2024-09-02 14:32:06,944 - werkzeug - INFO -  * Debugger PIN: 736-784-721
+2024-09-02 14:32:11,003 - app - INFO - Rendering index page
+2024-09-02 14:32:11,009 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:32:11] "GET / HTTP/1.1" 200 -
+2024-09-02 14:32:11,870 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:32:11] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-02 14:32:16,483 - app - INFO - Rendering upload resume page
+2024-09-02 14:32:16,486 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:32:16] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-02 14:32:23,413 - app - INFO - Received a file upload request
+2024-09-02 14:32:26,103 - app - INFO - File BamideleTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/BamideleTewogbadeResume.pdf
+2024-09-02 14:32:26,118 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:32:26,125 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:32:27,150 - ai_service - INFO - File uploaded successfully to GCS: uploads/BamideleTewogbadeResume.pdf
+2024-09-02 14:32:27,150 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/BamideleTewogbadeResume.pdf
+2024-09-02 14:32:27,150 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/BamideleTewogbadeResume.pdf', 'filename': 'BamideleTewogbadeResume.pdf'}>
+2024-09-02 14:32:27,150 - app - INFO - File type is PDF
+2024-09-02 14:32:27,151 - app - INFO - File BamideleTewogbadeResume.pdf removed from local storage
+2024-09-02 14:32:27,151 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:32:27] "POST /upload HTTP/1.1" 200 -
+2024-09-02 14:32:37,077 - app - INFO - Received request to get feedback page
+2024-09-02 14:32:37,077 - app - INFO - Session data at feedback page: filename=BamideleTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/BamideleTewogbadeResume.pdf
+2024-09-02 14:32:37,077 - app - INFO - Calling AI service to process the file
+2024-09-02 14:32:37,084 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:32:37,089 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-02 14:32:37,956 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/BamideleTewogbadeResume.pdf
+2024-09-02 14:32:38,047 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-02 14:32:38,047 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-02 14:32:38,048 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-02 14:32:38,048 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-02 14:32:38,048 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-02 14:32:38,048 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-02 14:32:38,049 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-02 14:32:42,940 - ai_service - INFO - Received response from Vertex AI.
+2024-09-02 14:32:42,942 - app - INFO - Analysis result: {'overall_feedback': "Bamidele, this resume showcases your strong technical skills and experience as a software developer. You've clearly built a diverse portfolio across fintech, AI, and mobile app development. However, to maximize your impact, I recommend focusing on quantifying your achievements and tailoring your resume to specific job applications.", 'feedback_cards': [{'title': 'Summary', 'description': 'This is a good start, but it could be even more compelling. Instead of stating your passions, demonstrate them. Mention a key project or achievement that highlights your fintech, AI, or mobile app development expertise.  Consider adding a quantifiable result to showcase your impact. For example, "Led the development of a mobile app that increased user engagement by 25% within the first quarter."', 'ats_match': '70%', 'recommendations': ['Rewrite the summary to highlight a specific achievement or project, demonstrating your value proposition.', 'Quantify your achievements wherever possible.']}, {'title': 'Experience', 'description': 'This section is your strength. You\'ve detailed impactful projects and responsibilities. Your involvement with Fasyl Technology Group demonstrates your experience in a demanding financial technology environment.  The diverse roles you\'ve held, from consultant programmer to lead ambassador, show your adaptability. However, you could further enhance your resume by  adding more specific details on the impact of your work on the company\'s bottom line. For example, instead of saying "Successfully deployed solutions at over 7 banks", quantify the impact.  Did these deployments lead to increased revenue, reduced costs, or improved customer satisfaction?  Highlighting these quantifiable results will make your achievements stand out.', 'ats_match': '85%', 'recommendations': ['Quantify the impact of your achievements by using numbers and metrics.', 'Prioritize the projects and responsibilities most relevant to the specific job you are applying for.', 'Use action verbs to describe your contributions, like "Developed", "Implemented", "Led", "Managed", etc.']}, {'title': 'Education', 'description': "You've presented your educational background well, showcasing your computer science degree from Catholic University College, Ghana. It's a good foundation for your career. ", 'ats_match': '90%', 'recommendations': ['Consider adding a relevant course or project from your university experience that showcases your technical skills or passion for software development.']}, {'title': 'Skills', 'description': "Bamidele, you have a strong set of skills! Your proficiency in various programming languages and frameworks, particularly Java, Python, Flutter, and Spring Boot, is valuable in today's market. The inclusion of tools like Kafka and Git demonstrates your experience with modern development practices. ", 'ats_match': '95%', 'recommendations': ["Consider listing specific technologies related to the job you're applying for.  For example, if the job requires React, you could mention it here. You can also categorize your skills to make them easier to scan."]}]}
+2024-09-02 14:32:42,950 - werkzeug - INFO - 127.0.0.1 - - [02/Sep/2024 14:32:42] "POST /get_feedback_page HTTP/1.1" 200 -
