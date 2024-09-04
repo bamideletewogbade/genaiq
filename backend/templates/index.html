@@ -1,381 +1,367 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CV.ai</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #8ecae6; /* Light blue background */
-      color: #023047; /* Dark blue text */
-      font-family: 'Roboto', sans-serif; 
-    }
-    .header-section {
-      display: flex;
-      align-items: center;
-      height: 100vh;
-      padding: 2rem;
-      background-color: #219ebc; /* Blue background for header */
-      color: #ffffff; /* White text */
-      margin: 0; /* Remove default margin */
-    }
-    .header-image {
-      flex: 1;
-      background: url('/static/images/oka.jpg') no-repeat center center;
-      background-size: cover;
-      height: 100%;
-      border-radius: 0.5rem;
-    }
-    .header-text {
-      flex: 1;
-      padding: 2rem;
-      max-width: 600px;
-    }
-    .header-text h1 {
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #ffffff; /* Ensure text visibility on dark background */
-    }
-    .header-text p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      color: #ffffff; /* Ensure text visibility on dark background */
-    }
-    .btn-primary {
-      background-color: #fb8500; /* Orange for primary buttons */
-      border: none;
-    }
-    .btn-primary:hover {
-      background-color: #ffb703; /* Yellow for hover effect */
-    }
-    .btn-secondary {
-      background-color: #ffb703; /* Yellow for secondary buttons */
-      border: none;
-    }
-    .btn-secondary:hover {
-      background-color: #fb8500; /* Orange for hover effect */
-    }
-    .btn-outline-primary {
-    background-color: transparent; /* Transparent background for outlined buttons */
-    color: #fb8500; /* Orange text color */
-    border: 2px solid #fb8500; /* Orange border */
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV.ai - AI-Powered Resume Enhancement</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #023047;
+            --secondary-color: #fb8500;
+            --accent-color: #8ecae6;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+        }
 
-.btn-outline-primary:hover {
-    background-color: #ffb703; /* Yellow background on hover */
-    color: white; /* White text color on hover */
-    border-color: #ffb703; /* Yellow border on hover */
-}
-    .card {
-      border: none;
-      border-radius: 0.5rem;
-      text-align: center;
-    }
-    .card-title {
-      color: #023047; /* Dark blue for card titles */
-    }
-    .card-text {
-      color: #023047; /* Dark blue for card text */
-    }
-    footer {
-  background-color: #023047; /* Dark blue background for footer */
-  color: #ffffff; /* White text in footer */
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-footer h3 {
-  color: #fff; /* Yellow for footer headings */
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--secondary-color) !important;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+
+        .btn-custom {
+            background-color: var(--secondary-color);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #ffb703;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
+        }
+
+        .header-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
+            height: 100vh;
+            display: flex;
+        }
+
+        .header-image {
+            background: url('/static/images/oka.jpg') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .header-image:hover {
+            transform: scale(1.05);
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .header-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .features {
+            height:100vh;
+            display: flex;
+        }
+            /* General Styles */
+            #faq h2 {
+                font-weight: bold;
+                color: black; /* Consistent with your color scheme */
+            }
+        
+            #faqQuestions .list-group-item {
+                cursor: pointer;
+                background-color: #f8f9fa; /* Light shade for background */
+                color: black;
+                transition: all 0.3s ease;
+                border-radius: 5px;
+            }
+        
+            #faqQuestions .list-group-item:hover,
+            #faqQuestions .list-group-item.active {
+                background-color: #345b83;
+                color: white; /* White text on active item */
+                font-weight: bold;
+            }
+        
+            .answer {
+                display: none;
+            }
+        
+            .answer.active {
+                display: block;
+                background-color: #ffffff; /* White background */
+                color: black; /* Text color */
+            }
+        
+            .shadow-sm {
+                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Soft shadow for answers */
+            }
+        
+            .rounded {
+                border-radius: 10px; /* Rounded corners for answers */
+            }
+
+        footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding-top: 50px;
+    flex-shrink: 0;
 }
 
 footer a {
-  color: #ffffff; /* White links */
+    color: var(--accent-color);
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-  color: #fb8500; /* Orange for link hover effect */
+    color: var(--secondary-color);
+    text-decoration: none;
 }
 
-footer .text-center.p-4 {
-  background-color: rgba(0, 0, 0, 0.05); /* Light background for bottom section */
+footer h6 {
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .navbar .nav-links {
-      flex-grow: 1;
-      display: flex;
-      justify-content: center;
-    }
-    .navbar .nav-links a {
-      margin: 0 1rem;
-    }
-    .notification-icon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #FE8C00; /* Use your preferred color */
-      color: #fff;
-      border-radius: 50%;
-      padding: 15px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      z-index: 1000;
-    }
-    .notification-icon i {
-      font-size: 24px;
-    }
-
-/* Tab Styling */
-#faq {
-  max-width: 900px;
-  margin: 0 auto;
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: all 0.3s ease;
 }
 
-.nav-pills .nav-link {
-  border-radius: 0;
-  border: 1px solid #ddd;
-  padding: 15px;
-  background-color: #f8f9fa;
-  color: #333;
-  cursor: pointer;
+.social-icons a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-3px);
 }
 
-.nav-pills .nav-link.active {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.nav-pills .nav-link:hover {
-  background-color: #0056b3;
-  color: #fff;
-}
-
-.faq-content {
-  display: none;
-  padding: 15px;
-  border: 1px solid #ddd;
-  background-color: #fff;
-}
-
-.faq-content.show {
-  display: block;
-}
-  </style>
+   
+    </style>
 </head>
+
 <body>
-  <header class="p-3 text-bg-dark">
-    <div class="container">
-      <div class="navbar">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" style="font-size: large;">
-              <b>CV.ai</b>
-        </a>
-        <div class="nav-links">
-          <ul class="nav col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">Resume Builder</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">Resume Optimizer</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">Resume Matcher</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">Resume Roast</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-          </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">CV.ai</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Resume Builder</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Resume Optimizer</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Resume Matcher</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Resume Roast</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                    </ul>
+                    <div class="d-flex">
+                        <a href="#" class="btn btn-outline-light me-2">Login</a>
+                        <a href="#" class="btn btn-custom">Create CV</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="header-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Swapped the columns here -->
+                    <div class="col-lg-6">
+                        <div class="header-image"></div>
+                    </div>
+                    <div class="col-lg-6 header-text">
+                        <h1 class="display-4">Welcome to CV.ai</h1>
+                        <p>Transform your career with CV.ai, the advanced AI-driven tool designed to enhance your resume
+                            and stand out in the competitive job market. Our personalized approach tailors your resume
+                            to highlight your strengths and align with industry expectations.</p>
+                        <a href="/upload_resume_page" class="btn btn-custom btn-lg px-4 me-sm-3">Get Instant Feedback on CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="container px-4 py-5">
+            <h2 class="pb-2 border-bottom text-center">Why Choose CV.ai?</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
+                <div class="col">
+                    <article class="card h-100 text-center shadow-lg feature-card">
+                        <div class="card-body">
+                            <h3 class="card-title">Personalized AI Insights</h3>
+                            <p class="card-text">Harness the power of AI to receive customized recommendations that
+                                reflect your unique skills and career goals.</p>
+                            <a href="#" class="btn btn-custom">Upload Resume to get Insights</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="card h-100 text-center shadow-lg feature-card">
+                        <div class="card-body">
+                            <h3 class="card-title">Resume Optimization</h3>
+                            <p class="card-text">Ensure your resume passes Applicant Tracking Systems (ATS) with our
+                                advanced keyword optimization strategies.</p>
+                            <a href="#" class="btn btn-custom">Try Optimization Now</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="card h-100 text-center shadow-lg feature-card">
+                        <div class="card-body">
+                            <h3 class="card-title">Instant Feedback</h3>
+                            <p class="card-text">Receive immediate, actionable feedback to help you refine your resume
+                                and maximize its impact.</p>
+                                <a href="/upload_resume_page" class="btn btn-custom">Get Instant Feedback</a>
+                                </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="container px-4 py-5">
+            <h2 class="pb-2 border-bottom text-center text-black">Frequently Asked Questions</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <ul class="list-group border-0" id="faqQuestions">
+                        <li class="list-group-item border-0 mb-2 py-3 active" data-bs-target="#answer1">How does CV.ai enhance my resume?</li>
+                        <li class="list-group-item border-0 mb-2 py-3" data-bs-target="#answer2">Is CV.ai secure?</li>
+                        <li class="list-group-item border-0 mb-2 py-3" data-bs-target="#answer3">What is the cost of using CV.ai?</li>
+                    </ul>
+                </div>
+                <div class="col-md-8">
+                    <div id="faqAnswers">
+                        <div id="answer1" class="answer active p-4 rounded bg-white shadow-sm">
+                            <p>CV.ai uses advanced AI algorithms to analyze your resume and provide tailored suggestions to
+                                improve its structure, content, and keyword optimization, ensuring it stands out to potential
+                                employers and passes through Applicant Tracking Systems (ATS).</p>
+                        </div>
+                        <div id="answer2" class="answer p-4 rounded bg-white shadow-sm">
+                            <p>Yes, CV.ai employs state-of-the-art encryption and data protection measures to ensure your
+                                personal information and resume details are kept secure and confidential. We prioritize your
+                                privacy at all times.</p>
+                        </div>
+                        <div id="answer3" class="answer p-4 rounded bg-white shadow-sm">
+                            <p>CV.ai offers a range of pricing options, from a free basic plan to premium plans that provide
+                                more in-depth analysis and features. You can choose the plan that best suits your needs and
+                                budget.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <footer class="text-center text-lg-start">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">CV.ai</h5>
+                    <p>Empowering careers with AI-driven resume solutions.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+                    <p><a href="#" class="text-reset">Resume Builder</a></p>
+                    <p><a href="#" class="text-reset">Resume Optimizer</a></p>
+                    <p><a href="#" class="text-reset">Resume Matcher</a></p>
+                    <p><a href="#" class="text-reset">Resume Roast</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+                    <p><a href="#" class="text-reset">Pricing</a></p>
+                    <p><a href="#" class="text-reset">Contact Us</a></p>
+                    <p><a href="#" class="text-reset">FAQs</a></p>
+                    <p><a href="#" class="text-reset">Terms of Service</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3"></i> 1234 Street Name, City, Country</p>
+                    <p><i class="fas fa-envelope me-3"></i> info@cv.ai</p>
+                    <p><i class="fas fa-phone me-3"></i> +1 234 567 890</p>
+                </div>
+            </div>
         </div>
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-warning me-2">Login</button>
-          <button type="button" class="btn btn-outline-primary me-2">Create CV</button>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 CV.ai. All rights reserved.
         </div>
-      </div>
-    </div>
-  </header>
+    </footer>
 
-  <header class="header-section">
-    <div class="header-image"></div>
-    <div class="header-text">
-      <h1 class="display-4">Welcome to CV.ai</h1>
-      <p>Transform your career with CV.ai, the advanced AI-driven tool designed to enhance your resume and stand out in the competitive job market. Our personalized approach tailors your resume to highlight your strengths and align with industry expectations.</p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-start">
-        <a href="/upload_resume_page" class="btn btn-primary btn-lg px-4 me-sm-3">Get Instant Feedback on CV</a>
-      </div>
-    </div>
-  </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqQuestions = document.querySelectorAll('#faqQuestions .list-group-item');
+            const faqAnswers = document.querySelectorAll('#faqAnswers .answer');
+    
+            faqQuestions.forEach((question, index) => {
+                question.addEventListener('click', function () {
+                    // Remove active class from all questions and answers
+                    faqQuestions.forEach(q => q.classList.remove('active'));
+                    faqAnswers.forEach(a => a.classList.remove('active'));
+    
+                    // Add active class to the clicked question and corresponding answer
+                    question.classList.add('active');
+                    const targetAnswer = document.querySelector(question.getAttribute('data-bs-target'));
+                    targetAnswer.classList.add('active');
+                });
+            });
+    
+            // Initialize the first answer as visible
+            faqAnswers[0].classList.add('active');
+        });
+    </script>
 
-  <section id="features" class="container px-4 py-5">
-    <h2 class="pb-2 border-bottom text-center">Why Choose CV.ai?</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <!-- Feature 1 -->
-      <div class="col">
-        <div class="card h-100 text-center shadow-lg">
-          <div class="card-body">
-            <h3 class="card-title">Personalized AI Insights</h3>
-            <p class="card-text">Harness the power of AI to receive customized recommendations that reflect your unique skills and career goals.</p>
-            <a href="#" id="continueButton" class="btn btn-outline-primary"><b>Upload Resume to get Insights</b></a>
-          </div>
-        </div>
-      </div>
-      <!-- Feature 3 -->
-      <div class="col">
-        <div class="card h-100 text-center shadow-lg">
-          <div class="card-body">
-            <h3 class="card-title">Smart Resume Matcher</h3>
-            <p class="card-text">Match your resume with job descriptions to ensure you meet the key requirements and stand out.</p>
-            <a href="#" id="continueButton" class="btn btn-outline-primary"><b>Check CV-Job fit</b></a>
-          </div>
-        </div>
-      </div>
-      <!-- Feature 4 -->
-      <div class="col">
-        <div class="card h-100 text-center shadow-lg">
-          <div class="card-body">
-            <h3 class="card-title">Resume Roast</h3>
-            <p class="card-text">Add a touch of fun with a light-hearted review of your resume, providing insightful feedback in a playful manner.</p>
-            <a href="#" id="continueButton" class="btn btn-outline-primary"><b>Roast Me!</b></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-   <!-- FAQ Section -->
-   <section id="faq" class="container px-4 py-5">
-    <h2 class="pb-2 border-bottom text-center">Frequently Asked Questions</h2>
-    <div class="row">
-      <div class="col-md-3">
-        <!-- Tabs -->
-        <ul class="nav nav-pills flex-column" id="faqTabs">
-          <li class="nav-item">
-            <a class="nav-link active" href="#" data-tab="faq1">Why should I use CV.ai?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-tab="faq2">What is ATS?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-tab="faq3">What is the meaning of ATS optimized CV?</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-9">
-        <!-- Tab Content -->
-        <div id="faqContent">
-          <!-- Content for Question 1 -->
-          <div class="faq-content" id="faq1">
-            At CV.ai, we're not just offering a resume-building tool; we're providing you with a powerful strategic partner in your career journey.
-            <ul>
-              <li><b>Advanced AI-Powered Insights</b></li>
-              Our platform harnesses the latest in large language models (LLMs) to analyze your resume with unparalleled speed and accuracy. By leveraging cutting-edge AI technology, we process information faster and more efficiently, offering you deeper, more actionable insights. This advanced analysis allows us to tailor your CV in a way that highlights your unique strengths and aligns perfectly with industry expectations.
-              <li><b>Precision in Personalization</b></li>
-              With our LLM-powered resume analyzer, we go beyond mere error detection. Our AI meticulously evaluates your resume, identifying areas for improvement and providing specific recommendations to enhance your professional presentation. This means you receive not just generic advice, but insights that are directly relevant to your career goals and aspirations.
-              <li><b>Tailored CV Optimization</b></li>
-              Our Resume Optimizer uses sophisticated algorithms to align your CV with targeted job opportunities. This ensures your resume is not only visually appealing but also optimized for Applicant Tracking Systems (ATS), increasing your chances of making it through initial screenings.
-            </ul>
-          </div>
-          <!-- Content for Question 2 -->
-          <div class="faq-content" id="faq2">
-            ATS, or Applicant Tracking System, is like a robot that helps companies find the right people for a job. It looks at resumes and picks out the ones that match what the company needs, so they don’t have to look through all the resumes themselves.
-          </div>
-          <!-- Content for Question 3 -->
-          <div class="faq-content" id="faq3">
-            An ATS-optimized CV is a resume that is specially designed to be easily read by a computer system called an Applicant Tracking System (ATS). This system helps companies sort through job applications by looking for specific words and formats. An ATS-optimized CV makes sure your resume gets noticed by both the computer and the person hiring.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
- 
-
-  <footer class="text-center text-lg-start text-white">
-    <!-- Social Media Links -->
-    <section class="d-flex justify-content-center p-4 border-bottom" style="background-color: #023047;">
-      <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
-      </div>
-      <div>
-        <a href="#" class="me-4 text-reset"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="me-4 text-reset"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="me-4 text-reset"><i class="fab fa-google"></i></a>
-        <a href="#" class="me-4 text-reset"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="me-4 text-reset"><i class="fab fa-linkedin"></i></a>
-        <a href="#" class="me-4 text-reset"><i class="fab fa-github"></i></a>
-      </div>
-    </section>
-  
-    <!-- Footer Content -->
-    <section class="p-4" style="background-color: #023047;">
-      <div class="container text-center text-md-start">
-        <div class="row">
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto">
-            <h3 class="text-uppercase fw-bold mb-4">CV.ai</h3>
-            <p>At CV.ai, we use advanced AI technology to streamline the resume-building process and ensure you have the best chance of landing your dream job.</p>
-          </div>
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h3 class="text-uppercase fw-bold mb-4">Tools</h3>
-            <p><a href="#" class="text-reset">Resume Optimizer</a></p>
-            <p><a href="#" class="text-reset">Resume Matcher</a></p>
-            <p><a href="#" class="text-reset">Resume Roast</a></p>
-            <p><a href="#" class="text-reset">Pricing</a></p>
-          </div>
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h3 class="text-uppercase fw-bold mb-4">Useful Links</h3>
-            <p><a href="#" class="text-reset">Your Account</a></p>
-            <p><a href="#" class="text-reset">FAQs</a></p>
-            <p><a href="#" class="text-reset">Privacy Policy</a></p>
-            <p><a href="#" class="text-reset">Terms & Conditions</a></p>
-          </div>
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <h3 class="text-uppercase fw-bold mb-4">Contact</h3>
-            <!-- <p><i class="fas fa-home me-3"></i> Lagos, Nigeria</p> -->
-            <p><i class="fas fa-envelope me-3"></i> bishoptewogbade@gmail.com</p>
-            <p><i class="fas fa-phone me-3"></i> +233 59 779 0470</p>
-            <p><i class="fas fa-print me-3"></i> +233 59 779 0470</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  
-    <!-- Footer Bottom -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2024 CV.ai. All rights reserved.
-    </div>
-  </footer>
-  
-
-  <!-- Chat Notification Icon -->
-  <div class="notification-icon">
-    <i class="fas fa-comments"></i>
-  </div>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('#faqTabs .nav-link');
-  const contents = document.querySelectorAll('#faqContent .faq-content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', (event) => {
-      event.preventDefault();
-
-      // Remove active class from all tabs and hide all contents
-      tabs.forEach(t => t.classList.remove('active'));
-      contents.forEach(c => c.classList.remove('show'));
-
-      // Add active class to the clicked tab and show corresponding content
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.tab).classList.add('show');
-    });
-  });
-});
-
-</script>
-<script>
-  document.getElementById('continueButton').addEventListener('click', () => {
-      window.location.href = 'continue_btn_index.html';
-  });
-</script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO6GJtBvZ0G2IkqnkJ4A8vHe5d5o5q+6vPpP7kQpC0Ad0S4U3K6kw" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-D5mZ3qRJUmO40WuD8QsoF48twTVYf8OX4efX7KeF+2wR+8K2eFVuQkc6MPb7V+fa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Tgoy5XvsOSmXYFMBivH9c7tKefQHGeLr1MO+w5vvF6E9euH6kBfq2C7wTocX4Tb" crossorigin="anonymous"></script>
 </body>
+
 </html>
+
+
+
+
+
+
+
+

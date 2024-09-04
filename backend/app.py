@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, send_file, session
+from flask import Flask, render_template, request, jsonify, send_file, session, redirect, url_for
 from werkzeug.utils import secure_filename
 import os
 import logging
@@ -14,6 +14,9 @@ SECRET_KEY = "bishop"
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = SECRET_KEY
+
+# Replace with your Paystack secret key
+PAYSTACK_SECRET_KEY = 'sk_test_your_secret_key'
 
 def setup_logging():
     """Sets up logging with file rotation."""
@@ -143,10 +146,12 @@ def get_feedback_page():
         try:
             feedback = call_vertex_ai(file_uri)
             app.logger.info(f"Analysis result: {feedback}")
+            session['ai_response'] = feedback
+
 
             # Process the result and prepare feedback data dynamically
             analysis_result = feedback
-            return render_template('feedback_page.html', feedback=analysis_result), 200
+            return redirect(url_for('feedback_summary'))
 
         except Exception as e:
             app.logger.error(f"Error calling AI service: {e}")
@@ -208,6 +213,98 @@ def download_feedback_pdf():
     else:
         app.logger.error("PDF file not found")
         return jsonify({'error': 'PDF file not found'}), 404
+
+# Endpoint to only display summary
+@app.route('/feedback_summary', methods=['GET'])
+def feedback_summary():
+    # Assume the AI-generated response is stored in the session
+    ai_response = session.get('ai_response', {})
+    summary = ai_response.get('overall_feedback', 'Summary not available.')
+
+    return render_template('feedback_summary.html', summary=summary)
+
+@app.route('/full_report', methods=['GET'])
+def full_report():
+    app.logger.info("Received request to get feedback page")
+
+    try:
+        filename = session.get('filename')
+        file_uri = session.get('file_uri')
+        app.logger.info(f"Session data at feedback page: filename={filename}, file_uri={file_uri}")
+
+        if not filename or not file_uri:
+            app.logger.error("Required session data missing")
+            return jsonify({'error': 'Session data missing'}), 400
+
+        # Process the file using AI service
+        app.logger.info("Calling AI service to process the file")
+
+        try:
+            feedback = call_vertex_ai(file_uri)
+            app.logger.info(f"Analysis result: {feedback}")
+            session['ai_response'] = feedback
+
+            # Process the result and prepare feedback data dynamically
+            analysis_result = feedback
+            return render_template('feedback_page.html', feedback=analysis_result), 200
+
+        except Exception as e:
+            app.logger.error(f"Error calling AI service: {e}")
+            return jsonify({'error': 'Error calling AI service'}), 500
+
+    except Exception as e:
+        app.logger.error(f"Error processing feedback: {e}")
+        return jsonify({'error': 'Error processing feedback'}), 500
+
+@app.route('/payment', methods=['GET', 'POST'])
+def payment():
+    if request.method == 'POST':
+        # Process payment here
+        payment_successful = True  # Example placeholder for actual payment logic
+        
+        if payment_successful:
+            return redirect(url_for('full_report'))
+
+    return render_template('payment.html')
+
+@app.route('/start_payment', methods=['POST'])
+def start_payment():
+    email = request.form.get('email')
+    payment_method = request.form.get('payment-method')
+
+    # Determine the amount based on the payment method
+    if payment_method == 'card':
+        amount = 1000  # Amount in kobo (10 dollars), Paystack expects the amount in the smallest currency unit
+        currency = 'NGN'  # Use 'NGN' for Naira
+    elif payment_method == 'mobile_money':
+        amount = 16000  # Amount in GHS, Paystack expects the amount in the smallest currency unit
+        currency = 'GHS'  # Use 'GHS' for Ghana Cedis
+    else:
+        return jsonify({'status': 'failed', 'message': 'Invalid payment method'}), 400
+
+    # Initialize the payment
+    url = 'https://api.paystack.co/transaction/initialize'
+    PAYSTACK_SECRET_KEY = 'sk_test_d09c41f57e1897f4ae815c7da361ab9e2a780d93'
+    headers = {
+        'Authorization': f'Bearer {PAYSTACK_SECRET_KEY}',
+        'Content-Type': 'application/json',
+    }
+
+    data = {
+        'email': email,
+        'amount': amount,
+        'currency': currency,  # Set the currency based on the payment method
+        'callback_url': url_for('verify_payment', _external=True)  # Set callback URL to verify payment after completion
+    }
+
+    response = requests.post(url, json=data, headers=headers)
+    response_data = response.json()
+
+    if response_data['status']:
+        # Redirect user to the Paystack payment page
+        return redirect(response_data['data']['authorization_url'])
+    else:
+        return jsonify({'status': 'failed', 'message': 'Payment initialization failed'}), 400
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
