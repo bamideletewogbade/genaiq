@@ -159,3 +159,84 @@ def call_vertex_ai(file_uri):
     except Exception as e:
         logger.error(f"Error in call_vertex_ai: {e}")
         return {"error": f"Error processing the file: {str(e)}"}
+
+
+def roast_resume(file_uri):
+    """Calls Vertex AI to analyze the extracted text and returns the analysis in JSON format."""
+    try:
+        file_content = download_file_from_gcs(file_uri)
+        
+        if not file_content:
+            logger.error(f"Failed to download file from GCS: {file_uri}")
+            return {"error": "Failed to download file from GCS."}
+        
+        file_extension = os.path.splitext(file_uri)[1].lower()
+        
+        if file_extension == '.pdf':
+            file_text = extract_text_from_pdf(file_content)
+        elif file_extension == '.docx':
+            file_text = extract_text_from_docx(file_content)
+        elif file_extension == '.txt':
+            file_text = extract_text_from_txt(file_content)
+        else:
+            logger.warning(f"Unsupported file type: {file_extension}")
+            return {"error": "Unsupported file type."}
+        
+        if not file_text.strip():
+            logger.warning("No text extracted from the file.")
+            return {"error": "No text extracted from the file."}
+        
+        logger.info("Initializing Vertex AI with the given project ID and location.")
+        project_id = "genaiq"
+        location = "us-central1"
+        initialize_vertex_ai(project_id, location)
+
+        logger.info("Loading the Vertex AI generative model.")
+        model = GenerativeModel("gemini-1.5-flash-001", generation_config={"response_mime_type": "application/json"})
+
+        logger.info("Preparing the prompt for Vertex AI.")
+        prompt = (
+            "Yo, listen up! You're about to channel your inner Kevin Hart, that pint-sized comedy powerhouse with a mouth that runs faster than Usain Bolt on Red Bull. Your mission? Roast the hell outta this resume, but make it so funny the person might frame it instead of cry. "
+            "let the roast have the following fields:\n\n"
+            "step: First Impressions\n"
+            "description: Start with a 'First Impressions' bit. You know, like when Kevin walks on stage and just starts ripping into the audience. What's the first thing that hits you about this resume? Is it trying so hard it's sweating? Is it emptier than Kevin's height chart?\n\n"
+            "step: Section-by-Section Roast\n"
+            "description: Go section by section. Education, experience, skills—whatever's there, tear it apart like it owes you money. But remember, we're going for laughs, not tears. Think of each section like a different person in Kevin's story—give 'em all a voice, a personality.\n\n"
+            "step: Kevin Hart-isms\n"
+            "description: Sprinkle in some classic Kevin Hart-isms. You know, those little catchphrases or vocal tics he does. Maybe throw in a 'You gon' learn today!' when you see a particularly sad skill listed.\n\n"
+            "step: Physical Comedy\n"
+            "description: Don't forget the physical comedy! Yeah, I know you're text-based, but describe some exaggerated reactions or movements. Like, 'If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!''\n\n"
+            "step: Real Talk\n"
+            "description: End with a 'Real Talk' moment. Kevin always brings it home with a bit of genuine advice wrapped in humor. Give 'em something they can actually use, but make it funny.\n\n"
+            "Response should be in JSON format. Strip all special characters so I can use JSON response easily. "
+            "Structure it like this:\n"
+            "introduction: Provides the main intro roast.\n"
+            "steps: Each step includes a header and description, which are rendered in separate sections."
+        )
+
+        logger.info("Creating a Part object from the extracted file text.")
+        part = Part.from_text(file_text)
+
+        logger.info("Sending the prompt to Vertex AI for content generation.")
+        response = model.generate_content([part, prompt])
+        
+        if response and response.text:
+            logger.info("Received response from Vertex AI.")
+            response_text = response.text
+            
+            logger.debug(f"Raw response text: {response_text}")
+
+            try:
+                # Strip JSON formatting characters and parse
+                clean_response = response_text.strip().strip('```json').strip('```').strip()
+                return json.loads(clean_response)
+            except json.JSONDecodeError as json_err:
+                logger.error(f"Failed to parse JSON response: {json_err}")
+                return {"error": "Failed to parse JSON response.", "raw_response": response_text}
+        else:
+            logger.warning("No response received from Vertex AI.")
+            return {"error": "No response received from Vertex AI."}
+
+    except Exception as e:
+        logger.error(f"Error in roast_resume: {e}")
+        return {"error": f"Error processing the file: {str(e)}"}

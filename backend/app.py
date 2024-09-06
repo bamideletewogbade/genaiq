@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-from ai_service import upload_local_file_to_gcs, call_vertex_ai
+from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume
 import requests
 
 app = Flask(__name__)
@@ -162,47 +162,39 @@ def get_feedback_page():
         app.logger.error(f"Error processing feedback: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
 
-def call_vertex_ai_test():
-    """Simulated response from AI service."""
-    simulated_response = {
-        'overall_feedback': 'Sample overall feedback from AI.',
-        'feedback_cards': [
-            {
-                'title': 'Summary',
-                'description': 'Sample description for Summary.',
-                'ats_match': 80,
-                'recommendations': [
-                    'Recommendation 1 for Summary',
-                    'Recommendation 2 for Summary'
-                ]
-            },
-            {
-                'title': 'Experience',
-                'description': 'Sample description for Experience.',
-                'recommendations': [
-                    'Recommendation 1 for Experience',
-                    'Recommendation 2 for Experience'
-                ]
-            },
-            {
-                'title': 'Education',
-                'description': 'Sample description for Education.',
-                'recommendations': [
-                    'Recommendation 1 for Education',
-                    'Recommendation 2 for Education'
-                ]
-            },
-            {
-                'title': 'Skills',
-                'description': 'Sample description for Skills.',
-                'recommendations': [
-                    'Recommendation 1 for Skills',
-                    'Recommendation 2 for Skills'
-                ]
-            },
-        ]
-    }
-    return simulated_response
+@app.route('/get_roast_page', methods=['POST'])
+def roast_resume_page():
+    app.logger.info("Received request to get feedback page")
+
+    try:
+        filename = session.get('filename')
+        file_uri = session.get('file_uri')
+        app.logger.info(f"Session data at feedback page: filename={filename}, file_uri={file_uri}")
+
+        if not filename or not file_uri:
+            app.logger.error("Required session data missing")
+            return jsonify({'error': 'Session data missing'}), 400
+
+        # Process the file using AI service
+        app.logger.info("Calling AI service to process the file")
+
+        try:
+            roast = roast_resume(file_uri)
+            app.logger.info(f"Analysis result: {roast}")
+            session['ai_roast_response'] = roast
+
+
+            # # Process the result and prepare feedback data dynamically
+            # analysis_result = roast
+            return render_template('roast_response.html', roast=roast), 200
+
+        except Exception as e:
+            app.logger.error(f"Error calling AI service: {e}")
+            return jsonify({'error': 'Error calling AI service'}), 500
+
+    except Exception as e:
+        app.logger.error(f"Error processing feedback: {e}")
+        return jsonify({'error': 'Error processing feedback'}), 500
 
 @app.route('/download_feedback_pdf')
 def download_feedback_pdf():
@@ -365,6 +357,7 @@ def verify_payment():
 
 @app.route('/roast')
 def resume_roast():
+
     return render_template('resume_roast.html')
 
 @app.route('/uploads/<filename>')

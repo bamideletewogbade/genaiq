@@ -5888,3 +5888,682 @@
 2024-09-05 18:14:52,317 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2024 18:14:52] "GET /roast HTTP/1.1" 200 -
 2024-09-05 18:16:26,129 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2024 18:16:26] "GET /roast HTTP/1.1" 200 -
 2024-09-05 18:16:34,007 - werkzeug - INFO - 127.0.0.1 - - [05/Sep/2024 18:16:34] "GET /roast HTTP/1.1" 200 -
+2024-09-06 03:16:12,968 - app - INFO - Starting Flask application
+2024-09-06 03:16:12,993 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-06 03:16:12,993 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-06 03:16:12,995 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 03:16:15,298 - app - INFO - Starting Flask application
+2024-09-06 03:16:15,307 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 03:16:15,309 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 03:22:51,396 - app - INFO - Rendering index page
+2024-09-06 03:22:51,402 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:22:51] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-06 03:22:52,646 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:22:52] "GET /static/images/oka.jpg HTTP/1.1" 200 -
+2024-09-06 03:22:56,904 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:22:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-09-06 03:23:08,066 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:23:08] "GET /roast HTTP/1.1" 200 -
+2024-09-06 03:30:57,581 - app - INFO - Rendering index page
+2024-09-06 03:30:57,585 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:30:57] "GET / HTTP/1.1" 200 -
+2024-09-06 03:30:57,964 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:30:57] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 03:32:48,943 - app - INFO - Rendering index page
+2024-09-06 03:32:48,947 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:32:48] "GET / HTTP/1.1" 200 -
+2024-09-06 03:32:49,374 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:32:49] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 03:39:03,457 - app - INFO - Rendering index page
+2024-09-06 03:39:03,461 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:39:03] "GET / HTTP/1.1" 200 -
+2024-09-06 03:39:03,881 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:39:03] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 03:40:23,532 - app - INFO - Rendering index page
+2024-09-06 03:40:23,535 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:40:23] "GET / HTTP/1.1" 200 -
+2024-09-06 03:40:23,903 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:40:23] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 03:41:51,864 - app - INFO - Rendering index page
+2024-09-06 03:41:51,867 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:41:51] "GET / HTTP/1.1" 200 -
+2024-09-06 03:41:52,264 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:41:52] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 03:48:35,077 - app - INFO - Rendering index page
+2024-09-06 03:48:35,080 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:48:35] "GET / HTTP/1.1" 200 -
+2024-09-06 03:48:35,879 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:48:35] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 03:48:51,958 - app - INFO - Rendering index page
+2024-09-06 03:48:51,962 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:48:51] "GET / HTTP/1.1" 200 -
+2024-09-06 03:48:52,289 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:48:52] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 03:50:07,639 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:50:07] "GET /roast HTTP/1.1" 200 -
+2024-09-06 03:53:19,608 - app - INFO - Rendering index page
+2024-09-06 03:53:19,612 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:53:19] "GET / HTTP/1.1" 200 -
+2024-09-06 03:53:19,989 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:53:19] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 03:53:56,488 - app - INFO - Rendering index page
+2024-09-06 03:53:56,492 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:53:56] "GET / HTTP/1.1" 200 -
+2024-09-06 03:53:56,889 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:53:56] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 03:54:18,328 - app - INFO - Rendering index page
+2024-09-06 03:54:18,332 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:54:18] "GET / HTTP/1.1" 200 -
+2024-09-06 03:54:18,699 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:54:18] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 03:54:51,474 - app - INFO - Rendering index page
+2024-09-06 03:54:51,477 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:54:51] "GET / HTTP/1.1" 200 -
+2024-09-06 03:54:51,875 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:54:51] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 03:55:03,454 - app - INFO - Rendering index page
+2024-09-06 03:55:03,458 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:55:03] "GET / HTTP/1.1" 200 -
+2024-09-06 03:55:03,825 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:55:03] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 03:56:52,007 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:56:52] "GET /roast HTTP/1.1" 200 -
+2024-09-06 03:57:58,997 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:57:58] "GET /roast HTTP/1.1" 200 -
+2024-09-06 03:58:30,498 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 03:58:30] "GET /roast HTTP/1.1" 200 -
+2024-09-06 03:59:59,944 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-06 04:00:00,738 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 04:00:02,993 - app - INFO - Starting Flask application
+2024-09-06 04:00:03,002 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 04:00:03,002 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 04:02:36,048 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:02:36] "GET /roast HTTP/1.1" 200 -
+2024-09-06 04:04:19,132 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:04:19] "GET /roast HTTP/1.1" 200 -
+2024-09-06 04:04:33,620 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:04:33] "GET /roast HTTP/1.1" 200 -
+2024-09-06 04:19:57,605 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:19:57] "GET /roast HTTP/1.1" 200 -
+2024-09-06 04:20:07,892 - app - INFO - Received a file upload request
+2024-09-06 04:20:08,656 - app - WARNING - No file part in request
+2024-09-06 04:20:08,657 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:20:08] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2024-09-06 04:20:13,221 - app - INFO - Received a file upload request
+2024-09-06 04:20:13,858 - app - WARNING - No file part in request
+2024-09-06 04:20:13,859 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:20:13] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2024-09-06 04:20:17,771 - app - INFO - Received a file upload request
+2024-09-06 04:20:18,469 - app - WARNING - No file part in request
+2024-09-06 04:20:18,470 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:20:18] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2024-09-06 04:38:11,342 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:38:11] "GET /roast HTTP/1.1" 200 -
+2024-09-06 04:38:22,200 - app - INFO - Received a file upload request
+2024-09-06 04:38:23,348 - app - WARNING - No file part in request
+2024-09-06 04:38:23,349 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:38:23] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2024-09-06 04:41:11,594 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:41:11] "GET /roast HTTP/1.1" 200 -
+2024-09-06 04:43:52,033 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:43:52] "GET /roast HTTP/1.1" 200 -
+2024-09-06 04:44:00,151 - app - INFO - Received a file upload request
+2024-09-06 04:44:02,538 - app - WARNING - No file part in request
+2024-09-06 04:44:02,539 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:44:02] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2024-09-06 04:44:07,390 - app - INFO - Received a file upload request
+2024-09-06 04:44:08,408 - app - WARNING - No file part in request
+2024-09-06 04:44:08,409 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:44:08] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2024-09-06 04:47:06,803 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:47:06] "GET /roast HTTP/1.1" 200 -
+2024-09-06 04:47:13,611 - app - INFO - Received a file upload request
+2024-09-06 04:47:14,729 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-06 04:47:14,794 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 04:47:14,802 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 04:47:28,843 - ai_service - ERROR - Error uploading to GCS: string indices must be integers
+2024-09-06 04:47:28,843 - app - INFO - File URI: None
+2024-09-06 04:47:28,844 - app - INFO - Session data after upload: <SecureCookieSession {'filename': 'Olusegun_Tewogbade.pdf', 'file_uri': None}>
+2024-09-06 04:47:28,844 - app - INFO - File type is PDF
+2024-09-06 04:47:28,844 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-06 04:47:28,845 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:47:28] "POST /upload HTTP/1.1" 200 -
+2024-09-06 04:47:48,489 - app - INFO - Starting Flask application
+2024-09-06 04:47:48,501 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-06 04:47:48,501 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-06 04:47:48,502 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 04:47:50,736 - app - INFO - Starting Flask application
+2024-09-06 04:47:50,745 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 04:47:50,745 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 04:47:54,651 - app - INFO - Rendering index page
+2024-09-06 04:47:54,658 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:47:54] "GET / HTTP/1.1" 200 -
+2024-09-06 04:47:55,438 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:47:55] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 04:48:01,714 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:48:01] "GET /roast HTTP/1.1" 200 -
+2024-09-06 04:48:09,452 - app - INFO - Received a file upload request
+2024-09-06 04:48:10,179 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 04:48:10,196 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 04:48:10,205 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 04:48:10,741 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 04:48:10,742 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 04:48:10,742 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-06 04:48:10,742 - app - INFO - File type is PDF
+2024-09-06 04:48:10,742 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-06 04:48:10,744 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:48:10] "POST /upload HTTP/1.1" 200 -
+2024-09-06 04:48:34,994 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:48:34] "GET /roast HTTP/1.1" 200 -
+2024-09-06 04:48:42,331 - app - INFO - Received a file upload request
+2024-09-06 04:48:43,149 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 04:48:43,159 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 04:48:43,167 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 04:48:44,334 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 04:48:44,334 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 04:48:44,335 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-06 04:48:44,335 - app - INFO - File type is PDF
+2024-09-06 04:48:44,335 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-06 04:48:44,336 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 04:48:44] "POST /upload HTTP/1.1" 200 -
+2024-09-06 04:51:47,790 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-06 04:51:48,457 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 04:51:50,761 - app - INFO - Starting Flask application
+2024-09-06 04:51:50,770 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 04:51:50,770 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 04:51:57,998 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-06 04:51:58,672 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:23:19,677 - app - INFO - Starting Flask application
+2024-09-06 05:23:19,689 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-06 05:23:19,689 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-06 05:23:19,690 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:23:21,924 - app - INFO - Starting Flask application
+2024-09-06 05:23:21,932 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:23:21,933 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:23:27,122 - app - INFO - Rendering index page
+2024-09-06 05:23:27,128 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:23:27] "GET / HTTP/1.1" 200 -
+2024-09-06 05:23:27,959 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:23:27] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 05:23:31,585 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:23:31] "GET /roast HTTP/1.1" 200 -
+2024-09-06 05:23:40,405 - app - INFO - Received a file upload request
+2024-09-06 05:23:41,341 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:23:41,356 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:23:41,363 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:23:42,380 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:23:42,380 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:23:42,380 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-06 05:23:42,381 - app - INFO - File type is PDF
+2024-09-06 05:23:42,381 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-06 05:23:42,382 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:23:42] "POST /upload HTTP/1.1" 200 -
+2024-09-06 05:23:43,302 - app - INFO - Received request to get feedback page
+2024-09-06 05:23:43,303 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:23:43,303 - app - INFO - Calling AI service to process the file
+2024-09-06 05:23:43,303 - app - ERROR - Error calling AI service: roast_resume() takes 0 positional arguments but 1 was given
+2024-09-06 05:23:43,303 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:23:43] "[35m[1mPOST /get_roast_page HTTP/1.1[0m" 500 -
+2024-09-06 05:24:56,322 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:24:57,041 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:24:59,321 - app - INFO - Starting Flask application
+2024-09-06 05:24:59,330 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:24:59,331 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:27:10,532 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-06 05:27:11,185 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:27:13,485 - app - INFO - Starting Flask application
+2024-09-06 05:27:13,493 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:27:13,494 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:27:19,391 - app - INFO - Received a file upload request
+2024-09-06 05:27:20,099 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:27:20,118 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:27:20,128 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:27:21,213 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:27:21,214 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:27:21,214 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-06 05:27:21,215 - app - INFO - File type is PDF
+2024-09-06 05:27:21,215 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-06 05:27:21,216 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:27:21] "POST /upload HTTP/1.1" 200 -
+2024-09-06 05:27:22,559 - app - INFO - Received request to get feedback page
+2024-09-06 05:27:22,560 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:27:22,560 - app - INFO - Calling AI service to process the file
+2024-09-06 05:27:22,568 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:27:22,575 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:27:23,548 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:27:23,772 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-06 05:27:23,772 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-06 05:27:23,773 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-06 05:27:23,773 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-06 05:27:23,774 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-06 05:27:23,774 - ai_service - ERROR - Error in call_vertex_ai: unsupported operand type(s) for -: 'str' and 'str'
+2024-09-06 05:27:23,774 - app - INFO - Analysis result: {'error': "Error processing the file: unsupported operand type(s) for -: 'str' and 'str'"}
+2024-09-06 05:27:23,788 - app - ERROR - Error calling AI service: unexpected char '#' at 432
+2024-09-06 05:27:23,789 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:27:23] "[35m[1mPOST /get_roast_page HTTP/1.1[0m" 500 -
+2024-09-06 05:27:56,191 - app - INFO - Received a file upload request
+2024-09-06 05:27:56,918 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 05:27:56,927 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:27:56,933 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:27:57,943 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 05:27:57,943 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 05:27:57,943 - app - INFO - Session data after upload: <SecureCookieSession {'ai_response': {'error': "Error processing the file: unsupported operand type(s) for -: 'str' and 'str'"}, 'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-06 05:27:57,943 - app - INFO - File type is PDF
+2024-09-06 05:27:57,944 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-06 05:27:57,944 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:27:57] "POST /upload HTTP/1.1" 200 -
+2024-09-06 05:27:59,460 - app - INFO - Received request to get feedback page
+2024-09-06 05:27:59,460 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 05:27:59,460 - app - INFO - Calling AI service to process the file
+2024-09-06 05:27:59,469 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:27:59,476 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:28:00,479 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 05:28:00,572 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-06 05:28:00,572 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-06 05:28:00,572 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-06 05:28:00,572 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-06 05:28:00,573 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-06 05:28:00,573 - ai_service - ERROR - Error in call_vertex_ai: unsupported operand type(s) for -: 'str' and 'str'
+2024-09-06 05:28:00,573 - app - INFO - Analysis result: {'error': "Error processing the file: unsupported operand type(s) for -: 'str' and 'str'"}
+2024-09-06 05:28:00,574 - app - ERROR - Error calling AI service: unexpected char '#' at 432
+2024-09-06 05:28:00,575 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:28:00] "[35m[1mPOST /get_roast_page HTTP/1.1[0m" 500 -
+2024-09-06 05:29:25,739 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:29:26,413 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:29:28,753 - app - INFO - Starting Flask application
+2024-09-06 05:29:28,762 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:29:28,763 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:29:40,092 - app - INFO - Received a file upload request
+2024-09-06 05:29:40,840 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:29:40,856 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:29:40,863 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:29:41,880 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:29:41,880 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:29:41,880 - app - INFO - Session data after upload: <SecureCookieSession {'ai_response': {'error': "Error processing the file: unsupported operand type(s) for -: 'str' and 'str'"}, 'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-06 05:29:41,881 - app - INFO - File type is PDF
+2024-09-06 05:29:41,881 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-06 05:29:41,882 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:29:41] "POST /upload HTTP/1.1" 200 -
+2024-09-06 05:29:43,020 - app - INFO - Received request to get feedback page
+2024-09-06 05:29:43,020 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:29:43,020 - app - INFO - Calling AI service to process the file
+2024-09-06 05:29:43,027 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:29:43,033 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:29:44,001 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:29:44,218 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-06 05:29:44,218 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-06 05:29:44,219 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-06 05:29:44,219 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-06 05:29:44,220 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-06 05:29:44,220 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-06 05:29:44,220 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-06 05:29:44,221 - ai_service - ERROR - Error in call_vertex_ai: Unexpected item type: ("Return the response in JSON format.Use the struture provided belowYo, listen up! You're about to channel your inner Kevin Hart, that pint-sized comedy powerhouse with a mouth that runs faster than Usain Bolt on Red Bull. Your mission? Roast the hell outta this resume, but make it so funny the person might frame it instead of cry.", 'Structure the roast with the following fields:\n\nstepsstepFirst Impressions', "descriptionStart with a 'First Impressions' bit. You know, like when Kevin walks on stage and just starts ripping into the audience. What's the first thing that hits you about this resume? Is it trying so hard it's sweating? Is it emptier than Kevin's height chart?", 'stepSection-by-Section Roast', "descriptionGo section by section. Education, experience, skills—whatever's there, tear it apart like it owes you money. But remember, we're going for laughs, not tears. Think of each section like a different person in Kevin's story—give 'em all a voice, a personality.", 'stepKevin Hart-isms', "descriptionSprinkle in some classic Kevin Hart-isms. You know, those little catchphrases or vocal tics he does. Maybe throw in a 'You gon' learn today!' when you see a particularly sad skill listed.", 'stepPhysical Comedy', "descriptionDon't forget the physical comedy! Yeah, I know you're text-based, but describe some exaggerated reactions or movements. Like, 'If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!''", 'stepReal Talk', "descriptionEnd with a 'Real Talk' moment. Kevin always brings it home with a bit of genuine advice wrapped in humor. Give 'em something they can actually use, but make it funny.", 'Response should be in JSON formatStructure it like thisintroduction: Provides the main intro roast.steps: Each step includes a header and description, which are rendered in separate sections.').Only types that represent a single Content or a single Part are supported here.
+2024-09-06 05:29:44,221 - app - INFO - Analysis result: {'error': 'Error processing the file: Unexpected item type: ("Return the response in JSON format.Use the struture provided belowYo, listen up! You\'re about to channel your inner Kevin Hart, that pint-sized comedy powerhouse with a mouth that runs faster than Usain Bolt on Red Bull. Your mission? Roast the hell outta this resume, but make it so funny the person might frame it instead of cry.", \'Structure the roast with the following fields:\\n\\nstepsstepFirst Impressions\', "descriptionStart with a \'First Impressions\' bit. You know, like when Kevin walks on stage and just starts ripping into the audience. What\'s the first thing that hits you about this resume? Is it trying so hard it\'s sweating? Is it emptier than Kevin\'s height chart?", \'stepSection-by-Section Roast\', "descriptionGo section by section. Education, experience, skills—whatever\'s there, tear it apart like it owes you money. But remember, we\'re going for laughs, not tears. Think of each section like a different person in Kevin\'s story—give \'em all a voice, a personality.", \'stepKevin Hart-isms\', "descriptionSprinkle in some classic Kevin Hart-isms. You know, those little catchphrases or vocal tics he does. Maybe throw in a \'You gon\' learn today!\' when you see a particularly sad skill listed.", \'stepPhysical Comedy\', "descriptionDon\'t forget the physical comedy! Yeah, I know you\'re text-based, but describe some exaggerated reactions or movements. Like, \'If I saw this resume in person, I\'d be running around the room, arms flailing, screaming \'What is this?! What. Is. This?!\'\'", \'stepReal Talk\', "descriptionEnd with a \'Real Talk\' moment. Kevin always brings it home with a bit of genuine advice wrapped in humor. Give \'em something they can actually use, but make it funny.", \'Response should be in JSON formatStructure it like thisintroduction: Provides the main intro roast.steps: Each step includes a header and description, which are rendered in separate sections.\').Only types that represent a single Content or a single Part are supported here.'}
+2024-09-06 05:29:44,224 - app - ERROR - Error calling AI service: unexpected char '#' at 432
+2024-09-06 05:29:44,226 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:29:44] "[35m[1mPOST /get_roast_page HTTP/1.1[0m" 500 -
+2024-09-06 05:30:39,677 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:30:40,325 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:30:42,657 - app - INFO - Starting Flask application
+2024-09-06 05:30:42,667 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:30:42,667 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:30:43,735 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:30:44,403 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:30:46,728 - app - INFO - Starting Flask application
+2024-09-06 05:30:46,737 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:30:46,738 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:30:48,837 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:30:49,499 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:30:51,795 - app - INFO - Starting Flask application
+2024-09-06 05:30:51,806 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:30:51,807 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:31:33,932 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:31:34,556 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:31:36,875 - app - INFO - Starting Flask application
+2024-09-06 05:31:36,885 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:31:36,885 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:31:37,963 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:31:38,618 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:31:40,876 - app - INFO - Starting Flask application
+2024-09-06 05:31:40,885 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:31:40,885 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:31:41,953 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:31:42,594 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:31:44,884 - app - INFO - Starting Flask application
+2024-09-06 05:31:44,893 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:31:44,893 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:31:50,070 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:31:50,693 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:31:52,957 - app - INFO - Starting Flask application
+2024-09-06 05:31:52,965 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:31:52,966 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:31:55,063 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:31:55,704 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:31:58,113 - app - INFO - Starting Flask application
+2024-09-06 05:31:58,123 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:31:58,123 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:32:00,218 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:32:00,884 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:32:03,200 - app - INFO - Starting Flask application
+2024-09-06 05:32:03,213 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:32:03,214 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:32:07,375 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:32:08,046 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:32:10,330 - app - INFO - Starting Flask application
+2024-09-06 05:32:10,340 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:32:10,340 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:32:11,428 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:32:12,073 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:32:14,430 - app - INFO - Starting Flask application
+2024-09-06 05:32:14,438 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:32:14,439 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:32:15,514 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:32:16,149 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:32:18,463 - app - INFO - Starting Flask application
+2024-09-06 05:32:18,471 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:32:18,472 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:32:22,615 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:32:23,280 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:32:25,604 - app - INFO - Starting Flask application
+2024-09-06 05:32:25,613 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:32:25,614 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:32:29,771 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:32:30,426 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:32:32,722 - app - INFO - Starting Flask application
+2024-09-06 05:32:32,730 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:32:32,731 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:32:40,977 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:32:41,629 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:32:43,998 - app - INFO - Starting Flask application
+2024-09-06 05:32:44,007 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:32:44,007 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:33:13,844 - app - INFO - Received a file upload request
+2024-09-06 05:33:14,480 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:33:14,500 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:33:14,509 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:33:15,533 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:33:15,534 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:33:15,534 - app - INFO - Session data after upload: <SecureCookieSession {'ai_response': {'error': 'Error processing the file: Unexpected item type: ("Return the response in JSON format.Use the struture provided belowYo, listen up! You\'re about to channel your inner Kevin Hart, that pint-sized comedy powerhouse with a mouth that runs faster than Usain Bolt on Red Bull. Your mission? Roast the hell outta this resume, but make it so funny the person might frame it instead of cry.", \'Structure the roast with the following fields:\\n\\nstepsstepFirst Impressions\', "descriptionStart with a \'First Impressions\' bit. You know, like when Kevin walks on stage and just starts ripping into the audience. What\'s the first thing that hits you about this resume? Is it trying so hard it\'s sweating? Is it emptier than Kevin\'s height chart?", \'stepSection-by-Section Roast\', "descriptionGo section by section. Education, experience, skills—whatever\'s there, tear it apart like it owes you money. But remember, we\'re going for laughs, not tears. Think of each section like a different person in Kevin\'s story—give \'em all a voice, a personality.", \'stepKevin Hart-isms\', "descriptionSprinkle in some classic Kevin Hart-isms. You know, those little catchphrases or vocal tics he does. Maybe throw in a \'You gon\' learn today!\' when you see a particularly sad skill listed.", \'stepPhysical Comedy\', "descriptionDon\'t forget the physical comedy! Yeah, I know you\'re text-based, but describe some exaggerated reactions or movements. Like, \'If I saw this resume in person, I\'d be running around the room, arms flailing, screaming \'What is this?! What. Is. This?!\'\'", \'stepReal Talk\', "descriptionEnd with a \'Real Talk\' moment. Kevin always brings it home with a bit of genuine advice wrapped in humor. Give \'em something they can actually use, but make it funny.", \'Response should be in JSON formatStructure it like thisintroduction: Provides the main intro roast.steps: Each step includes a header and description, which are rendered in separate sections.\').Only types that represent a single Content or a single Part are supported here.'}, 'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-06 05:33:15,535 - app - INFO - File type is PDF
+2024-09-06 05:33:15,535 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-06 05:33:15,536 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:33:15] "POST /upload HTTP/1.1" 200 -
+2024-09-06 05:33:16,481 - app - INFO - Received request to get feedback page
+2024-09-06 05:33:16,481 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:33:16,482 - app - INFO - Calling AI service to process the file
+2024-09-06 05:33:16,490 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:33:16,497 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:33:17,445 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 05:33:17,667 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-06 05:33:17,667 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-06 05:33:17,667 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-06 05:33:17,668 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-06 05:33:17,668 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-06 05:33:17,668 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-06 05:33:17,669 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-06 05:33:17,669 - ai_service - ERROR - Error in call_vertex_ai: Unexpected item type: ("Yo, listen up! You're about to channel your inner Kevin Hart, that pint-sized comedy powerhouse with a mouth that runs faster than Usain Bolt on Red Bull. Your mission? Roast the hell outta this resume, but make it so funny the person might frame it instead of cry.", "Structure the roast with the following fields:\n\nstepFirst ImpressionsdescriptionStart with a 'First Impressions' bit. You know, like when Kevin walks on stage and just starts ripping into the audience. What's the first thing that hits you about this resume? Is it trying so hard it's sweating? Is it emptier than Kevin's height chart?stepSection-by-Section RoastdescriptionGo section by section. Education, experience, skills—whatever's there, tear it apart like it owes you money. But remember, we're going for laughs, not tears. Think of each section like a different person in Kevin's story—give 'em all a voice, a personality.stepKevin Hart-ismsdescriptionSprinkle in some classic Kevin Hart-isms. You know, those little catchphrases or vocal tics he does. Maybe throw in a 'You gon' learn today!' when you see a particularly sad skill listed.stepPhysical ComedydescriptionDon't forget the physical comedy! Yeah, I know you're text-based, but describe some exaggerated reactions or movements. Like, 'If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!''stepReal TalkdescriptionEnd with a 'Real Talk' moment. Kevin always brings it home with a bit of genuine advice wrapped in humor. Give 'em something they can actually use, but make it funny.Response should be in JSON formatStructure it like thisintroduction: Provides the main intro roast.steps: Each step includes a header and description, which are rendered in separate sections.").Only types that represent a single Content or a single Part are supported here.
+2024-09-06 05:33:17,669 - app - INFO - Analysis result: {'error': 'Error processing the file: Unexpected item type: ("Yo, listen up! You\'re about to channel your inner Kevin Hart, that pint-sized comedy powerhouse with a mouth that runs faster than Usain Bolt on Red Bull. Your mission? Roast the hell outta this resume, but make it so funny the person might frame it instead of cry.", "Structure the roast with the following fields:\\n\\nstepFirst ImpressionsdescriptionStart with a \'First Impressions\' bit. You know, like when Kevin walks on stage and just starts ripping into the audience. What\'s the first thing that hits you about this resume? Is it trying so hard it\'s sweating? Is it emptier than Kevin\'s height chart?stepSection-by-Section RoastdescriptionGo section by section. Education, experience, skills—whatever\'s there, tear it apart like it owes you money. But remember, we\'re going for laughs, not tears. Think of each section like a different person in Kevin\'s story—give \'em all a voice, a personality.stepKevin Hart-ismsdescriptionSprinkle in some classic Kevin Hart-isms. You know, those little catchphrases or vocal tics he does. Maybe throw in a \'You gon\' learn today!\' when you see a particularly sad skill listed.stepPhysical ComedydescriptionDon\'t forget the physical comedy! Yeah, I know you\'re text-based, but describe some exaggerated reactions or movements. Like, \'If I saw this resume in person, I\'d be running around the room, arms flailing, screaming \'What is this?! What. Is. This?!\'\'stepReal TalkdescriptionEnd with a \'Real Talk\' moment. Kevin always brings it home with a bit of genuine advice wrapped in humor. Give \'em something they can actually use, but make it funny.Response should be in JSON formatStructure it like thisintroduction: Provides the main intro roast.steps: Each step includes a header and description, which are rendered in separate sections.").Only types that represent a single Content or a single Part are supported here.'}
+2024-09-06 05:33:17,672 - app - ERROR - Error calling AI service: unexpected char '#' at 432
+2024-09-06 05:33:17,673 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:33:17] "[35m[1mPOST /get_roast_page HTTP/1.1[0m" 500 -
+2024-09-06 05:35:11,746 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:35:12,425 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:35:14,759 - app - INFO - Starting Flask application
+2024-09-06 05:35:14,768 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:35:14,768 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:35:15,838 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:35:16,487 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:35:18,821 - app - INFO - Starting Flask application
+2024-09-06 05:35:18,830 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:35:18,830 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:35:27,084 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:35:27,829 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:35:30,143 - app - INFO - Starting Flask application
+2024-09-06 05:35:30,152 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:35:30,152 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:36:12,200 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:36:12,875 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:36:15,188 - app - INFO - Starting Flask application
+2024-09-06 05:36:15,197 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:36:15,198 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:36:21,388 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:36:22,030 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:36:24,309 - app - INFO - Starting Flask application
+2024-09-06 05:36:24,318 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:36:24,318 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:36:33,591 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:36:34,253 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:36:36,609 - app - INFO - Starting Flask application
+2024-09-06 05:36:36,618 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:36:36,619 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:36:38,710 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:36:39,372 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:36:41,724 - app - INFO - Starting Flask application
+2024-09-06 05:36:41,734 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:36:41,734 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:36:47,937 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:36:48,663 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:36:50,955 - app - INFO - Starting Flask application
+2024-09-06 05:36:50,963 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:36:50,964 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:36:57,159 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 05:36:57,782 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 05:37:00,068 - app - INFO - Starting Flask application
+2024-09-06 05:37:00,077 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 05:37:00,078 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 05:37:08,462 - app - INFO - Received a file upload request
+2024-09-06 05:37:09,259 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 05:37:09,276 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:37:09,284 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:37:10,310 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 05:37:10,310 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 05:37:10,310 - app - INFO - Session data after upload: <SecureCookieSession {'ai_response': {'error': 'Error processing the file: Unexpected item type: ("Yo, listen up! You\'re about to channel your inner Kevin Hart, that pint-sized comedy powerhouse with a mouth that runs faster than Usain Bolt on Red Bull. Your mission? Roast the hell outta this resume, but make it so funny the person might frame it instead of cry.", "Structure the roast with the following fields:\\n\\nstepFirst ImpressionsdescriptionStart with a \'First Impressions\' bit. You know, like when Kevin walks on stage and just starts ripping into the audience. What\'s the first thing that hits you about this resume? Is it trying so hard it\'s sweating? Is it emptier than Kevin\'s height chart?stepSection-by-Section RoastdescriptionGo section by section. Education, experience, skills—whatever\'s there, tear it apart like it owes you money. But remember, we\'re going for laughs, not tears. Think of each section like a different person in Kevin\'s story—give \'em all a voice, a personality.stepKevin Hart-ismsdescriptionSprinkle in some classic Kevin Hart-isms. You know, those little catchphrases or vocal tics he does. Maybe throw in a \'You gon\' learn today!\' when you see a particularly sad skill listed.stepPhysical ComedydescriptionDon\'t forget the physical comedy! Yeah, I know you\'re text-based, but describe some exaggerated reactions or movements. Like, \'If I saw this resume in person, I\'d be running around the room, arms flailing, screaming \'What is this?! What. Is. This?!\'\'stepReal TalkdescriptionEnd with a \'Real Talk\' moment. Kevin always brings it home with a bit of genuine advice wrapped in humor. Give \'em something they can actually use, but make it funny.Response should be in JSON formatStructure it like thisintroduction: Provides the main intro roast.steps: Each step includes a header and description, which are rendered in separate sections.").Only types that represent a single Content or a single Part are supported here.'}, 'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-06 05:37:10,311 - app - INFO - File type is PDF
+2024-09-06 05:37:10,311 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-06 05:37:10,312 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:37:10] "POST /upload HTTP/1.1" 200 -
+2024-09-06 05:37:11,850 - app - INFO - Received request to get feedback page
+2024-09-06 05:37:11,850 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 05:37:11,850 - app - INFO - Calling AI service to process the file
+2024-09-06 05:37:11,858 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:37:11,865 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 05:37:12,839 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 05:37:12,944 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-06 05:37:12,944 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-06 05:37:12,945 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-06 05:37:12,945 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-06 05:37:12,946 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-06 05:37:12,946 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-06 05:37:12,947 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-06 05:37:18,474 - ai_service - INFO - Received response from Vertex AI.
+2024-09-06 05:37:18,479 - app - INFO - Analysis result: {'introduction': "Alright, everybody, gather round! I've got a resume here that's got more typos than a toddler's first attempt at writing. This is like that friend who shows up to a party in a full suit, but their shirt's inside-out... and they're wearing flip-flops. It's trying so hard to impress, but it just... fails miserably. You ready for this? 'Cause this resume, it's about to get roasted so bad, it'll need a fire extinguisher. *Cue dramatic music* Let's begin...", 'steps': [{'header': 'First Impressions', 'description': "This resume is a textbook case of 'trying too hard.' It's got so many buzzwords, it sounds like a dictionary threw up on a keyboard.  And the formatting?  Don't even get me started. It's like a formatting tornado hit, then left a note saying, 'Sorry, I'm not good with spaces.'"}, {'header': 'Section-by-Section Roast', 'description': "Let's break down this masterpiece, shall we? The summary? It's like a motivational poster made into a job description.  'Passionate' is the word of the year, I guess.  The experience section reads like a laundry list of companies and accomplishments.  This isn't a resume, it's a 'Look at all the cool things I've done' infomercial. The skills?  Oh, the skills.  It's got everything from 'Java' to 'Git' to 'Jenkins.'  It's like, 'Hey, I can code.  But I can also use a computer.'  It's a masterpiece of mediocrity."}, {'header': 'Kevin Hart-isms', 'description': "You know what, I'm gonna 'keep it 100' with y'all.  This resume is like those friends who tell you they're 'successful' but they can't even spell 'entrepreneur' without Google.  You gon' learn today! *Kevin points dramatically at the resume*  This ain't about knowing a bunch of techy stuff.  It's about being able to communicate what you know.  And this, my friends, is a prime example of 'talkin' a big game, but not backin' it up.'"}, {'header': 'Physical Comedy', 'description': "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!' It's got so much content, but it feels so hollow. It's like those cardboard cutouts they put up at car dealerships, all dressed up, but no substance. You gotta bring the energy, baby!  This resume needs more 'oomph.'"}, {'header': 'Real Talk', 'description': "Look, I'm gonna give you some real talk.  You gotta cut the fluff, stop trying to impress everyone with all these buzzwords.  Focus on what makes you unique.  Show them what you can actually do.  Don't be afraid to be yourself, even if it means being 'slightly' less impressive. You might just surprise yourself. And who knows, you might actually land that dream job.  Just ditch the 'motivational poster' vibe and be authentic.  That's the real secret sauce to landing a gig.  Trust me, it'll save you a lot of time and headaches."}]}
+2024-09-06 05:37:18,483 - app - ERROR - Error calling AI service: unexpected char '#' at 432
+2024-09-06 05:37:18,484 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 05:37:18] "[35m[1mPOST /get_roast_page HTTP/1.1[0m" 500 -
+2024-09-06 06:21:00,299 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-06 06:21:01,005 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:21:03,339 - app - INFO - Starting Flask application
+2024-09-06 06:21:03,348 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:21:03,348 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:21:13,642 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-06 06:21:14,293 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:21:16,642 - app - INFO - Starting Flask application
+2024-09-06 06:21:16,651 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:21:16,651 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:21:34,150 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-06 06:21:34,785 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:21:37,101 - app - INFO - Starting Flask application
+2024-09-06 06:21:37,111 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:21:37,111 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:21:41,264 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-06 06:21:41,924 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:21:44,295 - app - INFO - Starting Flask application
+2024-09-06 06:21:44,304 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:21:44,304 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:21:47,438 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-06 06:21:48,135 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:21:50,566 - app - INFO - Starting Flask application
+2024-09-06 06:21:50,575 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:21:50,576 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:22:00,878 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-06 06:22:01,557 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:22:03,902 - app - INFO - Starting Flask application
+2024-09-06 06:22:03,911 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:22:03,912 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:22:18,267 - app - INFO - Received a file upload request
+2024-09-06 06:22:19,115 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 06:22:19,133 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:22:19,140 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:22:20,187 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 06:22:20,188 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 06:22:20,188 - app - INFO - Session data after upload: <SecureCookieSession {'ai_response': {'introduction': "Alright, everybody, gather round! I've got a resume here that's got more typos than a toddler's first attempt at writing. This is like that friend who shows up to a party in a full suit, but their shirt's inside-out... and they're wearing flip-flops. It's trying so hard to impress, but it just... fails miserably. You ready for this? 'Cause this resume, it's about to get roasted so bad, it'll need a fire extinguisher. *Cue dramatic music* Let's begin...", 'steps': [{'description': "This resume is a textbook case of 'trying too hard.' It's got so many buzzwords, it sounds like a dictionary threw up on a keyboard.  And the formatting?  Don't even get me started. It's like a formatting tornado hit, then left a note saying, 'Sorry, I'm not good with spaces.'", 'header': 'First Impressions'}, {'description': "Let's break down this masterpiece, shall we? The summary? It's like a motivational poster made into a job description.  'Passionate' is the word of the year, I guess.  The experience section reads like a laundry list of companies and accomplishments.  This isn't a resume, it's a 'Look at all the cool things I've done' infomercial. The skills?  Oh, the skills.  It's got everything from 'Java' to 'Git' to 'Jenkins.'  It's like, 'Hey, I can code.  But I can also use a computer.'  It's a masterpiece of mediocrity.", 'header': 'Section-by-Section Roast'}, {'description': "You know what, I'm gonna 'keep it 100' with y'all.  This resume is like those friends who tell you they're 'successful' but they can't even spell 'entrepreneur' without Google.  You gon' learn today! *Kevin points dramatically at the resume*  This ain't about knowing a bunch of techy stuff.  It's about being able to communicate what you know.  And this, my friends, is a prime example of 'talkin' a big game, but not backin' it up.'", 'header': 'Kevin Hart-isms'}, {'description': "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!' It's got so much content, but it feels so hollow. It's like those cardboard cutouts they put up at car dealerships, all dressed up, but no substance. You gotta bring the energy, baby!  This resume needs more 'oomph.'", 'header': 'Physical Comedy'}, {'description': "Look, I'm gonna give you some real talk.  You gotta cut the fluff, stop trying to impress everyone with all these buzzwords.  Focus on what makes you unique.  Show them what you can actually do.  Don't be afraid to be yourself, even if it means being 'slightly' less impressive. You might just surprise yourself. And who knows, you might actually land that dream job.  Just ditch the 'motivational poster' vibe and be authentic.  That's the real secret sauce to landing a gig.  Trust me, it'll save you a lot of time and headaches.", 'header': 'Real Talk'}]}, 'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-06 06:22:20,188 - app - INFO - File type is PDF
+2024-09-06 06:22:20,189 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-06 06:22:20,190 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 06:22:20] "POST /upload HTTP/1.1" 200 -
+2024-09-06 06:22:21,497 - app - INFO - Received request to get feedback page
+2024-09-06 06:22:21,498 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 06:22:21,498 - app - INFO - Calling AI service to process the file
+2024-09-06 06:22:21,506 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:22:21,513 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:22:22,506 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 06:22:22,603 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-06 06:22:22,604 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-06 06:22:22,604 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-06 06:22:22,604 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-06 06:22:22,605 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-06 06:22:22,605 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-06 06:22:22,605 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-06 06:22:29,167 - ai_service - INFO - Received response from Vertex AI.
+2024-09-06 06:22:29,169 - app - INFO - Analysis result: {'introduction': "Yo, welcome to the 'Roast Me' show! Today's subject? This resume! It's so desperate for attention, it's practically wearing a 'Look at me!' sign... made of pixels, of course. This thing's got more buzzwords than a tech conference in Silicon Valley. Let's break it down, shall we?  But first, lemme just say... this is some serious 'I'm trying too hard' energy. It's like the resume equivalent of those dudes who wear their gym clothes everywhere, even to the grocery store. You gon' learn today! ", 'steps': [{'header': 'First Impressions', 'description': "It's like a frantic student who just crammed for a test. I mean, the guy's got a LinkedIn URL, a Twitter handle, and even a website for his side hustle. This ain't your average resume, folks. This is a full-blown marketing campaign! But, you know what's missing? A good ol' fashioned resume objective. You know, the thing that actually tells the recruiter what you're looking for.  You gon' learn today! *Kevin rubs his chin thoughtfully and makes a 'hm' noise*"}, {'header': 'Section-by-Section Roast', 'description': "Let's start with the 'Summary.' It's practically a love letter to every buzzword in the tech industry. Fintech, AI, mobile apps... it's like a word vomit session from a tech evangelist.  The 'Experience' section is a trip. This guy's a one-man tech army! He's done everything from building APIs to integrating AI chatbots.  He's even got a 'Lead Campus Ambassador' role for Ingressive for Good.  *Kevin does a dramatic hand gesture and snaps his fingers* You know what this tells me? This guy's got a serious case of 'FOMO' (Fear Of Missing Out). He's been to every conference, tried every tech stack, and done every side hustle.  But what about actually having a track record?  The 'Skills' section is a straight-up list of every programming language and framework under the sun. It's like the tech equivalent of a buffet.  *Kevin shakes his head and makes a 'tsk tsk' noise*  You know what they say... jack of all trades, master of none.  And finally, the 'Education' section.  'BSC Computer Science.'  *Kevin raises an eyebrow and smirks*  I mean, it's not a PhD in rocket science, but it'll do.  You gon' learn today!"}, {'header': 'Kevin Hart-isms', 'description': "This resume is so long, it's got a 'to be continued' at the bottom!  *Kevin looks around in disbelief and shakes his head*  This ain't a novel, dude! It's a resume! And this thing is more packed than a subway in rush hour.  *Kevin mimes riding a subway with exaggerated movements*  But the real kicker? This guy's got a 'Blue Vision Multimedia - BVM' gig...  *Kevin pauses and then whispers dramatically*  What is that even?  Blue Vision Multimedia?  I mean, the name alone makes me want to run for the hills!"}, {'header': 'Physical Comedy', 'description': "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!'  *Kevin dramatically throws his arms in the air and stomps his feet*  This thing's got more acronyms than a NASA mission!  *Kevin makes a confused face and mimes reading a document with his finger*  I'm just trying to find the information I need, man.  I'm not trying to decipher a secret code! You gon' learn today!"}, {'header': 'Real Talk', 'description': "Look, I get it. You want to impress the recruiter. You want to show them you're a tech guru with all the latest skills. But sometimes, less is more.  *Kevin leans in and whispers*  Focus on the key skills and projects that actually matter for the job. And ditch the 'I'm a tech rockstar' attitude.  *Kevin gives a thumbs up*  Let your work speak for itself.  You gon' learn today!"}]}
+2024-09-06 06:22:29,173 - app - ERROR - Error calling AI service: unexpected char '#' at 745
+2024-09-06 06:22:29,175 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 06:22:29] "[35m[1mPOST /get_roast_page HTTP/1.1[0m" 500 -
+2024-09-06 06:24:44,141 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:24:44,793 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:24:47,072 - app - INFO - Starting Flask application
+2024-09-06 06:24:47,080 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:24:47,081 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:25:26,138 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:25:26,975 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:25:29,358 - app - INFO - Starting Flask application
+2024-09-06 06:25:29,366 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:25:29,367 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:25:31,461 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:25:32,220 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:25:34,647 - app - INFO - Starting Flask application
+2024-09-06 06:25:34,657 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:25:34,657 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:25:36,754 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:25:37,443 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:25:39,840 - app - INFO - Starting Flask application
+2024-09-06 06:25:39,849 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:25:39,849 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:25:42,965 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:25:43,607 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:25:45,929 - app - INFO - Starting Flask application
+2024-09-06 06:25:45,938 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:25:45,938 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:25:48,043 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:25:48,702 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:25:50,996 - app - INFO - Starting Flask application
+2024-09-06 06:25:51,004 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:25:51,005 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:25:53,102 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:25:53,738 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:25:56,021 - app - INFO - Starting Flask application
+2024-09-06 06:25:56,031 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:25:56,032 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:26:00,183 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:26:00,849 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:26:03,187 - app - INFO - Starting Flask application
+2024-09-06 06:26:03,195 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:26:03,196 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:26:07,346 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:26:08,031 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:26:10,405 - app - INFO - Starting Flask application
+2024-09-06 06:26:10,414 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:26:10,414 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:26:13,548 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:26:14,218 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:26:16,545 - app - INFO - Starting Flask application
+2024-09-06 06:26:16,554 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:26:16,554 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:26:21,726 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:26:22,382 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:26:24,676 - app - INFO - Starting Flask application
+2024-09-06 06:26:24,686 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:26:24,687 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:26:51,419 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:26:52,056 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:26:54,342 - app - INFO - Starting Flask application
+2024-09-06 06:26:54,351 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:26:54,351 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:26:55,426 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:26:56,088 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:26:58,384 - app - INFO - Starting Flask application
+2024-09-06 06:26:58,392 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:26:58,393 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:27:00,506 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:27:01,175 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:27:03,465 - app - INFO - Starting Flask application
+2024-09-06 06:27:03,474 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:27:03,475 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:27:11,579 - app - INFO - Received a file upload request
+2024-09-06 06:27:12,235 - app - INFO - File OlusegunTewogbadeResume.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 06:27:12,254 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:27:12,262 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:27:13,343 - ai_service - INFO - File uploaded successfully to GCS: uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 06:27:13,343 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 06:27:13,343 - app - INFO - Session data after upload: <SecureCookieSession {'ai_response': {'introduction': "Alright, everybody, gather round! I've got a resume here that's got more typos than a toddler's first attempt at writing. This is like that friend who shows up to a party in a full suit, but their shirt's inside-out... and they're wearing flip-flops. It's trying so hard to impress, but it just... fails miserably. You ready for this? 'Cause this resume, it's about to get roasted so bad, it'll need a fire extinguisher. *Cue dramatic music* Let's begin...", 'steps': [{'description': "This resume is a textbook case of 'trying too hard.' It's got so many buzzwords, it sounds like a dictionary threw up on a keyboard.  And the formatting?  Don't even get me started. It's like a formatting tornado hit, then left a note saying, 'Sorry, I'm not good with spaces.'", 'header': 'First Impressions'}, {'description': "Let's break down this masterpiece, shall we? The summary? It's like a motivational poster made into a job description.  'Passionate' is the word of the year, I guess.  The experience section reads like a laundry list of companies and accomplishments.  This isn't a resume, it's a 'Look at all the cool things I've done' infomercial. The skills?  Oh, the skills.  It's got everything from 'Java' to 'Git' to 'Jenkins.'  It's like, 'Hey, I can code.  But I can also use a computer.'  It's a masterpiece of mediocrity.", 'header': 'Section-by-Section Roast'}, {'description': "You know what, I'm gonna 'keep it 100' with y'all.  This resume is like those friends who tell you they're 'successful' but they can't even spell 'entrepreneur' without Google.  You gon' learn today! *Kevin points dramatically at the resume*  This ain't about knowing a bunch of techy stuff.  It's about being able to communicate what you know.  And this, my friends, is a prime example of 'talkin' a big game, but not backin' it up.'", 'header': 'Kevin Hart-isms'}, {'description': "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!' It's got so much content, but it feels so hollow. It's like those cardboard cutouts they put up at car dealerships, all dressed up, but no substance. You gotta bring the energy, baby!  This resume needs more 'oomph.'", 'header': 'Physical Comedy'}, {'description': "Look, I'm gonna give you some real talk.  You gotta cut the fluff, stop trying to impress everyone with all these buzzwords.  Focus on what makes you unique.  Show them what you can actually do.  Don't be afraid to be yourself, even if it means being 'slightly' less impressive. You might just surprise yourself. And who knows, you might actually land that dream job.  Just ditch the 'motivational poster' vibe and be authentic.  That's the real secret sauce to landing a gig.  Trust me, it'll save you a lot of time and headaches.", 'header': 'Real Talk'}]}, 'ai_roast_response': {'introduction': "Yo, welcome to the 'Roast Me' show! Today's subject? This resume! It's so desperate for attention, it's practically wearing a 'Look at me!' sign... made of pixels, of course. This thing's got more buzzwords than a tech conference in Silicon Valley. Let's break it down, shall we?  But first, lemme just say... this is some serious 'I'm trying too hard' energy. It's like the resume equivalent of those dudes who wear their gym clothes everywhere, even to the grocery store. You gon' learn today! ", 'steps': [{'description': "It's like a frantic student who just crammed for a test. I mean, the guy's got a LinkedIn URL, a Twitter handle, and even a website for his side hustle. This ain't your average resume, folks. This is a full-blown marketing campaign! But, you know what's missing? A good ol' fashioned resume objective. You know, the thing that actually tells the recruiter what you're looking for.  You gon' learn today! *Kevin rubs his chin thoughtfully and makes a 'hm' noise*", 'header': 'First Impressions'}, {'description': "Let's start with the 'Summary.' It's practically a love letter to every buzzword in the tech industry. Fintech, AI, mobile apps... it's like a word vomit session from a tech evangelist.  The 'Experience' section is a trip. This guy's a one-man tech army! He's done everything from building APIs to integrating AI chatbots.  He's even got a 'Lead Campus Ambassador' role for Ingressive for Good.  *Kevin does a dramatic hand gesture and snaps his fingers* You know what this tells me? This guy's got a serious case of 'FOMO' (Fear Of Missing Out). He's been to every conference, tried every tech stack, and done every side hustle.  But what about actually having a track record?  The 'Skills' section is a straight-up list of every programming language and framework under the sun. It's like the tech equivalent of a buffet.  *Kevin shakes his head and makes a 'tsk tsk' noise*  You know what they say... jack of all trades, master of none.  And finally, the 'Education' section.  'BSC Computer Science.'  *Kevin raises an eyebrow and smirks*  I mean, it's not a PhD in rocket science, but it'll do.  You gon' learn today!", 'header': 'Section-by-Section Roast'}, {'description': "This resume is so long, it's got a 'to be continued' at the bottom!  *Kevin looks around in disbelief and shakes his head*  This ain't a novel, dude! It's a resume! And this thing is more packed than a subway in rush hour.  *Kevin mimes riding a subway with exaggerated movements*  But the real kicker? This guy's got a 'Blue Vision Multimedia - BVM' gig...  *Kevin pauses and then whispers dramatically*  What is that even?  Blue Vision Multimedia?  I mean, the name alone makes me want to run for the hills!", 'header': 'Kevin Hart-isms'}, {'description': "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!'  *Kevin dramatically throws his arms in the air and stomps his feet*  This thing's got more acronyms than a NASA mission!  *Kevin makes a confused face and mimes reading a document with his finger*  I'm just trying to find the information I need, man.  I'm not trying to decipher a secret code! You gon' learn today!", 'header': 'Physical Comedy'}, {'description': "Look, I get it. You want to impress the recruiter. You want to show them you're a tech guru with all the latest skills. But sometimes, less is more.  *Kevin leans in and whispers*  Focus on the key skills and projects that actually matter for the job. And ditch the 'I'm a tech rockstar' attitude.  *Kevin gives a thumbs up*  Let your work speak for itself.  You gon' learn today!", 'header': 'Real Talk'}]}, 'file_uri': 'gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf', 'filename': 'OlusegunTewogbadeResume.pdf'}>
+2024-09-06 06:27:13,344 - app - INFO - File type is PDF
+2024-09-06 06:27:13,344 - app - INFO - File OlusegunTewogbadeResume.pdf removed from local storage
+2024-09-06 06:27:13,346 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 06:27:13] "POST /upload HTTP/1.1" 200 -
+2024-09-06 06:27:15,558 - app - INFO - Received request to get feedback page
+2024-09-06 06:27:15,558 - app - INFO - Session data at feedback page: filename=OlusegunTewogbadeResume.pdf, file_uri=gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 06:27:15,559 - app - INFO - Calling AI service to process the file
+2024-09-06 06:27:15,567 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:27:15,574 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:27:16,544 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/OlusegunTewogbadeResume.pdf
+2024-09-06 06:27:16,642 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-06 06:27:16,643 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-06 06:27:16,643 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-06 06:27:16,643 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-06 06:27:16,644 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-06 06:27:16,644 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-06 06:27:16,644 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-06 06:27:23,277 - ai_service - INFO - Received response from Vertex AI.
+2024-09-06 06:27:23,279 - app - INFO - Analysis result: {'introduction': 'Alright, everybody! Gather round, \'cause I\'m \'bout to dissect this resume like a Thanksgiving turkey. It\'s so packed with buzzwords, it\'s practically a dictionary with a side of LinkedIn. We got \'passionate,\' \'impactful,\' \'innovative,\'—you name it, it\'s in here. But hold on, is this a resume or a mission statement for the United Nations of Software Development? I swear, I saw \'leading the team\' in a fortune cookie once.  We gon\' break down this thing, section by section, and I\'m not holding back. You gon\' learn today!"', 'steps': [{'header': 'First Impressions', 'description': "Yo, this thing's so long, it's like a Netflix show.  They got a whole story in here, from 'Fasyl Technology Group' to 'Blue Vision Media.' Did this guy write a novel instead of a resume? I'm just picturing a 'To Be Continued' sign at the bottom. And what's with the name?  OLUSEGUN TEW OGBADE?  Sound like the title of a Nigerian action film,  and that's not a bad thing, mind you. But this resume is so long, I bet it has its own theme music!"}, {'header': 'Section-by-Section Roast', 'description': "'EXPERIENCE'...  Wow, this guy is the ultimate side hustle king. It's like he's got a job for every day of the week.  But I'm confused—Consultant Programmer? Partner, CTO?  Is this guy a walking job description generator?  I swear, he's got more titles than a royal family.  And don't even get me started on the 'SKILLS' section. This guy knows every programming language under the sun. He's like a human compiler! Java, Python, Dart, SQL—I'm surprised he didn't list 'Morse Code' and 'Bird Whistling.' I'm pretty sure this resume is longer than the Bible, but at least I finally found a use for all those acronyms I learned in college.  And hey, 'Lead Ambassador'?  That's like the ultimate resume flex. I wonder if he gets paid in swag? Maybe a t-shirt that says 'I <3 Code'?"}, {'header': 'Kevin Hart-isms', 'description': "'I'm a passionate software developer...with a knack for fintech...'  Oh, really?  Is that what they call it these days?  A 'knack'?  I thought they were called 'skills'.  And don't even get me started on the whole 'AI' thing.  He's like, 'I'm an AI guru!  I can integrate AI into a toaster!'  I bet he sleeps in a t-shirt that says 'I Love AI'—I'd wear that shirt, too, if I could write code that could make me disappear from awkward situations.  And listen, 'making technology work for people'?  That's a noble goal, but have you heard of 'user experience'?  This guy's so focused on coding, he probably forgets that real people are using these things.  It's like, 'Yo, here's my code, now figure it out!'"}, {'header': 'Physical Comedy', 'description': "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!'  It's like the resume equivalent of a clown car—all these skills and experiences just keep pouring out! I'd be doing a full-blown 'Kevin Hart dance'—you know, the one where I'm jumping up and down, pointing at the resume, and yelling, 'This is too much! This is too much!'"}, {'header': 'Real Talk', 'description': "Look,  I know this guy is talented,  but this resume is more about impressing than making connections.  Don't get caught up in the hype words.  Focus on showcasing what you can actually do for the company.  And for the love of all that is holy,  get rid of all the 'I' statements.  We get it, you're a software developer—but the real magic happens when you work with others.  So, ditch the ego, embrace the team, and let your skills do the talking. You gon' learn today!  And remember, I'm just kidding,  but also,  I'm not."}]}
+2024-09-06 06:27:23,282 - app - ERROR - Error calling AI service: unexpected char '#' at 745
+2024-09-06 06:27:23,284 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 06:27:23] "[35m[1mPOST /get_roast_page HTTP/1.1[0m" 500 -
+2024-09-06 06:31:09,598 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:31:10,315 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:31:40,988 - app - INFO - Starting Flask application
+2024-09-06 06:31:41,000 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-06 06:31:41,001 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-06 06:31:41,001 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:31:43,338 - app - INFO - Starting Flask application
+2024-09-06 06:31:43,347 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:31:43,347 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:31:47,068 - app - INFO - Rendering index page
+2024-09-06 06:31:47,073 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 06:31:47] "GET / HTTP/1.1" 200 -
+2024-09-06 06:31:48,134 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 06:31:48] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-06 06:31:51,560 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 06:31:51] "GET /roast HTTP/1.1" 200 -
+2024-09-06 06:32:06,128 - app - INFO - Received a file upload request
+2024-09-06 06:32:06,816 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-06 06:32:06,834 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:32:06,842 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:32:07,907 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-06 06:32:07,907 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 06:32:07,908 - app - INFO - Session data after upload: <SecureCookieSession {'ai_response': {'introduction': "Alright, everybody, gather round! I've got a resume here that's got more typos than a toddler's first attempt at writing. This is like that friend who shows up to a party in a full suit, but their shirt's inside-out... and they're wearing flip-flops. It's trying so hard to impress, but it just... fails miserably. You ready for this? 'Cause this resume, it's about to get roasted so bad, it'll need a fire extinguisher. *Cue dramatic music* Let's begin...", 'steps': [{'description': "This resume is a textbook case of 'trying too hard.' It's got so many buzzwords, it sounds like a dictionary threw up on a keyboard.  And the formatting?  Don't even get me started. It's like a formatting tornado hit, then left a note saying, 'Sorry, I'm not good with spaces.'", 'header': 'First Impressions'}, {'description': "Let's break down this masterpiece, shall we? The summary? It's like a motivational poster made into a job description.  'Passionate' is the word of the year, I guess.  The experience section reads like a laundry list of companies and accomplishments.  This isn't a resume, it's a 'Look at all the cool things I've done' infomercial. The skills?  Oh, the skills.  It's got everything from 'Java' to 'Git' to 'Jenkins.'  It's like, 'Hey, I can code.  But I can also use a computer.'  It's a masterpiece of mediocrity.", 'header': 'Section-by-Section Roast'}, {'description': "You know what, I'm gonna 'keep it 100' with y'all.  This resume is like those friends who tell you they're 'successful' but they can't even spell 'entrepreneur' without Google.  You gon' learn today! *Kevin points dramatically at the resume*  This ain't about knowing a bunch of techy stuff.  It's about being able to communicate what you know.  And this, my friends, is a prime example of 'talkin' a big game, but not backin' it up.'", 'header': 'Kevin Hart-isms'}, {'description': "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!' It's got so much content, but it feels so hollow. It's like those cardboard cutouts they put up at car dealerships, all dressed up, but no substance. You gotta bring the energy, baby!  This resume needs more 'oomph.'", 'header': 'Physical Comedy'}, {'description': "Look, I'm gonna give you some real talk.  You gotta cut the fluff, stop trying to impress everyone with all these buzzwords.  Focus on what makes you unique.  Show them what you can actually do.  Don't be afraid to be yourself, even if it means being 'slightly' less impressive. You might just surprise yourself. And who knows, you might actually land that dream job.  Just ditch the 'motivational poster' vibe and be authentic.  That's the real secret sauce to landing a gig.  Trust me, it'll save you a lot of time and headaches.", 'header': 'Real Talk'}]}, 'ai_roast_response': {'introduction': 'Alright, everybody! Gather round, \'cause I\'m \'bout to dissect this resume like a Thanksgiving turkey. It\'s so packed with buzzwords, it\'s practically a dictionary with a side of LinkedIn. We got \'passionate,\' \'impactful,\' \'innovative,\'—you name it, it\'s in here. But hold on, is this a resume or a mission statement for the United Nations of Software Development? I swear, I saw \'leading the team\' in a fortune cookie once.  We gon\' break down this thing, section by section, and I\'m not holding back. You gon\' learn today!"', 'steps': [{'description': "Yo, this thing's so long, it's like a Netflix show.  They got a whole story in here, from 'Fasyl Technology Group' to 'Blue Vision Media.' Did this guy write a novel instead of a resume? I'm just picturing a 'To Be Continued' sign at the bottom. And what's with the name?  OLUSEGUN TEW OGBADE?  Sound like the title of a Nigerian action film,  and that's not a bad thing, mind you. But this resume is so long, I bet it has its own theme music!", 'header': 'First Impressions'}, {'description': "'EXPERIENCE'...  Wow, this guy is the ultimate side hustle king. It's like he's got a job for every day of the week.  But I'm confused—Consultant Programmer? Partner, CTO?  Is this guy a walking job description generator?  I swear, he's got more titles than a royal family.  And don't even get me started on the 'SKILLS' section. This guy knows every programming language under the sun. He's like a human compiler! Java, Python, Dart, SQL—I'm surprised he didn't list 'Morse Code' and 'Bird Whistling.' I'm pretty sure this resume is longer than the Bible, but at least I finally found a use for all those acronyms I learned in college.  And hey, 'Lead Ambassador'?  That's like the ultimate resume flex. I wonder if he gets paid in swag? Maybe a t-shirt that says 'I <3 Code'?", 'header': 'Section-by-Section Roast'}, {'description': "'I'm a passionate software developer...with a knack for fintech...'  Oh, really?  Is that what they call it these days?  A 'knack'?  I thought they were called 'skills'.  And don't even get me started on the whole 'AI' thing.  He's like, 'I'm an AI guru!  I can integrate AI into a toaster!'  I bet he sleeps in a t-shirt that says 'I Love AI'—I'd wear that shirt, too, if I could write code that could make me disappear from awkward situations.  And listen, 'making technology work for people'?  That's a noble goal, but have you heard of 'user experience'?  This guy's so focused on coding, he probably forgets that real people are using these things.  It's like, 'Yo, here's my code, now figure it out!'", 'header': 'Kevin Hart-isms'}, {'description': "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!'  It's like the resume equivalent of a clown car—all these skills and experiences just keep pouring out! I'd be doing a full-blown 'Kevin Hart dance'—you know, the one where I'm jumping up and down, pointing at the resume, and yelling, 'This is too much! This is too much!'", 'header': 'Physical Comedy'}, {'description': "Look,  I know this guy is talented,  but this resume is more about impressing than making connections.  Don't get caught up in the hype words.  Focus on showcasing what you can actually do for the company.  And for the love of all that is holy,  get rid of all the 'I' statements.  We get it, you're a software developer—but the real magic happens when you work with others.  So, ditch the ego, embrace the team, and let your skills do the talking. You gon' learn today!  And remember, I'm just kidding,  but also,  I'm not.", 'header': 'Real Talk'}]}, 'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-06 06:32:07,908 - app - INFO - File type is PDF
+2024-09-06 06:32:07,908 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-06 06:32:07,910 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 06:32:07] "POST /upload HTTP/1.1" 200 -
+2024-09-06 06:32:10,048 - app - INFO - Received request to get feedback page
+2024-09-06 06:32:10,049 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 06:32:10,049 - app - INFO - Calling AI service to process the file
+2024-09-06 06:32:10,059 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:32:10,067 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:32:11,035 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 06:32:11,130 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-06 06:32:11,130 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-06 06:32:11,131 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-06 06:32:11,131 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-06 06:32:11,132 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-06 06:32:11,132 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-06 06:32:11,132 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-06 06:32:18,055 - ai_service - INFO - Received response from Vertex AI.
+2024-09-06 06:32:18,058 - app - INFO - Analysis result: {'introduction': "Yo, hold up! I see this resume and my first thought is, 'Did this guy write this on a napkin after a couple of beers at a tech conference?'  Man, this resume is so desperate to impress, it's practically doing a lap dance for recruiters. Let's break this bad boy down, shall we? It's about to get real, real funny. You gon' learn today!", 'steps': [{'header': 'First Impressions', 'description': "This resume is a textbook case of trying too hard. It's like a kid who just learned how to use bold and italics and wants to show off every single time.  We got the full name, multiple titles, and enough contact info to start a small phone company.  It's like the resume equivalent of wearing a suit to a barbecue.  What's next?  A resume in Comic Sans?  Get a grip, man! "}, {'header': 'Summary', 'description': "This 'summary' is more of a 'summary of why I'm trying to hide my lack of real experience'. It's filled with buzzwords and phrases like 'passionate software developer' and 'solving real-world problems'. It's like saying you're a 'creative writer' when you only write grocery lists.  Just say what you actually do, don't try to impress with words you barely understand."}, {'header': 'Experience', 'description': "This experience section is like a train wreck in slow motion.  It's a laundry list of  jobs, but instead of highlighting accomplishments, it's just a bunch of jargon and vague claims.  'Integrated Kafka to resolve delays...reduced response times by 60%'.  Dude, you're either making stuff up or you're just really bad at explaining what you actually do.  'Transitioned several services from Python Flask to Java Spring Boot'.  Is this a resume or a tech blog?  And don't get me started on the 'Abeyie Innovation Studios' bit.  Sounds like a place where they invent new ways to make coffee, not solve real problems. And the 'Blue Vision Multimedia - BVM' gig?  That name is so generic, I'm pretty sure it's already taken by a thousand other companies."}, {'header': 'Education', 'description': "Catholic University College, Ghana?  I don't know about you, but I'm getting a 'Catholic School' vibe from this.  Like, is there a prayer circle before every coding session?  Don't worry, we all got that one friend who went to a school with a funny name.  Just make sure it's relevant to the job you're applying for, because a degree in 'Computer Science' is about as useful as a degree in 'underwater basket weaving' if you don't have the skills to back it up."}, {'header': 'Skills', 'description': "This skills section is like a kid's first attempt at writing a shopping list.  'Java Python Dart SQL PL/SQL JavaScript'.  Ok, buddy, we get it, you know some coding stuff. But is this a grocery store or a tech company?  'Spring Boot Angular Flutter Flask'.  You know what this reminds me of?  A bunch of friends trying to impress their parents by throwing around fancy words they barely understand.  Here's a tip:  Instead of listing every random skill you've ever touched, pick a few that are actually relevant to the job you're applying for."}, {'header': 'Kevin Hart-isms', 'description': "You know, I'm starting to think this guy is trying to be the 'Kevin Hart of tech'.  He's got all the energy and enthusiasm of a chihuahua on a sugar rush, but without the comedic timing.  And the way he describes every accomplishment is like he's telling a story, but it's a story with no punchline.  'Increased trader decision accuracy by {30%}'.  What, are you a fortune teller now?  And this 'AI-driven solutions' thing is just a fancy way of saying you're still learning the basics.  It's like saying you're a 'master chef' because you know how to boil water."}, {'header': 'Physical Comedy', 'description': "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!'  Then I'd grab the resume and start shaking it like a maraca, saying 'This is all you got?  This is all you got?  Come on, man, step it up!'"}]}
+2024-09-06 06:32:18,060 - app - ERROR - Error calling AI service: unexpected char '#' at 745
+2024-09-06 06:32:18,081 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 06:32:18] "[35m[1mPOST /get_roast_page HTTP/1.1[0m" 500 -
+2024-09-06 06:34:08,388 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:34:09,077 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:34:11,483 - app - INFO - Starting Flask application
+2024-09-06 06:34:11,492 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:34:11,493 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:34:14,627 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:34:15,266 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:34:17,570 - app - INFO - Starting Flask application
+2024-09-06 06:34:17,579 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:34:17,579 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:37:28,440 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:37:29,092 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:37:31,402 - app - INFO - Starting Flask application
+2024-09-06 06:37:31,411 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:37:31,411 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:38:51,377 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:38:52,019 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:38:54,327 - app - INFO - Starting Flask application
+2024-09-06 06:38:54,336 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:38:54,336 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:38:56,427 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:38:57,103 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:38:59,508 - app - INFO - Starting Flask application
+2024-09-06 06:38:59,516 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:38:59,517 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:39:00,589 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-06 06:39:01,287 - werkzeug - INFO -  * Restarting with stat
+2024-09-06 06:39:03,572 - app - INFO - Starting Flask application
+2024-09-06 06:39:03,581 - werkzeug - WARNING -  * Debugger is active!
+2024-09-06 06:39:03,581 - werkzeug - INFO -  * Debugger PIN: 127-231-147
+2024-09-06 06:39:14,140 - app - INFO - Received a file upload request
+2024-09-06 06:39:15,329 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-06 06:39:15,346 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:39:15,352 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:39:16,387 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-06 06:39:16,387 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 06:39:16,388 - app - INFO - Session data after upload: <SecureCookieSession {'ai_response': {'introduction': "Alright, everybody, gather round! I've got a resume here that's got more typos than a toddler's first attempt at writing. This is like that friend who shows up to a party in a full suit, but their shirt's inside-out... and they're wearing flip-flops. It's trying so hard to impress, but it just... fails miserably. You ready for this? 'Cause this resume, it's about to get roasted so bad, it'll need a fire extinguisher. *Cue dramatic music* Let's begin...", 'steps': [{'description': "This resume is a textbook case of 'trying too hard.' It's got so many buzzwords, it sounds like a dictionary threw up on a keyboard.  And the formatting?  Don't even get me started. It's like a formatting tornado hit, then left a note saying, 'Sorry, I'm not good with spaces.'", 'header': 'First Impressions'}, {'description': "Let's break down this masterpiece, shall we? The summary? It's like a motivational poster made into a job description.  'Passionate' is the word of the year, I guess.  The experience section reads like a laundry list of companies and accomplishments.  This isn't a resume, it's a 'Look at all the cool things I've done' infomercial. The skills?  Oh, the skills.  It's got everything from 'Java' to 'Git' to 'Jenkins.'  It's like, 'Hey, I can code.  But I can also use a computer.'  It's a masterpiece of mediocrity.", 'header': 'Section-by-Section Roast'}, {'description': "You know what, I'm gonna 'keep it 100' with y'all.  This resume is like those friends who tell you they're 'successful' but they can't even spell 'entrepreneur' without Google.  You gon' learn today! *Kevin points dramatically at the resume*  This ain't about knowing a bunch of techy stuff.  It's about being able to communicate what you know.  And this, my friends, is a prime example of 'talkin' a big game, but not backin' it up.'", 'header': 'Kevin Hart-isms'}, {'description': "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!' It's got so much content, but it feels so hollow. It's like those cardboard cutouts they put up at car dealerships, all dressed up, but no substance. You gotta bring the energy, baby!  This resume needs more 'oomph.'", 'header': 'Physical Comedy'}, {'description': "Look, I'm gonna give you some real talk.  You gotta cut the fluff, stop trying to impress everyone with all these buzzwords.  Focus on what makes you unique.  Show them what you can actually do.  Don't be afraid to be yourself, even if it means being 'slightly' less impressive. You might just surprise yourself. And who knows, you might actually land that dream job.  Just ditch the 'motivational poster' vibe and be authentic.  That's the real secret sauce to landing a gig.  Trust me, it'll save you a lot of time and headaches.", 'header': 'Real Talk'}]}, 'ai_roast_response': {'introduction': 'Alright, everybody! Gather round, \'cause I\'m \'bout to dissect this resume like a Thanksgiving turkey. It\'s so packed with buzzwords, it\'s practically a dictionary with a side of LinkedIn. We got \'passionate,\' \'impactful,\' \'innovative,\'—you name it, it\'s in here. But hold on, is this a resume or a mission statement for the United Nations of Software Development? I swear, I saw \'leading the team\' in a fortune cookie once.  We gon\' break down this thing, section by section, and I\'m not holding back. You gon\' learn today!"', 'steps': [{'description': "Yo, this thing's so long, it's like a Netflix show.  They got a whole story in here, from 'Fasyl Technology Group' to 'Blue Vision Media.' Did this guy write a novel instead of a resume? I'm just picturing a 'To Be Continued' sign at the bottom. And what's with the name?  OLUSEGUN TEW OGBADE?  Sound like the title of a Nigerian action film,  and that's not a bad thing, mind you. But this resume is so long, I bet it has its own theme music!", 'header': 'First Impressions'}, {'description': "'EXPERIENCE'...  Wow, this guy is the ultimate side hustle king. It's like he's got a job for every day of the week.  But I'm confused—Consultant Programmer? Partner, CTO?  Is this guy a walking job description generator?  I swear, he's got more titles than a royal family.  And don't even get me started on the 'SKILLS' section. This guy knows every programming language under the sun. He's like a human compiler! Java, Python, Dart, SQL—I'm surprised he didn't list 'Morse Code' and 'Bird Whistling.' I'm pretty sure this resume is longer than the Bible, but at least I finally found a use for all those acronyms I learned in college.  And hey, 'Lead Ambassador'?  That's like the ultimate resume flex. I wonder if he gets paid in swag? Maybe a t-shirt that says 'I <3 Code'?", 'header': 'Section-by-Section Roast'}, {'description': "'I'm a passionate software developer...with a knack for fintech...'  Oh, really?  Is that what they call it these days?  A 'knack'?  I thought they were called 'skills'.  And don't even get me started on the whole 'AI' thing.  He's like, 'I'm an AI guru!  I can integrate AI into a toaster!'  I bet he sleeps in a t-shirt that says 'I Love AI'—I'd wear that shirt, too, if I could write code that could make me disappear from awkward situations.  And listen, 'making technology work for people'?  That's a noble goal, but have you heard of 'user experience'?  This guy's so focused on coding, he probably forgets that real people are using these things.  It's like, 'Yo, here's my code, now figure it out!'", 'header': 'Kevin Hart-isms'}, {'description': "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!'  It's like the resume equivalent of a clown car—all these skills and experiences just keep pouring out! I'd be doing a full-blown 'Kevin Hart dance'—you know, the one where I'm jumping up and down, pointing at the resume, and yelling, 'This is too much! This is too much!'", 'header': 'Physical Comedy'}, {'description': "Look,  I know this guy is talented,  but this resume is more about impressing than making connections.  Don't get caught up in the hype words.  Focus on showcasing what you can actually do for the company.  And for the love of all that is holy,  get rid of all the 'I' statements.  We get it, you're a software developer—but the real magic happens when you work with others.  So, ditch the ego, embrace the team, and let your skills do the talking. You gon' learn today!  And remember, I'm just kidding,  but also,  I'm not.", 'header': 'Real Talk'}]}, 'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-06 06:39:16,388 - app - INFO - File type is PDF
+2024-09-06 06:39:16,388 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-06 06:39:16,390 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 06:39:16] "POST /upload HTTP/1.1" 200 -
+2024-09-06 06:39:18,161 - app - INFO - Received request to get feedback page
+2024-09-06 06:39:18,161 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 06:39:18,161 - app - INFO - Calling AI service to process the file
+2024-09-06 06:39:18,168 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:39:18,175 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-06 06:39:19,164 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-06 06:39:19,384 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-06 06:39:19,384 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-06 06:39:19,384 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-06 06:39:19,385 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-06 06:39:19,385 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-06 06:39:19,385 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-06 06:39:19,386 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-06 06:39:25,372 - ai_service - INFO - Received response from Vertex AI.
+2024-09-06 06:39:25,374 - app - INFO - Analysis result: {'introduction': "Yo, check out this resume! It's so long it makes my head spin like a washing machine on high speed.  My man's got more bullet points than a bulletproof vest.  And the font?  It's like he's trying to shout at you from across the room, 'Hey, look at me, I'm a software developer! I'm a software developer!'.  Dude, chill out.  We get it.", 'steps': [{'header': 'First Impressions', 'description': "This resume is like a Nigerian prince email - full of promises, but you can't help but feel like you're about to get scammed.  This dude is throwing every buzzword at the wall, hoping something sticks.  Fintech? Check. AI? Check. Flutter?  Check.  I'm pretty sure he's about to list 'breathing' as a skill. You gon' learn today!  But learn what, I'm not sure."}, {'header': 'Section-by-Section Roast', 'description': 'Let\'s start with "Experience." It\'s like a poorly organized garage sale - you\'ve got a bunch of random items, but nothing seems to belong together.  "Consultant Programmer"? Sounds more like a side hustle than a career. And "Partner, CTO"? I\'m guessing that means he\'s the boss of like, three other people.  I\'d be more impressed if he actually knew what a CTO does.  As for the "Skills" section, it\'s a basic tech sampler platter.  He\'s got everything, but does he really master anything?  I\'m guessing not.  It\'s like a wannabe chef who throws everything in the pot and hopes it tastes good.'}, {'header': 'Kevin Hart-isms', 'description': '\'I\'m dedicated to solving real-world problems and making technology work for people\'.... Yeah, dude, we all are.  That\'s kinda the point of being a software developer.  But you don\'t have to say it with the same dramatic flair as a Shakespearean actor. And \'significally boosting overall system responsiveness and scalability\' - are you writing a technical manual or a rap song?  Choose one.  And hey, don\'t forget about the "Education" section.  Catholic University College, Ghana?  Sounds like a nice place.  But that doesn\'t mean you gotta list it like it\'s the Sorbonne.'}, {'header': 'Physical Comedy', 'description': "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!'   Like a dog chasing its tail, but instead of a tail, it's a laundry list of buzzwords and self-aggrandizing claims.  Someone, please, give this guy a thesaurus!  Or maybe just a reality check.  And I'm not even gonna mention the weird, half-assed URL he's using.  Did his website designer just give up halfway through?"}, {'header': 'Real Talk', 'description': "Yo, listen up.  This resume is a good start, but it needs a major overhaul.  Take out the fluff, focus on the skills that actually matter, and ditch the 'I'm-so-important' attitude.  And while you're at it,  get yourself a professional resume writer.  They can help you translate all that tech mumbo jumbo into something that actually makes sense to a hiring manager.  Don't be afraid to be yourself, but be a confident, competent, and professional yourself.  You got this! Now go out there and get that job, dude!  But no more 'AI-driven solutions', please.  Just keep it real."}]}
+2024-09-06 06:39:25,377 - app - ERROR - Error calling AI service: unexpected char '#' at 745
+2024-09-06 06:39:25,379 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2024 06:39:25] "[35m[1mPOST /get_roast_page HTTP/1.1[0m" 500 -
