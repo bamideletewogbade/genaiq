@@ -4,6 +4,7 @@ import os
 import logging
 from logging.handlers import RotatingFileHandler
 from ai_service import upload_local_file_to_gcs, call_vertex_ai
+import requests
 
 app = Flask(__name__)
 
@@ -16,7 +17,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = SECRET_KEY
 
 # Replace with your Paystack secret key
-PAYSTACK_SECRET_KEY = 'sk_test_your_secret_key'
+PAYSTACK_SECRET_KEY = 'sk_test_d09c41f57e1897f4ae815c7da361ab9e2a780d93'
 
 def setup_logging():
     """Sets up logging with file rotation."""
@@ -151,7 +152,7 @@ def get_feedback_page():
 
             # Process the result and prepare feedback data dynamically
             analysis_result = feedback
-            return redirect(url_for('feedback_summary'))
+            return render_template('full_report.html', feedback=analysis_result), 200
 
         except Exception as e:
             app.logger.error(f"Error calling AI service: {e}")
@@ -272,19 +273,23 @@ def start_payment():
     email = request.form.get('email')
     payment_method = request.form.get('payment-method')
 
-    # Determine the amount based on the payment method
-    if payment_method == 'card':
-        amount = 1000  # Amount in kobo (10 dollars), Paystack expects the amount in the smallest currency unit
-        currency = 'NGN'  # Use 'NGN' for Naira
-    elif payment_method == 'mobile_money':
-        amount = 16000  # Amount in GHS, Paystack expects the amount in the smallest currency unit
-        currency = 'GHS'  # Use 'GHS' for Ghana Cedis
-    else:
+    # Log received request data
+    app.logger.info(f"Received start_payment request with email: {email} and payment_method: {payment_method}")
+
+    if not email:
+        app.logger.error('Email not provided')
+        return jsonify({'status': 'failed', 'message': 'Email is required'}), 400
+
+    if payment_method not in ['card', 'mobile_money']:
+        app.logger.error('Invalid payment method: %s', payment_method)
         return jsonify({'status': 'failed', 'message': 'Invalid payment method'}), 400
+
+
+    amount = 160 * 100
+    currency = 'GHS'
 
     # Initialize the payment
     url = 'https://api.paystack.co/transaction/initialize'
-    PAYSTACK_SECRET_KEY = 'sk_test_d09c41f57e1897f4ae815c7da361ab9e2a780d93'
     headers = {
         'Authorization': f'Bearer {PAYSTACK_SECRET_KEY}',
         'Content-Type': 'application/json',
@@ -293,18 +298,74 @@ def start_payment():
     data = {
         'email': email,
         'amount': amount,
-        'currency': currency,  # Set the currency based on the payment method
-        'callback_url': url_for('verify_payment', _external=True)  # Set callback URL to verify payment after completion
+        'currency': currency,
+        'callback_url': url_for('verify_payment', _external=True)
     }
 
-    response = requests.post(url, json=data, headers=headers)
-    response_data = response.json()
+    try:
+        response = requests.post(url, json=data, headers=headers)
+        # response.raise_for_status()  # Raise an HTTPError for bad responses
+        response_data = response.json()
 
-    if response_data['status']:
-        # Redirect user to the Paystack payment page
-        return redirect(response_data['data']['authorization_url'])
-    else:
-        return jsonify({'status': 'failed', 'message': 'Payment initialization failed'}), 400
+        # Log Paystack response data
+        app.logger.info(f"Paystack response: {response_data}")
+
+        if response_data['status']:
+            app.logger.info('Payment initialization successful. Redirecting to %s', response_data['data']['authorization_url'])
+            return redirect(response_data['data']['authorization_url'])
+        else:
+            app.logger.error('Payment initialization failed: %s', response_data.get('message', 'Unknown error'))
+            return jsonify({'status': 'failed', 'message': 'Payment initialization failed'}), 400
+
+    except requests.exceptions.RequestException as e:
+        app.logger.error('Request to Paystack failed: %s', e)
+        return jsonify({'status': 'failed', 'message': 'Payment initialization failed'}), 500
+
+
+@app.route('/verify_payment', methods=['GET'])
+def verify_payment():
+    reference = request.args.get('reference')
+
+    app.logger.info(f"Received verify_payment request with reference: {reference}")
+
+    if not reference:
+        app.logger.error('Reference not provided')
+        return jsonify({'status': 'failed', 'message': 'Reference not provided'}), 400
+
+    # Verify the payment with Paystack
+    url = f'https://api.paystack.co/transaction/verify/{reference}'
+    headers = {
+        'Authorization': f'Bearer {PAYSTACK_SECRET_KEY}',
+        'Content-Type': 'application/json',
+    }
+
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()  # Raise an HTTPError for bad responses
+        response_data = response.json()
+
+        # Log Paystack response data
+        app.logger.info(f"Paystack verification response: {response_data}")
+
+        if response_data['status']:
+            payment_status = response_data['data']['status']
+            if payment_status == 'success':
+                app.logger.info('Payment successful for reference %s', reference)
+                return jsonify({'status': 'success', 'message': 'Payment successful'}), 200
+            else:
+                app.logger.error('Payment failed for reference %s', reference)
+                return jsonify({'status': 'failed', 'message': 'Payment failed'}), 400
+        else:
+            app.logger.error('Payment verification failed for reference %s: %s', reference, response_data.get('message', 'Unknown error'))
+            return jsonify({'status': 'failed', 'message': 'Payment verification failed'}), 400
+
+    except requests.exceptions.RequestException as e:
+        app.logger.error('Request to Paystack failed: %s', e)
+        return jsonify({'status': 'failed', 'message': 'Payment verification failed'}), 500
+
+@app.route('/roast')
+def resume_roast():
+    return render_template('resume_roast.html')
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):

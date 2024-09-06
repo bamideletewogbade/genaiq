@@ -123,15 +123,17 @@ def call_vertex_ai(file_uri):
             "You are an HR expert with extensive experience in evaluating resumes. "
             "Please review the following resume and provide detailed feedback on the candidate's qualifications, achievements, "
             "and potential for career growth. Highlight areas of strength and suggest improvements. Also, provide an ATS match percentage "
-            "for the resume. Structure the feedback with the following fields:\n\n"
-            "1. 'overall_feedback': A summary of the overall quality of the resume. \n"
+            "for the resume. Structure the feedback with the following fields:\n\n Esure the summary is the first field returned"
+            "1. 'overall_feedback': A summary of the overall quality of the resume, including first impressions and overall strengths. \n"
             "2. 'feedback_cards': A list of sections, each containing:\n"
-            "   - 'title': The section title (e.g., Professional Experience, Skills and Technologies, etc.).\n"
-            "   - 'description': Detailed feedback on the section.\n"
-            "   - 'ats_match': An ATS match percentage for this section.\n"
-            "   - 'recommendations': Suggestions for improvement.\n"
-            "Return response in JSON format, also remember to be as human as possible. Tone and clarity. Also be personal by using the person's name."
+            "   - 'title': The section title (e.g., Professional Experience, Skills and Technologies, Contact Information, etc.).\n"
+            "   - 'description': Detailed feedback on the section, focusing on clarity, relevance, and effectiveness.\n"
+            "   - 'ats_match': An ATS match percentage for this section based on common applicant tracking system criteria.\n"
+            "   - 'recommendations': Specific, actionable suggestions for improvement, aimed at enhancing clarity, impact, and ATS compatibility.\n"
+            "Return the response in JSON format. Ensure the tone is clear and professional, yet friendly and engaging. "
+            "Personalize the feedback by using the candidate's name throughout the review, making the advice feel tailored and considerate."
         )
+
 
         logger.info("Creating a Part object from the extracted file text.")
         part = Part.from_text(file_text)
