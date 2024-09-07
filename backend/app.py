@@ -164,7 +164,7 @@ def get_feedback_page():
 
 @app.route('/get_roast_page', methods=['POST'])
 def roast_resume_page():
-    app.logger.info("Received request to get feedback page")
+    app.logger.info("Received request to get roast page")
 
     try:
         filename = session.get('filename')
@@ -195,6 +195,33 @@ def roast_resume_page():
     except Exception as e:
         app.logger.error(f"Error processing feedback: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
+
+def roast_resume_test():
+    # This function would normally call the AI service.
+    # For this example, we will return the static JSON response.
+    return {
+        "introduction": "Yo, yo, yo! Hold up, hold up, hold up! Is this a resume or a self-help book? 'Cause I'm getting more life advice than job qualifications here. This resume is so long, it's practically a novella. It's like a novel of 'How to Sound Like You Have a Life When You Don't.'",
+        "First Impressions": {
+            "header": "First Impressions",
+            "description": "Okay, so the first thing I see is this picture. It's like they just grabbed a random stock photo of a dude with a generic smile. You know, the kind of smile you get when you're holding back a sneeze in a crowded elevator. And the summary? It's like a generic AI chatbot wrote it. 'Passionate software developer' - Yeah, we all are. We're passionate about not being hungry. This guy's gotta find a new passion, because this resume is giving 'passion project that's going nowhere.'"
+        },
+        "Section-by-Section Roast": {
+            "header": "Section-by-Section Roast",
+            "description": "Let's break down this thing, section by section, like a pro wrestler taking apart his opponent.\n\n**Experience: ** Okay, this is where it gets interesting. This guy's been at three jobs in three years, and they all have a similar theme: 'I did things and now I'm leaving.' This resume is like a series of breakup letters. 'Oh, I integrated Kafka, so I'm gone. See ya!' Dude, you're not a secret agent. You're a software developer. Get a grip!\n\n**Education: ** Catholic University College, Ghana. I'm not saying it's a bad school, but it sounds like a place you'd go if you wanted to major in 'How to Be a Humblebragger.'\n\n**Skills: ** This is where I start to lose my mind. We got 'Java, Python, Dart, SQL, PL/SQL, JavaScript...' Dude, you're trying to impress me with your knowledge, but all I see is a laundry list of buzzwords. This isn't a coding bootcamp, it's a resume! You gon' learn today!\n\n**Keywords: ** 'AI', 'Fintech', 'Mobile App Development.' This guy's throwing every trending keyword in there like he's trying to win the 'Most Generic Software Developer' award. You're not a Techie Superhero. You're just a guy who knows how to write some code. Calm down, bruh!"
+        },
+        "Kevin Hart-isms": {
+            "header": "Kevin Hart-isms",
+            "description": "This resume? It's like a car with a 'For Sale' sign on it, but the engine's missing. You're tellin' me you're a 'Consultant Programmer' but you're still working on 'Three Knights'? That's like me saying, 'I'm a comedian, but I'm still learning how to tell jokes.' And 'AI-driven solutions'? That's like saying, 'I'm a genius, I can solve problems.' We all can, man. We're humans. We're supposed to solve problems."
+        },
+        "Physical Comedy": {
+            "header": "Physical Comedy",
+            "description": "If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!' Then I'd stop, take a deep breath, and say, 'This resume is so bad, it's good.' Because it's so ridiculous, it's actually kind of entertaining. It's like a bad movie you can't stop watching."
+        },
+        "Real Talk": {
+            "header": "Real Talk",
+            "description": "Yo, listen up. I know you're trying to impress people with this resume, but all you're doing is making yourself look like a try-hard. Focus on your skills, your experience, and your achievements. Don't just throw keywords at the wall and see what sticks. Be authentic, be confident, and be yourself. You'll go farther in the long run."
+        }
+    }
 
 @app.route('/download_feedback_pdf')
 def download_feedback_pdf():

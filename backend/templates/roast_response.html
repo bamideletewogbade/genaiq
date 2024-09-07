@@ -3,25 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Roast of Your Resume</title>
+    <title>CV.ai - Resume Roast</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
-        h1 { color: #FE8C00; }
-        .step { margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
-        .step-header { font-weight: bold; color: #FE8C00; margin-bottom: 5px; }
-        .step-description { font-size: 1rem; color: #333; }
-        .intro-text { font-size: 1.2rem; color: #555; margin-bottom: 20px; }
+        :root {
+            --primary-color: #023047;
+            --secondary-color: #fb8500;
+            --accent-color: #8ecae6;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--secondary-color) !important;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .roast-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .roast-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .roast-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            font-weight: 600;
+        }
+
+        .roast-body {
+            padding: 2rem;
+        }
+
+        .roast-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .roast-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .roast-section-title {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .roast-content {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding-top: 50px;
+    flex-shrink: 0;
+}
+
+footer a {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+footer h6 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
     </style>
 </head>
 <body>
-    <h1>The Roast of Your Resume</h1>
-    <p class="intro-text">{{introduction}}</p>
-
-    {{#each steps}}
-        <div class="step">
-            <div class="step-header">{{header}}</div>
-            <div class="step-description">{{description}}</div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">CV.ai</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Resume Insights</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Resume Optimizer</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Resume-JD Matcher</a></li>
+                </ul>
+            </div>
         </div>
-    {{/each}}
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="roast-card">
+                        <div class="roast-header text-center">
+                            <h1 class="mb-0">The Roast of Your Resume</h1>
+                        </div>
+                        <div class="roast-body">
+                            <div class="roast-section">
+                                <p class="roast-content">{{ roast.roast }}</p>
+                            </div>
+                            <div class="text-center mt-4">
+                                <button class="btn btn-secondary" onclick="history.back()">Back</button>
+                                <button class="btn btn-primary" id="shareBtn"><i class="fa-solid fa-share"></i> Share</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center text-lg-start">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text">CV.ai</h5>
+                    <p>Empowering careers with AI-driven resume solutions.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+                    <p><a href="#" class="text-reset">Resume Builder</a></p>
+                    <p><a href="#" class="text-reset">Resume Optimizer</a></p>
+                    <p><a href="#" class="text-reset">Resume Matcher</a></p>
+                    <p><a href="#" class="text-reset">Resume Roast</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+                    <p><a href="#" class="text-reset">Pricing</a></p>
+                    <p><a href="#" class="text-reset">Contact Us</a></p>
+                    <p><a href="#" class="text-reset">FAQs</a></p>
+                    <p><a href="#" class="text-reset">Terms of Service</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-envelope me-3"></i> bishoptewogbade@gmail.com</p>
+                    <p><i class="fas fa-phone me-3"></i> +233 59 779 0470</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 CV.ai All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('shareBtn').addEventListener('click', async () => {
+            const shareData = {
+                title: 'Resume Roast',
+                text: 'Check out my resume roast on CV.ai!',
+                url: window.location.href
+            };
+
+            try {
+                await navigator.share(shareData);
+                console.log('Share successful');
+            } catch (err) {
+                console.error('Error sharing:', err);
+            }
+        });
+    </script>
 </body>
 </html>

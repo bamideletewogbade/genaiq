@@ -196,23 +196,19 @@ def roast_resume(file_uri):
 
         logger.info("Preparing the prompt for Vertex AI.")
         prompt = (
-            "Yo, listen up! You're about to channel your inner Kevin Hart, that pint-sized comedy powerhouse with a mouth that runs faster than Usain Bolt on Red Bull. Your mission? Roast the hell outta this resume, but make it so funny the person might frame it instead of cry. "
-            "let the roast have the following fields:\n\n"
-            "step: First Impressions\n"
-            "description: Start with a 'First Impressions' bit. You know, like when Kevin walks on stage and just starts ripping into the audience. What's the first thing that hits you about this resume? Is it trying so hard it's sweating? Is it emptier than Kevin's height chart?\n\n"
-            "step: Section-by-Section Roast\n"
-            "description: Go section by section. Education, experience, skills—whatever's there, tear it apart like it owes you money. But remember, we're going for laughs, not tears. Think of each section like a different person in Kevin's story—give 'em all a voice, a personality.\n\n"
-            "step: Kevin Hart-isms\n"
-            "description: Sprinkle in some classic Kevin Hart-isms. You know, those little catchphrases or vocal tics he does. Maybe throw in a 'You gon' learn today!' when you see a particularly sad skill listed.\n\n"
-            "step: Physical Comedy\n"
-            "description: Don't forget the physical comedy! Yeah, I know you're text-based, but describe some exaggerated reactions or movements. Like, 'If I saw this resume in person, I'd be running around the room, arms flailing, screaming 'What is this?! What. Is. This?!''\n\n"
-            "step: Real Talk\n"
-            "description: End with a 'Real Talk' moment. Kevin always brings it home with a bit of genuine advice wrapped in humor. Give 'em something they can actually use, but make it funny.\n\n"
-            "Response should be in JSON format. Strip all special characters so I can use JSON response easily. "
-            "Structure it like this:\n"
-            "introduction: Provides the main intro roast.\n"
-            "steps: Each step includes a header and description, which are rendered in separate sections."
-        )
+        "Imagine you are a comedian like Kevin Hart, known for your sharp wit and humor. You are given a resume to review and roast. Your goal is to make the review funny and engaging"
+        "Craft a single, cohesive roast that includes:\n\n"
+        "1. Make fun of job titles, company names, and the way responsibilities are described. Point out any exaggerations or clichés.\n"
+        "2. Make jokes about the keywords used in the resume that seem trendy or overused.\n"
+        "3. A funny conclusion with a tiny bit of actual advice\n\n"
+        "Keep the entire roast concise (about 4-6 sentences total) and funny. "
+        "Structure your response in JSON format with a single 'roast' field. "
+        "Strip all special characters for easy JSON parsing. "
+        "Example structure:\n"
+        "{\n"
+        "  'roast': 'Yo, this resume... [full roast content here]'\n"
+        "}"
+)
 
         logger.info("Creating a Part object from the extracted file text.")
         part = Part.from_text(file_text)
@@ -228,8 +224,8 @@ def roast_resume(file_uri):
 
             try:
                 # Strip JSON formatting characters and parse
-                clean_response = response_text.strip().strip('```json').strip('```').strip()
-                return json.loads(clean_response)
+                # clean_response = response_text.strip().strip('```json').strip('```').strip()
+                return json.loads(response_text)
             except json.JSONDecodeError as json_err:
                 logger.error(f"Failed to parse JSON response: {json_err}")
                 return {"error": "Failed to parse JSON response.", "raw_response": response_text}
