@@ -219,7 +219,6 @@ def roast_resume(file_uri):
         if response and response.text:
             logger.info("Received response from Vertex AI.")
             response_text = response.text
-            
             logger.debug(f"Raw response text: {response_text}")
 
             try:
@@ -236,3 +235,80 @@ def roast_resume(file_uri):
     except Exception as e:
         logger.error(f"Error in roast_resume: {e}")
         return {"error": f"Error processing the file: {str(e)}"}
+
+def match_resume_to_job(resume_uri, job_description):
+    """
+    Matches a resume to a job description using Vertex AI.
+    
+    :param resume_uri: GCS URI of the resume file
+    :param job_description: String containing the job description
+    :return: JSON object with match analysis
+    """
+    try:
+        # Download and extract text from resume
+        resume_content = download_file_from_gcs(resume_uri)
+        if not resume_content:
+            return {"error": "Failed to download resume from GCS."}
+        
+        file_extension = os.path.splitext(resume_uri)[1].lower()
+        if file_extension == '.pdf':
+            resume_text = extract_text_from_pdf(resume_content)
+        elif file_extension == '.docx':
+            resume_text = extract_text_from_docx(resume_content)
+        elif file_extension == '.txt':
+            resume_text = extract_text_from_txt(resume_content)
+        else:
+            return {"error": "Unsupported resume file type."}
+        
+        if not resume_text.strip():
+            return {"error": "No text extracted from the resume."}
+        
+        # Initialize Vertex AI
+        project_id = "genaiq"
+        location = "us-central1"
+        initialize_vertex_ai(project_id, location)
+
+        # Load the Vertex AI generative model
+        model = GenerativeModel("gemini-1.5-flash-001",
+                                generation_config={"response_mime_type": "application/json"})
+
+        # Prepare the prompt
+        prompt = f"""
+        You are an expert in resume analysis and job matching. Please compare the following resume with the provided job description and provide a detailed analysis. Structure your response in JSON format with the following fields:
+
+        1. 'match_percentage': An integer from 0 to 100 representing how well the resume matches the job description.
+        2. 'skills_gap': A list of skills mentioned in the job description but not found or not sufficiently demonstrated in the resume.
+        3. 'recommendations': A list of specific suggestions to improve the resume for this job.
+        4. 'strengths': A list of areas where the candidate's resume aligns well with the job requirements.
+        5. 'overall_assessment': A brief summary of the candidate's fit for the position.
+
+        Resume:
+        {resume_text}
+
+        Job Description:
+        {job_description}
+
+        Ensure your response is in valid JSON format.
+        """
+
+        # Create Part objects
+        resume_part = Part.from_text(resume_text)
+        job_desc_part = Part.from_text(job_description)
+
+        # Generate content
+        response = model.generate_content([resume_part, job_desc_part, prompt])
+        
+        if response and response.text:
+            try:
+                return json.loads(response.text.strip('```json').strip('```').strip())
+            except json.JSONDecodeError as json_err:
+                return {"error": "Failed to parse JSON response.", "raw_response": response.text}
+        else:
+            return {"error": "No response received from Vertex AI."}
+
+    except Exception as e:
+        logging.error(f"Error in match_resume_to_job: {e}")
+        return {"error": f"Error processing the resume and job description: {str(e)}"}
+
+
+
