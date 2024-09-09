@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_with_jd
+from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job
 import requests
 
 app = Flask(__name__)
@@ -378,6 +378,10 @@ def match():
 def resume_roast():
 
     return render_template('resume_roast.html')
+
+@app.route('/match')
+def match_jd():
+    return render_template('jd_matcher.html')
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):

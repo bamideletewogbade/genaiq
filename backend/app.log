@@ -7261,3 +7261,20 @@
 2024-09-08 07:46:59,968 - werkzeug - INFO - 127.0.0.1 - - [08/Sep/2024 07:46:59] "POST /get_roast_page HTTP/1.1" 200 -
 2024-09-08 07:52:13,133 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
 2024-09-08 07:52:14,008 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 07:11:33,544 - app - INFO - Starting Flask application
+2024-09-09 07:11:33,637 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-09 07:11:33,637 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-09 07:11:33,639 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 07:11:35,882 - app - INFO - Starting Flask application
+2024-09-09 07:11:35,891 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 07:11:35,899 - werkzeug - INFO -  * Debugger PIN: 327-467-230
+2024-09-09 07:11:44,128 - app - INFO - Rendering index page
+2024-09-09 07:11:44,134 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:11:44] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-09 07:11:45,235 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:11:45] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-09 07:11:49,817 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:11:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-09-09 07:11:52,870 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:11:52] "GET /match HTTP/1.1" 200 -
+2024-09-09 07:15:07,153 - app - INFO - Rendering index page
+2024-09-09 07:15:07,156 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:15:07] "GET / HTTP/1.1" 200 -
+2024-09-09 07:15:07,498 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:15:07] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-09 07:39:55,336 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:39:55] "GET /match HTTP/1.1" 200 -
