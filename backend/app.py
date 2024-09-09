@@ -359,6 +359,9 @@ def verify_payment():
 def match():
     resume = request.files['resume']
     job_description = request.form['job_description']
+
+    filename = session.get('filename')
+    file_uri = session.get('file_uri')
     
     if resume and job_description:
         filename = secure_filename(resume.filename)
