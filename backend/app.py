@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job
+from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_with_ai
 import requests
 
 app = Flask(__name__)
@@ -162,50 +162,6 @@ def get_feedback_page():
         app.logger.error(f"Error processing feedback: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
 
-@app.route('/get_roast_page', methods=['POST'])
-def roast_resume_page():
-    app.logger.info("Received request to get roast page")
-
-    try:
-        filename = session.get('filename')
-        file_uri = session.get('file_uri')
-        app.logger.info(f"Session data at feedback page: filename={filename}, file_uri={file_uri}")
-
-        if not filename or not file_uri:
-            app.logger.error("Required session data missing")
-            return jsonify({'error': 'Session data missing'}), 400
-
-        # Process the file using AI service
-        app.logger.info("Calling AI service to process the file")
-
-        try:
-            roast = roast_resume(file_uri)
-            app.logger.info(f"Analysis result: {roast}")
-            session['ai_roast_response'] = roast
-
-
-            # # Process the result and prepare feedback data dynamically
-            # analysis_result = roast
-            return render_template('roast_response.html', roast=roast), 200
-
-        except Exception as e:
-            app.logger.error(f"Error calling AI service: {e}")
-            return jsonify({'error': 'Error calling AI service'}), 500
-
-    except Exception as e:
-        app.logger.error(f"Error processing feedback: {e}")
-        return jsonify({'error': 'Error processing feedback'}), 500
-
-@app.route('/download_feedback_pdf')
-def download_feedback_pdf():
-    """Serve the feedback PDF for download."""
-    pdf_filepath = session.get('pdf_filepath')
-    if pdf_filepath and os.path.exists(pdf_filepath):
-        app.logger.info(f"Serving PDF: {pdf_filepath}")
-        return send_file(pdf_filepath, as_attachment=True)
-    else:
-        app.logger.error("PDF file not found")
-        return jsonify({'error': 'PDF file not found'}), 404
 
 # Endpoint to only display summary
 @app.route('/feedback_summary', methods=['GET'])
@@ -248,6 +204,93 @@ def full_report():
     except Exception as e:
         app.logger.error(f"Error processing feedback: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
+
+@app.route('/roast')
+def resume_roast():
+    return render_template('resume_roast.html')
+
+@app.route('/get_roast_page', methods=['POST'])
+def roast_resume_page():
+    app.logger.info("Received request to get roast page")
+
+    try:
+        filename = session.get('filename')
+        file_uri = session.get('file_uri')
+        app.logger.info(f"Session data at feedback page: filename={filename}, file_uri={file_uri}")
+
+        if not filename or not file_uri:
+            app.logger.error("Required session data missing")
+            return jsonify({'error': 'Session data missing'}), 400
+
+        # Process the file using AI service
+        app.logger.info("Calling AI service to process the file")
+
+        try:
+            roast = roast_resume(file_uri)
+            app.logger.info(f"Analysis result: {roast}")
+            session['ai_roast_response'] = roast
+
+            # # Process the result and prepare feedback data dynamically
+            # analysis_result = roast
+            return render_template('roast_response.html', roast=roast), 200
+
+        except Exception as e:
+            app.logger.error(f"Error calling AI service: {e}")
+            return jsonify({'error': 'Error calling AI service'}), 500
+
+    except Exception as e:
+        app.logger.error(f"Error processing feedback: {e}")
+        return jsonify({'error': 'Error processing feedback'}), 500
+
+@app.route('/match_jd')
+def match_jd():
+    return render_template('jd_matcher.html')
+
+
+@app.route('/match', methods=['POST'])
+def match():
+    try:
+        if 'resume' not in request.files or 'job_description' not in request.form:
+            app.logger.error("No resume or job description provided.")
+            return jsonify({"error": "No resume or job description provided."}), 400
+
+        resume = request.files['resume']
+        job_description = request.form['job_description']
+
+        if resume.filename == '' or not allowed_file(resume.filename):
+            app.logger.error("Invalid file type or no file selected.")
+            return jsonify({"error": "Invalid file type or no file selected."}), 400
+
+        filename = secure_filename(resume.filename)
+        resume_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        resume.save(resume_path)
+        app.logger.info(f"Resume uploaded and saved at {resume_path}")
+
+        # resume_uri = f'uploads/{filename}'
+        # app.logger.info(f"Resume URI: {resume_uri}")
+
+        result = match_resume_to_job(resume_uri, job_description)
+        app.logger.info(f"AI Response: {result}")
+
+        os.remove(resume_path)  # Clean up uploaded file after processing
+        app.logger.info(f"Deleted resume file: {resume_path}")
+
+        return render_template('jd_matcher.html', result=result)
+    except Exception as e:
+        app.logger.error(f"Error in match function: {e}")
+        return jsonify({"error": "An error occurred during processing."}), 500
+
+
+@app.route('/download_feedback_pdf')
+def download_feedback_pdf():
+    """Serve the feedback PDF for download."""
+    pdf_filepath = session.get('pdf_filepath')
+    if pdf_filepath and os.path.exists(pdf_filepath):
+        app.logger.info(f"Serving PDF: {pdf_filepath}")
+        return send_file(pdf_filepath, as_attachment=True)
+    else:
+        app.logger.error("PDF file not found")
+        return jsonify({'error': 'PDF file not found'}), 404
 
 @app.route('/payment', methods=['GET', 'POST'])
 def payment():
@@ -355,33 +398,6 @@ def verify_payment():
         app.logger.error('Request to Paystack failed: %s', e)
         return jsonify({'status': 'failed', 'message': 'Payment verification failed'}), 500
 
-@app.route('/match', methods=['POST'])
-def match():
-    resume = request.files['resume']
-    job_description = request.form['job_description']
-
-    filename = session.get('filename')
-    file_uri = session.get('file_uri')
-    
-    if resume and job_description:
-        filename = secure_filename(resume.filename)
-        resume.save(filename)
-        
-        # Process the resume and job description using your AI model
-        result = match_resume_with_jd(filename, job_description)
-        
-        return render_template('jd_matcher.html', result=result)
-    else:
-        return render_template('jd_matcher.html', result=None)
-
-@app.route('/roast')
-def resume_roast():
-
-    return render_template('resume_roast.html')
-
-@app.route('/match')
-def match_jd():
-    return render_template('jd_matcher.html')
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):

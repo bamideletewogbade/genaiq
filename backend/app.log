@@ -7278,3 +7278,175 @@
 2024-09-09 07:15:07,156 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:15:07] "GET / HTTP/1.1" 200 -
 2024-09-09 07:15:07,498 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:15:07] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
 2024-09-09 07:39:55,336 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:39:55] "GET /match HTTP/1.1" 200 -
+2024-09-09 07:59:36,784 - app - INFO - Starting Flask application
+2024-09-09 07:59:36,795 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-09 07:59:36,795 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-09 07:59:36,796 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 07:59:39,006 - app - INFO - Starting Flask application
+2024-09-09 07:59:39,015 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 07:59:39,015 - werkzeug - INFO -  * Debugger PIN: 327-467-230
+2024-09-09 07:59:43,891 - app - INFO - Rendering index page
+2024-09-09 07:59:43,977 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:59:43] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-09-09 07:59:44,272 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:59:44] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-09-09 07:59:44,445 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:59:44] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-09-09 07:59:45,463 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:59:45] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=I4TyCD4ic7pCOI1i8UYd HTTP/1.1" 200 -
+2024-09-09 07:59:47,834 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 07:59:47] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-09-09 08:05:11,298 - app - INFO - Starting Flask application
+2024-09-09 08:05:11,309 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-09 08:05:11,309 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-09 08:05:11,310 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 08:05:13,532 - app - INFO - Starting Flask application
+2024-09-09 08:05:13,541 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 08:05:13,542 - werkzeug - INFO -  * Debugger PIN: 327-467-230
+2024-09-09 08:05:17,702 - app - INFO - Rendering index page
+2024-09-09 08:05:17,708 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:05:17] "GET / HTTP/1.1" 200 -
+2024-09-09 08:05:18,696 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:05:18] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-09 08:05:23,489 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:05:23] "[35m[1mGET /match_jd HTTP/1.1[0m" 500 -
+2024-09-09 08:05:23,714 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:05:23] "GET /match_jd?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-09-09 08:05:23,784 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:05:23] "GET /match_jd?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-09-09 08:05:24,053 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:05:24] "GET /match_jd?__debugger__=yes&cmd=resource&f=console.png&s=Wly5h6gHU3rDMkhF27Vb HTTP/1.1" 200 -
+2024-09-09 08:05:24,739 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:05:24] "GET /match_jd?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-09-09 08:10:48,420 - app - INFO - Starting Flask application
+2024-09-09 08:10:48,432 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-09 08:10:48,432 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-09 08:10:48,433 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 08:10:50,626 - app - INFO - Starting Flask application
+2024-09-09 08:10:50,634 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 08:10:50,635 - werkzeug - INFO -  * Debugger PIN: 327-467-230
+2024-09-09 08:10:58,832 - app - INFO - Rendering index page
+2024-09-09 08:10:58,839 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:10:58] "GET / HTTP/1.1" 200 -
+2024-09-09 08:10:59,552 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:10:59] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-09 08:11:02,938 - app - INFO - Rendering upload resume page
+2024-09-09 08:11:02,964 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:11:02] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-09 08:11:03,347 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:11:03] "[36mGET /static/images/usee.jpg HTTP/1.1[0m" 304 -
+2024-09-09 08:11:08,636 - app - INFO - Rendering index page
+2024-09-09 08:11:08,636 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:11:08] "GET / HTTP/1.1" 200 -
+2024-09-09 08:11:08,971 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:11:08] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-09 08:11:12,299 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:11:12] "GET /match_jd HTTP/1.1" 200 -
+2024-09-09 08:25:01,631 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:25:01] "[31m[1mGET /match HTTP/1.1[0m" 405 -
+2024-09-09 08:36:53,405 - app - INFO - Rendering index page
+2024-09-09 08:36:53,406 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:36:53] "GET / HTTP/1.1" 200 -
+2024-09-09 08:36:56,252 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 08:36:56] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-09 14:09:58,238 - app - INFO - Starting Flask application
+2024-09-09 14:09:58,325 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-09 14:09:58,326 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-09 14:09:58,328 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 14:10:00,847 - app - INFO - Starting Flask application
+2024-09-09 14:10:00,856 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 14:10:00,857 - werkzeug - INFO -  * Debugger PIN: 571-761-755
+2024-09-09 14:10:19,503 - app - INFO - Rendering index page
+2024-09-09 14:10:19,516 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 14:10:19] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-09 14:10:20,432 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 14:10:20] "GET /static/images/oka.jpg HTTP/1.1" 200 -
+2024-09-09 14:10:55,563 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 14:10:55] "GET /match_jd HTTP/1.1" 200 -
+2024-09-09 16:49:34,883 - app - INFO - Starting Flask application
+2024-09-09 16:49:34,938 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-09 16:49:34,938 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-09 16:49:34,940 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 16:49:37,265 - app - INFO - Starting Flask application
+2024-09-09 16:49:37,274 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 16:49:37,275 - werkzeug - INFO -  * Debugger PIN: 112-227-074
+2024-09-09 16:49:46,286 - app - INFO - Rendering index page
+2024-09-09 16:49:46,323 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 16:49:46] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-09 16:49:46,998 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 16:49:46] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-09 16:49:57,037 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 16:49:57] "GET /match_jd HTTP/1.1" 200 -
+2024-09-09 16:50:34,584 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-09 16:50:34,591 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-09 16:50:34,600 - ai_service - ERROR - Error downloading from GCS: not enough values to unpack (expected 2, got 1)
+2024-09-09 16:50:34,601 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 16:50:34] "POST /match HTTP/1.1" 200 -
+2024-09-09 17:11:09,578 - app - INFO - Starting Flask application
+2024-09-09 17:11:09,590 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-09 17:11:09,590 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-09 17:11:09,591 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 17:11:11,918 - app - INFO - Starting Flask application
+2024-09-09 17:11:11,927 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 17:11:11,928 - werkzeug - INFO -  * Debugger PIN: 112-227-074
+2024-09-09 17:11:46,060 - app - INFO - Rendering index page
+2024-09-09 17:11:46,066 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:11:46] "GET / HTTP/1.1" 200 -
+2024-09-09 17:11:47,306 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:11:47] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-09 17:11:56,018 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:11:56] "GET /match_jd HTTP/1.1" 200 -
+2024-09-09 17:12:13,477 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:12:13] "[35m[1mPOST /match HTTP/1.1[0m" 500 -
+2024-09-09 17:12:13,840 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:12:13] "GET /match?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-09-09 17:12:14,083 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:12:14] "GET /match?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-09-09 17:12:14,574 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:12:14] "GET /match?__debugger__=yes&cmd=resource&f=console.png&s=no3BaBBm17SX7NDjfQqE HTTP/1.1" 200 -
+2024-09-09 17:12:15,181 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:12:15] "GET /match?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-09-09 17:12:55,180 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-09 17:12:56,074 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 17:12:58,384 - app - INFO - Starting Flask application
+2024-09-09 17:12:58,392 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 17:12:58,393 - werkzeug - INFO -  * Debugger PIN: 112-227-074
+2024-09-09 17:13:13,759 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-09 17:13:14,379 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 17:13:16,695 - app - INFO - Starting Flask application
+2024-09-09 17:13:16,704 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 17:13:16,705 - werkzeug - INFO -  * Debugger PIN: 112-227-074
+2024-09-09 17:15:06,216 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:15:06] "[35m[1mPOST /match HTTP/1.1[0m" 500 -
+2024-09-09 17:15:06,610 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:15:06] "[36mGET /match?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-09-09 17:15:06,803 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:15:06] "[36mGET /match?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-09-09 17:15:07,055 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:15:07] "GET /match?__debugger__=yes&cmd=resource&f=console.png&s=1IZ8Sbr0X3MJynd7lVGr HTTP/1.1" 200 -
+2024-09-09 17:15:31,554 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-09 17:15:32,202 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 17:15:34,613 - app - INFO - Starting Flask application
+2024-09-09 17:15:34,622 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 17:15:34,623 - werkzeug - INFO -  * Debugger PIN: 112-227-074
+2024-09-09 17:15:42,837 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-09 17:15:43,453 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 17:15:45,720 - app - INFO - Starting Flask application
+2024-09-09 17:15:45,729 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 17:15:45,730 - werkzeug - INFO -  * Debugger PIN: 112-227-074
+2024-09-09 17:16:33,805 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-09 17:16:34,436 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 17:16:36,875 - app - INFO - Starting Flask application
+2024-09-09 17:16:36,885 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 17:16:36,885 - werkzeug - INFO -  * Debugger PIN: 112-227-074
+2024-09-09 17:16:52,259 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-09 17:16:52,887 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 17:16:55,216 - app - INFO - Starting Flask application
+2024-09-09 17:16:55,225 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 17:16:55,226 - werkzeug - INFO -  * Debugger PIN: 112-227-074
+2024-09-09 17:17:53,068 - app - INFO - Starting Flask application
+2024-09-09 17:17:53,081 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-09 17:17:53,081 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-09 17:17:53,082 - werkzeug - INFO -  * Restarting with stat
+2024-09-09 17:17:55,380 - app - INFO - Starting Flask application
+2024-09-09 17:17:55,389 - werkzeug - WARNING -  * Debugger is active!
+2024-09-09 17:17:55,389 - werkzeug - INFO -  * Debugger PIN: 112-227-074
+2024-09-09 17:18:13,520 - app - INFO - Rendering index page
+2024-09-09 17:18:13,526 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:18:13] "GET / HTTP/1.1" 200 -
+2024-09-09 17:18:14,295 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:18:14] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-09 17:18:18,194 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:18:18] "GET /match_jd HTTP/1.1" 200 -
+2024-09-09 17:18:31,320 - app - INFO - Resume uploaded and saved at /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-09 17:18:31,320 - app - INFO - Resume URI: uploads/Olusegun_Tewogbade.pdf
+2024-09-09 17:18:31,321 - app - ERROR - Error in match function: name 'match_resume_to_job' is not defined
+2024-09-09 17:18:31,321 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2024 17:18:31] "[35m[1mPOST /match HTTP/1.1[0m" 500 -
+2024-09-09 17:31:43,651 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-09 17:31:44,271 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 02:30:02,004 - app - INFO - Starting Flask application
+2024-09-10 02:30:02,066 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-10 02:30:02,066 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-10 02:30:02,068 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 02:30:04,708 - app - INFO - Starting Flask application
+2024-09-10 02:30:04,719 - werkzeug - WARNING -  * Debugger is active!
+2024-09-10 02:30:04,720 - werkzeug - INFO -  * Debugger PIN: 519-034-268
+2024-09-10 02:31:40,992 - app - INFO - Rendering index page
+2024-09-10 02:31:41,009 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:31:41] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-10 02:38:08,776 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:38:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-09-10 02:38:39,849 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:38:39] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 02:39:09,292 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:39:09] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 02:39:11,045 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:39:11] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 02:39:32,453 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:39:32] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 02:39:33,060 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:39:33] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 02:48:10,929 - app - INFO - Rendering index page
+2024-09-10 02:48:10,935 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:48:10] "GET / HTTP/1.1" 200 -
+2024-09-10 02:48:12,827 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:48:12] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 02:49:54,849 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:49:54] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 02:49:55,519 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:49:55] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 02:55:01,543 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:55:01] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 02:55:41,829 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:55:41] "GET /match_jd HTTP/1.1" 200 -

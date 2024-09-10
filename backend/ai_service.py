@@ -236,7 +236,7 @@ def roast_resume(file_uri):
         logger.error(f"Error in roast_resume: {e}")
         return {"error": f"Error processing the file: {str(e)}"}
 
-def match_resume_to_job(resume_uri, job_description):
+def match_resume_with_ai(resume_uri, job_description):
     """
     Matches a resume to a job description using Vertex AI.
     

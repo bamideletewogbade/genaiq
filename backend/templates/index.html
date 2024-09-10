@@ -176,7 +176,31 @@ footer h6 {
     color: var(--secondary-color);
     transform: translateY(-3px);
 }
-   
+#pricing .card, #payment-info .alert {
+    background-color: var(--light-bg);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#pricing .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#pricing .card-title {
+    color: var(--primary-color);
+}
+
+#pricing h4 {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+#payment-info .alert-info {
+    background-color: var(--accent-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
     </style>
 </head>
 
@@ -194,7 +218,7 @@ footer h6 {
                         <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
                         <li class="nav-item"><a href="{{ url_for('match') }}" class="nav-link">Resume Insights</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Resume Optimizer</a></li>
-                        <li class="nav-item">  <a href="{{ url_for('match') }}" class="nav-link">Resume-JD Matcher</a></li>
+                        <li class="nav-item">  <a href="{{ url_for('match_jd') }}" class="nav-link">Resume-JD Matcher</a></li>
                         <!-- <li class="nav-item"><a href="#" class="nav-link">Resume Roast</a></li> -->
                         <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
                     </ul>
@@ -261,6 +285,80 @@ footer h6 {
                 </div>
             </div>
         </section>
+
+        <section id="pricing" class="container px-4 py-5">
+            <h2 class="pb-2 border-bottom text-center text-black">Our Services</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
+                <div class="col">
+                    <div class="card h-100 text-center shadow-lg feature-card">
+                        <div class="card-body">
+                            <h3 class="card-title">Resume Roast</h3>
+                            <p class="card-text">Get a quick assessment and identify key improvements.</p>
+                            <h4 class="my-3">Free</h4>
+                            <a href="/roast" class="btn btn-custom">Try Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center shadow-lg feature-card">
+                        <div class="card-body">
+                            <h3 class="card-title">Resume Feedback</h3>
+                            <p class="card-text">Receive detailed insights and personalized recommendations.</p>
+                            <h4 class="my-3">$5 / ¢80</h4>
+                            <a href="/upload_resume_page" class="btn btn-custom">Get Feedback</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center shadow-lg feature-card">
+                        <div class="card-body">
+                            <h3 class="card-title">CV Job Matcher</h3>
+                            <p class="card-text">Use our job matching algorithm for tailored job suggestions.</p>
+                            <h4 class="my-3">$5 / ¢80</h4>
+                            <a href="{{ url_for('match_jd') }}" class="btn btn-custom">Try Matcher</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center shadow-lg feature-card">
+                        <div class="card-body">
+                            <h3 class="card-title">Feedback + Matcher Bundle</h3>
+                            <p class="card-text">Get both Resume Feedback and CV Job Matcher at a discounted price.</p>
+                            <h4 class="my-3">$8 / ¢128</h4>
+                            <a href="#" class="btn btn-custom">Get Bundle</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center shadow-lg feature-card">
+                        <div class="card-body">
+                            <h3 class="card-title">Resume Builder</h3>
+                            <p class="card-text">Create professional resumes with our easy-to-use interface.</p>
+                            <h4 class="my-3">Coming Soon</h4>
+                            <a href="#" class="btn btn-custom" disabled>Notify Me</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center shadow-lg feature-card">
+                        <div class="card-body">
+                            <h3 class="card-title">Resume Optimizer</h3>
+                            <p class="card-text">Optimize your resume with AI-powered suggestions and keyword optimization.</p>
+                            <h4 class="my-3">Coming Soon</h4>
+                            <a href="#" class="btn btn-custom" disabled>Notify Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="payment-info" class="container px-4 py-5">
+            <div class="alert alert-info" role="alert">
+                <h4 class="alert-heading">Payment Options</h4>
+                <p>We accept global payments via Stripe (Visa, Mastercard) and local payments via PayStack (Mobile Money) for our Ghanaian customers.</p>
+            </div>
+        </section>
+
 
         <section id="faq" class="container px-4 py-5">
             <h2 class="pb-2 border-bottom text-center text-black">Frequently Asked Questions</h2>
