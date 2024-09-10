@@ -7518,3 +7518,154 @@
 2024-09-10 07:41:36,464 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:41:36] "GET / HTTP/1.1" 200 -
 2024-09-10 07:41:36,861 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:41:36] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
 2024-09-10 07:45:02,117 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:45:02] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 15:46:28,931 - app - INFO - Starting Flask application
+2024-09-10 15:46:29,006 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-10 15:46:29,006 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-10 15:46:29,008 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 15:46:31,240 - app - INFO - Starting Flask application
+2024-09-10 15:46:31,248 - werkzeug - WARNING -  * Debugger is active!
+2024-09-10 15:46:31,250 - werkzeug - INFO -  * Debugger PIN: 663-048-712
+2024-09-10 15:46:58,470 - app - INFO - Rendering index page
+2024-09-10 15:46:58,486 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 15:46:58] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-10 15:46:59,121 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 15:46:59] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 15:47:03,266 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 15:47:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-09-10 17:36:21,008 - app - INFO - Starting Flask application
+2024-09-10 17:36:21,080 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-10 17:36:21,080 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-10 17:36:21,084 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 17:36:23,439 - app - INFO - Starting Flask application
+2024-09-10 17:36:23,448 - werkzeug - WARNING -  * Debugger is active!
+2024-09-10 17:36:23,449 - werkzeug - INFO -  * Debugger PIN: 403-025-025
+2024-09-10 17:36:30,809 - app - INFO - Rendering index page
+2024-09-10 17:36:30,832 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 17:36:30] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-10 17:36:31,553 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 17:36:31] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 17:36:35,917 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 17:36:35] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 17:49:34,556 - app - INFO - Starting Flask application
+2024-09-10 17:53:51,859 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-10 17:53:52,497 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 17:55:25,869 - app - INFO - Starting Flask application
+2024-09-10 17:55:25,882 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-10 17:55:25,882 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-10 17:55:25,883 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 17:55:28,335 - app - INFO - Starting Flask application
+2024-09-10 17:55:28,345 - werkzeug - WARNING -  * Debugger is active!
+2024-09-10 17:55:28,345 - werkzeug - INFO -  * Debugger PIN: 403-025-025
+2024-09-10 17:55:32,873 - app - INFO - Rendering index page
+2024-09-10 17:55:32,881 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 17:55:32] "GET / HTTP/1.1" 200 -
+2024-09-10 17:55:33,510 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 17:55:33] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 17:55:36,812 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 17:55:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-09-10 17:55:37,445 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 17:55:37] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 17:56:29,570 - app - ERROR - No resume or job description provided.
+2024-09-10 17:56:29,571 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 17:56:29] "[31m[1mPOST /match HTTP/1.1[0m" 400 -
+2024-09-10 18:05:58,407 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-10 18:05:59,061 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 18:06:01,456 - app - INFO - Starting Flask application
+2024-09-10 18:06:01,464 - werkzeug - WARNING -  * Debugger is active!
+2024-09-10 18:06:01,465 - werkzeug - INFO -  * Debugger PIN: 403-025-025
+2024-09-10 18:09:01,495 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-10 18:09:02,148 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 18:09:04,517 - app - INFO - Starting Flask application
+2024-09-10 18:09:04,526 - werkzeug - WARNING -  * Debugger is active!
+2024-09-10 18:09:04,527 - werkzeug - INFO -  * Debugger PIN: 403-025-025
+2024-09-10 18:25:19,948 - app - INFO - Starting Flask application
+2024-09-10 18:25:31,352 - app - INFO - Starting Flask application
+2024-09-10 18:27:13,745 - app - INFO - Starting Flask application
+2024-09-10 18:28:44,717 - app - INFO - Starting Flask application
+2024-09-10 19:40:27,645 - app - INFO - Starting Flask application
+2024-09-10 19:40:27,717 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-10 19:40:27,718 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-10 19:40:27,720 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 19:40:30,092 - app - INFO - Starting Flask application
+2024-09-10 19:40:30,103 - werkzeug - WARNING -  * Debugger is active!
+2024-09-10 19:40:30,105 - werkzeug - INFO -  * Debugger PIN: 950-945-047
+2024-09-10 19:40:44,795 - app - INFO - Rendering index page
+2024-09-10 19:40:44,824 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:40:44] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-10 19:40:45,415 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:40:45] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 19:40:48,303 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:40:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-09-10 19:41:28,451 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:41:28] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 19:41:39,623 - app - INFO - Rendering index page
+2024-09-10 19:41:39,624 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:41:39] "GET / HTTP/1.1" 200 -
+2024-09-10 19:41:39,927 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:41:39] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 19:43:08,111 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:43:08] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 19:44:06,574 - app - INFO - Rendering index page
+2024-09-10 19:44:06,575 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:44:06] "GET / HTTP/1.1" 200 -
+2024-09-10 19:44:07,209 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:44:07] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 19:44:21,358 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:44:21] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 19:57:58,653 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:57:58] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 19:58:22,309 - app - INFO - Resume uploaded and saved at /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-10 19:58:22,381 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 19:58:22,388 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 19:58:36,424 - ai_service - ERROR - Error uploading to GCS: string indices must be integers
+2024-09-10 19:58:36,424 - app - INFO - File URI: None
+2024-09-10 19:58:36,424 - app - INFO - Session data after upload: <SecureCookieSession {'ai_roast_response': {'roast': 'Yo, this resume is like a bad rom-com -  overly dramatic, full of clichés, and the plot just doesn\'t make sense. "Consultant Programmer" sounds like a fancy title for \'guy who fixes computers,\' and "Fasyl Technology Group"?  Sounds like something you\'d find in a bad sci-fi movie.  And let\'s be real, saying you \'increased efficiency by 60%\' is like saying a pizza is "perfectly cooked" when it\'s basically charcoal.  Listen, you\'re a good programmer, but maybe ditch the buzzwords and focus on actual achievements.  You\'re not a superhero, you\'re a developer.  Chill out.'}, 'file_uri': None, 'filename': 'Olusegun_Tewogbade.pdf', 'job_description': 'java'}>
+2024-09-10 19:58:36,424 - ai_service - INFO - Downloading resume from URI: None
+2024-09-10 19:58:36,432 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 19:58:36,439 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 19:58:36,447 - ai_service - ERROR - Error downloading from GCS: 'NoneType' object has no attribute 'replace'
+2024-09-10 19:58:36,447 - ai_service - ERROR - Failed to download resume from GCS.
+2024-09-10 19:58:36,448 - app - INFO - AI Response: {'error': 'Failed to download resume from GCS.'}
+2024-09-10 19:58:36,448 - app - INFO - Deleted resume file: /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-10 19:58:36,450 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:58:36] "POST /match HTTP/1.1" 200 -
+2024-09-10 19:59:04,505 - app - INFO - Resume uploaded and saved at /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-10 19:59:04,513 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 19:59:04,521 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 19:59:05,650 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-10 19:59:05,650 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-10 19:59:05,650 - app - INFO - Session data after upload: <SecureCookieSession {'ai_roast_response': {'roast': 'Yo, this resume is like a bad rom-com -  overly dramatic, full of clichés, and the plot just doesn\'t make sense. "Consultant Programmer" sounds like a fancy title for \'guy who fixes computers,\' and "Fasyl Technology Group"?  Sounds like something you\'d find in a bad sci-fi movie.  And let\'s be real, saying you \'increased efficiency by 60%\' is like saying a pizza is "perfectly cooked" when it\'s basically charcoal.  Listen, you\'re a good programmer, but maybe ditch the buzzwords and focus on actual achievements.  You\'re not a superhero, you\'re a developer.  Chill out.'}, 'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf', 'job_description': 'java'}>
+2024-09-10 19:59:05,650 - ai_service - INFO - Downloading resume from URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-10 19:59:05,658 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 19:59:05,664 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 19:59:06,568 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-10 19:59:06,660 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-10 19:59:06,661 - ai_service - INFO - Initializing Vertex AI.
+2024-09-10 19:59:06,661 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-10 19:59:06,661 - ai_service - INFO - Loaded Vertex AI generative model.
+2024-09-10 19:59:06,662 - ai_service - INFO - Prompt prepared for Vertex AI.
+2024-09-10 19:59:06,662 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-10 19:59:06,662 - ai_service - ERROR - Error in match_resume_with_ai: 'GenerativeModel' object has no attribute 'predict'
+2024-09-10 19:59:06,662 - app - INFO - AI Response: {'error': "Error processing the file: 'GenerativeModel' object has no attribute 'predict'"}
+2024-09-10 19:59:06,662 - app - INFO - Deleted resume file: /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-10 19:59:06,663 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 19:59:06] "POST /match HTTP/1.1" 200 -
+2024-09-10 20:00:17,424 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-10 20:00:18,310 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 20:00:20,708 - app - INFO - Starting Flask application
+2024-09-10 20:00:20,717 - werkzeug - WARNING -  * Debugger is active!
+2024-09-10 20:00:20,717 - werkzeug - INFO -  * Debugger PIN: 950-945-047
+2024-09-10 20:01:13,020 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/ai_service.py', reloading
+2024-09-10 20:01:13,711 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 20:03:19,035 - app - INFO - Starting Flask application
+2024-09-10 20:03:19,046 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-10 20:03:19,046 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-10 20:03:19,047 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 20:03:21,303 - app - INFO - Starting Flask application
+2024-09-10 20:03:21,312 - werkzeug - WARNING -  * Debugger is active!
+2024-09-10 20:03:21,313 - werkzeug - INFO -  * Debugger PIN: 950-945-047
+2024-09-10 20:03:26,052 - app - INFO - Rendering index page
+2024-09-10 20:03:26,059 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 20:03:26] "GET / HTTP/1.1" 200 -
+2024-09-10 20:03:26,647 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 20:03:26] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 20:03:29,639 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 20:03:29] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 20:03:43,679 - app - INFO - Resume uploaded and saved at /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-10 20:03:43,695 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 20:03:43,702 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 20:03:44,767 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-10 20:03:44,767 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-10 20:03:44,768 - app - INFO - Session data after upload: <SecureCookieSession {'ai_roast_response': {'roast': 'Yo, this resume is like a bad rom-com -  overly dramatic, full of clichés, and the plot just doesn\'t make sense. "Consultant Programmer" sounds like a fancy title for \'guy who fixes computers,\' and "Fasyl Technology Group"?  Sounds like something you\'d find in a bad sci-fi movie.  And let\'s be real, saying you \'increased efficiency by 60%\' is like saying a pizza is "perfectly cooked" when it\'s basically charcoal.  Listen, you\'re a good programmer, but maybe ditch the buzzwords and focus on actual achievements.  You\'re not a superhero, you\'re a developer.  Chill out.'}, 'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf', 'job_description': 'java\r\npython'}>
+2024-09-10 20:03:44,768 - ai_service - INFO - Downloading resume from URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-10 20:03:44,776 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 20:03:44,783 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 20:03:45,749 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-10 20:03:45,843 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-10 20:03:45,843 - ai_service - INFO - Initializing Vertex AI.
+2024-09-10 20:03:45,843 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-10 20:03:45,844 - ai_service - INFO - Loaded Vertex AI generative model.
+2024-09-10 20:03:45,844 - ai_service - INFO - Prompt prepared for Vertex AI.
+2024-09-10 20:03:45,844 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-10 20:03:50,784 - ai_service - INFO - Received response from Vertex AI.
+2024-09-10 20:03:50,834 - app - INFO - AI Response: None
+2024-09-10 20:03:50,835 - app - INFO - Deleted resume file: /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-10 20:03:50,836 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 20:03:50] "POST /match HTTP/1.1" 200 -

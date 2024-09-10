@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_with_ai
+from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job
 import requests
 
 app = Flask(__name__)
@@ -250,6 +250,7 @@ def match_jd():
 @app.route('/match', methods=['POST'])
 def match():
     try:
+        # Check if both resume and job description are provided
         if 'resume' not in request.files or 'job_description' not in request.form:
             app.logger.error("No resume or job description provided.")
             return jsonify({"error": "No resume or job description provided."}), 400
@@ -257,66 +258,39 @@ def match():
         resume = request.files['resume']
         job_description = request.form['job_description']
 
+        # Check if a valid file is uploaded
         if resume.filename == '' or not allowed_file(resume.filename):
             app.logger.error("Invalid file type or no file selected.")
             return jsonify({"error": "Invalid file type or no file selected."}), 400
 
+        # Save the uploaded resume
         filename = secure_filename(resume.filename)
         resume_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         resume.save(resume_path)
         app.logger.info(f"Resume uploaded and saved at {resume_path}")
 
-        # resume_uri = f'uploads/{filename}'
-        # app.logger.info(f"Resume URI: {resume_uri}")
-
+        # Process the resume file
         try:
-            # Upload file to GCS
             bucket_name = 'genaiq_cloudbuild'
             destination_blob_name = f'uploads/{filename}'
-            file_uri = upload_local_file_to_gcs(filepath, bucket_name, destination_blob_name)
+            file_uri = upload_local_file_to_gcs(resume_path, bucket_name, destination_blob_name)
             app.logger.info(f"File URI: {file_uri}")
 
-            # Store filename and file URI in session
+            # Store session data
             session['job_description'] = job_description
             session['file_uri'] = file_uri
             app.logger.info(f"Session data after upload: {session}")
 
-            # Determine file type and prepare response
-            file_type = file.mimetype.split('/')[1]
-            response = {'success': True, 'file_type': file_type}
+            result = match_resume_to_job(file_uri, job_description)
+            app.logger.info(f"AI Response: {result}")
 
-            if file_type == 'pdf':
-                response['file_url'] = filepath
-                app.logger.info("File type is PDF")
-            elif file_type == 'plain':
-                with open(filepath, 'r') as f:
-                    content = f.read()
-                response['content'] = content
-                app.logger.info("File type is TXT")
-            elif file_type == 'vnd.openxmlformats-officedocument.wordprocessingml.document':
-                response['file_url'] = filepath
-                app.logger.info("File type is DOCX")
-            else:
-                app.logger.error("Unsupported file type")
-                response = {'error': 'Unsupported file type'}
+            os.remove(resume_path)  # Clean up uploaded file after processing
+            app.logger.info(f"Deleted resume file: {resume_path}")
 
+            return render_template('jd_matcher_result.html', result=result)
         except Exception as e:
             app.logger.error(f"Error processing file: {e}")
-            response = {'error': 'File processing error'}
-
-        finally:
-            # Clean up the local file
-            if os.path.exists(filepath):
-                os.remove(filepath)
-                app.logger.info(f"File {filename} removed from local storage")
-
-        result = match_resume_to_job(resume_uri, job_description)
-        app.logger.info(f"AI Response: {result}")
-
-        os.remove(resume_path)  # Clean up uploaded file after processing
-        app.logger.info(f"Deleted resume file: {resume_path}")
-
-        return render_template('jd_matcher.html', result=result)
+            return jsonify({"error": "File processing error"}), 500
     except Exception as e:
         app.logger.error(f"Error in match function: {e}")
         return jsonify({"error": "An error occurred during processing."}), 500

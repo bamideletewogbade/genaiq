@@ -236,7 +236,7 @@ def roast_resume(file_uri):
         logger.error(f"Error in roast_resume: {e}")
         return {"error": f"Error processing the file: {str(e)}"}
 
-def match_resume_with_ai(resume_uri, job_description):
+def match_resume_to_job(resume_uri, job_description):
     """
     Matches a resume to a job description using Vertex AI.
     
@@ -325,24 +325,25 @@ def match_resume_with_ai(resume_uri, job_description):
         
         # Step 7: Generate content with Vertex AI
         logger.info("Sending the prompt to Vertex AI for content generation.")
-        response = model.predict([prompt])
+        response = model.generate_content([prompt])
         
         if response and response.text:
             logger.info("Received response from Vertex AI.")
             response_text = response.text
             logger.debug(f"Raw response text: {response_text}")
+            print(response_text)
 
-            try:
-                return json.loads(response_text.strip('```json').strip('```').strip())
-            except json.JSONDecodeError as json_err:
-                logger.error(f"Failed to parse JSON response: {json_err}")
-                return {"error": "Failed to parse JSON response.", "raw_response": response_text}
+            # try:
+            #     # return json.loads(response_text.strip('```json').strip('```').strip())
+            # except json.JSONDecodeError as json_err:
+            #     logger.error(f"Failed to parse JSON response: {json_err}")
+            #     return {"error": "Failed to parse JSON response.", "raw_response": response_text}
         else:
             logger.warning("No response received from Vertex AI.")
             return {"error": "No response received from Vertex AI."}
     
     except Exception as e:
-        logger.error(f"Error in match_resume_with_ai: {e}")
+        logger.error(f"Error in match_resume_with_job: {e}")
         return {"error": f"Error processing the file: {str(e)}"}
 
 def save_roast_to_json(roast_result, file_name):

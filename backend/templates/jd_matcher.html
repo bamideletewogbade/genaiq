@@ -231,18 +231,18 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <form id="resumeForm" method="post" action="/match" enctype="multipart/form-data">
+                    <form id="resumeForm" method="post" enctype="multipart/form-data" action="/match">
                         <div class="mb-4">
                             <label for="resumeFile" class="form-label"><i class="fas fa-file-alt me-2"></i>Upload Resume</label>
-                            <input class="form-control" type="file" id="resumeFile" name="resumeFile" required>
+                            <input class="form-control" type="file" id="resumeFile" name="resume">
                             <small class="text-muted">Supported formats: PDF, DOCX</small>
                         </div>
                         <div class="mb-4">
                             <label for="jobDescription" class="form-label"><i class="fas fa-briefcase me-2"></i>Paste Job Description</label>
-                            <textarea class="form-control" id="jobDescription" name="jobDescription" rows="6" placeholder="Copy and paste the full job description here" required></textarea>
+                            <textarea class="form-control" id="jobDescription" name="job_description" rows="6" placeholder="Copy and paste the full job description here"></textarea>
                         </div>
                         <button type="submit" class="btn btn-custom w-100"><i class="fas fa-check-circle me-2"></i>Analyze Match</button>
-                    </form>                    
+                    </form>                                       
                 </div>
             </div>
             <div class="text-center mt-5">
