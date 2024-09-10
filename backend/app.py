@@ -269,6 +269,47 @@ def match():
         # resume_uri = f'uploads/{filename}'
         # app.logger.info(f"Resume URI: {resume_uri}")
 
+        try:
+            # Upload file to GCS
+            bucket_name = 'genaiq_cloudbuild'
+            destination_blob_name = f'uploads/{filename}'
+            file_uri = upload_local_file_to_gcs(filepath, bucket_name, destination_blob_name)
+            app.logger.info(f"File URI: {file_uri}")
+
+            # Store filename and file URI in session
+            session['job_description'] = job_description
+            session['file_uri'] = file_uri
+            app.logger.info(f"Session data after upload: {session}")
+
+            # Determine file type and prepare response
+            file_type = file.mimetype.split('/')[1]
+            response = {'success': True, 'file_type': file_type}
+
+            if file_type == 'pdf':
+                response['file_url'] = filepath
+                app.logger.info("File type is PDF")
+            elif file_type == 'plain':
+                with open(filepath, 'r') as f:
+                    content = f.read()
+                response['content'] = content
+                app.logger.info("File type is TXT")
+            elif file_type == 'vnd.openxmlformats-officedocument.wordprocessingml.document':
+                response['file_url'] = filepath
+                app.logger.info("File type is DOCX")
+            else:
+                app.logger.error("Unsupported file type")
+                response = {'error': 'Unsupported file type'}
+
+        except Exception as e:
+            app.logger.error(f"Error processing file: {e}")
+            response = {'error': 'File processing error'}
+
+        finally:
+            # Clean up the local file
+            if os.path.exists(filepath):
+                os.remove(filepath)
+                app.logger.info(f"File {filename} removed from local storage")
+
         result = match_resume_to_job(resume_uri, job_description)
         app.logger.info(f"AI Response: {result}")
 

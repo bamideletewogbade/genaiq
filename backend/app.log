@@ -7450,3 +7450,71 @@
 2024-09-10 02:49:55,519 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:49:55] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
 2024-09-10 02:55:01,543 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:55:01] "GET /match_jd HTTP/1.1" 200 -
 2024-09-10 02:55:41,829 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 02:55:41] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 03:09:25,599 - werkzeug - INFO -  * Detected change in '/home/bishoptewogbade/genaiq/backend/app.py', reloading
+2024-09-10 03:09:26,805 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 07:30:55,646 - app - INFO - Starting Flask application
+2024-09-10 07:30:55,726 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-10 07:30:55,727 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-10 07:30:55,729 - werkzeug - INFO -  * Restarting with stat
+2024-09-10 07:30:58,156 - app - INFO - Starting Flask application
+2024-09-10 07:30:58,166 - werkzeug - WARNING -  * Debugger is active!
+2024-09-10 07:30:58,168 - werkzeug - INFO -  * Debugger PIN: 480-647-210
+2024-09-10 07:31:11,482 - app - INFO - Rendering index page
+2024-09-10 07:31:11,517 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:31:11] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-10 07:31:12,276 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:31:12] "GET /static/images/oka.jpg HTTP/1.1" 200 -
+2024-09-10 07:31:15,992 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:31:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-09-10 07:34:23,991 - app - INFO - Rendering index page
+2024-09-10 07:34:23,996 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:34:23] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-10 07:34:24,453 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:34:24] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 07:34:56,113 - app - INFO - Rendering index page
+2024-09-10 07:34:56,119 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:34:56] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-10 07:34:56,462 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:34:56] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 07:37:01,315 - app - INFO - Rendering index page
+2024-09-10 07:37:01,321 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:37:01] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-10 07:37:01,660 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:37:01] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 07:37:48,342 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:37:48] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 07:38:47,204 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:38:47] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 07:39:23,812 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:39:23] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 07:39:35,634 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:39:35] "GET /match_jd HTTP/1.1" 200 -
+2024-09-10 07:40:18,488 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:40:18] "GET /roast HTTP/1.1" 200 -
+2024-09-10 07:40:50,848 - app - INFO - Received a file upload request
+2024-09-10 07:40:51,453 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-10 07:40:51,518 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 07:40:51,527 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 07:41:05,564 - ai_service - ERROR - Error uploading to GCS: string indices must be integers
+2024-09-10 07:41:05,564 - app - INFO - File URI: None
+2024-09-10 07:41:05,565 - app - INFO - Session data after upload: <SecureCookieSession {'filename': 'Olusegun_Tewogbade.pdf', 'file_uri': None}>
+2024-09-10 07:41:05,565 - app - INFO - File type is PDF
+2024-09-10 07:41:05,566 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-10 07:41:05,567 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:41:05] "POST /upload HTTP/1.1" 200 -
+2024-09-10 07:41:17,738 - app - INFO - Received a file upload request
+2024-09-10 07:41:18,470 - app - INFO - File Olusegun_Tewogbade.pdf saved to /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
+2024-09-10 07:41:18,481 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 07:41:18,489 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 07:41:19,649 - ai_service - INFO - File uploaded successfully to GCS: uploads/Olusegun_Tewogbade.pdf
+2024-09-10 07:41:19,649 - app - INFO - File URI: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-10 07:41:19,649 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf', 'filename': 'Olusegun_Tewogbade.pdf'}>
+2024-09-10 07:41:19,650 - app - INFO - File type is PDF
+2024-09-10 07:41:19,650 - app - INFO - File Olusegun_Tewogbade.pdf removed from local storage
+2024-09-10 07:41:19,651 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:41:19] "POST /upload HTTP/1.1" 200 -
+2024-09-10 07:41:20,445 - app - INFO - Received request to get roast page
+2024-09-10 07:41:20,445 - app - INFO - Session data at feedback page: filename=Olusegun_Tewogbade.pdf, file_uri=gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-10 07:41:20,445 - app - INFO - Calling AI service to process the file
+2024-09-10 07:41:20,454 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 07:41:20,463 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-10 07:41:21,360 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_cloudbuild/uploads/Olusegun_Tewogbade.pdf
+2024-09-10 07:41:21,460 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-10 07:41:21,461 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-10 07:41:21,461 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-10 07:41:21,461 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-10 07:41:21,462 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-10 07:41:21,462 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-10 07:41:21,462 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-10 07:41:23,703 - ai_service - INFO - Received response from Vertex AI.
+2024-09-10 07:41:23,708 - app - INFO - Analysis result: {'roast': 'Yo, this resume is like a bad rom-com -  overly dramatic, full of clichés, and the plot just doesn\'t make sense. "Consultant Programmer" sounds like a fancy title for \'guy who fixes computers,\' and "Fasyl Technology Group"?  Sounds like something you\'d find in a bad sci-fi movie.  And let\'s be real, saying you \'increased efficiency by 60%\' is like saying a pizza is "perfectly cooked" when it\'s basically charcoal.  Listen, you\'re a good programmer, but maybe ditch the buzzwords and focus on actual achievements.  You\'re not a superhero, you\'re a developer.  Chill out.'}
+2024-09-10 07:41:23,731 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:41:23] "POST /get_roast_page HTTP/1.1" 200 -
+2024-09-10 07:41:36,463 - app - INFO - Rendering index page
+2024-09-10 07:41:36,464 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:41:36] "GET / HTTP/1.1" 200 -
+2024-09-10 07:41:36,861 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:41:36] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-10 07:45:02,117 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 07:45:02] "GET /match_jd HTTP/1.1" 200 -

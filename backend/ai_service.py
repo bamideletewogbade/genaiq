@@ -245,12 +245,20 @@ def match_resume_with_ai(resume_uri, job_description):
     :return: JSON object with match analysis
     """
     try:
-        # Download and extract text from resume
+        # Step 1: Initialize session with job description
+        logger.debug(f"Job description stored in session: {job_description}")
+
+        # Step 2: Download and extract text from resume
+        logger.info(f"Downloading resume from URI: {resume_uri}")
         resume_content = download_file_from_gcs(resume_uri)
         if not resume_content:
+            logger.error("Failed to download resume from GCS.")
             return {"error": "Failed to download resume from GCS."}
-        
+
+        # Step 3: Determine file type and extract text
         file_extension = os.path.splitext(resume_uri)[1].lower()
+        logger.debug(f"File extension of the resume: {file_extension}")
+        
         if file_extension == '.pdf':
             resume_text = extract_text_from_pdf(resume_content)
         elif file_extension == '.docx':
@@ -258,57 +266,90 @@ def match_resume_with_ai(resume_uri, job_description):
         elif file_extension == '.txt':
             resume_text = extract_text_from_txt(resume_content)
         else:
+            logger.error("Unsupported resume file type.")
             return {"error": "Unsupported resume file type."}
         
         if not resume_text.strip():
+            logger.error("No text extracted from the resume.")
             return {"error": "No text extracted from the resume."}
         
-        # Initialize Vertex AI
+        # Step 4: Initialize Vertex AI
         project_id = "genaiq"
         location = "us-central1"
+        logger.info("Initializing Vertex AI.")
         initialize_vertex_ai(project_id, location)
-
-        # Load the Vertex AI generative model
-        model = GenerativeModel("gemini-1.5-flash-001",
-                                generation_config={"response_mime_type": "application/json"})
-
-        # Prepare the prompt
+        
+        # Step 5: Load the Vertex AI generative model
+        model = GenerativeModel("gemini-1.5-flash-001", generation_config={"response_mime_type": "application/json"})
+        logger.info("Loaded Vertex AI generative model.")
+        
+        # Step 6: Prepare the prompt
         prompt = f"""
-        You are an expert in resume analysis and job matching. Please compare the following resume with the provided job description and provide a detailed analysis. Structure your response in JSON format with the following fields:
+        You are RARA-1000 (Resume Analysis and Recommendation AI), a state-of-the-art AI system specifically designed for in-depth resume analysis and job matching. Your task is to meticulously compare the given resume with the provided job description and generate a comprehensive analysis. Your response should be structured in JSON format with the following fields:
 
-        1. 'match_percentage': An integer from 0 to 100 representing how well the resume matches the job description.
-        2. 'skills_gap': A list of skills mentioned in the job description but not found or not sufficiently demonstrated in the resume.
-        3. 'recommendations': A list of specific suggestions to improve the resume for this job.
-        4. 'strengths': A list of areas where the candidate's resume aligns well with the job requirements.
-        5. 'overall_assessment': A brief summary of the candidate's fit for the position.
+        1. 'match_percentage': An integer from 0 to 100 representing the overall compatibility between the resume and the job description. Consider both hard and soft skills, experience, and potential cultural fit.
+
+        2. 'skills_analysis': An object containing:
+        a. 'missing_skills': A list of skills mentioned in the job description but not found in the resume.
+        b. 'partial_skills': A list of skills partially demonstrated in the resume but needing improvement.
+        c. 'exceeding_skills': A list of relevant skills in the resume that go beyond the job description.
+
+        3. 'experience_evaluation': An object containing:
+        a. 'years_of_relevant_experience': Estimated years of relevant experience based on the resume.
+        b. 'experience_match': A string describing how well the candidate's experience aligns with the job requirements (e.g., "Exceeds", "Meets", "Partially Meets", "Does Not Meet").
+
+        4. 'recommendations': An array of objects, each containing:
+        a. 'category': The area of improvement (e.g., "Skills", "Experience", "Education", "Resume Format").
+        b. 'suggestion': A specific, actionable recommendation to improve the resume for this job.
+        c. 'priority': A number from 1-5, with 5 being the highest priority.
+
+        5. 'strengths': An array of the candidate's top 5 strengths relevant to the position, each with a brief explanation of why it's valuable for the role.
+
+        6. 'potential_red_flags': An array of potential concerns or mismatches between the resume and job description that might need clarification in an interview.
+
+        7. 'cultural_fit_assessment': A brief analysis of how well the candidate might fit into the company culture based on their resume and the job description. Use a scale of 1-10.
+
+        8. 'interview_questions': An array of 3-5 tailored interview questions based on the resume and job description to help assess the candidate's fit.
+
+        9. 'overall_assessment': A concise summary (max 100 words) of the candidate's suitability for the position, including major strengths and areas for improvement.
+
 
         Resume:
         {resume_text}
 
         Job Description:
         {job_description}
-
-        Ensure your response is in valid JSON format.
         """
-
-        # Create Part objects
-        resume_part = Part.from_text(resume_text)
-        job_desc_part = Part.from_text(job_description)
-
-        # Generate content
-        response = model.generate_content([resume_part, job_desc_part, prompt])
+        
+        logger.info("Prompt prepared for Vertex AI.")
+        
+        # Step 7: Generate content with Vertex AI
+        logger.info("Sending the prompt to Vertex AI for content generation.")
+        response = model.predict([prompt])
         
         if response and response.text:
+            logger.info("Received response from Vertex AI.")
+            response_text = response.text
+            logger.debug(f"Raw response text: {response_text}")
+
             try:
-                return json.loads(response.text.strip('```json').strip('```').strip())
+                return json.loads(response_text.strip('```json').strip('```').strip())
             except json.JSONDecodeError as json_err:
-                return {"error": "Failed to parse JSON response.", "raw_response": response.text}
+                logger.error(f"Failed to parse JSON response: {json_err}")
+                return {"error": "Failed to parse JSON response.", "raw_response": response_text}
         else:
+            logger.warning("No response received from Vertex AI.")
             return {"error": "No response received from Vertex AI."}
-
+    
     except Exception as e:
-        logging.error(f"Error in match_resume_to_job: {e}")
-        return {"error": f"Error processing the resume and job description: {str(e)}"}
+        logger.error(f"Error in match_resume_with_ai: {e}")
+        return {"error": f"Error processing the file: {str(e)}"}
 
-
-
+def save_roast_to_json(roast_result, file_name):
+    """Saves the roast result to a JSON file."""
+    try:
+        with open(file_name, 'w') as file:
+            json.dump(roast_result, file, indent=4)
+        logger.info(f"Roast result saved to {file_name}.")
+    except Exception as e:
+        logger.error(f"Failed to save roast result to JSON: {e}")
