@@ -7669,3 +7669,165 @@
 2024-09-10 20:03:50,834 - app - INFO - AI Response: None
 2024-09-10 20:03:50,835 - app - INFO - Deleted resume file: /home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads/Olusegun_Tewogbade.pdf
 2024-09-10 20:03:50,836 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2024 20:03:50] "POST /match HTTP/1.1" 200 -
+2024-09-15 12:22:23,245 - app - INFO - Starting Flask application
+2024-09-15 12:22:23,265 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-15 12:22:23,265 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-15 12:22:23,266 - werkzeug - INFO -  * Restarting with stat
+2024-09-15 12:22:25,579 - app - INFO - Starting Flask application
+2024-09-15 12:22:25,588 - werkzeug - WARNING -  * Debugger is active!
+2024-09-15 12:22:25,590 - werkzeug - INFO -  * Debugger PIN: 163-625-939
+2024-09-15 12:22:53,339 - app - INFO - Rendering index page
+2024-09-15 12:22:53,348 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 12:22:53] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 12:22:53,789 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 12:22:53] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 12:23:50,744 - app - INFO - Rendering index page
+2024-09-15 12:23:50,745 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 12:23:50] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 12:23:55,300 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 12:23:55] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 12:24:03,906 - app - INFO - Rendering index page
+2024-09-15 12:24:03,912 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 12:24:03] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 12:24:04,219 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 12:24:04] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:15:23,763 - app - INFO - Rendering index page
+2024-09-15 13:15:23,768 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:15:23] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:16:10,820 - app - INFO - Rendering index page
+2024-09-15 13:16:10,825 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:16:10] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:16:12,756 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:16:12] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:16:52,595 - app - INFO - Rendering index page
+2024-09-15 13:16:52,602 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:16:52] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:17:07,361 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:17:07] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:23:39,395 - app - INFO - Rendering index page
+2024-09-15 13:23:39,399 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:23:39] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:23:39,797 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:23:39] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:23:59,543 - app - INFO - Rendering index page
+2024-09-15 13:23:59,549 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:23:59] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:24:01,684 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:24:01] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:27:33,183 - app - INFO - Rendering index page
+2024-09-15 13:27:33,184 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:27:33] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:27:34,673 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:27:34] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:28:00,795 - app - INFO - Rendering index page
+2024-09-15 13:28:00,801 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:28:00] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:28:05,027 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:28:05] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:29:26,164 - app - INFO - Rendering index page
+2024-09-15 13:29:26,169 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:29:26] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:29:26,538 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:29:26] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:31:04,361 - app - INFO - Rendering index page
+2024-09-15 13:31:04,366 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:31:04] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:31:05,554 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:31:05] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:40:13,943 - app - INFO - Rendering index page
+2024-09-15 13:40:13,948 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:40:13] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:40:14,332 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:40:14] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:43:21,868 - app - INFO - Rendering index page
+2024-09-15 13:43:21,873 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:43:21] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:43:22,424 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:43:22] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:45:49,837 - app - INFO - Rendering index page
+2024-09-15 13:45:49,842 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:45:49] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:45:57,995 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:45:57] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:49:15,641 - app - INFO - Rendering index page
+2024-09-15 13:49:15,647 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:49:15] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:49:20,863 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:49:20] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:49:38,766 - app - INFO - Rendering index page
+2024-09-15 13:49:38,767 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:49:38] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:49:39,079 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:49:39] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:49:44,728 - app - INFO - Rendering index page
+2024-09-15 13:49:44,733 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:49:44] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:49:46,962 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:49:46] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:50:00,063 - app - INFO - Rendering index page
+2024-09-15 13:50:00,069 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:50:00] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:50:03,716 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:50:03] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:50:35,191 - app - INFO - Rendering index page
+2024-09-15 13:50:35,197 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:50:35] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:50:35,379 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:50:35] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:50:59,558 - app - INFO - Rendering index page
+2024-09-15 13:50:59,564 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:50:59] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:51:01,332 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:51:01] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:51:39,683 - app - INFO - Rendering index page
+2024-09-15 13:51:39,689 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:51:39] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:51:41,770 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:51:41] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:52:04,257 - app - INFO - Rendering index page
+2024-09-15 13:52:04,263 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:52:04] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:52:05,244 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:52:05] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:52:40,689 - app - INFO - Rendering index page
+2024-09-15 13:52:40,690 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:52:40] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:52:40,885 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:52:40] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:52:44,091 - app - INFO - Rendering index page
+2024-09-15 13:52:44,092 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:52:44] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:52:44,389 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:52:44] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:52:52,042 - app - INFO - Rendering index page
+2024-09-15 13:52:52,043 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:52:52] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:52:52,339 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:52:52] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:52:55,112 - app - INFO - Rendering index page
+2024-09-15 13:52:55,117 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:52:55] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:52:55,900 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:52:55] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:53:38,874 - app - INFO - Rendering index page
+2024-09-15 13:53:38,880 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:53:38] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:53:39,355 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:53:39] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:55:31,384 - app - INFO - Rendering index page
+2024-09-15 13:55:31,390 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:55:31] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:55:31,597 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:55:31] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:56:09,261 - app - INFO - Rendering index page
+2024-09-15 13:56:09,267 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:56:09] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:56:11,607 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:56:11] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:56:21,984 - app - INFO - Rendering index page
+2024-09-15 13:56:21,989 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:56:21] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:56:24,637 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:56:24] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:57:26,683 - app - INFO - Rendering index page
+2024-09-15 13:57:26,688 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:57:26] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:57:28,986 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:57:28] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:57:31,777 - app - INFO - Rendering index page
+2024-09-15 13:57:31,777 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:57:31] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:57:33,630 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:57:33] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:58:10,213 - app - INFO - Rendering index page
+2024-09-15 13:58:10,218 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:58:10] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:58:10,531 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:58:10] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 13:58:14,169 - app - INFO - Rendering index page
+2024-09-15 13:58:14,174 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:58:14] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 13:58:14,368 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 13:58:14] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:13:02,902 - app - INFO - Rendering index page
+2024-09-15 14:13:02,907 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:13:02] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:13:05,049 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:13:05] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:16:13,989 - app - INFO - Rendering index page
+2024-09-15 14:16:13,994 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:16:13] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:16:14,465 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:16:14] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:22:21,447 - app - INFO - Rendering index page
+2024-09-15 14:22:21,448 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:22:21] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:22:21,709 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:22:21] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:22:29,740 - app - INFO - Rendering index page
+2024-09-15 14:22:29,741 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:22:29] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:22:30,256 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:22:30] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:24:19,513 - app - INFO - Rendering index page
+2024-09-15 14:24:19,519 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:24:19] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:24:19,755 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:24:19] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:25:00,942 - app - INFO - Rendering index page
+2024-09-15 14:25:00,947 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:25:00] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:25:01,458 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:25:01] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:25:03,667 - app - INFO - Rendering index page
+2024-09-15 14:25:03,668 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:25:03] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:25:04,868 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:25:04] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:25:49,134 - app - INFO - Rendering index page
+2024-09-15 14:25:49,140 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:25:49] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:25:49,674 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:25:49] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:27:43,741 - app - INFO - Rendering index page
+2024-09-15 14:27:43,746 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:27:43] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:27:43,988 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:27:43] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:27:47,951 - app - INFO - Rendering index page
+2024-09-15 14:27:47,952 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:27:47] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:27:48,407 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:27:48] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:28:34,770 - app - INFO - Rendering index page
+2024-09-15 14:28:34,776 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:28:34] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:28:35,229 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:28:35] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:28:38,394 - app - INFO - Rendering index page
+2024-09-15 14:28:38,395 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:28:38] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:28:39,481 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:28:39] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:28:50,658 - app - INFO - Rendering index page
+2024-09-15 14:28:50,659 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:28:50] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:29:03,170 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:29:03] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:31:04,887 - app - INFO - Rendering index page
+2024-09-15 14:31:04,888 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:31:04] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-15 14:31:27,807 - werkzeug - INFO - 127.0.0.1 - - [15/Sep/2024 14:31:27] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-15 14:36:41,810 - app - INFO - Starting Flask application
+2024-09-15 14:36:41,822 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-15 14:36:41,822 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-15 14:36:41,823 - werkzeug - INFO -  * Restarting with stat
+2024-09-15 14:36:44,047 - app - INFO - Starting Flask application
+2024-09-15 14:36:44,056 - werkzeug - WARNING -  * Debugger is active!
+2024-09-15 14:36:44,056 - werkzeug - INFO -  * Debugger PIN: 163-625-939

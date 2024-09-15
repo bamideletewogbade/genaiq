@@ -18,7 +18,12 @@
             --text-color: #333333;
             --light-bg: #f8f9fa;
         }
-
+        .full-height-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: top;
+        padding: 4rem 0;
+        }
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-color);
@@ -27,7 +32,9 @@
             flex-direction: column;
             min-height: 100vh;
         }
-
+        .icon-custom-color {
+        color: var(--secondary-color); 
+        }
         .navbar {
             background-color: var(--primary-color);
             box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
@@ -66,7 +73,7 @@
             background-color: var(--primary-color);
             color: white;
             padding: 4rem 0;
-            /* height: 100vh; */
+            height: 100vh;
             display: flex;
         }
 
@@ -108,12 +115,12 @@
             /* General Styles */
             #faq h2 {
                 font-weight: bold;
-                color: black; /* Consistent with your color scheme */
+                color: black; 
             }
         
             #faqQuestions .list-group-item {
                 cursor: pointer;
-                background-color: #f8f9fa; /* Light shade for background */
+                background-color: #f8f9fa; 
                 color: black;
                 transition: all 0.3s ease;
                 border-radius: 5px;
@@ -122,7 +129,7 @@
             #faqQuestions .list-group-item:hover,
             #faqQuestions .list-group-item.active {
                 background-color: #345b83;
-                color: white; /* White text on active item */
+                color: white; 
                 font-weight: bold;
             }
         
@@ -132,16 +139,16 @@
         
             .answer.active {
                 display: block;
-                background-color: #ffffff; /* White background */
-                color: black; /* Text color */
+                background-color: #ffffff; 
+                color: black; 
             }
         
             .shadow-sm {
-                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Soft shadow for answers */
+                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); 
             }
         
             .rounded {
-                border-radius: 10px; /* Rounded corners for answers */
+                border-radius: 10px; 
             }
 
         footer {
@@ -201,6 +208,19 @@ footer h6 {
     border-color: var(--primary-color);
     color: var(--primary-color);
 }
+.custom-list {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.custom-list li {
+    padding: 10px 0; 
+}
+
+.custom-list li:last-child {
+    border-bottom: none; 
+}
     </style>
 </head>
 
@@ -250,42 +270,67 @@ footer h6 {
             </div>
         </section>
 
-        <section id="features" class="container px-4 py-5">
-            <h2 class="pb-2 border-bottom text-center">Why Choose CV.ai?</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
-                <div class="col">
-                    <article class="card h-100 text-center shadow-lg feature-card">
-                        <div class="card-body">
-                            <h3 class="card-title">Personalized AI Insights</h3>
-                            <p class="card-text">Harness the power of AI to receive customized feedback and recommendations that
-                                reflect your unique skills and career goals.</p>
-                            <a href="#" class="btn btn-custom">Upload Resume to get Insights</a>
+        <section id="features" class="py-5">
+            <div class="container">
+                <h2 class="pb-3 text-center text-black">Why Choose CV.ai?</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
+                    <!-- First Card -->
+                    <div class="col">
+                        <div class="card h-100 text-center shadow-lg feature-card">
+                            <div class="card-body">
+                                <i class="fas fa-brain fa-3x mb-3 icon-custom-color"></i>
+                                <h4 class="card-title">Advanced AI</h4>
+                                <p class="card-text">Cutting-edge algorithms analyze your resume for improvement.</p>
+                                <ul class="custom-list">
+                                    <li class="">Real-time insights</li>
+                                    <li class="">AI-driven optimization</li>
+                                    <li class="">ATS-friendly structure</li>
+                                </ul>
+                            </div>
                         </div>
-                    </article>
-                </div>
-                <div class="col">
-                    <article class="card h-100 text-center shadow-lg feature-card">
-                        <div class="card-body">
-                            <h3 class="card-title">Resume Matcher</h3>
-                            <p class="card-text">Ensure your resume passes Applicant Tracking Systems (ATS) with our
-                                advanced keyword optimization strategies.</p>
-                            <a href="#" class="btn btn-custom">Try Optimization Now</a>
+                    </div>
+                    <!-- Second Card -->
+                    <div class="col">
+                        <div class="card h-100 text-center shadow-lg feature-card">
+                            <div class="card-body">
+                                <i class="fas fa-bolt fa-3x mb-3 icon-custom-color"></i>
+                                <h4 class="card-title">Fast and Efficient</h4>
+                                <p class="card-text">Quick and comprehensive resume analysis to save you time.</p>
+                                <ul class="custom-list">
+                                    <li class="">Instant feedback</li>
+                                    <li class="">Comprehensive reports</li>
+                                    <li class="">Fast-track your job search</li>
+                                </ul>
+                            </div>
                         </div>
-                    </article>
+                    </div>
+                    <!-- Third Card -->
+                    <div class="col">
+                        <div class="card h-100 text-center shadow-lg feature-card">
+                            <div class="card-body">
+                                <i class="fas fa-user-check fa-3x mb-3 icon-custom-color"></i>
+                                <h4 class="card-title">Tailored for You</h4>
+                                <p class="card-text">Personalized recommendations to boost your career growth.</p>
+                                <ul class="custom-list">
+                                    <li class="">Custom insights</li>
+                                    <li class="">Career-driven suggestions</li>
+                                    <li class="">Industry-specific advice</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col">
-                    <article class="card h-100 text-center shadow-lg feature-card">
-                        <div class="card-body">
-                            <h3 class="card-title">Instant Feedback</h3>
-                            <p class="card-text">Receive immediate, actionable feedback to help you refine your resume
-                                and maximize its impact.</p>
-                                <a href="/upload_resume_page" class="btn btn-custom">Get Instant Feedback</a>
-                                </div>
-                    </article>
+                <!-- Mission and Vision Card -->
+                <div class="card mt-4 shadow-lg feature-card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Our Mission & Vision</h3>
+                        <p class="card-text">At CV.ai, our mission is to help job seekers secure interviews by optimizing resumes to pass ATS systems. We tailor each resume to the job description, providing personalized and actionable insights to enhance your career journey. We envision a future where every job applicant has the tools to stand out and achieve their professional dreams.</p>
+                        <a href="#" class="btn btn-custom mt-4">Learn More</a>
+                    </div>
                 </div>
             </div>
         </section>
-
+        
         <section id="pricing" class="container px-4 py-5">
             <h2 class="pb-2 border-bottom text-center text-black">Our Services</h2>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">

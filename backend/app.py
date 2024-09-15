@@ -9,8 +9,9 @@ import requests
 app = Flask(__name__)
 
 # Configuration
-UPLOAD_FOLDER = '/home/bishoptewogbade/genaiq/backend/static/uploads/temp_uploads'
-LOG_FILE_PATH = '/home/bishoptewogbade/genaiq/backend/app.log'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = os.path.join(BASE_DIR, 'static', 'uploads', 'temp_uploads')
+LOG_FILE_PATH = os.path.join(BASE_DIR, 'app.log')
 SECRET_KEY = "bishop"
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
