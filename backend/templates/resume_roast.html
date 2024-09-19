@@ -214,9 +214,9 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Resume Insights</a></li>
+                        <li class="nav-item"><a href="{{ url_for('upload_resume_page') }}" class="nav-link">Resume Insights</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Resume Optimizer</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Resume-JD Matcher</a></li>
+                        <li class="nav-item">  <a href="{{ url_for('match_jd') }}" class="nav-link">Resume-JD Matcher</a></li>
                         <!-- <li class="nav-item"><a href="#" class="nav-link">Resume Roast</a></li> -->
                         <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
                     </ul>
@@ -228,7 +228,6 @@
             </div>
         </nav>
     </header>
-
     <section class="header-section">
         <div class="container">
             <h1>Let's Roast Your Resume!</h1>

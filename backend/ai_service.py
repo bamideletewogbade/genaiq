@@ -110,7 +110,7 @@ def call_vertex_ai(file_uri):
     
     try:
         logger.info("Initializing Vertex AI with the given project ID and location.")
-        project_id = "genaiq"
+        project_id = "genaiq-433814"
         location = "us-central1"
         initialize_vertex_ai(project_id, location)
 
@@ -187,7 +187,7 @@ def roast_resume(file_uri):
             return {"error": "No text extracted from the file."}
         
         logger.info("Initializing Vertex AI with the given project ID and location.")
-        project_id = "genaiq"
+        project_id = "genaiq-433814"
         location = "us-central1"
         initialize_vertex_ai(project_id, location)
 
@@ -274,7 +274,7 @@ def match_resume_to_job(resume_uri, job_description):
             return {"error": "No text extracted from the resume."}
         
         # Step 4: Initialize Vertex AI
-        project_id = "genaiq"
+        project_id = "genaiq-433814"
         location = "us-central1"
         logger.info("Initializing Vertex AI.")
         initialize_vertex_ai(project_id, location)

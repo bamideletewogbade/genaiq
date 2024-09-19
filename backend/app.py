@@ -85,7 +85,7 @@ def upload_file():
 
         try:
             # Upload file to GCS
-            bucket_name = 'genaiq_cloudbuild'
+            bucket_name = 'genaiq_storage_new'
             destination_blob_name = f'uploads/{filename}'
             file_uri = upload_local_file_to_gcs(filepath, bucket_name, destination_blob_name)
             app.logger.info(f"File URI: {file_uri}")
@@ -129,9 +129,45 @@ def upload_file():
         app.logger.error("File type not allowed")
         return jsonify({'error': 'File type not allowed'}), 400
 
-@app.route('/get_feedback_page', methods=['POST'])
-def get_feedback_page():
-    app.logger.info("Received request to get feedback page")
+# @app.route('/get_feedback_page', methods=['POST'])
+# def get_feedback_page():
+#     app.logger.info("Received request to get feedback page")
+
+#     try:
+#         filename = session.get('filename')
+#         file_uri = session.get('file_uri')
+#         app.logger.info(f"Session data at feedback page: filename={filename}, file_uri={file_uri}")
+
+#         if not filename or not file_uri:
+#             app.logger.error("Required session data missing")
+#             return jsonify({'error': 'Session data missing'}), 400
+
+#         # Process the file using AI service
+#         app.logger.info("Calling AI service to process the file")
+
+#         try:
+#             feedback = call_vertex_ai(file_uri)
+#             app.logger.info(f"Analysis result: {feedback}")
+#             session['ai_response'] = feedback
+
+
+#             # Process the result and prepare feedback data dynamically
+#             analysis_result = feedback
+#             return render_template('full_report.html', feedback=analysis_result), 200
+
+#         except Exception as e:
+#             app.logger.error(f"Error calling AI service: {e}")
+#             return jsonify({'error': 'Error calling AI service'}), 500
+
+#     except Exception as e:
+#         app.logger.error(f"Error processing feedback: {e}")
+#         return jsonify({'error': 'Error processing feedback'}), 500
+
+
+# Endpoint to only display summary
+@app.route('/feedback_summary', methods=['POST', 'GET'])
+def feedback_summary():
+    app.logger.info("Received request to get feedback summary page")
 
     try:
         filename = session.get('filename')
@@ -150,10 +186,10 @@ def get_feedback_page():
             app.logger.info(f"Analysis result: {feedback}")
             session['ai_response'] = feedback
 
-
-            # Process the result and prepare feedback data dynamically
-            analysis_result = feedback
-            return render_template('full_report.html', feedback=analysis_result), 200
+            ai_response = session.get('ai_response')
+    
+            summary = ai_response.get('overall_feedback', 'Summary not available.')
+            return render_template('feedback_summary.html', summary=summary), 200
 
         except Exception as e:
             app.logger.error(f"Error calling AI service: {e}")
@@ -162,40 +198,30 @@ def get_feedback_page():
     except Exception as e:
         app.logger.error(f"Error processing feedback: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
-
-
-# Endpoint to only display summary
-@app.route('/feedback_summary', methods=['GET'])
-def feedback_summary():
-    # Assume the AI-generated response is stored in the session
-    ai_response = session.get('ai_response', {})
-    summary = ai_response.get('overall_feedback', 'Summary not available.')
-
-    return render_template('feedback_summary.html', summary=summary)
-
-@app.route('/full_report', methods=['GET'])
+  
+@app.route('/full_report', methods=['POST','GET'])
 def full_report():
-    app.logger.info("Received request to get feedback page")
+    app.logger.info("Received request to get feedback full report page")
 
     try:
-        filename = session.get('filename')
-        file_uri = session.get('file_uri')
-        app.logger.info(f"Session data at feedback page: filename={filename}, file_uri={file_uri}")
+        # filename = session.get('filename')
+        # file_uri = session.get('file_uri')
+        # app.logger.info(f"Session data at feedback page: filename={filename}, file_uri={file_uri}")
 
-        if not filename or not file_uri:
-            app.logger.error("Required session data missing")
-            return jsonify({'error': 'Session data missing'}), 400
+        # if not filename or not file_uri:
+        #     app.logger.error("Required session data missing")
+        #     return jsonify({'error': 'Session data missing'}), 400
 
-        # Process the file using AI service
-        app.logger.info("Calling AI service to process the file")
+        # # Process the file using AI service
+        # app.logger.info("Calling AI service to process the file")
 
         try:
-            feedback = call_vertex_ai(file_uri)
-            app.logger.info(f"Analysis result: {feedback}")
-            session['ai_response'] = feedback
+            # feedback = call_vertex_ai(file_uri)
+            # app.logger.info(f"Analysis result: {feedback}")
+            ai_response = session.get('ai_response')
 
             # Process the result and prepare feedback data dynamically
-            analysis_result = feedback
+            analysis_result = ai_response
             return render_template('feedback_page.html', feedback=analysis_result), 200
 
         except Exception as e:
