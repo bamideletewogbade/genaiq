@@ -2,142 +2,271 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume and Job Description Matching Result</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #023047;
+            --secondary-color: #fb8500;
+            --accent-color: #8ecae6;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+        }
         body {
-            background-color: #f8f9fa; /* Light background */
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--secondary-color) !important;
+            font-size: 1.5rem;
+        }
+        .nav-link {
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        .btn-custom {
+            background-color: var(--secondary-color);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #ffb703;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
         }
         .card {
-            transition: transform 0.2s; /* Animation for hover effect */
-            border: 1px solid #FE8C00; /* Gold border */
-            margin-bottom: 20px; /* Space between cards */
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
         }
         .card:hover {
-            transform: scale(1.05); /* Slightly enlarge the card on hover */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-        }
-        h1, h2, h3 {
-            color: #343a40; /* Dark text color */
-        }
-        .match-percentage {
-            color: #FE8C00; /* Gold color for match percentage */
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         }
         .card-header {
-            background-color: #FE8C00; /* Gold header */
-            color: white; /* White text for header */
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            border-top-left-radius: 15px !important;
+            border-top-right-radius: 15px !important;
+        }
+        .match-percentage {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+        .progress-bar {
+            background-color: var(--secondary-color);
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding-top: 50px;
+            margin-top: auto;
+        }
+        footer a {
+            color: var(--accent-color);
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        .social-icons a {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
         }
     </style>
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">CV.ai</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="{{ url_for('upload_resume_page') }}" class="nav-link">Resume Insights</a></li>
+                        <li class="nav-item"><a href="{{ url_for('match_jd') }}" class="nav-link">Resume-JD Matcher</a></li>
+                        <li class="nav-item"><a href="{{ url_for('resume_roast') }}" class="nav-link">Resume Roast</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                    </ul>
+                    <div class="d-flex">
+                        <a href="#" class="btn btn-custom">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <div class="container mt-5">
-        <h1 class="text-center">Matching Result</h1>
-        <h2 class="text-center match-percentage">Overall Match Percentage: {{ result.match_percentage }}%</h2>
-
-        <div class="mt-4">
-            <h3>Skills Analysis</h3>
-            <div class="card">
-                <div class="card-header">Skills Analysis</div>
-                <div class="card-body">
-                    <p><strong>Missing Skills:</strong> {{ result.skills_analysis.missing_skills | join(', ') }}</p>
-                    <p><strong>Partial Skills:</strong> {{ result.skills_analysis.partial_skills | join(', ') }}</p>
-                    <p><strong>Exceeding Skills:</strong> {{ result.skills_analysis.exceeding_skills | join(', ') }}</p>
-                </div>
+        <h1 class="text-center mb-4">Matching Result</h1>
+        <div class="text-center match-percentage">
+            Overall Match: {{ result.match_percentage }}%
+            <div class="progress mt-2">
+                <div class="progress-bar" role="progressbar" style="width: {{ result.match_percentage }}%;" aria-valuenow="{{ result.match_percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
 
-        <div class="mt-4">
-            <h3>Experience Evaluation</h3>
-            <div class="card">
-                <div class="card-header">Experience Evaluation</div>
-                <div class="card-body">
-                    <p><strong>Years of Relevant Experience:</strong> {{ result.experience_evaluation.years_of_relevant_experience }}</p>
-                    <p><strong>Experience Match:</strong> {{ result.experience_evaluation.experience_match }}</p>
-                </div>
+        <div class="card mt-4">
+            <div class="card-header">
+                <i class="fas fa-cogs mr-2"></i> Skills Analysis
+            </div>
+            <div class="card-body">
+                <h6><i class="fas fa-times-circle text-danger mr-2"></i>Missing Skills:</h6>
+                <p>{{ result.skills_analysis.missing_skills | join(', ') }}</p>
+                <h6><i class="fas fa-exclamation-circle text-warning mr-2"></i>Partial Skills:</h6>
+                <p>{{ result.skills_analysis.partial_skills | join(', ') }}</p>
+                <h6><i class="fas fa-check-circle text-success mr-2"></i>Exceeding Skills:</h6>
+                <p>{{ result.skills_analysis.exceeding_skills | join(', ') }}</p>
             </div>
         </div>
 
-        <div class="mt-4">
-            <h3>Recommendations</h3>
-            <div class="card">
-                <div class="card-header">Recommendations</div>
-                <div class="card-body">
-                    <ul>
-                        {% for rec in result.recommendations %}
-                        <li>
-                            <strong>Category:</strong> {{ rec.category }}<br>
-                            <strong>Suggestion:</strong> {{ rec.suggestion }}<br>
-                            <strong>Priority:</strong> {{ rec.priority }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+        <div class="card mt-4">
+            <div class="card-header">
+                <i class="fas fa-briefcase mr-2"></i> Experience Evaluation
+            </div>
+            <div class="card-body">
+                <h6>Years of Relevant Experience:</h6>
+                <p>{{ result.experience_evaluation.years_of_relevant_experience }}</p>
+                <h6>Experience Match:</h6>
+                <p>{{ result.experience_evaluation.experience_match }}</p>
             </div>
         </div>
 
-        <div class="mt-4">
-            <h3>Strengths</h3>
-            <div class="card">
-                <div class="card-header">Strengths</div>
-                <div class="card-body">
-                    <ul>
-                        {% for strength in result.strengths %}
-                        <li>
-                            <strong>{{ strength.strength }}</strong>: {{ strength.explanation }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+        <div class="card mt-4">
+            <div class="card-header">
+                <i class="fas fa-lightbulb mr-2"></i> Recommendations
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    {% for rec in result.recommendations %}
+                    <li class="list-group-item">
+                        <h6 class="mb-1">{{ rec.category }}</h6>
+                        <p class="mb-1">{{ rec.suggestion }}</p>
+                        <small class="text-muted">Priority: {{ rec.priority }}</small>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
 
-        <div class="mt-4">
-            <h3>Potential Red Flags</h3>
-            <div class="card">
-                <div class="card-header">Potential Red Flags</div>
-                <div class="card-body">
-                    <ul>
-                        {% for red_flag in result.potential_red_flags %}
-                        <li>{{ red_flag }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
+        <div class="card mt-4">
+            <div class="card-header">
+                <i class="fas fa-star mr-2"></i> Strengths
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    {% for strength in result.strengths %}
+                    <li class="list-group-item">
+                        <h6 class="mb-1">{{ strength.strength }}</h6>
+                        <p class="mb-0">{{ strength.explanation }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
 
-        <div class="mt-4">
-            <h3>Cultural Fit Assessment</h3>
-            <div class="card">
-                <div class="card-header">Cultural Fit Assessment</div>
-                <div class="card-body">
-                    <p>{{ result.cultural_fit_assessment }}/10</p>
-                </div>
+        <div class="card mt-4">
+            <div class="card-header">
+                <i class="fas fa-exclamation-triangle mr-2"></i> Potential Red Flags
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    {% for red_flag in result.potential_red_flags %}
+                    <li class="list-group-item">{{ red_flag }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
 
-        <div class="mt-4">
-            <h3>Interview Questions</h3>
-            <div class="card">
-                <div class="card-header">Interview Questions</div>
-                <div class="card-body">
-                    <ul>
-                        {% for question in result.interview_questions %}
-                        <li>{{ question }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
+        <div class="card mt-4">
+            <div class="card-header">
+                <i class="fas fa-users mr-2"></i> Cultural Fit
             </div>
-        </div>
-
-        <div class="mt-4">
-            <h3>Overall Assessment</h3>
-            <div class="card">
-                <div class="card-header">Overall Assessment</div>
-                <div class="card-body">
-                    <p>{{ result.overall_assessment }}</p>
-                </div>
+            <div class="card-body">
+                <p>{{ result.cultural_fit }}</p>
             </div>
         </div>
     </div>
+
+    <footer class="text-center text-lg-start text-white mt-4">
+        <div class="container p-4 pb-0">
+            <section class="mb-4">
+                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-linkedin-in"></i></a>
+            </section>
+            <section class="">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">About Us</h5>
+                        <p>CV.ai is dedicated to helping job seekers optimize their resumes and match with their dream jobs through advanced AI technology.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Contact</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="#!" class="text-white">FAQ</a></li>
+                            <li><a href="#!" class="text-white">Support</a></li>
+                            <li><a href="#!" class="text-white">Privacy Policy</a></li>
+                            <li><a href="#!" class="text-white">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Newsletter</h5>
+                        <form>
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" id="form5Example2" class="form-control" />
+                                <label class="form-label" for="form5Example2">Email address</label>
+                            </div>
+                            <button type="submit" class="btn btn-outline-light btn-block mb-4">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 CV.ai. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
