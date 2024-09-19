@@ -298,7 +298,7 @@ def match():
 
         # Process the resume file
         try:
-            bucket_name = 'genaiq_cloudbuild'
+            bucket_name = 'genaiq_storage_new'
             destination_blob_name = f'uploads/{filename}'
             file_uri = upload_local_file_to_gcs(resume_path, bucket_name, destination_blob_name)
             app.logger.info(f"File URI: {file_uri}")

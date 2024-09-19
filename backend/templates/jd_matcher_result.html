@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume and Job Description Matching Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background */
+        }
+        .card {
+            transition: transform 0.2s; /* Animation for hover effect */
+            border: 1px solid #FE8C00; /* Gold border */
+            margin-bottom: 20px; /* Space between cards */
+        }
+        .card:hover {
+            transform: scale(1.05); /* Slightly enlarge the card on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+        h1, h2, h3 {
+            color: #343a40; /* Dark text color */
+        }
+        .match-percentage {
+            color: #FE8C00; /* Gold color for match percentage */
+        }
+        .card-header {
+            background-color: #FE8C00; /* Gold header */
+            color: white; /* White text for header */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Matching Result</h1>
+        <h2 class="text-center match-percentage">Overall Match Percentage: {{ result.match_percentage }}%</h2>
+
+        <div class="mt-4">
+            <h3>Skills Analysis</h3>
+            <div class="card">
+                <div class="card-header">Skills Analysis</div>
+                <div class="card-body">
+                    <p><strong>Missing Skills:</strong> {{ result.skills_analysis.missing_skills | join(', ') }}</p>
+                    <p><strong>Partial Skills:</strong> {{ result.skills_analysis.partial_skills | join(', ') }}</p>
+                    <p><strong>Exceeding Skills:</strong> {{ result.skills_analysis.exceeding_skills | join(', ') }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h3>Experience Evaluation</h3>
+            <div class="card">
+                <div class="card-header">Experience Evaluation</div>
+                <div class="card-body">
+                    <p><strong>Years of Relevant Experience:</strong> {{ result.experience_evaluation.years_of_relevant_experience }}</p>
+                    <p><strong>Experience Match:</strong> {{ result.experience_evaluation.experience_match }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h3>Recommendations</h3>
+            <div class="card">
+                <div class="card-header">Recommendations</div>
+                <div class="card-body">
+                    <ul>
+                        {% for rec in result.recommendations %}
+                        <li>
+                            <strong>Category:</strong> {{ rec.category }}<br>
+                            <strong>Suggestion:</strong> {{ rec.suggestion }}<br>
+                            <strong>Priority:</strong> {{ rec.priority }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h3>Strengths</h3>
+            <div class="card">
+                <div class="card-header">Strengths</div>
+                <div class="card-body">
+                    <ul>
+                        {% for strength in result.strengths %}
+                        <li>
+                            <strong>{{ strength.strength }}</strong>: {{ strength.explanation }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h3>Potential Red Flags</h3>
+            <div class="card">
+                <div class="card-header">Potential Red Flags</div>
+                <div class="card-body">
+                    <ul>
+                        {% for red_flag in result.potential_red_flags %}
+                        <li>{{ red_flag }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h3>Cultural Fit Assessment</h3>
+            <div class="card">
+                <div class="card-header">Cultural Fit Assessment</div>
+                <div class="card-body">
+                    <p>{{ result.cultural_fit_assessment }}/10</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h3>Interview Questions</h3>
+            <div class="card">
+                <div class="card-header">Interview Questions</div>
+                <div class="card-body">
+                    <ul>
+                        {% for question in result.interview_questions %}
+                        <li>{{ question }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h3>Overall Assessment</h3>
+            <div class="card">
+                <div class="card-header">Overall Assessment</div>
+                <div class="card-body">
+                    <p>{{ result.overall_assessment }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

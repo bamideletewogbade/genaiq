@@ -333,11 +333,11 @@ def match_resume_to_job(resume_uri, job_description):
             logger.debug(f"Raw response text: {response_text}")
             print(response_text)
 
-            # try:
-            #     # return json.loads(response_text.strip('```json').strip('```').strip())
-            # except json.JSONDecodeError as json_err:
-            #     logger.error(f"Failed to parse JSON response: {json_err}")
-            #     return {"error": "Failed to parse JSON response.", "raw_response": response_text}
+            try:
+                return json.loads(response_text.strip('```json').strip('```').strip())
+            except json.JSONDecodeError as json_err:
+                logger.error(f"Failed to parse JSON response: {json_err}")
+                return {"error": "Failed to parse JSON response.", "raw_response": response_text}
         else:
             logger.warning("No response received from Vertex AI.")
             return {"error": "No response received from Vertex AI."}
