@@ -10301,3 +10301,118 @@ metadata {
 2024-09-19 21:26:03,723 - app - INFO - AI Response: {'match_percentage': 80, 'skills_analysis': {'missing_skills': ['Google Cloud Platform'], 'partial_skills': [], 'exceeding_skills': ['C#', 'NodeJs', 'React Native', 'Angular', 'Firebase', 'Mobile Device Management', 'Artificial Intelligence and Machine Learning', 'Web Development', 'Mobile App Development', 'Technical Analysis', 'Adaptability and Flexibility', 'Time management abilities', 'Excellent Communication', 'Reliability', 'Analytical and Methodical', 'Problem-solving abilities']}, 'experience_evaluation': {'years_of_relevant_experience': 2, 'experience_match': 'Meets'}, 'recommendations': [{'category': 'Skills', 'suggestion': "Highlight your experience with Google Cloud Platform, even if it's limited. Consider taking a relevant course or certification to strengthen this area.", 'priority': 4}, {'category': 'Resume Format', 'suggestion': 'Consider using a more standard resume format with clear sections for skills, experience, and education. The current format can be difficult to read and might not highlight relevant information.', 'priority': 3}], 'strengths': [{'strength': 'Software Development Expertise', 'explanation': 'Demonstrated skills in front-end and back-end development, along with experience in building applications and migrating legacy systems, are valuable for this role.'}, {'strength': 'Strong Programming Skills', 'explanation': "Proficiency in Python, JavaScript, and C# aligns well with the job description's requirements."}, {'strength': 'Framework Proficiency', 'explanation': 'Experience with React, React Native, and Angular showcases adaptability and a strong understanding of popular frameworks.'}, {'strength': 'Problem-Solving Abilities', 'explanation': "The candidate's background in network administration and experience resolving technical issues indicate strong analytical and problem-solving skills."}, {'strength': 'Collaborative Nature', 'explanation': 'Experience working on projects with other engineers demonstrates teamwork and communication skills crucial for a collaborative environment.'}], 'potential_red_flags': ['Lack of direct experience with Google Cloud Platform might require further explanation in the interview.', "The resume's format could be interpreted as less professional and may not effectively highlight key skills and experience."], 'cultural_fit_assessment': 7, 'interview_questions': ['Tell me about a time you had to learn a new technology quickly for a project. How did you approach it?', 'Can you describe your experience working with React and how you would apply it to a project involving Google Cloud Platform?', 'How would you describe your approach to debugging and troubleshooting technical issues?'], 'overall_assessment': 'This candidate possesses a strong foundation in software development, particularly in the languages and frameworks required for this position. Their experience in front-end and back-end development, along with proficiency in Python, JavaScript, and React, makes them a strong contender. However, their lack of direct experience with Google Cloud Platform might need clarification in the interview. Addressing this gap and refining their resume format would further enhance their candidacy.'}
 2024-09-19 21:26:03,723 - app - INFO - Deleted resume file: /home/bamidele_tewogbade1/genaiq/backend/static/uploads/temp_uploads/OkoroduduMichaelResume.pdf
 2024-09-19 21:26:03,734 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:26:03] "POST /match HTTP/1.1" 200 -
+2024-09-19 21:39:52,966 - app - INFO - Starting Flask application
+2024-09-19 21:39:52,979 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-19 21:39:52,979 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-19 21:39:52,980 - werkzeug - INFO -  * Restarting with stat
+2024-09-19 21:39:55,377 - app - INFO - Starting Flask application
+2024-09-19 21:39:55,387 - werkzeug - WARNING -  * Debugger is active!
+2024-09-19 21:39:55,387 - werkzeug - INFO -  * Debugger PIN: 128-224-971
+2024-09-19 21:40:51,437 - app - INFO - Rendering index page
+2024-09-19 21:40:51,446 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:40:51] "GET / HTTP/1.1" 200 -
+2024-09-19 21:40:52,209 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:40:52] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-19 21:40:54,396 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:40:54] "GET /roast HTTP/1.1" 200 -
+2024-09-19 21:41:06,304 - app - INFO - Received a file upload request
+2024-09-19 21:41:06,823 - app - INFO - File OkoroduduMichaelResume.pdf saved to /home/bamidele_tewogbade1/genaiq/backend/static/uploads/temp_uploads/OkoroduduMichaelResume.pdf
+2024-09-19 21:41:06,838 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-19 21:41:06,845 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-19 21:41:07,764 - ai_service - INFO - File uploaded successfully to GCS: uploads/OkoroduduMichaelResume.pdf
+2024-09-19 21:41:07,764 - app - INFO - File URI: gs://genaiq_storage_new/uploads/OkoroduduMichaelResume.pdf
+2024-09-19 21:41:07,764 - app - INFO - Session data after upload: <SecureCookieSession {'file_uri': 'gs://genaiq_storage_new/uploads/OkoroduduMichaelResume.pdf', 'job_description': 'java\r\npython\r\njavascript\r\nreact\r\ngoogle cloud platform', 'filename': 'OkoroduduMichaelResume.pdf'}>
+2024-09-19 21:41:07,765 - app - INFO - File type is PDF
+2024-09-19 21:41:07,765 - app - INFO - File OkoroduduMichaelResume.pdf removed from local storage
+2024-09-19 21:41:07,766 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:41:07] "POST /upload HTTP/1.1" 200 -
+2024-09-19 21:41:09,095 - app - INFO - Received request to get roast page
+2024-09-19 21:41:09,096 - app - INFO - Session data at feedback page: filename=OkoroduduMichaelResume.pdf, file_uri=gs://genaiq_storage_new/uploads/OkoroduduMichaelResume.pdf
+2024-09-19 21:41:09,096 - app - INFO - Calling AI service to process the file
+2024-09-19 21:41:09,103 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-19 21:41:09,110 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-19 21:41:10,050 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_storage_new/uploads/OkoroduduMichaelResume.pdf
+2024-09-19 21:41:10,291 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-19 21:41:10,291 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-19 21:41:10,291 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-19 21:41:10,291 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-19 21:41:10,292 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-19 21:41:10,292 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-19 21:41:10,293 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-19 21:41:12,083 - ai_service - INFO - Received response from Vertex AI.
+2024-09-19 21:41:12,085 - app - INFO - Analysis result: {'roast': "Yo, this resume is like a Nigerian rom-com, all over the place! 'Software Intern' at the 'Nigerian Development Foundation?' Sounds like a real party. 'Developed user interface... ensure timely completion of objectives'? Dude, you're a software intern, not a rocket scientist! And 'Network Administrator Intern' at 'Cross Country LTD?'  Is that a travel agency? You sound like a tech wizard with all these 'Artificial Intelligence' and 'Machine Learning' skills...  you're probably just playing with Siri on your phone.  Listen, homie, ditch the buzzwords and focus on the real skills, maybe throw in a funny anecdote.  We're all looking for a good laugh, not a tech seminar!"}
+2024-09-19 21:41:12,088 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:41:12] "POST /get_roast_page HTTP/1.1" 200 -
+2024-09-19 21:46:52,911 - app - INFO - Received request to get roast page
+2024-09-19 21:46:52,911 - app - INFO - Session data at feedback page: filename=OkoroduduMichaelResume.pdf, file_uri=gs://genaiq_storage_new/uploads/OkoroduduMichaelResume.pdf
+2024-09-19 21:46:52,911 - app - INFO - Calling AI service to process the file
+2024-09-19 21:46:52,920 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-19 21:46:52,927 - google.auth._default - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2024-09-19 21:46:53,865 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_storage_new/uploads/OkoroduduMichaelResume.pdf
+2024-09-19 21:46:53,979 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-19 21:46:53,979 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-19 21:46:53,979 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-19 21:46:53,979 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-19 21:46:53,979 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-19 21:46:53,980 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-19 21:46:53,980 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-19 21:46:56,237 - ai_service - INFO - Received response from Vertex AI.
+2024-09-19 21:46:56,240 - app - INFO - Analysis result: {'roast': "Yo, this resume is like a Nigerian Nollywood movie - all over the place!  'Software Intern' at the 'Nigerian Development Foundation?'  Sounds like a charity case, but hey, at least you got to 'develop user interfaces.'  I'm not sure what that means, but I bet it involved a lot of 'developing' and 'interfaces.' And then there's 'Network Administrator Intern' at 'Cross Country LTD.' I'm guessing that means you're the guy who fixes the wifi when the office can't download the latest TikTok dances.  Look, I get it, everyone wants to be a 'Software Developer with expertise in front-end and back-end development.'  But let's be real, 'expertise' is a strong word for someone who lists 'JavaScript' and 'Python' as skills.  You're like the guy who says he's fluent in Spanish because he knows 'Hola' and 'Adios.'  My advice?  Get some real experience, learn some actual languages, and ditch the 'AI and Machine Learning' jargon.  You'll be much more employable if you can actually code a website that doesn't crash when you open it."}
+2024-09-19 21:46:56,246 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:46:56] "POST /get_roast_page HTTP/1.1" 200 -
+2024-09-19 21:47:06,648 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:47:06] "GET /roast HTTP/1.1" 200 -
+2024-09-19 21:48:31,133 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:48:31] "GET /roast HTTP/1.1" 200 -
+2024-09-19 21:48:54,125 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:48:54] "GET /match_jd HTTP/1.1" 200 -
+2024-09-19 21:48:57,359 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:48:57] "[31m[1mGET /match HTTP/1.1[0m" 405 -
+2024-09-19 21:50:30,557 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:50:30] "GET /match_jd HTTP/1.1" 200 -
+2024-09-19 21:50:33,652 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:50:33] "GET /roast HTTP/1.1" 200 -
+2024-09-19 21:50:40,978 - app - INFO - Rendering upload resume page
+2024-09-19 21:50:40,982 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:50:40] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-19 21:50:48,017 - app - INFO - Rendering index page
+2024-09-19 21:50:48,018 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:50:48] "GET / HTTP/1.1" 200 -
+2024-09-19 21:50:48,492 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:50:48] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-19 21:50:50,142 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:50:50] "GET /roast HTTP/1.1" 200 -
+2024-09-19 21:50:54,516 - app - INFO - Rendering index page
+2024-09-19 21:50:54,517 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:50:54] "GET / HTTP/1.1" 200 -
+2024-09-19 21:50:55,066 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:50:55] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-19 21:50:56,671 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:50:56] "GET /roast HTTP/1.1" 200 -
+2024-09-19 21:51:00,299 - app - INFO - Rendering index page
+2024-09-19 21:51:00,300 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:00] "GET / HTTP/1.1" 200 -
+2024-09-19 21:51:00,728 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:00] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-19 21:51:03,815 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:03] "GET /roast HTTP/1.1" 200 -
+2024-09-19 21:51:06,004 - app - INFO - Rendering index page
+2024-09-19 21:51:06,005 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:06] "GET / HTTP/1.1" 200 -
+2024-09-19 21:51:06,338 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:06] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-19 21:51:07,644 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:07] "GET /match_jd HTTP/1.1" 200 -
+2024-09-19 21:51:10,260 - app - INFO - Rendering index page
+2024-09-19 21:51:10,261 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:10] "GET / HTTP/1.1" 200 -
+2024-09-19 21:51:10,807 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:10] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-19 21:51:12,133 - app - INFO - Rendering upload resume page
+2024-09-19 21:51:12,134 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:12] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-19 21:51:14,768 - app - INFO - Rendering index page
+2024-09-19 21:51:14,769 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:14] "GET / HTTP/1.1" 200 -
+2024-09-19 21:51:15,282 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:15] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-19 21:51:18,285 - app - INFO - Rendering index page
+2024-09-19 21:51:18,286 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:18] "GET / HTTP/1.1" 200 -
+2024-09-19 21:51:18,796 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:18] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-19 21:51:20,199 - app - INFO - Rendering upload resume page
+2024-09-19 21:51:20,199 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:20] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-19 21:51:25,929 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:25] "GET /match_jd HTTP/1.1" 200 -
+2024-09-19 21:51:27,607 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:27] "GET /match_jd HTTP/1.1" 200 -
+2024-09-19 21:51:29,558 - app - INFO - Rendering index page
+2024-09-19 21:51:29,559 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:29] "GET / HTTP/1.1" 200 -
+2024-09-19 21:51:29,843 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:51:29] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-19 21:52:25,892 - app - INFO - Rendering upload resume page
+2024-09-19 21:52:25,896 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:52:25] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-19 21:52:27,556 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:52:27] "GET /match_jd HTTP/1.1" 200 -
+2024-09-19 21:52:29,044 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:52:29] "GET /roast HTTP/1.1" 200 -
+2024-09-19 21:52:56,490 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:52:56] "GET /roast HTTP/1.1" 200 -
+2024-09-19 21:52:58,889 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:52:58] "GET /roast HTTP/1.1" 200 -
+2024-09-19 21:53:00,184 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:53:00] "GET /match_jd HTTP/1.1" 200 -
+2024-09-19 21:53:01,565 - app - INFO - Rendering upload resume page
+2024-09-19 21:53:01,566 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:53:01] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-19 21:53:06,014 - app - INFO - Rendering index page
+2024-09-19 21:53:06,015 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:53:06] "GET / HTTP/1.1" 200 -
+2024-09-19 21:53:06,181 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:53:06] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-19 21:53:07,313 - app - INFO - Rendering upload resume page
+2024-09-19 21:53:07,314 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:53:07] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-19 21:53:08,395 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:53:08] "GET /match_jd HTTP/1.1" 200 -
+2024-09-19 21:53:09,480 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:53:09] "GET /roast HTTP/1.1" 200 -
+2024-09-19 21:53:10,635 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:53:10] "GET /match_jd HTTP/1.1" 200 -
+2024-09-19 21:53:11,682 - app - INFO - Rendering upload resume page
+2024-09-19 21:53:11,683 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2024 21:53:11] "GET /upload_resume_page HTTP/1.1" 200 -

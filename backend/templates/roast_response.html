@@ -143,7 +143,7 @@ footer h6 {
                                 <p class="roast-content">{{ roast.roast }}</p>
                             </div>
                             <div class="text-center mt-4">
-                                <button class="btn btn-secondary" onclick="history.back()">Back</button>
+                                <button class="btn btn-secondary" onclick="navigateToRoast()">Back</button>
                                 <button class="btn btn-primary" id="shareBtn"><i class="fa-solid fa-share"></i> Share</button>
                             </div>
                         </div>
@@ -203,5 +203,12 @@ footer h6 {
             }
         });
     </script>
+    <script>
+        function navigateToRoast() {
+            const url = new URL(window.location.origin);
+            url.pathname = '/roast';
+            window.location.href = url.href;
+        }
+        </script>
 </body>
 </html>
