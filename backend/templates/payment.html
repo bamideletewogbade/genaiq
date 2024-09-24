@@ -9,6 +9,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://js.paystack.co/v2/inline.js"/>
     <style>
         :root {
             --primary-color: #023047;
@@ -201,26 +202,16 @@
     <main class="container">
         <div class="payment-section">
             <h2>Unlock Full Report</h2>
-            <!-- <p><strong>Price:</strong> $10 (Card Payment) or 160 GHS (Mobile Money)</p> -->
-            <form method="POST" action="{{ url_for('start_payment') }}">
-                <!-- <div class="form-group">
-                    <label for="amount">Amount:</label>
-                    <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
-                </div> -->
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="payment-method">Payment Method:</label>
-                    <select id="payment-method" name="payment-method" class="form-select" required>
-                        <option value="" disabled selected>Select payment method</option>
-                        <option value="card">Card Payment ($10)</option>
-                        <option value="mobile_money">Mobile Money (160 GHS)</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-submit">Make Payment</button>
-            </form>
+            
+            <form action="{{ url_for('start_payment') }}" method="POST">
+    <input type="email" name="email" required placeholder="Enter your email">
+    <select name="payment-method">
+        <option value="card">Card</option>
+        <option value="mobile_money">Mobile Money</option>
+    </select>
+    <button type="submit">Pay Now</button>
+</form>
+
         </div>
     </main>
 

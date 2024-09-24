@@ -18,7 +18,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = SECRET_KEY
 
 # Replace with your Paystack secret key
-PAYSTACK_SECRET_KEY = 'sk_test_d09c41f57e1897f4ae815c7da361ab9e2a780d93'
+PAYSTACK_SECRET_KEY = 'pk_test_231e69ddcb26e40256da24ec7ebc279395c5c4c1'
 
 def setup_logging():
     """Sets up logging with file rotation."""
@@ -334,16 +334,16 @@ def download_feedback_pdf():
         app.logger.error("PDF file not found")
         return jsonify({'error': 'PDF file not found'}), 404
 
-@app.route('/payment', methods=['GET', 'POST'])
-def payment():
-    if request.method == 'POST':
-        # Process payment here
-        payment_successful = True  # Example placeholder for actual payment logic
+# @app.route('/payment', methods=['GET', 'POST'])
+# def payment():
+#     if request.method == 'POST':
+#         # Process payment here
+#         payment_successful = True  # Example placeholder for actual payment logic
         
-        if payment_successful:
-            return redirect(url_for('full_report'))
+#         if payment_successful:
+#             return redirect(url_for('full_report'))
 
-    return render_template('payment.html')
+#     return render_template('payment.html')
 
 @app.route('/start_payment', methods=['POST'])
 def start_payment():
@@ -361,8 +361,7 @@ def start_payment():
         app.logger.error('Invalid payment method: %s', payment_method)
         return jsonify({'status': 'failed', 'message': 'Invalid payment method'}), 400
 
-
-    amount = 160 * 100
+    amount = 7000
     currency = 'GHS'
 
     # Initialize the payment
@@ -381,7 +380,6 @@ def start_payment():
 
     try:
         response = requests.post(url, json=data, headers=headers)
-        # response.raise_for_status()  # Raise an HTTPError for bad responses
         response_data = response.json()
 
         # Log Paystack response data
@@ -399,48 +397,6 @@ def start_payment():
         return jsonify({'status': 'failed', 'message': 'Payment initialization failed'}), 500
 
 
-@app.route('/verify_payment', methods=['GET'])
-def verify_payment():
-    reference = request.args.get('reference')
-
-    app.logger.info(f"Received verify_payment request with reference: {reference}")
-
-    if not reference:
-        app.logger.error('Reference not provided')
-        return jsonify({'status': 'failed', 'message': 'Reference not provided'}), 400
-
-    # Verify the payment with Paystack
-    url = f'https://api.paystack.co/transaction/verify/{reference}'
-    headers = {
-        'Authorization': f'Bearer {PAYSTACK_SECRET_KEY}',
-        'Content-Type': 'application/json',
-    }
-
-    try:
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()  # Raise an HTTPError for bad responses
-        response_data = response.json()
-
-        # Log Paystack response data
-        app.logger.info(f"Paystack verification response: {response_data}")
-
-        if response_data['status']:
-            payment_status = response_data['data']['status']
-            if payment_status == 'success':
-                app.logger.info('Payment successful for reference %s', reference)
-                return jsonify({'status': 'success', 'message': 'Payment successful'}), 200
-            else:
-                app.logger.error('Payment failed for reference %s', reference)
-                return jsonify({'status': 'failed', 'message': 'Payment failed'}), 400
-        else:
-            app.logger.error('Payment verification failed for reference %s: %s', reference, response_data.get('message', 'Unknown error'))
-            return jsonify({'status': 'failed', 'message': 'Payment verification failed'}), 400
-
-    except requests.exceptions.RequestException as e:
-        app.logger.error('Request to Paystack failed: %s', e)
-        return jsonify({'status': 'failed', 'message': 'Payment verification failed'}), 500
-
-
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     app.logger.info(f"Serving file {filename}")
@@ -450,6 +406,23 @@ def uploaded_file(filename):
 def tools():
     app.logger.info("Rendering tools selection page")
     return render_template('tool_selection_page.html')
+
+# @app.route('/verify_payment/<reference>', methods=['GET'])
+# def verify_payment(reference):
+#     headers = {
+#         'Authorization': f'Bearer {PAYSTACK_SECRET_KEY}',
+#         'Content-Type': 'application/json',
+#     }
+
+#     # Make a request to the Paystack API to verify the payment
+#     url = f'https://api.paystack.co/transaction/verify/{reference}'
+#     response = requests.get(url, headers=headers)
+#     result = response.json()
+
+#     if result['status']:
+#         return jsonify({'status': 'success', 'message': 'Payment verified successfully', 'data': result['data']})
+#     else:
+#         return jsonify({'status': 'failed', 'message': 'Payment verification failed', 'data': result.get('data', {})}), 400
 
 if __name__ == "__main__":
     app.logger.info("Starting Flask application")

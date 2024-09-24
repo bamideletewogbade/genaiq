@@ -140,27 +140,27 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <a class="navbar-brand" href="/">CV.ai</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Resume Insights</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Resume Optimizer</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Resume-JD Matcher</a></li>
-                        <!-- <li class="nav-item"><a href="#" class="nav-link">Resume Roast</a></li> -->
+                        <li class="nav-item"><a href="{{ url_for('upload_resume_page') }}" class="nav-link">Resume Insights</a></li>
+                        <!-- <li class="nav-item"><a href="#" class="nav-link">Resume Optimizer</a></li> -->
+                        <li class="nav-item">  <a href="{{ url_for('match_jd') }}" class="nav-link">Resume-JD Matcher</a></li>
+                        <li class="nav-item"><a href="{{ url_for('resume_roast') }}" class="nav-link">Resume Roast</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
                     </ul>
                     <div class="d-flex">
-                        <!-- <a href="#" class="btn btn-outline-light me-2">Login</a> -->
-                        <a href="#" class="btn btn-custom">Resume Roast</a>
+                        <!-- <a href="#" class="btn btn-outline-light me-2">Resume Roast</a> -->
+                        <a href="" class="btn btn-custom">Contact Us</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-
     <div class="content">
         <div class="container">
             <div class="row justify-content-center">
@@ -170,7 +170,7 @@
                         <p>{{ summary }}</p>
                         <!-- <a href="{{ url_for('payment') }}">Unlock Full Report</a> -->
                         <div class="text-center">
-                            <a href="{{ url_for('payment') }}" class="btn btn-custom btn-lg">Unlock Full Report</a>
+                            <a href="{{ url_for('start_payment') }}" class="btn btn-custom btn-lg">Unlock Full Report</a>
                         </div>
                     </div>
                 </div>
