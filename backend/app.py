@@ -334,18 +334,18 @@ def download_feedback_pdf():
         app.logger.error("PDF file not found")
         return jsonify({'error': 'PDF file not found'}), 404
 
-# @app.route('/payment', methods=['GET', 'POST'])
-# def payment():
-#     if request.method == 'POST':
-#         # Process payment here
-#         payment_successful = True  # Example placeholder for actual payment logic
+@app.route('/payment', methods=['GET', 'POST'])
+def payment():
+    if request.method == 'POST':
+        # Process payment here
+        payment_successful = True  # Example placeholder for actual payment logic
         
-#         if payment_successful:
-#             return redirect(url_for('full_report'))
+        if payment_successful:
+            return redirect(url_for('full_report'))
 
-#     return render_template('payment.html')
+    return render_template('payment.html')
 
-@app.route('/start_payment', methods=['POST'])
+@app.route('/start_payment', methods=['POST','GET'])
 def start_payment():
     email = request.form.get('email')
     payment_method = request.form.get('payment-method')
