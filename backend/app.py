@@ -339,7 +339,7 @@ def download_feedback_pdf():
 @app.route('/payment')
 def payment():
     app.logger.info("Rendering payment page")
-    return render_template('payment.html')
+    return render_template('paymentform.html')
 
 @app.route('/start_payment', methods=['POST'])
 def start_payment():
@@ -356,8 +356,8 @@ def start_payment():
         app.logger.error('Invalid payment method: %s', payment_method)
         return jsonify({'status': 'failed', 'message': 'Invalid payment method'}), 400
 
-    amount = 7000  # Amount in kobo (70 GHS)
-    currency = 'GHS'
+    amount = 700000 
+    currency = 'NGN'  
 
     url = 'https://api.paystack.co/transaction/initialize'
     headers = {

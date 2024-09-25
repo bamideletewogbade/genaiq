@@ -70,23 +70,24 @@
             const email = document.getElementById('email').value;
             const paymentMethod = document.getElementById('payment-method').value;
             
+            // Create a FormData object
+            const formData = new FormData();
+            formData.append('email', email);
+            formData.append('payment-method', paymentMethod);
+            
+            // Send a POST request to the backend
             fetch('/start_payment', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams({
-                    'email': email,
-                    'payment-method': paymentMethod
-                })
+                body: formData
             })
             .then(response => response.json())
             .then(data => {
-                if (data.status === 'failed') {
-                    alert(data.message);
-                } else {
+                if (data.status === 'success') {
                     // Redirect to Paystack's payment page
                     window.location.href = data.authorization_url;
+                } else {
+                    // Display error message
+                    alert(data.message || 'An error occurred. Please try again.');
                 }
             })
             .catch(error => {
