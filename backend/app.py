@@ -324,18 +324,6 @@ def match():
         app.logger.error(f"Error in match function: {e}")
         return jsonify({"error": "An error occurred during processing."}), 500
 
-
-@app.route('/download_feedback_pdf')
-def download_feedback_pdf():
-    """Serve the feedback PDF for download."""
-    pdf_filepath = session.get('pdf_filepath')
-    if pdf_filepath and os.path.exists(pdf_filepath):
-        app.logger.info(f"Serving PDF: {pdf_filepath}")
-        return send_file(pdf_filepath, as_attachment=True)
-    else:
-        app.logger.error("PDF file not found")
-        return jsonify({'error': 'PDF file not found'}), 404
-
 @app.route('/payment')
 def payment():
     app.logger.info("Rendering payment page")
@@ -395,20 +383,11 @@ def start_payment():
             'status': 'failed',
             'message': 'Payment initialization failed'
         }), 500
-        
-@app.route('/uploads/<filename>')
-def uploaded_file(filename):
-    app.logger.info(f"Serving file {filename}")
-    return send_file(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
-@app.route('/tools')
-def tools():
-    app.logger.info("Rendering tools selection page")
-    return render_template('tool_selection_page.html')
 
 @app.route('/verify_payment')
 def verify_payment():
     reference = request.args.get('reference')
+
     if not reference:
         return jsonify({'status': 'failed', 'message': 'No reference provided'}), 400
 
@@ -421,11 +400,8 @@ def verify_payment():
 
         if response_data['status']:
             # Payment was successful
-            return jsonify({
-                'status': 'success',
-                'message': 'Payment verified successfully',
-                'data': response_data['data']
-            })
+            feedback = session.get('ai_response')
+            return redirect(url_for('full_report', feedback=feedback))
         else:
             return jsonify({
                 'status': 'failed',
@@ -439,6 +415,22 @@ def verify_payment():
             'message': 'Payment verification failed'
         }), 500
 
+
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    app.logger.info(f"Serving file {filename}")
+    return send_file(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+@app.route('/download_feedback_pdf')
+def download_feedback_pdf():
+    """Serve the feedback PDF for download."""
+    pdf_filepath = session.get('pdf_filepath')
+    if pdf_filepath and os.path.exists(pdf_filepath):
+        app.logger.info(f"Serving PDF: {pdf_filepath}")
+        return send_file(pdf_filepath, as_attachment=True)
+    else:
+        app.logger.error("PDF file not found")
+        return jsonify({'error': 'PDF file not found'}), 404
 
 if __name__ == "__main__":
     app.logger.info("Starting Flask application")
