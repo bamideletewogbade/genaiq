@@ -10,3 +10,7 @@ steps:
 
 images:
   - 'gcr.io/genaiq/genaiq-flask'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+serviceAccount: 'genaiq-433814@appspot.gserviceaccount.com'
