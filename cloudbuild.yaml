@@ -13,4 +13,4 @@ images:
 
 options:
   logging: CLOUD_LOGGING_ONLY
-serviceAccount: 'genaiq-433814@appspot.gserviceaccount.com'
+serviceAccount: 'projects/genaiq-433814/serviceAccounts/genaiq-433814@appspot.gserviceaccount.com'
