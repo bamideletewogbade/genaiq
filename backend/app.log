@@ -12372,3 +12372,20 @@ metadata {
 2024-09-28 12:28:54,158 - app - INFO - Received start_payment request with email: bishoptewogbade@gmail.com and payment_method: card
 2024-09-28 12:28:54,466 - app - INFO - Paystack response: {'status': True, 'message': 'Authorization URL created', 'data': {'authorization_url': 'https://checkout.paystack.com/sxrhgjbvhwpo6xy', 'access_code': 'sxrhgjbvhwpo6xy', 'reference': 'xx9v7wu1w2'}}
 2024-09-28 12:28:54,467 - werkzeug - INFO - 127.0.0.1 - - [28/Sep/2024 12:28:54] "POST /start_payment HTTP/1.1" 200 -
+2024-09-29 13:08:11,276 - app - INFO - Starting Flask application
+2024-09-29 13:08:11,281 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.88.0.5:8080
+2024-09-29 13:08:11,282 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 13:08:26,795 - app - INFO - Rendering index page
+2024-09-29 13:08:26,806 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 13:08:26] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-29 13:08:27,768 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 13:08:27] "GET /static/images/oka.jpg HTTP/1.1" 200 -
+2024-09-29 13:08:28,733 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 13:08:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-09-29 13:08:45,716 - app - INFO - Rendering upload resume page
+2024-09-29 13:08:45,721 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 13:08:45] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-29 13:08:50,254 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 13:08:50] "GET /match_jd HTTP/1.1" 200 -
+2024-09-29 13:08:53,841 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 13:08:53] "GET /roast HTTP/1.1" 200 -
+2024-09-29 13:08:56,971 - app - INFO - Rendering index page
+2024-09-29 13:08:56,972 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 13:08:56] "GET / HTTP/1.1" 200 -
+2024-09-29 13:08:57,256 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 13:08:57] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -

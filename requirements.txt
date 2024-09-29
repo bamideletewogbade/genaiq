@@ -52,3 +52,5 @@ typing_extensions
 tzdata
 urllib3
 Werkzeug
+gunicorn
+
