@@ -355,7 +355,7 @@ def start_payment():
 
     data = {
         'email': email,
-        'amount': amount,
+        'amount': int(float(amount) * 100),
         'currency': currency,
         'callback_url': url_for('verify_payment', _external=True)
     }

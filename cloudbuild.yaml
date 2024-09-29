@@ -1,16 +1,12 @@
 steps:
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/genaiq/genaiq-flask', '.']
-
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/genaiq/genaiq-flask']
-
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', 'genaiq-flask', '--image', 'gcr.io/genaiq/genaiq-flask', '--region', 'us-central1', '--platform', 'managed']
-
-images:
-  - 'gcr.io/genaiq/genaiq-flask'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args: ['run', 'deploy', 'genaiq-flask', 
+           '--source', '.', 
+           '--region', 'us-central1', 
+           '--platform', 'managed']
 
 options:
   logging: CLOUD_LOGGING_ONLY
+
 serviceAccount: 'projects/genaiq/serviceAccounts/genaiq-433814@appspot.gserviceaccount.com'
