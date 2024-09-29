@@ -12389,3 +12389,22 @@ metadata {
 2024-09-29 13:08:56,971 - app - INFO - Rendering index page
 2024-09-29 13:08:56,972 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 13:08:56] "GET / HTTP/1.1" 200 -
 2024-09-29 13:08:57,256 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 13:08:57] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-29 14:26:45,767 - app - INFO - Starting Flask application
+2024-09-29 14:26:45,771 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8181
+ * Running on http://10.88.0.5:8181
+2024-09-29 14:26:45,771 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 14:26:56,173 - app - INFO - Rendering index page
+2024-09-29 14:26:56,183 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 14:26:56] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-29 14:26:56,555 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 14:26:56] "GET /static/images/oka.jpg HTTP/1.1" 200 -
+2024-09-29 14:26:56,974 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 14:26:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-09-29 14:27:09,809 - app - INFO - Rendering upload resume page
+2024-09-29 14:27:09,814 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 14:27:09] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-29 14:27:11,679 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 14:27:11] "GET /match_jd HTTP/1.1" 200 -
+2024-09-29 14:27:13,379 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 14:27:13] "GET /roast HTTP/1.1" 200 -
+2024-09-29 14:27:18,036 - app - INFO - Rendering index page
+2024-09-29 14:27:18,037 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 14:27:18] "GET / HTTP/1.1" 200 -
+2024-09-29 14:27:18,252 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 14:27:18] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-29 14:27:20,576 - app - INFO - Rendering upload resume page
+2024-09-29 14:27:20,577 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 14:27:20] "GET /upload_resume_page HTTP/1.1" 200 -
