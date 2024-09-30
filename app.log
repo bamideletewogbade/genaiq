@@ -12408,3 +12408,86 @@ metadata {
 2024-09-29 14:27:18,252 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 14:27:18] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
 2024-09-29 14:27:20,576 - app - INFO - Rendering upload resume page
 2024-09-29 14:27:20,577 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 14:27:20] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-29 15:18:03,458 - app - INFO - Starting Flask application
+2024-09-29 15:18:03,462 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.88.0.5:8080
+2024-09-29 15:18:03,462 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 15:18:34,670 - app - INFO - Rendering index page
+2024-09-29 15:18:34,681 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 15:18:34] "GET / HTTP/1.1" 200 -
+2024-09-29 15:18:40,410 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 15:18:40] "[36mGET /static/images/oka.jpg HTTP/1.1[0m" 304 -
+2024-09-29 15:18:57,446 - app - INFO - Rendering upload resume page
+2024-09-29 15:18:57,452 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 15:18:57] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-29 15:19:18,575 - app - INFO - Received a file upload request
+2024-09-29 15:19:21,211 - app - INFO - Received a file upload request
+2024-09-29 15:19:49,837 - app - INFO - Received a file upload request
+2024-09-29 15:19:57,123 - app - INFO - File CV_-_TEWOGBADE_BAMIDELE.pdf saved to /home/bamidele_tewogbade1/genaiq/backend/static/uploads/temp_uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:19:58,024 - ai_service - INFO - File uploaded successfully to GCS: uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:19:58,024 - app - INFO - File URI: gs://genaiq_storage_new/uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:19:58,025 - app - INFO - Session data after upload: <SecureCookieSession {'filename': 'CV_-_TEWOGBADE_BAMIDELE.pdf', 'file_uri': 'gs://genaiq_storage_new/uploads/CV_-_TEWOGBADE_BAMIDELE.pdf'}>
+2024-09-29 15:19:58,025 - app - INFO - File type is PDF
+2024-09-29 15:19:58,026 - app - INFO - File CV_-_TEWOGBADE_BAMIDELE.pdf removed from local storage
+2024-09-29 15:19:58,027 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 15:19:58] "POST /upload HTTP/1.1" 200 -
+2024-09-29 15:20:30,599 - app - INFO - File CV_-_TEWOGBADE_BAMIDELE.pdf saved to /home/bamidele_tewogbade1/genaiq/backend/static/uploads/temp_uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:20:31,459 - ai_service - INFO - File uploaded successfully to GCS: uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:20:31,460 - app - INFO - File URI: gs://genaiq_storage_new/uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:20:31,460 - app - INFO - Session data after upload: <SecureCookieSession {'filename': 'CV_-_TEWOGBADE_BAMIDELE.pdf', 'file_uri': 'gs://genaiq_storage_new/uploads/CV_-_TEWOGBADE_BAMIDELE.pdf'}>
+2024-09-29 15:20:31,460 - app - INFO - File type is PDF
+2024-09-29 15:20:31,460 - app - INFO - File CV_-_TEWOGBADE_BAMIDELE.pdf removed from local storage
+2024-09-29 15:20:31,462 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 15:20:31] "POST /upload HTTP/1.1" 200 -
+2024-09-29 15:20:56,140 - app - INFO - File CV_-_TEWOGBADE_BAMIDELE.pdf saved to /home/bamidele_tewogbade1/genaiq/backend/static/uploads/temp_uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:20:57,027 - ai_service - INFO - File uploaded successfully to GCS: uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:20:57,027 - app - INFO - File URI: gs://genaiq_storage_new/uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:20:57,027 - app - INFO - Session data after upload: <SecureCookieSession {'filename': 'CV_-_TEWOGBADE_BAMIDELE.pdf', 'file_uri': 'gs://genaiq_storage_new/uploads/CV_-_TEWOGBADE_BAMIDELE.pdf'}>
+2024-09-29 15:20:57,028 - app - INFO - File type is PDF
+2024-09-29 15:20:57,028 - app - INFO - File CV_-_TEWOGBADE_BAMIDELE.pdf removed from local storage
+2024-09-29 15:20:57,029 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 15:20:57] "POST /upload HTTP/1.1" 200 -
+2024-09-29 15:20:58,695 - app - INFO - Rendering upload resume page
+2024-09-29 15:20:58,696 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 15:20:58] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-29 15:21:28,401 - app - INFO - Received a file upload request
+2024-09-29 15:22:04,909 - app - INFO - File CV_-_TEWOGBADE_BAMIDELE.pdf saved to /home/bamidele_tewogbade1/genaiq/backend/static/uploads/temp_uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:22:05,787 - ai_service - INFO - File uploaded successfully to GCS: uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:22:05,788 - app - INFO - File URI: gs://genaiq_storage_new/uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:22:05,789 - app - INFO - Session data after upload: <SecureCookieSession {'filename': 'CV_-_TEWOGBADE_BAMIDELE.pdf', 'file_uri': 'gs://genaiq_storage_new/uploads/CV_-_TEWOGBADE_BAMIDELE.pdf'}>
+2024-09-29 15:22:05,789 - app - INFO - File type is PDF
+2024-09-29 15:22:05,790 - app - INFO - File CV_-_TEWOGBADE_BAMIDELE.pdf removed from local storage
+2024-09-29 15:22:05,791 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 15:22:05] "POST /upload HTTP/1.1" 200 -
+2024-09-29 15:22:26,652 - app - INFO - Received request to get feedback summary page
+2024-09-29 15:22:26,652 - app - INFO - Session data at feedback page: filename=CV_-_TEWOGBADE_BAMIDELE.pdf, file_uri=gs://genaiq_storage_new/uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:22:26,653 - app - INFO - Calling AI service to process the file
+2024-09-29 15:22:27,490 - ai_service - INFO - File downloaded successfully from GCS: gs://genaiq_storage_new/uploads/CV_-_TEWOGBADE_BAMIDELE.pdf
+2024-09-29 15:22:27,532 - ai_service - INFO - Text extracted successfully from PDF.
+2024-09-29 15:22:27,532 - ai_service - INFO - Initializing Vertex AI with the given project ID and location.
+2024-09-29 15:22:27,532 - ai_service - INFO - Vertex AI initialized successfully.
+2024-09-29 15:22:27,532 - ai_service - INFO - Loading the Vertex AI generative model.
+2024-09-29 15:22:27,533 - ai_service - INFO - Preparing the prompt for Vertex AI.
+2024-09-29 15:22:27,533 - ai_service - INFO - Creating a Part object from the extracted file text.
+2024-09-29 15:22:27,534 - ai_service - INFO - Sending the prompt to Vertex AI for content generation.
+2024-09-29 15:22:32,808 - ai_service - INFO - Received response from Vertex AI.
+2024-09-29 15:22:32,811 - app - INFO - Analysis result: {'overall_feedback': "Olusegun, your resume showcases a strong foundation in software development, particularly in the areas of AI, financial systems, and Android app development. Your experience with diverse technologies like Java, Python, C#, and SQL is impressive. Additionally, your involvement in volunteer projects and leadership roles demonstrates your commitment to making a positive impact. The resume presents a well-structured chronological layout, making it easy to follow your career trajectory. However, there are some areas where you can enhance the clarity and impact of your resume, particularly in the areas of quantifying achievements and tailoring your experience to specific job roles.  Let's focus on refining these elements for greater impact.", 'feedback_cards': [{'title': 'Contact Information', 'description': "Your contact information is presented clearly and professionally. It's easily accessible and well-formatted. ", 'ats_match': '95%', 'recommendations': ['Consider including a LinkedIn profile URL to provide additional context and professional connections.']}, {'title': 'Summary', 'description': 'The current summary captures your passion for AI and solving real-world problems, but it could be more impactful. While it highlights your skills and interests, it lacks specific quantifiable achievements or key accomplishments that showcase your value proposition.', 'ats_match': '70%', 'recommendations': ["Rewrite the summary to highlight 2-3 key achievements from your career, using powerful action verbs and quantifiable results. For example, you could mention 'Developed and deployed an AI chatbot that increased customer engagement by 20%.' or 'Led the development of a financial system that improved transaction processing speed by 15%. These quantifiable achievements would grab the attention of recruiters and demonstrate your tangible impact."]}, {'title': 'Professional Experience', 'description': 'You have a rich and diverse work history, demonstrating your versatility and ability to adapt to different roles and industries. Each experience is well-detailed, providing a good overview of your responsibilities and contributions. However, consider incorporating more quantifiable results to showcase the impact of your work.', 'ats_match': '85%', 'recommendations': ["For each role, try to include specific metrics or quantifiable outcomes that demonstrate your achievements.  For instance, instead of simply stating 'Developed financial systems,' you could say 'Developed and deployed financial systems that improved transaction processing time by 15% and reduced error rates by 20%.'  This type of detail makes your experience more compelling for recruiters and showcases your tangible value."]}, {'title': 'Skills and Technologies', 'description': 'The skills and technologies section provides a clear overview of your technical expertise. You have a strong understanding of relevant programming languages, frameworks, and tools.', 'ats_match': '90%', 'recommendations': ["Consider adding a section on 'Soft Skills' to highlight your communication, collaboration, and problem-solving skills. These skills are highly valuable in any role and will demonstrate your well-roundedness."]}, {'title': 'Education and Training', 'description': 'This section clearly outlines your academic background, showcasing your degree in Computer Science from the Catholic University of Ghana. It also includes relevant coursework and extracurricular activities.', 'ats_match': '80%', 'recommendations': ['Consider adding a brief statement about your final year project or a significant academic achievement. This can provide further insight into your skills and capabilities.']}, {'title': 'Language Skills', 'description': 'The list of languages you speak and the technical skills you have acquired is helpful, but it can be more impactful.', 'ats_match': '75%', 'recommendations': ["Break down this section into two separate lists: 'Languages' and 'Technical Skills.' This will improve readability and help recruiters quickly find relevant information."]}, {'title': 'Digital Skills', 'description': 'This section highlights your key digital skills. However, it could be more specific and tailored to the type of roles you are targeting. ', 'ats_match': '75%', 'recommendations': ["Instead of listing 'Problem-solving skills' and 'Communication skills,' provide concrete examples that demonstrate these skills. For example, 'Successfully resolved a complex technical issue that prevented a critical system from being deployed.' or 'Led a cross-functional team to develop and implement a new software solution that improved client satisfaction.'  These examples will provide more compelling evidence of your capabilities."]}]}
+2024-09-29 15:22:32,816 - werkzeug - INFO - 127.0.0.1 - - [29/Sep/2024 15:22:32] "POST /feedback_summary HTTP/1.1" 200 -
+2024-09-30 01:44:41,240 - app - INFO - Created directory: /home/bamidele_tewogbade1/genaiq/static/uploads/temp_uploads
+2024-09-30 01:44:41,245 - app - INFO - Starting Flask application
+2024-09-30 01:44:41,262 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.88.0.5:8080
+2024-09-30 01:44:41,262 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-30 01:44:41,263 - werkzeug - INFO -  * Restarting with stat
+2024-09-30 01:44:43,300 - app - INFO - Starting Flask application
+2024-09-30 01:44:43,308 - werkzeug - WARNING -  * Debugger is active!
+2024-09-30 01:44:43,310 - werkzeug - INFO -  * Debugger PIN: 258-555-231
+2024-09-30 01:44:49,890 - app - INFO - Rendering index page
+2024-09-30 01:44:49,899 - werkzeug - INFO - 127.0.0.1 - - [30/Sep/2024 01:44:49] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-09-30 01:44:50,233 - werkzeug - INFO - 127.0.0.1 - - [30/Sep/2024 01:44:50] "[33mGET /static/images/oka.jpg HTTP/1.1[0m" 404 -
+2024-09-30 01:45:07,192 - app - INFO - Rendering upload resume page
+2024-09-30 01:45:07,196 - werkzeug - INFO - 127.0.0.1 - - [30/Sep/2024 01:45:07] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-09-30 01:45:10,942 - werkzeug - INFO - 127.0.0.1 - - [30/Sep/2024 01:45:10] "GET /match_jd HTTP/1.1" 200 -
+2024-09-30 01:45:13,440 - werkzeug - INFO - 127.0.0.1 - - [30/Sep/2024 01:45:13] "GET /roast HTTP/1.1" 200 -
+2024-09-30 01:45:16,201 - app - INFO - Rendering index page
+2024-09-30 01:45:16,202 - werkzeug - INFO - 127.0.0.1 - - [30/Sep/2024 01:45:16] "GET / HTTP/1.1" 200 -
+2024-09-30 01:45:16,451 - werkzeug - INFO - 127.0.0.1 - - [30/Sep/2024 01:45:16] "[33mGET /static/images/oka.jpg HTTP/1.1[0m" 404 -
+2024-09-30 01:48:01,332 - app - INFO - Rendering index page
+2024-09-30 01:48:01,333 - werkzeug - INFO - 127.0.0.1 - - [30/Sep/2024 01:48:01] "GET / HTTP/1.1" 200 -
+2024-09-30 01:48:01,599 - werkzeug - INFO - 127.0.0.1 - - [30/Sep/2024 01:48:01] "GET /static/images/oka.jpg HTTP/1.1" 200 -
