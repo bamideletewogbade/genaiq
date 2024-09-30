@@ -200,35 +200,20 @@ def feedback_summary():
     except Exception as e:
         app.logger.error(f"Error processing feedback: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
-  
-@app.route('/full_report', methods=['POST','GET'])
+
+# Endpoint to display full feedback  
+@app.route('/full_report', methods=['POST', 'GET'])
 def full_report():
     app.logger.info("Received request to get feedback full report page")
 
     try:
-        # filename = session.get('filename')
-        # file_uri = session.get('file_uri')
-        # app.logger.info(f"Session data at feedback page: filename={filename}, file_uri={file_uri}")
+        ai_response = session.get('ai_response')
+        app.logger.info(f"AI Response from session: {ai_response}")
 
-        # if not filename or not file_uri:
-        #     app.logger.error("Required session data missing")
-        #     return jsonify({'error': 'Session data missing'}), 400
-
-        # # Process the file using AI service
-        # app.logger.info("Calling AI service to process the file")
-
-        try:
-            # feedback = call_vertex_ai(file_uri)
-            # app.logger.info(f"Analysis result: {feedback}")
-            ai_response = session.get('ai_response')
-
-            # Process the result and prepare feedback data dynamically
-            analysis_result = ai_response
-            return render_template('full_report.html', feedback=analysis_result), 200
-
-        except Exception as e:
-            app.logger.error(f"Error calling AI service: {e}")
-            return jsonify({'error': 'Error calling AI service'}), 500
+        if not ai_response:
+            ai_response = "No feedback available"
+        
+        return render_template('full_report.html', feedback=ai_response), 200
 
     except Exception as e:
         app.logger.error(f"Error processing feedback: {e}")
@@ -400,10 +385,10 @@ def verify_payment():
 
         if response_data['status']:
             # Payment was successful
-            feedback = session.get('ai_response')      
-        if not feedback:
-            feedback = "No feedback available"
-            session['feedback'] = feedback
+        #     feedback = session.get('ai_response')      
+        # if not feedback:
+        #     feedback = "No feedback available"
+        #     session['feedback'] = feedback
             return redirect(url_for('full_report'))
         else:
             return jsonify({
