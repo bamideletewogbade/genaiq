@@ -400,8 +400,11 @@ def verify_payment():
 
         if response_data['status']:
             # Payment was successful
-            feedback = session.get('ai_response')
-            return render_template('full_report.html', feedback=feedback), 200
+            feedback = session.get('ai_response')      
+        if not feedback:
+            feedback = "No feedback available"
+            session['feedback'] = feedback
+            return redirect(url_for('full_report'))
         else:
             return jsonify({
                 'status': 'failed',
