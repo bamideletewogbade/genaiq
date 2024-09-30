@@ -344,7 +344,7 @@ def start_payment():
         app.logger.error('Invalid payment method: %s', payment_method)
         return jsonify({'status': 'failed', 'message': 'Invalid payment method'}), 400
 
-    amount = 700000 
+    amount = 700 
     currency = 'NGN'  
 
     url = 'https://api.paystack.co/transaction/initialize'
