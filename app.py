@@ -224,7 +224,7 @@ def full_report():
 
             # Process the result and prepare feedback data dynamically
             analysis_result = ai_response
-            return render_template('feedback_page.html', feedback=analysis_result), 200
+            return render_template('full_report.html', feedback=analysis_result), 200
 
         except Exception as e:
             app.logger.error(f"Error calling AI service: {e}")
@@ -400,8 +400,8 @@ def verify_payment():
 
         if response_data['status']:
             # Payment was successful
-            feedback = session.get('ai_response')
-            return redirect(url_for('full_report', feedback=feedback))
+            # feedback = session.get('ai_response')
+            return redirect(url_for('full_report'))
         else:
             return jsonify({
                 'status': 'failed',
