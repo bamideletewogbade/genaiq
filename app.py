@@ -131,41 +131,6 @@ def upload_file():
         app.logger.error("File type not allowed")
         return jsonify({'error': 'File type not allowed'}), 400
 
-# @app.route('/get_feedback_page', methods=['POST'])
-# def get_feedback_page():
-#     app.logger.info("Received request to get feedback page")
-
-#     try:
-#         filename = session.get('filename')
-#         file_uri = session.get('file_uri')
-#         app.logger.info(f"Session data at feedback page: filename={filename}, file_uri={file_uri}")
-
-#         if not filename or not file_uri:
-#             app.logger.error("Required session data missing")
-#             return jsonify({'error': 'Session data missing'}), 400
-
-#         # Process the file using AI service
-#         app.logger.info("Calling AI service to process the file")
-
-#         try:
-#             feedback = call_vertex_ai(file_uri)
-#             app.logger.info(f"Analysis result: {feedback}")
-#             session['ai_response'] = feedback
-
-
-#             # Process the result and prepare feedback data dynamically
-#             analysis_result = feedback
-#             return render_template('full_report.html', feedback=analysis_result), 200
-
-#         except Exception as e:
-#             app.logger.error(f"Error calling AI service: {e}")
-#             return jsonify({'error': 'Error calling AI service'}), 500
-
-#     except Exception as e:
-#         app.logger.error(f"Error processing feedback: {e}")
-#         return jsonify({'error': 'Error processing feedback'}), 500
-
-
 # Endpoint to only display summary
 @app.route('/feedback_summary', methods=['POST', 'GET'])
 def feedback_summary():
@@ -202,8 +167,8 @@ def feedback_summary():
         return jsonify({'error': 'Error processing feedback'}), 500
 
 # Endpoint to display full feedback  
-@app.route('/full_report', methods=['POST', 'GET'])
-def full_report():
+@app.route('/feedback', methods=['POST', 'GET'])
+def feedback():
     app.logger.info("Received request to get feedback full report page")
 
     try:
@@ -389,7 +354,7 @@ def verify_payment():
         # if not feedback:
         #     feedback = "No feedback available"
         #     session['feedback'] = feedback
-            return redirect(url_for('full_report'))
+            return redirect(url_for('feedback'))
         else:
             return jsonify({
                 'status': 'failed',
