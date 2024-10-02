@@ -357,7 +357,7 @@ def verify_payment_for_matcher():
         # if not feedback:
         #     feedback = "No feedback available"
         #     session['feedback'] = feedback
-            return redirect(url_for('feedback'))
+            return redirect(url_for('matcher_result'))
         else:
             return jsonify({
                 'status': 'failed',
