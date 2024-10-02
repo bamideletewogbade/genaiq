@@ -262,19 +262,126 @@ def match():
             session['file_uri'] = file_uri
             app.logger.info(f"Session data after upload: {session}")
 
+            # Perform the resume matching
             result = match_resume_to_job(file_uri, job_description)
             app.logger.info(f"AI Response: {result}")
 
+            # Save the response temporarily in the session for later retrieval
+            session['match_result'] = result
+            
+            # Clean up the uploaded resume file
             os.remove(resume_path)  # Clean up uploaded file after processing
             app.logger.info(f"Deleted resume file: {resume_path}")
 
-            return render_template('jd_matcher_result.html', result=result)
+            # Redirect to the payment page
+            return redirect(url_for('payment'))
         except Exception as e:
             app.logger.error(f"Error processing file: {e}")
             return jsonify({"error": "File processing error"}), 500
     except Exception as e:
         app.logger.error(f"Error in match function: {e}")
-        return jsonify({"error": "An error occurred during processing."}), 500
+        return jsonify({"error": "An error occurred during processing."}), 500.
+
+@app.route('/start_payment_for_matcher', methods=['POST'])
+def start_payment_for_matcher():
+    email = request.form.get('email')
+    # payment_method = request.form.get('payment-method')
+
+    app.logger.info(f"Received start_payment request with email: {email}")
+
+    if not email:
+        app.logger.error('Email not provided')
+        return jsonify({'status': 'failed', 'message': 'Email is required'}), 400
+
+    # if payment_method not in ['card', 'mobile_money']:
+    #     app.logger.error('Invalid payment method: %s', payment_method)
+    #     return jsonify({'status': 'failed', 'message': 'Invalid payment method'}), 400
+
+    amount = 700 
+    currency = 'NGN'  
+
+    url = 'https://api.paystack.co/transaction/initialize'
+    headers = {
+        'Authorization': f'Bearer {PAYSTACK_SECRET_KEY}',
+        'Content-Type': 'application/json',
+    }
+
+    data = {
+        'email': email,
+        'amount': int(float(amount) * 100),
+        'currency': currency,
+        'callback_url': url_for('verify_payment_for_matcher', _external=True)
+    }
+
+    try:
+        response = requests.post(url, json=data, headers=headers)
+        response_data = response.json()
+
+        app.logger.info(f"Paystack response: {response_data}")
+
+        if response_data['status']:
+            return jsonify({
+                'status': 'success',
+                'authorization_url': response_data['data']['authorization_url']
+            })
+        else:
+            return jsonify({
+                'status': 'failed',
+                'message': response_data.get('message', 'Payment initialization failed')
+            }), 400
+
+    except requests.exceptions.RequestException as e:
+        app.logger.error('Request to Paystack failed: %s', e)
+        return jsonify({
+            'status': 'failed',
+            'message': 'Payment initialization failed'
+        }), 500
+
+@app.route('/verify_payment_for_matcher')
+def verify_payment_for_matcher():
+    reference = request.args.get('reference')
+
+    if not reference:
+        return jsonify({'status': 'failed', 'message': 'No reference provided'}), 400
+
+    url = f'https://api.paystack.co/transaction/verify/{reference}'
+    headers = {'Authorization': f'Bearer {PAYSTACK_SECRET_KEY}'}
+
+    try:
+        response = requests.get(url, headers=headers)
+        response_data = response.json()
+
+        if response_data['status']:
+            # Payment was successful
+        #     feedback = session.get('ai_response')      
+        # if not feedback:
+        #     feedback = "No feedback available"
+        #     session['feedback'] = feedback
+            return redirect(url_for('feedback'))
+        else:
+            return jsonify({
+                'status': 'failed',
+                'message': 'Payment verification failed'
+            }), 400
+
+    except requests.exceptions.RequestException as e:
+        app.logger.error('Request to Paystack failed: %s', e)
+        return jsonify({
+            'status': 'failed',
+            'message': 'Payment verification failed'
+        }), 500
+
+@app.route('/matcher_result', methods=['POST'])
+def matcher_result():
+    # Logic to confirm payment goes here
+    # After payment is confirmed, you can render the result
+    match_result = session.get('match_result')
+    if not match_result:
+        return jsonify({"error": "No match result found. Please try again."}), 400
+    
+    app.logger.info("Payment confirmed, rendering result page")
+    return render_template('jd_matcher_result.html', result=match_result)
+
 
 @app.route('/payment')
 def payment():
