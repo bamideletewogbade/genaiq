@@ -370,44 +370,44 @@ def verify_payment():
             'message': 'Payment verification failed'
         }), 500
 
-@app.route('/download_feedback_pdf', methods=['GET'])
-def download_feedback_pdf():
-    try:
-        ai_response = session.get('ai_response')
+# @app.route('/download_feedback_pdf', methods=['GET'])
+# def download_feedback_pdf():
+#     try:
+#         ai_response = session.get('ai_response')
 
-        if not ai_response:
-            ai_response = {"overall_feedback": "No feedback available", "feedback_cards": []}
+#         if not ai_response:
+#             ai_response = {"overall_feedback": "No feedback available", "feedback_cards": []}
 
-        # Create PDF in memory
-        pdf_buffer = io.BytesIO()
-        c = canvas.Canvas(pdf_buffer, pagesize=letter)
-        c.drawString(100, 750, "Feedback Report")
-        c.drawString(100, 735, f"Overall Feedback: {ai_response['overall_feedback']}")
+#         # Create PDF in memory
+#         pdf_buffer = io.BytesIO()
+#         c = canvas.Canvas(pdf_buffer, pagesize=letter)
+#         c.drawString(100, 750, "Feedback Report")
+#         c.drawString(100, 735, f"Overall Feedback: {ai_response['overall_feedback']}")
 
-        y = 700
-        for index, card in enumerate(ai_response['feedback_cards']):
-            c.drawString(100, y, f"{index + 1}. {card['title']}")
-            y -= 15
-            c.drawString(120, y, card['description'])
-            y -= 15
-            if 'ats_match' in card:
-                c.drawString(120, y, f"ATS Match: {card['ats_match']}")
-                y -= 15
-            if 'recommendations' in card:
-                for rec in card['recommendations']:
-                    c.drawString(120, y, f"- {rec}")
-                    y -= 15
-            y -= 15
+#         y = 700
+#         for index, card in enumerate(ai_response['feedback_cards']):
+#             c.drawString(100, y, f"{index + 1}. {card['title']}")
+#             y -= 15
+#             c.drawString(120, y, card['description'])
+#             y -= 15
+#             if 'ats_match' in card:
+#                 c.drawString(120, y, f"ATS Match: {card['ats_match']}")
+#                 y -= 15
+#             if 'recommendations' in card:
+#                 for rec in card['recommendations']:
+#                     c.drawString(120, y, f"- {rec}")
+#                     y -= 15
+#             y -= 15
 
-        c.showPage()
-        c.save()
-        pdf_buffer.seek(0)
+#         c.showPage()
+#         c.save()
+#         pdf_buffer.seek(0)
 
-        return send_file(pdf_buffer, as_attachment=True, download_name='feedback_report.pdf', mimetype='application/pdf')
+#         return send_file(pdf_buffer, as_attachment=True, download_name='feedback_report.pdf', mimetype='application/pdf')
 
-    except Exception as e:
-        app.logger.error(f"Error generating PDF: {e}")
-        return jsonify({'error': 'Error generating PDF'}), 500
+#     except Exception as e:
+#         app.logger.error(f"Error generating PDF: {e}")
+#         return jsonify({'error': 'Error generating PDF'}), 500
 
 
 @app.route('/uploads/<filename>')
