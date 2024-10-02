@@ -373,8 +373,6 @@ def verify_payment_for_matcher():
 
 @app.route('/matcher_result', methods=['POST'])
 def matcher_result():
-    # Logic to confirm payment goes here
-    # After payment is confirmed, you can render the result
     match_result = session.get('match_result')
     if not match_result:
         return jsonify({"error": "No match result found. Please try again."}), 400
