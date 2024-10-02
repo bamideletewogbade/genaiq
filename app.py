@@ -5,8 +5,8 @@ import logging
 from logging.handlers import RotatingFileHandler
 from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job
 import requests
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
+# from reportlab.lib.pagesizes import letter
+# from reportlab.pdfgen import canvas
 
 app = Flask(__name__)
 
