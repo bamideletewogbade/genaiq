@@ -284,17 +284,17 @@ def payment():
 @app.route('/start_payment', methods=['POST'])
 def start_payment():
     email = request.form.get('email')
-    payment_method = request.form.get('payment-method')
+    # payment_method = request.form.get('payment-method')
 
-    app.logger.info(f"Received start_payment request with email: {email} and payment_method: {payment_method}")
+    app.logger.info(f"Received start_payment request with email: {email}")
 
     if not email:
         app.logger.error('Email not provided')
         return jsonify({'status': 'failed', 'message': 'Email is required'}), 400
 
-    if payment_method not in ['card', 'mobile_money']:
-        app.logger.error('Invalid payment method: %s', payment_method)
-        return jsonify({'status': 'failed', 'message': 'Invalid payment method'}), 400
+    # if payment_method not in ['card', 'mobile_money']:
+    #     app.logger.error('Invalid payment method: %s', payment_method)
+    #     return jsonify({'status': 'failed', 'message': 'Invalid payment method'}), 400
 
     amount = 700 
     currency = 'NGN'  
