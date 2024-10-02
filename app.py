@@ -5,6 +5,8 @@ import logging
 from logging.handlers import RotatingFileHandler
 from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job
 import requests
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
 
 app = Flask(__name__)
 
@@ -368,22 +370,51 @@ def verify_payment():
             'message': 'Payment verification failed'
         }), 500
 
+@app.route('/download_feedback_pdf', methods=['GET'])
+def download_feedback_pdf():
+    try:
+        ai_response = session.get('ai_response')
+
+        if not ai_response:
+            ai_response = {"overall_feedback": "No feedback available", "feedback_cards": []}
+
+        # Create PDF in memory
+        pdf_buffer = io.BytesIO()
+        c = canvas.Canvas(pdf_buffer, pagesize=letter)
+        c.drawString(100, 750, "Feedback Report")
+        c.drawString(100, 735, f"Overall Feedback: {ai_response['overall_feedback']}")
+
+        y = 700
+        for index, card in enumerate(ai_response['feedback_cards']):
+            c.drawString(100, y, f"{index + 1}. {card['title']}")
+            y -= 15
+            c.drawString(120, y, card['description'])
+            y -= 15
+            if 'ats_match' in card:
+                c.drawString(120, y, f"ATS Match: {card['ats_match']}")
+                y -= 15
+            if 'recommendations' in card:
+                for rec in card['recommendations']:
+                    c.drawString(120, y, f"- {rec}")
+                    y -= 15
+            y -= 15
+
+        c.showPage()
+        c.save()
+        pdf_buffer.seek(0)
+
+        return send_file(pdf_buffer, as_attachment=True, download_name='feedback_report.pdf', mimetype='application/pdf')
+
+    except Exception as e:
+        app.logger.error(f"Error generating PDF: {e}")
+        return jsonify({'error': 'Error generating PDF'}), 500
+
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     app.logger.info(f"Serving file {filename}")
     return send_file(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-@app.route('/download_feedback_pdf')
-def download_feedback_pdf():
-    """Serve the feedback PDF for download."""
-    pdf_filepath = session.get('pdf_filepath')
-    if pdf_filepath and os.path.exists(pdf_filepath):
-        app.logger.info(f"Serving PDF: {pdf_filepath}")
-        return send_file(pdf_filepath, as_attachment=True)
-    else:
-        app.logger.error("PDF file not found")
-        return jsonify({'error': 'PDF file not found'}), 404
 
 if __name__ == "__main__":
     app.logger.info("Starting Flask application")
