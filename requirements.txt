@@ -53,3 +53,9 @@ tzdata
 urllib3
 Werkzeug
 gunicorn
+msgspec
+cachelib
+Flask-Session
+async-timeout
+redis
+google-cloud-firestore
