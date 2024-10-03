@@ -353,11 +353,12 @@ def verify_payment_for_matcher():
 
         if response_data['status']:
             # Payment was successful
-        #     feedback = session.get('ai_response')      
-        # if not feedback:
-        #     feedback = "No feedback available"
-        #     session['feedback'] = feedback
-            return redirect(url_for('matcher_result'))
+            match_result = session.get('match_result')
+            if not match_result:
+                return jsonify({"error": "No match result found. Please try again."}), 400
+
+            app.logger.info("Payment confirmed, rendering result page")
+            return render_template('jd_matcher_result.html', result=match_result)
         else:
             return jsonify({
                 'status': 'failed',
@@ -371,14 +372,14 @@ def verify_payment_for_matcher():
             'message': 'Payment verification failed'
         }), 500
 
-@app.route('/matcher_result', methods=['POST'])
-def matcher_result():
-    match_result = session.get('match_result')
-    if not match_result:
-        return jsonify({"error": "No match result found. Please try again."}), 400
+# @app.route('/matcher_result', methods=['POST'])
+# def matcher_result():
+#     match_result = session.get('match_result')
+#     if not match_result:
+#         return jsonify({"error": "No match result found. Please try again."}), 400
     
-    app.logger.info("Payment confirmed, rendering result page")
-    return render_template('jd_matcher_result.html', result=match_result)
+#     app.logger.info("Payment confirmed, rendering result page")
+#     return render_template('jd_matcher_result.html', result=match_result)
 
 
 @app.route('/payment')
