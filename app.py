@@ -5,10 +5,10 @@ import logging
 from logging.handlers import RotatingFileHandler
 from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job
 import requests
-from flask_session import Session
-import redis
-from google.cloud import firestore
-import uuid
+# from flask_session import Session
+# import redis
+# from google.cloud import firestore
+# import uuid
 
 # from reportlab.lib.pagesizes import letter
 # from reportlab.pdfgen import canvas
@@ -16,13 +16,13 @@ import uuid
 app = Flask(__name__)
 
 # Configure the Redis server for session storage
-app.config['SESSION_TYPE'] = 'redis'
-app.config['SESSION_PERMANENT'] = False
-app.config['SESSION_USE_SIGNER'] = True
-app.config['SESSION_REDIS'] = redis.StrictRedis(host='localhost', port=6379, db=0)
+# app.config['SESSION_TYPE'] = 'redis'
+# app.config['SESSION_PERMANENT'] = False
+# app.config['SESSION_USE_SIGNER'] = True
+# app.config['SESSION_REDIS'] = redis.StrictRedis(host='localhost', port=6379, db=0)
 
 # Initialize the session
-Session(app)
+# Session(app)
 
 # Configuration
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -31,7 +31,7 @@ LOG_FILE_PATH = os.path.join(BASE_DIR, 'app.log')
 SECRET_KEY = "bishop"
 
 # Initialize Firestore DB
-db = firestore.Client()
+# db = firestore.Client()
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = SECRET_KEY
@@ -202,6 +202,10 @@ def feedback():
     except Exception as e:
         app.logger.error(f"Error processing feedback: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
+    
+    finally:
+        session.clear()
+        app.logger.info("Session cleared after processing feedback")
 
 @app.route('/roast')
 def resume_roast():
@@ -240,6 +244,10 @@ def roast_resume_page():
         app.logger.error(f"Error processing feedback: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
 
+    finally:
+        session.clear()
+        app.logger.info("Session cleared after processing feedback")
+
 @app.route('/match_jd')
 def match_jd():
     return render_template('jd_matcher.html')
@@ -274,31 +282,24 @@ def match():
             file_uri = upload_local_file_to_gcs(resume_path, bucket_name, destination_blob_name)
             app.logger.info(f"File URI: {file_uri}")
 
-            # Create a unique identifier for this session
-            session_id = str(uuid.uuid4())
-
-            # Store session data in Firestore
-            db.collection('sessions').document(session_id).set({
-                'job_description': job_description,
-                'file_uri': file_uri,
-            })
-            app.logger.info(f"Session data after upload: {session_id}")
+            # Store session data
+            session['job_description'] = job_description
+            session['file_uri'] = file_uri
+            app.logger.info(f"Session data after upload: {session}")
 
             # Perform the resume matching
             result = match_resume_to_job(file_uri, job_description)
             app.logger.info(f"AI Response: {result}")
 
-            # Save the result in Firestore
-            db.collection('sessions').document(session_id).update({
-                'match_result': result,
-            })
-
+            # Save the response temporarily in the session for later retrieval
+            session['match_result'] = result
+            
             # Clean up the uploaded resume file
             os.remove(resume_path)  # Clean up uploaded file after processing
             app.logger.info(f"Deleted resume file: {resume_path}")
 
-            # Pass the session ID to the payment page
-            return redirect(url_for('payment', session_id=session_id))
+            # Redirect to the payment page
+            return redirect(url_for('payment'))
         except Exception as e:
             app.logger.error(f"Error processing file: {e}")
             return jsonify({"error": "File processing error"}), 500
@@ -364,7 +365,6 @@ def start_payment_for_matcher():
 @app.route('/verify_payment_for_matcher')
 def verify_payment_for_matcher():
     reference = request.args.get('reference')
-    session_id = request.args.get('session_id')
 
     if not reference:
         return jsonify({'status': 'failed', 'message': 'No reference provided'}), 400
@@ -378,12 +378,12 @@ def verify_payment_for_matcher():
 
         if response_data['status']:
             # Payment was successful
-            session_doc = db.collection('sessions').document(session_id).get()
-            if session_doc.exists:
-                match_result = session_doc.to_dict().get('match_result')
-                return render_template('jd_matcher_result.html', result=match_result)
-            else:
-                return jsonify({'status': 'failed', 'message': 'Session not found'}), 400
+            match_result = session.get('match_result')
+            if not match_result:
+                return jsonify({"error": "No match result found. Please try again."}), 400
+            
+            app.logger.info("Payment confirmed, rendering result page")
+            return render_template('jd_matcher_result.html', result=match_result), 200
         else:
             return jsonify({
                 'status': 'failed',
@@ -396,6 +396,12 @@ def verify_payment_for_matcher():
             'status': 'failed',
             'message': 'Payment verification failed'
         }), 500
+
+    finally:
+        # Clear the session data regardless of success or failure
+        session.clear()
+
+
         
 # @app.route('/matcher_result', methods=['POST'])
 # def matcher_result():
