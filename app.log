@@ -12533,3 +12533,13 @@ metadata {
 2024-09-30 13:53:55,399 - app - INFO - Received start_payment request with email: bishoptewogbade@gmail.com and payment_method: card
 2024-09-30 13:53:55,775 - app - INFO - Paystack response: {'status': True, 'message': 'Authorization URL created', 'data': {'authorization_url': 'https://checkout.paystack.com/rhfqkx4to66zugu', 'access_code': 'rhfqkx4to66zugu', 'reference': '4u52cloi74'}}
 2024-09-30 13:53:55,776 - werkzeug - INFO - 127.0.0.1 - - [30/Sep/2024 13:53:55] "POST /start_payment HTTP/1.1" 200 -
+2024-10-04 18:13:53,080 - app - INFO - Starting Flask application
+2024-10-04 18:13:53,229 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.88.0.5:8080
+2024-10-04 18:13:53,229 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-04 18:13:53,258 - werkzeug - INFO -  * Restarting with stat
+2024-10-04 18:13:55,470 - app - INFO - Starting Flask application
+2024-10-04 18:13:55,478 - werkzeug - WARNING -  * Debugger is active!
+2024-10-04 18:13:55,480 - werkzeug - INFO -  * Debugger PIN: 136-625-289

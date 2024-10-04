@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job, save_result_to_gcs, download_from_gcs
+from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job, save_response_to_gcs, download_from_gcs
 import requests
 from google.cloud import storage
 # from flask_session import Session
