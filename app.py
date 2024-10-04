@@ -279,9 +279,9 @@ def match():
         # Process the resume file
         try:
             bucket_name = 'genaiq_storage_new'
-            uploads_destination_blob_name = f'uploads/{filename}'
+            destination_blob_name = f'uploads/{filename}'
             matcher_destination_blob_name = f'results/{filename}'
-            file_uri = upload_local_file_to_gcs(resume_path, bucket_name, uploads_destination_blob_name)
+            file_uri = upload_local_file_to_gcs(resume_path, bucket_name, destination_blob_name)
             app.logger.info(f"File URI: {file_uri}")
 
             # Store session data
@@ -296,7 +296,7 @@ def match():
             # Let's save the ai response to a file and proceed to upload to GCS
             result_filename = f'{filename}_matcher_result.json'
 
-            result_uri = save_response_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
+            result_uri = g ponse_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
             session['result_uri'] = result_uri
             
             # Clean up the uploaded resume file
