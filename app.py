@@ -3,8 +3,9 @@ from werkzeug.utils import secure_filename
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job
+from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job, save_result_to_gcs, download_from_gcs
 import requests
+from google.cloud import storage
 # from flask_session import Session
 # import redis
 # from google.cloud import firestore
@@ -278,8 +279,9 @@ def match():
         # Process the resume file
         try:
             bucket_name = 'genaiq_storage_new'
-            destination_blob_name = f'uploads/{filename}'
-            file_uri = upload_local_file_to_gcs(resume_path, bucket_name, destination_blob_name)
+            uploads_destination_blob_name = f'uploads/{filename}'
+            matcher_destination_blob_name = f'results/{filename}'
+            file_uri = upload_local_file_to_gcs(resume_path, bucket_name, uploads_destination_blob_name)
             app.logger.info(f"File URI: {file_uri}")
 
             # Store session data
@@ -291,8 +293,11 @@ def match():
             result = match_resume_to_job(file_uri, job_description)
             app.logger.info(f"AI Response: {result}")
 
-            # Save the response temporarily in the session for later retrieval
-            session['match_result'] = result
+            # Let's save the ai response to a file and proceed to upload to GCS
+            result_filename = f'{filename}_matcher_result.json'
+
+            result_uri = save_response_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
+            session['result_uri'] = result_uri
             
             # Clean up the uploaded resume file
             os.remove(resume_path)  # Clean up uploaded file after processing
@@ -378,10 +383,15 @@ def verify_payment_for_matcher():
 
         if response_data['status']:
             # Payment was successful
-            match_result = session.get('match_result')
-            if not match_result:
-                return jsonify({"error": "No match result found. Please try again."}), 400
-            
+            result_uri = session.get('result_uri')
+            if not result_uri:
+                return jsonify({"error": "No result URI found. Please try again."}), 400
+
+            result_data = download_from_gcs(result_uri)
+            if not result_data:
+                return jsonify({"error": "Error retrieving match result. Please try again."}), 500
+
+            match_result = json.loads(result_data)
             app.logger.info("Payment confirmed, rendering result page")
             return render_template('jd_matcher_result.html', result=match_result), 200
         else:
@@ -397,22 +407,6 @@ def verify_payment_for_matcher():
             'message': 'Payment verification failed'
         }), 500
 
-    finally:
-        # Clear the session data regardless of success or failure
-        session.clear()
-
-
-        
-# @app.route('/matcher_result', methods=['POST'])
-# def matcher_result():
-#     match_result = session.get('match_result')
-#     if not match_result:
-#         return jsonify({"error": "No match result found. Please try again."}), 400
-    
-#     app.logger.info("Payment confirmed, rendering result page")
-#     return render_template('jd_matcher_result.html', result=match_result)
-
-
 @app.route('/payment')
 def payment():
     app.logger.info("Rendering payment page")
@@ -423,7 +417,7 @@ def start_payment():
     email = request.form.get('email')
     # payment_method = request.form.get('payment-method')
 
-    app.logger.info(f"Received start_payment request with email: {email}")
+    app.logger.info(f"Received start payment request with email: {email}")
 
     if not email:
         app.logger.error('Email not provided')

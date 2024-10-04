@@ -48,6 +48,36 @@ def upload_local_file_to_gcs(file_path, bucket_name, destination_blob_name):
         logger.error(f"Error uploading to GCS: {e}")
         return None
 
+def save_response_to_file(response, file_path):
+    """Saves the AI response to a local file."""
+    try:
+        with open(file_path, 'w') as file:
+            file.write(response)
+        logger.info(f"Response saved successfully to file: {file_path}")
+    except Exception as e:
+        logger.error(f"Error saving response to file: {e}")
+
+def save_response_to_gcs(response, file_path, bucket_name, jd_matcher_result_destination_blob_name):
+    """Saves the AI response to a local file and uploads it to Google Cloud Storage."""
+    save_response_to_file(response, file_path)
+    gcs_path = upload_local_file_to_gcs(file_path, bucket_name, destination_blob_name)
+    if gcs_path:
+        logger.info(f"Response uploaded to GCS successfully: {gcs_path}")
+    else:
+        logger.error("Failed to upload response to GCS")
+
+def download_from_gcs(uri):
+    """Downloads a file from GCS given a gs:// URI."""
+    try:
+        storage_client = storage.Client()
+        bucket_name, blob_name = uri.replace("gs://", "").split("/", 1)
+        bucket = storage_client.bucket(bucket_name)
+        blob = bucket.blob(blob_name)
+        return blob.download_as_string()
+    except Exception as e:
+        logger.error(f"Error downloading from GCS: {e}")
+        return None
+
 def extract_text_from_pdf(file_content):
     """Extracts text from a PDF file."""
     try:
