@@ -275,16 +275,16 @@ def match_resume_to_job(resume_uri, job_description):
     """
     try:
         # Step 1: Initialize session with job description
-        logger.debug(f"Job description stored in session: {job_description}")
+        # logger.debug(f"Job description stored in session: {job_description}")
 
-        # Step 2: Download and extract text from resume
+        # Step 1: Download and extract text from resume
         logger.info(f"Downloading resume from URI: {resume_uri}")
         resume_content = download_file_from_gcs(resume_uri)
         if not resume_content:
             logger.error("Failed to download resume from GCS.")
             return {"error": "Failed to download resume from GCS."}
 
-        # Step 3: Determine file type and extract text
+        # Step 2: Determine file type and extract text
         file_extension = os.path.splitext(resume_uri)[1].lower()
         logger.debug(f"File extension of the resume: {file_extension}")
         
@@ -302,17 +302,17 @@ def match_resume_to_job(resume_uri, job_description):
             logger.error("No text extracted from the resume.")
             return {"error": "No text extracted from the resume."}
         
-        # Step 4: Initialize Vertex AI
+        # Step 3: Initialize Vertex AI
         project_id = "genaiq-433814"
         location = "us-central1"
         logger.info("Initializing Vertex AI.")
         initialize_vertex_ai(project_id, location)
         
-        # Step 5: Load the Vertex AI generative model
+        # Step 4: Load the Vertex AI generative model
         model = GenerativeModel("gemini-1.5-flash-001", generation_config={"response_mime_type": "application/json"})
         logger.info("Loaded Vertex AI generative model.")
         
-        # Step 6: Prepare the prompt
+        # Step 5: Prepare the prompt
         prompt = f"""
         You are RARA-1000 (Resume Analysis and Recommendation AI), a state-of-the-art AI system specifically designed for in-depth resume analysis and job matching. Your task is to meticulously compare the given resume with the provided job description and generate a comprehensive analysis. Your response should be structured in JSON format with the following fields:
 
@@ -352,18 +352,18 @@ def match_resume_to_job(resume_uri, job_description):
         
         logger.info("Prompt prepared for Vertex AI.")
         
-        # Step 7: Generate content with Vertex AI
+        # Step 6: Generate content with Vertex AI
         logger.info("Sending the prompt to Vertex AI for content generation.")
         response = model.generate_content([prompt])
         
         if response and response.text:
             logger.info("Received response from Vertex AI.")
             response_text = response.text
-            logger.debug(f"Raw response text: {response_text}")
-            print(response_text)
+            logger.info(f"Raw response text: {response_text}")
 
             try:
-                return json.loads(response_text.strip('```json').strip('```').strip())
+                # return json.loads(response_text.strip('```json').strip('```').strip())
+                return json.loads(response_text)
             except json.JSONDecodeError as json_err:
                 logger.error(f"Failed to parse JSON response: {json_err}")
                 return {"error": "Failed to parse JSON response.", "raw_response": response_text}

@@ -204,9 +204,9 @@ def feedback():
         app.logger.error(f"Error processing feedback: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
     
-    finally:
-        session.clear()
-        app.logger.info("Session cleared after processing feedback")
+    # finally:
+    #     session.clear()
+    #     app.logger.info("Session cleared after processing feedback")
 
 @app.route('/roast')
 def resume_roast():
@@ -245,9 +245,9 @@ def roast_resume_page():
         app.logger.error(f"Error processing feedback: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
 
-    finally:
-        session.clear()
-        app.logger.info("Session cleared after processing feedback")
+    # finally:
+    #     session.clear()
+    #     app.logger.info("Session cleared after processing feedback")
 
 @app.route('/match_jd')
 def match_jd():
@@ -284,27 +284,20 @@ def match():
             file_uri = upload_local_file_to_gcs(resume_path, bucket_name, destination_blob_name)
             app.logger.info(f"File URI: {file_uri}")
 
-            # Store session data
-            session['job_description'] = job_description
-            session['file_uri'] = file_uri
-            app.logger.info(f"Session data after upload: {session}")
-
             # Perform the resume matching
             result = match_resume_to_job(file_uri, job_description)
-            app.logger.info(f"AI Response: {result}")
 
             # Let's save the ai response to a file and proceed to upload to GCS
             result_filename = f'{filename}_matcher_result.json'
 
             result_uri = save_response_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
-            session['result_uri'] = result_uri
             
             # Clean up the uploaded resume file
             os.remove(resume_path)  # Clean up uploaded file after processing
             app.logger.info(f"Deleted resume file: {resume_path}")
 
             # Redirect to the payment page
-            return redirect(url_for('payment_for_matcher'))
+            return redirect(url_for('payment_for_matcher', result_uri=result_uri))
         except Exception as e:
             app.logger.error(f"Error processing file: {e}")
             return jsonify({"error": "File processing error"}), 500
@@ -315,17 +308,14 @@ def match():
 @app.route('/start_payment_for_matcher', methods=['POST'])
 def start_payment_for_matcher():
     email = request.form.get('email')
+    result_uri = request.args.get('result_uri')
     # payment_method = request.form.get('payment-method')
 
-    app.logger.info(f"Received start_payment request with email: {email}")
+    app.logger.info(f"Received start_payment request with email: {email} and result uri: {result_uri}")
 
     if not email:
         app.logger.error('Email not provided')
         return jsonify({'status': 'failed', 'message': 'Email is required'}), 400
-
-    # if payment_method not in ['card', 'mobile_money']:
-    #     app.logger.error('Invalid payment method: %s', payment_method)
-    #     return jsonify({'status': 'failed', 'message': 'Invalid payment method'}), 400
 
     amount = 700 
     currency = 'NGN'  
@@ -340,7 +330,7 @@ def start_payment_for_matcher():
         'email': email,
         'amount': int(float(amount) * 100),
         'currency': currency,
-        'callback_url': url_for('verify_payment_for_matcher', _external=True)
+        'callback_url': url_for('verify_payment_for_matcher', result_uri=result_uri, _external=True)
     }
 
     try:
@@ -370,6 +360,10 @@ def start_payment_for_matcher():
 @app.route('/verify_payment_for_matcher')
 def verify_payment_for_matcher():
     reference = request.args.get('reference')
+    result_uri = request.args.get('result_uri')
+
+    app.logger.info(f"Received verify payment for matcher request with reference: {reference} and result uri: {result_uri}")
+
 
     if not reference:
         app.logger.error("No reference provided.")
@@ -384,9 +378,8 @@ def verify_payment_for_matcher():
 
         if response_data['status']:
             # Payment was successful
-            result_uri = session.get('result_uri')
             if not result_uri:
-                app.logger.error("No result URI found in session.")
+                app.logger.error("No result URI found.")
                 return jsonify({"error": "No result URI found. Please try again."}), 400
 
             # Fetch file from GCS
