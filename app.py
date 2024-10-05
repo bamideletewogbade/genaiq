@@ -304,7 +304,7 @@ def match():
             app.logger.info(f"Deleted resume file: {resume_path}")
 
             # Redirect to the payment page
-            return redirect(url_for('payment'))
+            return redirect(url_for('payment_for_matcher'))
         except Exception as e:
             app.logger.error(f"Error processing file: {e}")
             return jsonify({"error": "File processing error"}), 500
@@ -437,6 +437,11 @@ def verify_payment_for_matcher():
 def payment():
     app.logger.info("Rendering payment page")
     return render_template('paymentform.html')
+
+@app.route('/payment_for_matcher')
+def payment():
+    app.logger.info("Rendering payment page")
+    return render_template('paymentFormMatcher.html')
 
 @app.route('/start_payment', methods=['POST'])
 def start_payment():
