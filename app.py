@@ -439,7 +439,7 @@ def payment():
     return render_template('paymentform.html')
 
 @app.route('/payment_for_matcher')
-def payment():
+def payment_for_matcher():
     app.logger.info("Rendering payment page")
     return render_template('paymentFormMatcher.html')
 
