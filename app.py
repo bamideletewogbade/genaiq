@@ -6,33 +6,23 @@ from logging.handlers import RotatingFileHandler
 from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job, save_response_to_gcs, download_from_gcs
 import requests
 from google.cloud import storage
-# from flask_session import Session
-# import redis
-# from google.cloud import firestore
-# import uuid
+from flask_session import Session
+
 
 # from reportlab.lib.pagesizes import letter
 # from reportlab.pdfgen import canvas
 
 app = Flask(__name__)
 
-# Configure the Redis server for session storage
-# app.config['SESSION_TYPE'] = 'redis'
-# app.config['SESSION_PERMANENT'] = False
-# app.config['SESSION_USE_SIGNER'] = True
-# app.config['SESSION_REDIS'] = redis.StrictRedis(host='localhost', port=6379, db=0)
-
-# Initialize the session
-# Session(app)
+# Configure session to use filesystem (you can use other storage mechanisms too)
+app.config['SESSION_TYPE'] = 'filesystem'
+SECRET_KEY = "bishop"
+Session(app)
 
 # Configuration
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(BASE_DIR, 'static', 'uploads', 'temp_uploads')
 LOG_FILE_PATH = os.path.join(BASE_DIR, 'app.log')
-SECRET_KEY = "bishop"
-
-# Initialize Firestore DB
-# db = firestore.Client()
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = SECRET_KEY
@@ -291,13 +281,18 @@ def match():
             result_filename = f'{filename}_matcher_result.json'
 
             result_uri = save_response_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
+
+            # Save result_uri into the session
+            session['result_uri'] = result_uri
+            app.logger.info(f"Result URI saved in session: {result_uri}")
+
             
             # Clean up the uploaded resume file
             os.remove(resume_path)  # Clean up uploaded file after processing
             app.logger.info(f"Deleted resume file: {resume_path}")
 
             # Redirect to the payment page
-            return redirect(url_for('payment_for_matcher', result_uri=result_uri))
+            return redirect(url_for('payment_for_matcher'))
         except Exception as e:
             app.logger.error(f"Error processing file: {e}")
             return jsonify({"error": "File processing error"}), 500
@@ -308,7 +303,7 @@ def match():
 @app.route('/start_payment_for_matcher', methods=['POST'])
 def start_payment_for_matcher():
     email = request.form.get('email')
-    result_uri = request.args.get('result_uri')
+    result_uri = session.get('result_uri')
     # payment_method = request.form.get('payment-method')
 
     app.logger.info(f"Received start_payment request with email: {email} and result uri: {result_uri}")
@@ -330,7 +325,7 @@ def start_payment_for_matcher():
         'email': email,
         'amount': int(float(amount) * 100),
         'currency': currency,
-        'callback_url': url_for('verify_payment_for_matcher', result_uri=result_uri, _external=True)
+        'callback_url': url_for('verify_payment_for_matcher', _external=True)
     }
 
     try:
@@ -360,7 +355,7 @@ def start_payment_for_matcher():
 @app.route('/verify_payment_for_matcher')
 def verify_payment_for_matcher():
     reference = request.args.get('reference')
-    result_uri = request.args.get('result_uri')
+    result_uri = session.get('result_uri')
 
     app.logger.info(f"Received verify payment for matcher request with reference: {reference} and result uri: {result_uri}")
 
