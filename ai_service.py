@@ -66,17 +66,16 @@ def save_response_to_gcs(response, file_path, bucket_name, destination_blob_name
     else:
         logger.error("Failed to upload response to GCS")
 
-def download_from_gcs(uri):
-    """Downloads a file from GCS given a gs:// URI."""
+def download_from_gcs(bucket_name, source_blob_name, destination_file_name):
+    """Downloads a file from Google Cloud Storage."""
     try:
         storage_client = storage.Client()
-        bucket_name, blob_name = uri.replace("gs://", "").split("/", 1)
         bucket = storage_client.bucket(bucket_name)
-        blob = bucket.blob(blob_name)
-        return blob.download_as_string()
+        blob = bucket.blob(source_blob_name)
+        blob.download_to_filename(destination_file_name)
+        logger.info(f"File {source_blob_name} downloaded to {destination_file_name}.")
     except Exception as e:
-        logger.error(f"Error downloading from GCS: {e}")
-        return None
+        logger.error(f"Error downloading file from GCS: {e}")
 
 def extract_text_from_pdf(file_content):
     """Extracts text from a PDF file."""

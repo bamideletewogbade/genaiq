@@ -372,6 +372,7 @@ def verify_payment_for_matcher():
     reference = request.args.get('reference')
 
     if not reference:
+        app.logger.error("No reference provided.")
         return jsonify({'status': 'failed', 'message': 'No reference provided'}), 400
 
     url = f'https://api.paystack.co/transaction/verify/{reference}'
@@ -385,23 +386,48 @@ def verify_payment_for_matcher():
             # Payment was successful
             result_uri = session.get('result_uri')
             if not result_uri:
+                app.logger.error("No result URI found in session.")
                 return jsonify({"error": "No result URI found. Please try again."}), 400
 
-            result_data = download_from_gcs(result_uri)
-            if not result_data:
+            # Fetch file from GCS
+            bucket_name = "genaiq_storage_new"
+            local_result_dir = tempfile.gettempdir()  # Using system's temporary directory
+            local_result_path = os.path.join(local_result_dir, f'{result_uri.split("/")[-1]}')
+
+            try:
+                download_from_gcs(bucket_name, result_uri, local_result_path)
+            except Exception as e:
+                app.logger.error(f"Error downloading file from GCS: {e}")
                 return jsonify({"error": "Error retrieving match result. Please try again."}), 500
 
-            match_result = json.loads(result_data)
+            try:
+                with open(local_result_path, 'r') as file:
+                    result_data = file.read()
+            except Exception as e:
+                app.logger.error(f"Error reading result file: {e}")
+                return jsonify({"error": "Error reading match result. Please try again."}), 500
+
+            if not result_data:
+                app.logger.error("Match result data is empty.")
+                return jsonify({"error": "Error retrieving match result. Please try again."}), 500
+
+            try:
+                match_result = json.loads(result_data)
+            except json.JSONDecodeError as e:
+                app.logger.error(f"Error decoding JSON result data: {e}")
+                return jsonify({"error": "Error processing match result. Please try again."}), 500
+
             app.logger.info("Payment confirmed, rendering result page")
             return render_template('jd_matcher_result.html', result=match_result), 200
         else:
+            app.logger.error("Payment verification failed.")
             return jsonify({
                 'status': 'failed',
                 'message': 'Payment verification failed'
             }), 400
 
     except requests.exceptions.RequestException as e:
-        app.logger.error('Request to Paystack failed: %s', e)
+        app.logger.error(f"Request to Paystack failed: {e}")
         return jsonify({
             'status': 'failed',
             'message': 'Payment verification failed'

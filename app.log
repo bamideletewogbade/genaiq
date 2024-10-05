@@ -12553,3 +12553,10 @@ metadata {
 2024-10-05 00:14:59,265 - app - INFO - Starting Flask application
 2024-10-05 00:14:59,273 - werkzeug - WARNING -  * Debugger is active!
 2024-10-05 00:14:59,275 - werkzeug - INFO -  * Debugger PIN: 870-726-511
+2024-10-05 00:30:28,511 - app - INFO - Starting Flask application
+2024-10-05 00:30:28,524 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.88.0.4:8080
+2024-10-05 00:30:28,524 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 00:30:28,525 - werkzeug - INFO -  * Restarting with stat
