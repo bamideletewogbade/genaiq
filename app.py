@@ -296,7 +296,7 @@ def match():
             # Let's save the ai response to a file and proceed to upload to GCS
             result_filename = f'{filename}_matcher_result.json'
 
-            result_uri = g ponse_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
+            result_uri = save_response_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
             session['result_uri'] = result_uri
             
             # Clean up the uploaded resume file

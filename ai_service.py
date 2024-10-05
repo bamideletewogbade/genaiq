@@ -52,11 +52,11 @@ def save_response_to_file(response, file_path):
     """Saves the AI response to a local file."""
     try:
         with open(file_path, 'w') as file:
-            file.write(response)
+            file.write(json.dumps(response))  # Convert dict to JSON string
         logger.info(f"Response saved successfully to file: {file_path}")
     except Exception as e:
         logger.error(f"Error saving response to file: {e}")
-
+        
 def save_response_to_gcs(response, file_path, bucket_name, jd_matcher_result_destination_blob_name):
     """Saves the AI response to a local file and uploads it to Google Cloud Storage."""
     save_response_to_file(response, file_path)
