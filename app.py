@@ -248,6 +248,7 @@ def match_jd():
 @app.route('/match', methods=['POST'])
 def match():
     try:
+        # Check if both resume and job description are provided
         if 'resume' not in request.files or 'job_description' not in request.form:
             app.logger.error("No resume or job description provided.")
             return jsonify({"error": "No resume or job description provided."}), 400
@@ -255,34 +256,45 @@ def match():
         resume = request.files['resume']
         job_description = request.form['job_description']
 
+        # Check if a valid file is uploaded
         if resume.filename == '' or not allowed_file(resume.filename):
             app.logger.error("Invalid file type or no file selected.")
             return jsonify({"error": "Invalid file type or no file selected."}), 400
 
+        # Save the uploaded resume
         filename = secure_filename(resume.filename)
         resume_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         resume.save(resume_path)
         app.logger.info(f"Resume uploaded and saved at {resume_path}")
 
-        bucket_name = 'genaiq_storage_new'
-        destination_blob_name = f'uploads/{filename}'
-        matcher_destination_blob_name = f'results/{filename}'
-        file_uri = upload_local_file_to_gcs(resume_path, bucket_name, destination_blob_name)
-        app.logger.info(f"File URI: {file_uri}")
+        # Process the resume file
+        try:
+            bucket_name = 'genaiq_storage_new'
+            destination_blob_name = f'uploads/{filename}'
+            matcher_destination_blob_name = f'results/{filename}'
+            file_uri = upload_local_file_to_gcs(resume_path, bucket_name, destination_blob_name)
+            app.logger.info(f"File URI: {file_uri}")
 
-        result = match_resume_to_job(file_uri, job_description)
-        result_filename = f'{filename}_matcher_result.json'
-        result_uri = save_response_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
-        app.logger.info(f"Result URI: {result_uri}")
-        with tempfile.NamedTemporaryFile(delete=False, mode='w', suffix='.txt') as temp_file:
-            temp_file.write(result_uri)
-            temp_file_path = temp_file.name
-        app.logger.info(f"Result URI saved to temp file: {temp_file_path}")
+            # Perform the resume matching
+            result = match_resume_to_job(file_uri, job_description)
+            result_filename = f'{filename}_matcher_result.json'
+            result_uri = save_response_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
+            app.logger.info(f"Result URI: {result_uri}")
+         
 
-        os.remove(resume_path)
-        app.logger.info(f"Deleted resume file: {resume_path}")
+            # Save the result uri in session 
+            session['result_uri'] = result_uri
+            app.logger.info(f"Result URI saved in session")
+            
+            # Clean up the uploaded resume file
+            os.remove(resume_path)  # Clean up uploaded file after processing
+            app.logger.info(f"Deleted resume file: {resume_path}")
 
-        return redirect(url_for('verify_payment_for_matcher', temp_file_path=temp_file_path))
+            # Redirect to the payment page
+            return redirect(url_for('payment'))
+        except Exception as e:
+            app.logger.error(f"Error processing file: {e}")
+            return jsonify({"error": "File processing error"}), 500
     except Exception as e:
         app.logger.error(f"Error in match function: {e}")
         return jsonify({"error": "An error occurred during processing."}), 500
