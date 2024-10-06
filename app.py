@@ -6,7 +6,8 @@ from logging.handlers import RotatingFileHandler
 from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job, save_response_to_gcs, download_from_gcs
 import requests
 from google.cloud import storage
-from flask_session import Session
+import tempfile
+# from flask_session import Session
 
 
 # from reportlab.lib.pagesizes import letter
@@ -15,7 +16,7 @@ from flask_session import Session
 app = Flask(__name__)
 
 # Configure session to use filesystem (you can use other storage mechanisms too)
-app.config['SESSION_TYPE'] = 'filesystem'
+# app.config['SESSION_TYPE'] = 'filesystem'
 SECRET_KEY = "bishop"
 Session(app)
 
@@ -247,7 +248,6 @@ def match_jd():
 @app.route('/match', methods=['POST'])
 def match():
     try:
-        # Check if both resume and job description are provided
         if 'resume' not in request.files or 'job_description' not in request.form:
             app.logger.error("No resume or job description provided.")
             return jsonify({"error": "No resume or job description provided."}), 400
@@ -255,47 +255,34 @@ def match():
         resume = request.files['resume']
         job_description = request.form['job_description']
 
-        # Check if a valid file is uploaded
         if resume.filename == '' or not allowed_file(resume.filename):
             app.logger.error("Invalid file type or no file selected.")
             return jsonify({"error": "Invalid file type or no file selected."}), 400
 
-        # Save the uploaded resume
         filename = secure_filename(resume.filename)
         resume_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         resume.save(resume_path)
         app.logger.info(f"Resume uploaded and saved at {resume_path}")
 
-        # Process the resume file
-        try:
-            bucket_name = 'genaiq_storage_new'
-            destination_blob_name = f'uploads/{filename}'
-            matcher_destination_blob_name = f'results/{filename}'
-            file_uri = upload_local_file_to_gcs(resume_path, bucket_name, destination_blob_name)
-            app.logger.info(f"File URI: {file_uri}")
+        bucket_name = 'genaiq_storage_new'
+        destination_blob_name = f'uploads/{filename}'
+        matcher_destination_blob_name = f'results/{filename}'
+        file_uri = upload_local_file_to_gcs(resume_path, bucket_name, destination_blob_name)
+        app.logger.info(f"File URI: {file_uri}")
 
-            # Perform the resume matching
-            result = match_resume_to_job(file_uri, job_description)
+        result = match_resume_to_job(file_uri, job_description)
+        result_filename = f'{filename}_matcher_result.json'
+        result_uri = save_response_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
 
-            # Let's save the ai response to a file and proceed to upload to GCS
-            result_filename = f'{filename}_matcher_result.json'
+        with tempfile.NamedTemporaryFile(delete=False, mode='w', suffix='.txt') as temp_file:
+            temp_file.write(result_uri)
+            temp_file_path = temp_file.name
+        app.logger.info(f"Result URI saved to temp file: {temp_file_path}")
 
-            result_uri = save_response_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
+        os.remove(resume_path)
+        app.logger.info(f"Deleted resume file: {resume_path}")
 
-            # Save result_uri into the session
-            session['result_uri'] = result_uri
-            app.logger.info(f"Result URI saved in session: {result_uri}")
-
-            
-            # Clean up the uploaded resume file
-            os.remove(resume_path)  # Clean up uploaded file after processing
-            app.logger.info(f"Deleted resume file: {resume_path}")
-
-            # Redirect to the payment page
-            return redirect(url_for('payment_for_matcher'))
-        except Exception as e:
-            app.logger.error(f"Error processing file: {e}")
-            return jsonify({"error": "File processing error"}), 500
+        return redirect(url_for('verify_payment_for_matcher', temp_file_path=temp_file_path))
     except Exception as e:
         app.logger.error(f"Error in match function: {e}")
         return jsonify({"error": "An error occurred during processing."}), 500
@@ -303,10 +290,10 @@ def match():
 @app.route('/start_payment_for_matcher', methods=['POST'])
 def start_payment_for_matcher():
     email = request.form.get('email')
-    result_uri = session.get('result_uri')
+    # result_uri = session.get('result_uri')
     # payment_method = request.form.get('payment-method')
 
-    app.logger.info(f"Received start_payment request with email: {email} and result uri: {result_uri}")
+    # app.logger.info(f"Received start_payment request with email: {email} and result uri: {result_uri}")
 
     if not email:
         app.logger.error('Email not provided')
@@ -355,10 +342,15 @@ def start_payment_for_matcher():
 @app.route('/verify_payment_for_matcher')
 def verify_payment_for_matcher():
     reference = request.args.get('reference')
-    result_uri = session.get('result_uri')
+    temp_file_path = request.args.get('temp_file_path')
+    result_uri = None
+
+    if temp_file_path and os.path.exists(temp_file_path):
+        with open(temp_file_path, 'r') as temp_file:
+            result_uri = temp_file.read()
+        os.remove(temp_file_path)
 
     app.logger.info(f"Received verify payment for matcher request with reference: {reference} and result uri: {result_uri}")
-
 
     if not reference:
         app.logger.error("No reference provided.")
@@ -372,14 +364,12 @@ def verify_payment_for_matcher():
         response_data = response.json()
 
         if response_data['status']:
-            # Payment was successful
             if not result_uri:
                 app.logger.error("No result URI found.")
                 return jsonify({"error": "No result URI found. Please try again."}), 400
 
-            # Fetch file from GCS
             bucket_name = "genaiq_storage_new"
-            local_result_dir = tempfile.gettempdir()  # Using system's temporary directory
+            local_result_dir = tempfile.gettempdir()
             local_result_path = os.path.join(local_result_dir, f'{result_uri.split("/")[-1]}')
 
             try:
@@ -409,18 +399,12 @@ def verify_payment_for_matcher():
             return render_template('jd_matcher_result.html', result=match_result), 200
         else:
             app.logger.error("Payment verification failed.")
-            return jsonify({
-                'status': 'failed',
-                'message': 'Payment verification failed'
-            }), 400
+            return jsonify({'status': 'failed', 'message': 'Payment verification failed'}), 400
 
     except requests.exceptions.RequestException as e:
         app.logger.error(f"Request to Paystack failed: {e}")
-        return jsonify({
-            'status': 'failed',
-            'message': 'Payment verification failed'
-        }), 500
-
+        return jsonify({'status': 'failed', 'message': 'Payment verification failed'}), 500
+        
 @app.route('/payment')
 def payment():
     app.logger.info("Rendering payment page")
