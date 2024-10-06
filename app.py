@@ -273,7 +273,7 @@ def match():
         result = match_resume_to_job(file_uri, job_description)
         result_filename = f'{filename}_matcher_result.json'
         result_uri = save_response_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
-
+        app.logger.info(f"Result URI: {result_uri}")
         with tempfile.NamedTemporaryFile(delete=False, mode='w', suffix='.txt') as temp_file:
             temp_file.write(result_uri)
             temp_file_path = temp_file.name
