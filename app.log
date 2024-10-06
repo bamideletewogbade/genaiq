@@ -12582,3 +12582,13 @@ metadata {
 2024-10-06 00:35:49,812 - werkzeug - INFO - 127.0.0.1 - - [06/Oct/2024 00:35:49] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
 2024-10-06 00:35:50,309 - werkzeug - INFO - 127.0.0.1 - - [06/Oct/2024 00:35:50] "GET /static/images/oka.jpg HTTP/1.1" 200 -
 2024-10-06 00:35:51,067 - werkzeug - INFO - 127.0.0.1 - - [06/Oct/2024 00:35:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-06 00:41:36,280 - app - INFO - Starting Flask application
+2024-10-06 00:41:36,292 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.88.0.5:8080
+2024-10-06 00:41:36,292 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-06 00:41:36,293 - werkzeug - INFO -  * Restarting with stat
+2024-10-06 00:41:38,622 - app - INFO - Starting Flask application
+2024-10-06 00:41:38,630 - werkzeug - WARNING -  * Debugger is active!
+2024-10-06 00:41:38,633 - werkzeug - INFO -  * Debugger PIN: 769-859-362

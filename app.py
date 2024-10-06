@@ -18,7 +18,7 @@ app = Flask(__name__)
 # Configure session to use filesystem (you can use other storage mechanisms too)
 # app.config['SESSION_TYPE'] = 'filesystem'
 SECRET_KEY = "bishop"
-Session(app)
+# Session(app)
 
 # Configuration
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
