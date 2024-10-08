@@ -139,6 +139,62 @@ def upload_file():
         app.logger.error("File type not allowed")
         return jsonify({'error': 'File type not allowed'}), 400
 
+# # Endpoint to only display summary
+# @app.route('/feedback_summary', methods=['POST', 'GET'])
+# def feedback_summary():
+#     app.logger.info("Received request to get feedback summary page")
+
+#     try:
+#         filename = session.get('filename')
+#         file_uri = session.get('file_uri')
+#         app.logger.info(f"Session data at feedback page: filename={filename}, file_uri={file_uri}")
+
+#         if not filename or not file_uri:
+#             app.logger.error("Required session data missing")
+#             return jsonify({'error': 'Session data missing'}), 400
+
+#         # Process the file using AI service
+#         app.logger.info("Calling AI service to process the file")
+
+#         try:
+#             feedback = call_vertex_ai(file_uri)
+#             app.logger.info(f"Analysis result: {feedback}")
+
+#             # Save the AI response to a temporary file
+#             temp_file_name = 'ai_response.json'
+#             temp_file_path = os.path.join(app.config['UPLOAD_FOLDER'], temp_file_name)
+
+#             with open(temp_file_path, 'w') as temp_file:
+#                 json.dump(feedback, temp_file)
+#             app.logger.info(f"AI response saved at: {temp_file_path}")
+
+#             #session['ai_response'] = feedback
+
+#             # ai_response = session.get('ai_response')
+    
+#             # summary = ai_response.get('overall_feedback', 'Summary not available.')
+#             # return render_template('feedback_summary.html', summary=summary), 200
+
+#             # Read the AI response back from the file
+#         try:
+#             with open(temp_file_path, 'r') as temp_file:
+#                 ai_response = json.load(temp_file)
+
+#             summary = ai_response.get('overall_feedback', 'Summary not available.')
+#             return render_template('feedback_summary.html', summary=summary), 200
+            
+#         except Exception as e:
+#             app.logger.error(f"Error reading AI response from file: {e}")
+#             return jsonify({'error': 'Error reading AI response'}), 500
+
+#         except Exception as e:
+#             app.logger.error(f"Error calling AI service: {e}")
+#             return jsonify({'error': 'Error calling AI service'}), 500
+
+#     except Exception as e:
+#         app.logger.error(f"Error processing feedback: {e}")
+#         return jsonify({'error': 'Error processing feedback'}), 500
+
 # Endpoint to only display summary
 @app.route('/feedback_summary', methods=['POST', 'GET'])
 def feedback_summary():
@@ -159,12 +215,26 @@ def feedback_summary():
         try:
             feedback = call_vertex_ai(file_uri)
             app.logger.info(f"Analysis result: {feedback}")
-            session['ai_response'] = feedback
 
-            ai_response = session.get('ai_response')
-    
-            summary = ai_response.get('overall_feedback', 'Summary not available.')
-            return render_template('feedback_summary.html', summary=summary), 200
+            # Save the AI response to a temporary file
+            temp_file_name = 'ai_response.json'
+            temp_file_path = os.path.join(app.config['UPLOAD_FOLDER'], temp_file_name)
+
+            with open(temp_file_path, 'w') as temp_file:
+                json.dump(feedback, temp_file)
+            app.logger.info(f"AI response saved at: {temp_file_path}")
+
+            # Read the AI response back from the file
+            try:
+                with open(temp_file_path, 'r') as temp_file:
+                    ai_response = json.load(temp_file)
+
+                summary = ai_response.get('overall_feedback', 'Summary not available.')
+                return render_template('feedback_summary.html', summary=summary), 200
+            
+            except Exception as e:
+                app.logger.error(f"Error reading AI response from file: {e}")
+                return jsonify({'error': 'Error reading AI response'}), 500
 
         except Exception as e:
             app.logger.error(f"Error calling AI service: {e}")
@@ -173,6 +243,7 @@ def feedback_summary():
     except Exception as e:
         app.logger.error(f"Error processing feedback: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
+
 
 # Endpoint to display full feedback  
 @app.route('/feedback', methods=['POST', 'GET'])
