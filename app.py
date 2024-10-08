@@ -7,18 +7,14 @@ from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, m
 import requests
 from google.cloud import storage
 import tempfile
-# from flask_session import Session
-
 
 # from reportlab.lib.pagesizes import letter
 # from reportlab.pdfgen import canvas
 
 app = Flask(__name__)
 
-# Configure session to use filesystem (you can use other storage mechanisms too)
-# app.config['SESSION_TYPE'] = 'filesystem'
 SECRET_KEY = "bishop"
-# Session(app)
+
 
 # Configuration
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -236,10 +232,6 @@ def roast_resume_page():
         app.logger.error(f"Error processing feedback: {e}")
         return jsonify({'error': 'Error processing feedback'}), 500
 
-    # finally:
-    #     session.clear()
-    #     app.logger.info("Session cleared after processing feedback")
-
 @app.route('/match_jd')
 def match_jd():
     return render_template('jd_matcher.html')
@@ -279,19 +271,15 @@ def match():
             result = match_resume_to_job(file_uri, job_description)
             result_filename = f'{filename}_matcher_result.json'
             result_uri = save_response_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
-            app.logger.info(f"Result URI: {result_uri}")
-         
-
-            # Save the result uri in session 
+            app.logger.info(f"Saved response GCS Path: {result_uri}")
             session['result_uri'] = result_uri
-            app.logger.info(f"Result URI saved in session")
-            
+
             # Clean up the uploaded resume file
             os.remove(resume_path)  # Clean up uploaded file after processing
             app.logger.info(f"Deleted resume file: {resume_path}")
 
             # Redirect to the payment page
-            return redirect(url_for('payment'))
+            return redirect(url_for('payment_for_matcher'))
         except Exception as e:
             app.logger.error(f"Error processing file: {e}")
             return jsonify({"error": "File processing error"}), 500
@@ -354,15 +342,6 @@ def start_payment_for_matcher():
 @app.route('/verify_payment_for_matcher')
 def verify_payment_for_matcher():
     reference = request.args.get('reference')
-    temp_file_path = request.args.get('temp_file_path')
-    result_uri = None
-
-    if temp_file_path and os.path.exists(temp_file_path):
-        with open(temp_file_path, 'r') as temp_file:
-            result_uri = temp_file.read()
-        os.remove(temp_file_path)
-
-    app.logger.info(f"Received verify payment for matcher request with reference: {reference} and result uri: {result_uri}")
 
     if not reference:
         app.logger.error("No reference provided.")
@@ -376,9 +355,9 @@ def verify_payment_for_matcher():
         response_data = response.json()
 
         if response_data['status']:
-            if not result_uri:
-                app.logger.error("No result URI found.")
-                return jsonify({"error": "No result URI found. Please try again."}), 400
+            # if not result_uri:
+            #     app.logger.error("No result URI found.")
+            #     return jsonify({"error": "No result URI found. Please try again."}), 400
 
             bucket_name = "genaiq_storage_new"
             local_result_dir = tempfile.gettempdir()

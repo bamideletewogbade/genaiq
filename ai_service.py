@@ -59,12 +59,17 @@ def save_response_to_file(response, file_path):
 
 def save_response_to_gcs(response, file_path, bucket_name, destination_blob_name):
     """Saves the AI response to a local file and uploads it to Google Cloud Storage."""
-    save_response_to_file(response, file_path)
-    gcs_path = upload_local_file_to_gcs(file_path, bucket_name, destination_blob_name)
-    if gcs_path:
-        logger.info(f"Response uploaded to GCS successfully: {gcs_path}")
-    else:
-        logger.error("Failed to upload response to GCS")
+    try:
+        save_response_to_file(response, file_path)
+        gcs_path = upload_local_file_to_gcs(file_path, bucket_name, destination_blob_name)
+        if gcs_path:
+            return gcs_path  # Return the GCS path if upload is successful
+        else:
+            logger.error("Failed to upload the response file to GCS.")
+            return None
+    except Exception as e:
+        logger.error(f"Error uploading to GCS: {e}")
+        return None
 
 def download_from_gcs(bucket_name, source_blob_name, destination_file_name):
     """Downloads a file from Google Cloud Storage."""
