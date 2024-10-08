@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job, save_response_to_gcs, download_from_gcs
+from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, match_resume_to_job, save_response_to_gcs, download_from_gcs, save_response_to_temp_file
 import requests
 from google.cloud import storage
 import tempfile
@@ -272,14 +272,23 @@ def match():
             result_filename = f'{filename}_matcher_result.json'
             result_uri = save_response_to_gcs(result, result_filename, bucket_name, matcher_destination_blob_name)
             app.logger.info(f"Saved response GCS Path: {result_uri}")
-            session['result_uri'] = result_uri
 
+            result_path = os.path.join(app.config['UPLOAD_FOLDER'], result_filename)
+            
+            with open(result_path, 'w') as result_file:
+                json.dump(result, result_file)
+
+            app.logger.info(f"Saved match result locally at {result_path}")
+
+            # Store the result path in the session
+            session['result_path'] = result_path
+        
             # Clean up the uploaded resume file
             os.remove(resume_path)  # Clean up uploaded file after processing
             app.logger.info(f"Deleted resume file: {resume_path}")
 
             # Redirect to the payment page
-            return redirect(url_for('payment_for_matcher'))
+            return redirect(url_for('payment_for_matcher',result_path=result_path))
         except Exception as e:
             app.logger.error(f"Error processing file: {e}")
             return jsonify({"error": "File processing error"}), 500
@@ -290,10 +299,10 @@ def match():
 @app.route('/start_payment_for_matcher', methods=['POST'])
 def start_payment_for_matcher():
     email = request.form.get('email')
-    # result_uri = session.get('result_uri')
+    result_path = session.get('result_path')
     # payment_method = request.form.get('payment-method')
 
-    # app.logger.info(f"Received start_payment request with email: {email} and result uri: {result_uri}")
+    app.logger.info(f"Received start_payment request with email: {email} and result path: {result_path}")
 
     if not email:
         app.logger.error('Email not provided')
@@ -312,7 +321,7 @@ def start_payment_for_matcher():
         'email': email,
         'amount': int(float(amount) * 100),
         'currency': currency,
-        'callback_url': url_for('verify_payment_for_matcher', _external=True)
+        'callback_url': url_for('verify_payment_for_matcher', result_path=result_path, _external=True)
     }
 
     try:
@@ -342,7 +351,8 @@ def start_payment_for_matcher():
 @app.route('/verify_payment_for_matcher')
 def verify_payment_for_matcher():
     reference = request.args.get('reference')
-
+    result_path = request.args.get('result_path')
+    app.logger.info(f"Received verify payment request with result path: {result_path}")
     if not reference:
         app.logger.error("No reference provided.")
         return jsonify({'status': 'failed', 'message': 'No reference provided'}), 400
@@ -355,22 +365,8 @@ def verify_payment_for_matcher():
         response_data = response.json()
 
         if response_data['status']:
-            # if not result_uri:
-            #     app.logger.error("No result URI found.")
-            #     return jsonify({"error": "No result URI found. Please try again."}), 400
-
-            bucket_name = "genaiq_storage_new"
-            local_result_dir = tempfile.gettempdir()
-            local_result_path = os.path.join(local_result_dir, f'{result_uri.split("/")[-1]}')
-
             try:
-                download_from_gcs(bucket_name, result_uri, local_result_path)
-            except Exception as e:
-                app.logger.error(f"Error downloading file from GCS: {e}")
-                return jsonify({"error": "Error retrieving match result. Please try again."}), 500
-
-            try:
-                with open(local_result_path, 'r') as file:
+                with open(result_path, 'r') as file:
                     result_data = file.read()
             except Exception as e:
                 app.logger.error(f"Error reading result file: {e}")

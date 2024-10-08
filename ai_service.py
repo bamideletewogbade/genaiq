@@ -71,6 +71,18 @@ def save_response_to_gcs(response, file_path, bucket_name, destination_blob_name
         logger.error(f"Error uploading to GCS: {e}")
         return None
 
+def save_response_to_temp_file(response):
+    """Saves the AI response to a temporary file."""
+    try:
+        temp_file = tempfile.NamedTemporaryFile(delete=False, mode='w', suffix='.json')
+        json.dump(response, temp_file)
+        temp_file.close()
+        logger.info(f"Response saved successfully to temp file: {temp_file.name}")
+        return temp_file.name
+    except Exception as e:
+        logger.error(f"Error saving response to temp file: {e}")
+        return None
+
 def download_from_gcs(bucket_name, source_blob_name, destination_file_name):
     """Downloads a file from Google Cloud Storage."""
     try:
