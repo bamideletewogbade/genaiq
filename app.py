@@ -7,6 +7,7 @@ from ai_service import upload_local_file_to_gcs, call_vertex_ai, roast_resume, m
 import requests
 from google.cloud import storage
 import tempfile
+import json
 
 # from reportlab.lib.pagesizes import letter
 # from reportlab.pdfgen import canvas
