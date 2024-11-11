@@ -538,7 +538,7 @@ def uploaded_file(filename):
     return send_file(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
 @app.route('/create_resume')
-def resume_roast():
+def create_resume():
     return render_template('create_resume_index.html')
 
 
