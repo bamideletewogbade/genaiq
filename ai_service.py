@@ -52,7 +52,7 @@ def save_response_to_file(response, file_path):
     """Saves the AI response to a local file."""
     try:
         with open(file_path, 'w') as file:
-            file.write(json.dumps(response))  # Convert dict to JSON string
+            file.write(json.dumps(response))
         logger.info(f"Response saved successfully to file: {file_path}")
     except Exception as e:
         logger.error(f"Error saving response to file: {e}")
@@ -63,7 +63,7 @@ def save_response_to_gcs(response, file_path, bucket_name, destination_blob_name
         save_response_to_file(response, file_path)
         gcs_path = upload_local_file_to_gcs(file_path, bucket_name, destination_blob_name)
         if gcs_path:
-            return gcs_path  # Return the GCS path if upload is successful
+            return gcs_path  
         else:
             logger.error("Failed to upload the response file to GCS.")
             return None

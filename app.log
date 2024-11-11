@@ -12592,3 +12592,36 @@ metadata {
 2024-10-06 00:41:38,622 - app - INFO - Starting Flask application
 2024-10-06 00:41:38,630 - werkzeug - WARNING -  * Debugger is active!
 2024-10-06 00:41:38,633 - werkzeug - INFO -  * Debugger PIN: 769-859-362
+2024-11-11 11:16:11,897 - app - INFO - Starting Flask application
+2024-11-11 11:16:12,017 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.88.0.5:8080
+2024-11-11 11:16:12,017 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-11 11:16:12,020 - werkzeug - INFO -  * Restarting with stat
+2024-11-11 11:16:14,804 - app - INFO - Starting Flask application
+2024-11-11 11:16:14,816 - werkzeug - WARNING -  * Debugger is active!
+2024-11-11 11:16:14,840 - werkzeug - INFO -  * Debugger PIN: 880-654-857
+2024-11-11 11:16:30,862 - app - INFO - Rendering index page
+2024-11-11 11:16:30,883 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:16:30] "GET /?redirectedPreviously=true HTTP/1.1" 200 -
+2024-11-11 11:16:32,041 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:16:32] "GET /static/images/oka.jpg HTTP/1.1" 200 -
+2024-11-11 11:16:33,445 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:16:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-11-11 11:16:39,125 - app - INFO - Rendering upload resume page
+2024-11-11 11:16:39,148 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:16:39] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-11-11 11:16:45,092 - app - INFO - Rendering index page
+2024-11-11 11:16:45,092 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:16:45] "GET / HTTP/1.1" 200 -
+2024-11-11 11:16:46,705 - app - INFO - Rendering upload resume page
+2024-11-11 11:16:46,706 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:16:46] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-11-11 11:16:48,421 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:16:48] "GET /match_jd HTTP/1.1" 200 -
+2024-11-11 11:16:50,642 - app - INFO - Rendering upload resume page
+2024-11-11 11:16:50,643 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:16:50] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-11-11 11:16:52,391 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:16:52] "GET /match_jd HTTP/1.1" 200 -
+2024-11-11 11:16:54,316 - app - INFO - Rendering upload resume page
+2024-11-11 11:16:54,317 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:16:54] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-11-11 11:16:56,074 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:16:56] "GET /match_jd HTTP/1.1" 200 -
+2024-11-11 11:16:58,955 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:16:58] "GET /roast HTTP/1.1" 200 -
+2024-11-11 11:17:03,976 - app - INFO - Rendering upload resume page
+2024-11-11 11:17:03,977 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:17:03] "GET /upload_resume_page HTTP/1.1" 200 -
+2024-11-11 11:17:05,655 - app - INFO - Rendering index page
+2024-11-11 11:17:05,655 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:17:05] "GET / HTTP/1.1" 200 -
+2024-11-11 11:17:05,904 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2024 11:17:05] "GET /static/images/oka.jpg HTTP/1.1" 200 -

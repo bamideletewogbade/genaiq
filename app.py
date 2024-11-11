@@ -537,6 +537,10 @@ def uploaded_file(filename):
     app.logger.info(f"Serving file {filename}")
     return send_file(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
+@app.route('/create_resume')
+def resume_roast():
+    return render_template('create_resume_index.html')
+
 
 if __name__ == "__main__":
     app.logger.info("Starting Flask application")

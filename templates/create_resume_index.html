@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Creator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #023047;
+            --secondary-color: #fb8500;
+            --accent-color: #8ecae6;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+        .nav-link {
+            color: white;
+            font-weight: 500;
+            margin-left: 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+        .header-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .header-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .btn-custom {
+            background-color: var(--secondary-color);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #ffb703;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .content-section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .content-section .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .content-section .card:hover {
+            transform: translateY(-5px);
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">ResumeCreator</div>
+        <div>
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Templates</a>
+            <a href="#" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <header class="header-section">
+        <h1>Create Your Professional Resume</h1>
+        <p>Quickly and easily build a professional resume that stands out</p>
+        <button class="btn-custom">Get Started</button>
+    </header>
+
+    <section class="content-section">
+        <h2>How It Works</h2>
+        <div class="card">
+            <h3>Step 1: Enter Your Details</h3>
+            <p>Provide your personal information, education, work experience, and skills.</p>
+        </div>
+        <div class="card">
+            <h3>Step 2: Choose a Template</h3>
+            <p>Select a resume template that fits your style and preferences.</p>
+        </div>
+        <div class="card">
+            <h3>Step 3: Generate and Download</h3>
+            <p>Review your resume and download it in your preferred format.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        &copy; 2024 ResumeCreator. All rights reserved.
+    </footer>
+</body>
+</html>
